@@ -14,7 +14,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 
 ---
-I am currently the second-year Ph.D. student at Department of Informatics [King's College London](https://www.kcl.ac.uk/). I am supervised by [Dr Yali Du](https://yalidu.github.io/) and [Prof. Sanjay Modgil](https://nms.kcl.ac.uk/sanjay.modgil/). I received my M.S. degree from the Department of Computer Science at [University College London](https://www.ucl.ac.uk/), where I was supervised by [Prof. Jun Wang](http://www0.cs.ucl.ac.uk/staff/jun.wang/). Before that, I received my B.S. degree from the Department of Computer Science at [Eötvös Loránd University](https://www.elte.hu/en/), where I was supervised by [Prof. Márta Turcsányi-Szabó](http://comlogo.web.elte.hu/team/tagok/cvmarta_en.html).
+I am currently the second-year Ph.D. student at [Cooperative AI Lab](https://coopai.kcl.ac.uk/), [King's College London](https://www.kcl.ac.uk/). I am supervised by [Dr Yali Du](https://yalidu.github.io/) and [Prof. Sanjay Modgil](https://nms.kcl.ac.uk/sanjay.modgil/). I received my M.S. degree from the Department of Computer Science at [University College London](https://www.ucl.ac.uk/), where I was supervised by [Prof. Jun Wang](http://www0.cs.ucl.ac.uk/staff/jun.wang/). Before that, I received my B.S. degree from the Department of Computer Science at [Eötvös Loránd University](https://www.elte.hu/en/), where I was supervised by [Prof. Márta Turcsányi-Szabó](http://comlogo.web.elte.hu/team/tagok/cvmarta_en.html).
 
 My research interests lie in the intersection of Multi-agent Reinforcement Learning, Large Language Models, and Robotics. Current research themes include:
 
