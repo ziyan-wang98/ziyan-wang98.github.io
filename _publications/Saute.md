@@ -4,7 +4,7 @@ type: inproceedings
 key: highie
 title: >
     Sauté rl: Almost surely safe reinforcement learning using state augmentation
-author: Sootla, Aivar and Cowen-Rivers, Alexander I and Jafferjee, Taher and Wang, Ziyan and Mguni, David H and Wang, Jun and Ammar, Haitham
+author: Sootla, Aivar and Cowen-Rivers, Alexander and Jafferjee, Taher and Wang, Ziyan and Mguni, David H and Wang, Jun and Ammar, Haitham
 abbr: ICML'22
 booktitle: International Conference on Machine Learning (ICML)
 year: 2022
@@ -15,7 +15,7 @@ abstract: >
 bibtex: >
     @inproceedings{sootla2022saute,
         title={Saut{\'e} rl: Almost surely safe reinforcement learning using state augmentation},
-        author={Sootla, Aivar and Cowen-Rivers, Alexander I and Jafferjee, Taher and Wang, Ziyan and Mguni, David H and Wang, Jun and Ammar, Haitham},
+        author={Sootla, Aivar and Cowen-Rivers, Alexander and Jafferjee, Taher and Wang, Ziyan and Mguni, David H and Wang, Jun and Ammar, Haitham},
         booktitle={International Conference on Machine Learning},
         pages={20423--20443},
         year={2022},
