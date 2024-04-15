@@ -5,7 +5,7 @@ key: MACCA
 title: >
     MACCA: Offline Multi-agent Reinforcement Learning with Causal Credit Assignment
 author: Wang, Ziyan and Du, Yali and Zhang, Yudi and Fang, Meng and Huang, Biwei
-# abbr: NeurIPS'23
+abbr: Preprint
 # equalauthor: 
 # correspondence: Yali Du
 # website: https://probio-dataset.github.io/

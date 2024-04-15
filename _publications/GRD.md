@@ -3,17 +3,16 @@ layout: pub
 type: inproceedings
 title: >
     Interpretable Reward Redistribution in Reinforcement Learning: A Causal Approach
-author: Li, Hengli and Zhu, Song-Chun and Zheng, Zilong
-arxiv: '2306.09030'
+author: Zhang, Yudi and Du, Yali and Huang, Biwei and Wang, Ziyan and Wang, Jun and Fang, Meng and Pechenizkiy, Mykola
+arxiv: 2305.18427
 abbr: NeurIPS'23
 correspondence: Zheng, Zilong
-website: https://diplomat-dataset.github.io/
+website: https://reedzyd.github.io/GenerativeReturnDecomposition/
 booktitle: The Thirty-Seventh Annual Conference on Neural Information Processing Systems (NeruIPS)
 year: 2023
 selected: true
-code: https://github.com/diplomat-dataset/diplomat
 abstract: >
-    Pragmatic reasoning plays a pivotal role in deciphering implicit meanings that frequently arise in real-life conversations and is essential for the development of communicative social agents. In this paper, we introduce a novel challenge, DiPlomat, aiming at benchmarking machines’ capabilities on pragmatic reasoning and situated conversational understanding. Compared with previous works that treat different figurative expressions (e.g. metaphor, sarcasm) as individual tasks, DiPlomat provides a cohesive framework towards general pragmatic understanding. Our dataset is created through the utilization of Amazon Mechanical Turk ( AMT ), resulting in a total of 4, 177 multi-turn dialogues. In conjunction with the dataset, we propose two tasks, Pragmatic Identification and Reasoning (PIR) and Conversational Question Answering (CQA). Experimental results with state-of-the-art (SOTA) neural architectures reveal several significant findings: 1) large language models (LLMs) exhibit poor performance in tackling this subjective domain; 2) comprehensive comprehension of context emerges as a critical factor for establishing benign human-machine interactions; 3) current models defect in the application of pragmatic reasoning. As a result, we call on more attention to improve the ability of context understanding, reasoning, and implied meaning modeling.
+    A major challenge in reinforcement learning is to determine which state-action pairs are responsible for future rewards that are delayed. Reward redistribution serves as a solution to re-assign credits for each time step from observed sequences. While the majority of current approaches construct the reward redistribution in an uninterpretable manner, we propose to explicitly model the contributions of state and action from a causal perspective, resulting in an interpretable reward redistribution and preserving policy invariance. In this paper, we start by studying the role of causal generative models in reward redistribution by characterizing the generation of Markovian rewards and trajectory-wise long-term return and further propose a framework, called Generative Return Decomposition (GRD), for policy optimization in delayed reward scenarios. Specifically, GRD first identifies the unobservable Markovian rewards and causal relations in the generative process. Then, GRD makes use of the identified causal generative model to form a compact representation to train policy over the most favorable subspace of the state space of the agent. Theoretically, we show that the unobservable Markovian reward function is identifiable, as well as the underlying causal structure and causal models. Experimental results show that our method outperforms state-of-the-art methods and the provided visualization further demonstrates the interpretability of our method. The project page is located at https://reedzyd. github. io/GenerativeReturnDecomposition/.
 bibtex: >
     @inproceedings{NEURIPS2023_402e1210,
         author = {Zhang, Yudi and Du, Yali and Huang, Biwei and Wang, Ziyan and Wang, Jun and Fang, Meng and Pechenizkiy, Mykola},
