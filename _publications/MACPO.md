@@ -3,7 +3,7 @@ layout: pub
 type: inproceedings
 key: MACCA
 title: >
-    MACCA: Offline Multi-agent Reinforcement Learning with Causal Credit Assignment
+    Multi-Agent Constrained Policy Optimisation
 author: Gu, Shangding and Kuba, Jakub and Wen, Muning and Chen, Ruiqing and Wang, Ziyan and Tian, Zheng and Wang, Jun and Knoll, Alois and Yang, Yaodong
 abbr: Preprint
 # equalauthor: 
