@@ -48,6 +48,6 @@ My research interests lie in the intersection of Multi-agent Reinforcement Learn
 
 ## Professional Services
 
-- <b>Conference reviewer</b> for ICML 2024
+- <b>Conference reviewer</b> for ICML 2024, NeurIPS 2024, ICLR 2025
 - <b>Journal reviewer</b> for IEEE Transactions on Knowledge and Data Engineering (TKDE), IEEE Transactions on Artificial Intelligence (TAI)
 
