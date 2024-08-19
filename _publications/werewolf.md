@@ -27,6 +27,6 @@ bibtex: >
         title={Learning to Discuss Strategically: A Case Study on One Night Ultimate Werewolf},
         author={Jin, Xuanfa and Wang, Ziyan and Du, Yali and Fang, Meng and Zhang, Haifeng and Wang, Jun},
         booktitle={ICLR 2024 Workshop on Generative Models for Decision Making (ICLR GenAI4DM)},
-        year={2023}
+        year={2024}
     }
 ---
