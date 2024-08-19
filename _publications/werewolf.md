@@ -10,7 +10,7 @@ equalauthor: Jin, Xuanfa and Wang, Ziyan
 booktitle: ICLR 2024 Workshop on Generative Models for Decision Making (ICLR GenAI4DM)
 year: 2024
 selected: true
-# arxiv: 2306.15253
+arxiv: 2405.19946
 abstract: >
     Communication is a fundamental aspect of human society, facilitating the exchange of information
     and beliefs among people. Despite the advancements in large language models (LLMs), recent agents
