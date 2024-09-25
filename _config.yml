@@ -7,11 +7,11 @@ first_name: Ziyan
 middle_name:
 last_name: Wang
 chinese_name: 王梓岩
-email: ziyan.wang@kcl.ac.uk
+# email: ziyan.wang@kcl.ac.uk
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Ziyan's Home Page
 footer_text: >
-  Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
+  Inspired by <a href="https://zilongzheng.github.io/">Zilong Zheng's personal website</a>.
 
 # Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 # Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
@@ -59,7 +59,7 @@ blogger_url: # your blogger URL
 work_url: # work page URL
 keybase_username: # your keybase user name
 wikidata_id: # your wikidata id
-cv: Ziyan_Wang_s_CV.pdf
+# cv: Ziyan_Wang_s_CV.pdf
 
 contact_note: 
 

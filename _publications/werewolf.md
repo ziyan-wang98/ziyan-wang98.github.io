@@ -5,11 +5,12 @@ title: >
     Learning to Discuss Strategically: A Case Study on One Night Ultimate Werewolf
 author: Jin, Xuanfa and Wang, Ziyan and Du, Yali and Fang, Meng and Zhang, Haifeng and Wang, Jun
 
-abbr: ICLR'24 GenAI4DM Workshop
+abbr: NeurIPS'24
 equalauthor: Jin, Xuanfa and Wang, Ziyan
-booktitle: ICLR 2024 Workshop on Generative Models for Decision Making (ICLR GenAI4DM)
+booktitle: The Thirty-Eight Annual Conference on Neural Information Processing Systems (NeruIPS)
 year: 2024
 selected: true
+priority: 2
 arxiv: 2405.19946
 abstract: >
     Communication is a fundamental aspect of human society, facilitating the exchange of information

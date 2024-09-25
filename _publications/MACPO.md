@@ -11,7 +11,7 @@ abbr: Preprint
 # website: https://probio-dataset.github.io/
 arxiv: 2110.02793
 year: 2021
-selected: True
+selected: false
 code: https://github.com/chauncygu/Multi-Agent-Constrained-Policy-Optimisation
 booktitle: arXiv preprint
 # code: https://github.com/jiemingcui/probio/

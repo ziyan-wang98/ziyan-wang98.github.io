@@ -4,10 +4,11 @@
   <div class="notes"> <code style="font-size: 18px;">*</code><code>: Equal contribution</code>, <code
       style="font-size: 20px;">&#x2709;</code><code>: Corresponding author</code></div>
 
-  {% assign selected_publications = site.publications | where: "selected", "true" | group_by: "year" | sort: "name" %}
+  {% assign selected_publications = site.publications | where: "selected", "true" %}
+  {% assign sorted_publications = selected_publications | sort: "priority" | reverse | group_by: "year" | sort: "name" | reverse %}
   <div class="bibliography">
     <ol class="bibliography">
-      {% for y in selected_publications reversed %}
+      {% for y in sorted_publications %}
       {% assign yearConfSorted = y.items | sort: "abbr" | reverse %}
       {% if yearConfSorted != empty %}
       {% for item in yearConfSorted %}

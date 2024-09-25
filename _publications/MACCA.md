@@ -11,7 +11,8 @@ abbr: Preprint
 # website: https://probio-dataset.github.io/
 arxiv: 2312.03644
 year: 2024
-selected: True
+selected: false
+priority: 10
 booktitle: arXiv preprint arXiv:2312.03644
 # code: https://github.com/jiemingcui/probio/
 abstract: >
