@@ -22,10 +22,45 @@
 
     {% include footer.html %}
 
+    <!-- RevolverMaps globe -->
+    <div class="revolvermaps-container desktop-map">
+      <script type="text/javascript" src="//rf.revolvermaps.com/0/0/1.js?i=5sknf9ajkhb&amp;s=280&amp;m=8&amp;v=true&amp;r=false&amp;b=ffffff&amp;n=false&amp;c=00fff6" async="async"></script>
+    </div>
+
+    <!-- RevolverMaps flat map for mobile -->
+    <div class="revolvermaps-container mobile-map">
+      <script type="text/javascript" src="//rf.revolvermaps.com/0/0/4.js?i=57q8xvnhkqc&amp;m=2&amp;h=135&amp;c=00fff6&amp;r=15" async="async"></script>
+    </div>
+
   </body>
 
   {% include scripts/bootstrap.html %}
   {% include scripts/mansory.html %}
   {% include scripts/misc.html %}
+
+  <style>
+    .revolvermaps-container.desktop-map {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .revolvermaps-container.mobile-map {
+      display: none;
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 767px) {
+      .revolvermaps-container.desktop-map {
+        display: none;
+      }
+      .revolvermaps-container.mobile-map {
+        display: block;
+      }
+    }
+  </style>
 
 </html>
