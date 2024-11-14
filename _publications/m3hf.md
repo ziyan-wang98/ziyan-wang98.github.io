@@ -7,6 +7,7 @@ title: >
 author: Wang, Ziyan and Zhang, Zhicheng and Fang, Fei and Du, Yali
 
 booktitle: Under Review
+abbr: Preprint
 year: 2024
 selected: true
 priority: 999
