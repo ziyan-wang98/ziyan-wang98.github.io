@@ -22,15 +22,8 @@
 
     {% include footer.html %}
 
-    
-
-    <!-- RevolverMaps globe -->
-    <div class="revolvermaps-container desktop-map">
-      <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=m&d=aMhS5Z6p8BltnG8vtblHbnfhbIr4szWew5O8K9jZCsA&co=2d78ad&ct=ffffff&cmo=3acc3a&cmn=ff5353'></script>
-    </div>
-
-    <!-- RevolverMaps flat map for mobile -->
-    <div class="revolvermaps-container mobile-map">
+    <!-- Maps container -->
+    <div class="maps-container">
       <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=m&d=aMhS5Z6p8BltnG8vtblHbnfhbIr4szWew5O8K9jZCsA&co=2d78ad&ct=ffffff&cmo=3acc3a&cmn=ff5353'></script>
     </div>
 
@@ -61,6 +54,20 @@
       }
       .revolvermaps-container.mobile-map {
         display: block;
+      }
+    }
+
+    .maps-container {
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+      background-color: #f8f9fa;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 767px) {
+      .maps-container {
+        padding: 10px 0;
       }
     }
   </style>
