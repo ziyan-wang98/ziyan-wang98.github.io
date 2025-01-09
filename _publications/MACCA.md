@@ -11,7 +11,7 @@ abbr: NeurIPS'24 CRL Workshop
 # website: https://probio-dataset.github.io/
 arxiv: 2312.03644
 year: 2024
-selected: True
+selected: False
 priority: 444
 booktitle: NeurIPS 2024 Causal Representation Learning Workshop (NeurIPS CRL)
 # code: https://github.com/jiemingcui/probio/
