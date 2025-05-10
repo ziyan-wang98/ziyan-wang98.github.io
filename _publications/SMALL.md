@@ -7,7 +7,7 @@ author: Wang, Ziyan and Fang, Meng and Tomilin, Tristan and Fang, Fei and Du, Ya
 abbr: ICLR'24 GenAI4DM Workshop
 booktitle: ICLR 2024 Workshop on Generative Models for Decision Making (ICLR GenAI4DM)
 year: 2024
-selected: true
+selected: False
 priority: 333
 arxiv: 2405.20018
 abstract: >

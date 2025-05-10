@@ -7,6 +7,7 @@ title: >
 author: Wang, Ziyan and Zhang, Zhicheng and Fang, Fei and Du, Yali
 
 booktitle: ICML'25
+arxiv: 2503.02077
 abbr: ICML'25
 booktitle: Forty-Second International Conference on Machine Learning (ICML)
 year: 2025

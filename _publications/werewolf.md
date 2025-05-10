@@ -9,7 +9,7 @@ abbr: NeurIPS'24
 equalauthor: Jin, Xuanfa and Wang, Ziyan
 booktitle: The Thirty-Eight Annual Conference on Neural Information Processing Systems (NeruIPS)
 year: 2024
-selected: False
+selected: True
 priority: 2
 arxiv: 2405.19946
 abstract: >

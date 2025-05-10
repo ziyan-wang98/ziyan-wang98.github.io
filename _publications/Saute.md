@@ -8,7 +8,7 @@ author: Sootla, Aivar and Cowen-Rivers, Alexander and Jafferjee, Taher and Wang,
 abbr: ICML'22
 booktitle: International Conference on Machine Learning (ICML)
 year: 2022
-selected: true
+selected: False
 award: Spotlight
 arxiv: 2202.06558
 abstract: >

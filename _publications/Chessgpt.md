@@ -8,7 +8,7 @@ author: Feng, Xidong and Luo, Yicheng and Wang, Ziyan and Tang, Hongrui and Yang
 abbr: NeurIPS'23
 booktitle: The Thirty-Seventh Annual Conference on Neural Information Processing Systems (NeruIPS)
 year: 2023
-selected: true
+selected: True
 code: https://github.com/waterhorse1/ChessGPT
 website: https://huggingface.co/Waterhorse/chessgpt-base-v1
 arxiv: 2306.09200
