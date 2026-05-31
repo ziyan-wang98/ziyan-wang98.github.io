@@ -7,11 +7,12 @@ author: Jin, Xuanfa and Wang, Ziyan and Du, Yali and Fang, Meng and Zhang, Haife
 
 abbr: NeurIPS'24
 equalauthor: Jin, Xuanfa and Wang, Ziyan
-booktitle: The Thirty-Eight Annual Conference on Neural Information Processing Systems (NeruIPS)
+booktitle: The Thirty-Eighth Annual Conference on Neural Information Processing Systems (NeurIPS)
 year: 2024
 selected: True
 priority: 2
 arxiv: 2405.19946
+image: werewolf.png
 abstract: >
     Communication is a fundamental aspect of human society, facilitating the exchange of information
     and beliefs among people. Despite the advancements in large language models (LLMs), recent agents
@@ -27,7 +28,7 @@ bibtex: >
     @inproceedings{jin2024werewolf,
         title={Learning to Discuss Strategically: A Case Study on One Night Ultimate Werewolf},
         author={Jin, Xuanfa and Wang, Ziyan and Du, Yali and Fang, Meng and Zhang, Haifeng and Wang, Jun},
-        booktitle={ICLR 2024 Workshop on Generative Models for Decision Making (ICLR GenAI4DM)},
+        booktitle={The Thirty-Eighth Annual Conference on Neural Information Processing Systems (NeurIPS)},
         year={2024}
     }
 ---

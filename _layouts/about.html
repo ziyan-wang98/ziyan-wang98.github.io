@@ -11,23 +11,22 @@ layout: default
      <p class="desc">{{ page.description }}</p>
   </header> -->
 
-  <article>
+  <article class="home">
     {% if page.profile %}
     <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
       {% if page.profile.image %}
-      <img class="img-fluid z-depth-1 rounded" src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}">
+      <img class="img-fluid" src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}" alt="{{ site.first_name }} {{ site.last_name }}">
       {% endif %}
     </div>
     {% endif %}
 
-    <div class="post-header">
+    <div class="post-header hero-header">
       <h1 class="page-title">
         <!-- <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }} -->
         {{ site.first_name }} {% if site.middle_name != "blank" %}{{ site.middle_name }}{% endif %} {{ site.last_name }}
       </h1>
 
       <div class="info">
-
         <p class="desc">{{ page.description }}</p>
         {% if page.profile.address %}
         <div class="address">

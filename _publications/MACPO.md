@@ -1,7 +1,7 @@
 ---
 layout: pub
 type: inproceedings
-key: MACCA
+key: macpo
 title: >
     Multi-Agent Constrained Policy Optimisation
 author: Gu, Shangding and Kuba, Jakub and Wen, Muning and Chen, Ruiqing and Wang, Ziyan and Tian, Zheng and Wang, Jun and Knoll, Alois and Yang, Yaodong

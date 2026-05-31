@@ -7,4 +7,4 @@ nav: true
 
 ## Publications
 
-  {% include publications.html %}
+{% include publications.html %}

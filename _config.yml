@@ -2,16 +2,16 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title:  Ziyan Wang's Homepage # the website title (if blank, full name will be used instead)
+title: Ziyan Wang # the website title (if blank, full name will be used instead)
 first_name: Ziyan
 middle_name:
 last_name: Wang
 chinese_name: 王梓岩
 # email: ziyan.wang@kcl.ac.uk
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Ziyan's Home Page
+  Ph.D. candidate in multi-agent reinforcement learning, language agents, and safe autonomy.
 footer_text: >
-  Inspired by <a href="https://zilongzheng.github.io/">Zilong Zheng's personal website</a>.
+  Built with Jekyll and hosted on GitHub Pages.
 
 # Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 # Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
@@ -31,7 +31,7 @@ navbar_fixed: true
 footer_fixed: false
 
 # Dimensions
-max_width: 800px
+max_width: 980px
 
 # TODO: add layout settings (single page vs. multi-page)
 
@@ -59,7 +59,7 @@ blogger_url: # your blogger URL
 work_url: # work page URL
 keybase_username: # your keybase user name
 wikidata_id: # your wikidata id
-# cv: Ziyan_Wang_s_CV.pdf
+cv: ziyan_wang_cv.pdf
 
 contact_note: 
 
@@ -134,11 +134,7 @@ keep_files:
 
 # Plug-ins
 plugins:
-  - jekyll-email-protect
   - jekyll-github-metadata
-  - jekyll-paginate-v2
-  - jekyll/scholar
-  - jekyll-twitter-plugin
   - jemoji
 
 # -----------------------------------------------------------------------------
@@ -170,7 +166,7 @@ scholar:
 # Optional Features
 # -----------------------------------------------------------------------------
 
-enable_google_analytics:    true
+enable_google_analytics:    false
 enable_panelbear_analytics: false
 enable_mansory:             true
 enable_math:                true

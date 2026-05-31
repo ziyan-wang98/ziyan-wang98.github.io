@@ -8,7 +8,7 @@ arxiv: 2305.18427
 abbr: NeurIPS'23
 correspondence: Zheng, Zilong
 website: https://reedzyd.github.io/GenerativeReturnDecomposition/
-booktitle: The Thirty-Seventh Annual Conference on Neural Information Processing Systems (NeruIPS)
+booktitle: The Thirty-Seventh Annual Conference on Neural Information Processing Systems (NeurIPS)
 year: 2023
 selected: false
 abstract: >
@@ -16,7 +16,7 @@ abstract: >
 bibtex: >
     @inproceedings{NEURIPS2023_402e1210,
         author = {Zhang, Yudi and Du, Yali and Huang, Biwei and Wang, Ziyan and Wang, Jun and Fang, Meng and Pechenizkiy, Mykola},
-        booktitle = {The Thirty-Seventh Annual Conference on Neural Information Processing Systems (NeruIPS)},
+        booktitle = {The Thirty-Seventh Annual Conference on Neural Information Processing Systems (NeurIPS)},
         editor = {A. Oh and T. Neumann and A. Globerson and K. Saenko and M. Hardt and S. Levine},
         pages = {20208--20229},
         publisher = {Curran Associates, Inc.},

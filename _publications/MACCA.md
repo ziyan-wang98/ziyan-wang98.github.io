@@ -1,7 +1,7 @@
 ---
 layout: pub
 type: inproceedings
-key: MACCA
+key: macca
 title: >
     MACCA: Offline Multi-agent Reinforcement Learning with Causal Credit Assignment
 author: Wang, Ziyan and Du, Yali and Zhang, Yudi and Fang, Meng and Huang, Biwei
@@ -10,9 +10,10 @@ abbr: TMLR
 # correspondence: Yali Du
 # website: https://probio-dataset.github.io/
 arxiv: 2312.03644
+image: macca.png
 year: 2025
 selected: True
-priority: 444
+priority: 1
 booktitle: Transactions on Machine Learning Research (TMLR)
 # code: https://github.com/jiemingcui/probio/
 abstract: >
@@ -21,7 +22,7 @@ bibtex: >
     @inproceedings{wang2023macca,
         title={MACCA: Offline Multi-agent Reinforcement Learning with Causal Credit Assignment},
         author={Wang, Ziyan and Du, Yali and Zhang, Yudi and Fang, Meng and Huang, Biwei},
-        booktitle={arXiv preprint arXiv:2312.03644},
-        year={2024}
+        booktitle={Transactions on Machine Learning Research},
+        year={2025}
     }
 ---
