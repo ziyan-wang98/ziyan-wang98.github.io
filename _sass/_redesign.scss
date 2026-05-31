@@ -699,6 +699,7 @@ body {
   border-radius: 8px;
   bottom: 18px;
   box-shadow: 0 10px 24px rgba(31, 41, 51, 0.12);
+  cursor: pointer;
   min-height: 86px;
   min-width: 86px;
   padding: 0.55rem;
@@ -715,14 +716,21 @@ body {
   }
 }
 
-.visitor-globe:has(a[href*="clustrmaps"]),
+.visitor-globe-link {
+  border-radius: 8px;
+  inset: 0;
+  position: absolute;
+  z-index: 20;
+}
+
+.visitor-globe:has(a:not(.visitor-globe-link)[href*="clustrmaps"]),
 .visitor-globe:has(iframe[src*="clustrmaps"]),
 .visitor-globe:has(img[src*="clustrmaps"]) {
   min-height: 0;
   min-width: 0;
 }
 
-.visitor-globe:has(a[href*="clustrmaps"]) .visitor-globe-fallback,
+.visitor-globe:has(a:not(.visitor-globe-link)[href*="clustrmaps"]) .visitor-globe-fallback,
 .visitor-globe:has(iframe[src*="clustrmaps"]) .visitor-globe-fallback,
 .visitor-globe:has(img[src*="clustrmaps"]) .visitor-globe-fallback {
   display: none;
