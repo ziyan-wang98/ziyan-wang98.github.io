@@ -1,6 +1,7 @@
 ---
 layout: pub
 type: inproceedings
+key: werewolf
 title: >
     Learning to Discuss Strategically: A Case Study on One Night Ultimate Werewolf
 author: Jin, Xuanfa and Wang, Ziyan and Du, Yali and Fang, Meng and Zhang, Haifeng and Wang, Jun
@@ -12,6 +13,10 @@ year: 2024
 selected: True
 priority: 2
 arxiv: 2405.19946
+venue_url: https://openreview.net/forum?id=1f82rnwCbl
+pdf: https://openreview.net/pdf?id=1f82rnwCbl
+website: https://one-night-ultimate-werewolf.github.io/
+code: https://github.com/KylJin/Werewolf
 image: werewolf.png
 abstract: >
     Communication is a fundamental aspect of human society, facilitating the exchange of information

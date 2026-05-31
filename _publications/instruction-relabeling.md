@@ -12,6 +12,8 @@ selected: false
 priority: 5
 equalauthor: Zhang, Zhicheng and Wang, Ziyan
 arxiv: 2506.20061
+review_url: https://openreview.net/forum?id=iOjGMr6Xc1
+pdf: https://openreview.net/pdf?id=iOjGMr6Xc1
 image: instruction_relabeling.png
 abstract: >
     This work studies instruction relabeling with large language models for learning policies that follow open-ended instructions.

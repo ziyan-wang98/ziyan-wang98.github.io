@@ -103,6 +103,12 @@
       {% if page.abstract %}
         <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
       {% endif %}
+      {% if page.venue_url %}
+        <a href="{{ page.venue_url }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener">Venue</a>
+      {% endif %}
+      {% if page.review_url %}
+        <a href="{{ page.review_url }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener">OpenReview</a>
+      {% endif %}
       {% if page.arxiv %}
         <a href="https://arxiv.org/abs/{{ page.arxiv }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener">arXiv</a>
       {% endif %}
@@ -125,6 +131,9 @@
       {% endif %}
       {% if page.blog %}
         <a href="{{ page.blog }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener">Blog</a>
+      {% endif %}
+      {% if page.dataset %}
+        <a href="{{ page.dataset }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener">Dataset</a>
       {% endif %}
       {% if page.code %}
         <a href="{{ page.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener">Code</a>

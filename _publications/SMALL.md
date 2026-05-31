@@ -10,6 +10,7 @@ year: 2026
 selected: true
 priority: 0
 arxiv: 2405.20018
+venue_url: https://ojs.aaai.org/index.php/AAAI/article/view/41138
 pdf: https://ojs.aaai.org/index.php/AAAI/article/download/41138/45099
 image: small_mg.png
 abstract: >

@@ -3,12 +3,14 @@ layout: pub
 type: inproceedings
 key: chessgpt
 title: >
-    Chessgpt: Bridging policy learning and language modeling
+    ChessGPT: Bridging Policy Learning and Language Modeling
 author: Feng, Xidong and Luo, Yicheng and Wang, Ziyan and Tang, Hongrui and Yang, Mengyue and Shao, Kun and Mguni, David and Du, Yali and Wang, Jun
 abbr: NeurIPS'23
 booktitle: The Thirty-Seventh Annual Conference on Neural Information Processing Systems (NeurIPS)
 year: 2023
 selected: True
+venue_url: https://openreview.net/forum?id=pvdm4B6JMK
+pdf: https://openreview.net/pdf?id=pvdm4B6JMK
 code: https://github.com/waterhorse1/ChessGPT
 website: https://huggingface.co/Waterhorse/chessgpt-base-v1
 arxiv: 2306.09200
@@ -16,11 +18,11 @@ image: chessgpt.png
 abstract: >
     When solving decision-making tasks, humans typically depend on information from two key sources:(1) Historical policy data, which provides interaction replay from the environment, and (2) Analytical insights in natural language form, exposing the invaluable thought process or strategic considerations. Despite this, the majority of preceding research focuses on only one source: they either use historical replay exclusively to directly learn policy or value functions, or engaged in language model training utilizing mere language corpus. In this paper, we argue that a powerful autonomous agent should cover both sources. Thus, we propose ChessGPT, a GPT model bridging policy learning and language modeling by integrating data from these two sources in Chess games. Specifically, we build a large-scale game and language dataset related to chess. Leveraging the dataset, we showcase two model examples ChessCLIP and ChessGPT, integrating policy learning and language modeling. Finally, we propose a full evaluation framework for evaluating language model's chess ability. Experimental results validate our model and dataset's effectiveness. We open source our code, model, and dataset at https://github. com/waterhorse1/ChessGPT.
 bibtex: >
-    @inproceedings{feng2024chessgpt,
-        title={Chessgpt: Bridging policy learning and language modeling},
+    @inproceedings{feng2023chessgpt,
+        title={ChessGPT: Bridging Policy Learning and Language Modeling},
         author={Feng, Xidong and Luo, Yicheng and Wang, Ziyan and Tang, Hongrui and Yang, Mengyue and Shao, Kun and Mguni, David and Du, Yali and Wang, Jun},
         journal={The Thirty-Seventh Annual Conference on Neural Information Processing Systems (NeurIPS)},
         volume={36},
-        year={2024}
+        year={2023}
     }
 ---
