@@ -1,7 +1,7 @@
 ---
 layout: pub
 type: inproceedings
-key: highie
+key: saute
 title: >
     Sauté rl: Almost surely safe reinforcement learning using state augmentation
 author: Sootla, Aivar and Cowen-Rivers, Alexander and Jafferjee, Taher and Wang, Ziyan and Mguni, David H and Wang, Jun and Ammar, Haitham

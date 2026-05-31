@@ -1,39 +1,38 @@
 <div class="publications">
-    <div class="notes"> <code style="font-size: 18px;">*</code><code>: Equal contribution</code>, <code
-            style="font-size: 20px;">&#x2709;</code><code>: Corresponding author</code></div>
+  <p class="notes"><code>*</code> equal contribution, <code>&#x2709;</code> corresponding author</p>
 
-    {% assign all_publications = site.publications | sort: "priority" %}
-    {% assign years = all_publications | group_by: "year" %}
-    {% assign yearsSorted = years | sort: "name" | reverse %}
-    {% for y in yearsSorted %}
+  {% assign all_publications = site.publications | sort: "priority" %}
+  {% assign years = all_publications | group_by: "year" %}
+  {% assign yearsSorted = years | sort: "name" | reverse %}
+  {% for y in yearsSorted %}
     {% assign yearConfSorted = y.items | sort: "priority" %}
     {% if yearConfSorted != empty %}
-    <div class="bibliography">
-        <h4>{{y.name}}</h4>
-        <ol class="bibliography">
-            {% for item in yearConfSorted %}
-            <li>{{item}}</li>
-            {% endfor %}
-        </ol>
-    </div>
+    <section class="publication-year">
+      <h2>{{ y.name }}</h2>
+      <ol class="bibliography publication-list">
+        {% for item in yearConfSorted %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ol>
+    </section>
     {% endif %}
-    {% endfor %}
+  {% endfor %}
 </div>
 
 <div class="modal fade" id="bibtex-modal" tabindex="-1" role="dialog" aria-labelledby="bibtex-modal" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="bibtex-modal-title">BibTeX</h5>
-                <button id="copy-btn" class="btn copy-btn btn-outline-secondary btn-sm"
-                    data-clipboard-target="#bibtex-content" type="button">Copy</button>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <pre id='bibtex-content'></pre>
-            </div>
-        </div>
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="bibtex-modal-title">BibTeX</h5>
+        <button id="copy-btn" class="btn copy-btn btn-outline-secondary btn-sm"
+          data-clipboard-target="#bibtex-content" type="button">Copy</button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre id="bibtex-content"></pre>
+      </div>
     </div>
+  </div>
 </div>

@@ -1,24 +1,19 @@
-<div class="publications">
-  <div class="alert alert-primary"><a href="{{ 'publication' | relative_url }}">SEE ALL PUBLICATIONS <i
-        class="fas fa-angle-right" aria-hidden="true"></i></a></div>
-  <div class="notes"> <code style="font-size: 18px;">*</code><code>: Equal contribution</code>, <code
-      style="font-size: 20px;">&#x2709;</code><code>: Corresponding author</code></div>
+<div class="publications selected-publications">
+  <p class="notes"><code>*</code> equal contribution, <code>&#x2709;</code> corresponding author</p>
 
-  {% assign selected_publications = site.publications | where: "selected", "true" %}
+  {% assign selected_publications = site.publications | where: "selected", true %}
   {% assign sorted_publications = selected_publications | sort: "priority" | group_by: "year" | sort: "name" | reverse %}
-  <div class="bibliography">
-    <ol class="bibliography">
-      {% for y in sorted_publications %}
-      {% assign yearConfSorted = y.items | sort: "priority" %}
-      {% if yearConfSorted != empty %}
-      {% for item in yearConfSorted %}
-      <li>{{item}}</li>
-      {% endfor %}
-      {% endif %}
-      {% endfor %}
-    </ol>
-  </div>
 
+  <ol class="bibliography publication-list">
+    {% for y in sorted_publications %}
+      {% assign yearConfSorted = y.items | sort: "priority" %}
+      {% for item in yearConfSorted %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    {% endfor %}
+  </ol>
+
+  <p class="publication-more"><a href="{{ 'publication' | relative_url }}">View all publications</a></p>
 </div>
 
 <div class="modal fade" id="bibtex-modal" tabindex="-1" role="dialog" aria-labelledby="bibtex-modal" aria-hidden="true">
@@ -33,7 +28,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <pre id='bibtex-content'></pre>
+        <pre id="bibtex-content"></pre>
       </div>
     </div>
   </div>
