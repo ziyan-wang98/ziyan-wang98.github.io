@@ -531,56 +531,20 @@ body {
 
 .publication-venue-badge {
   align-items: center;
-  background: rgba(47, 111, 131, 0.12);
-  border: 1px solid rgba(47, 111, 131, 0.28);
+  background: rgba(47, 111, 131, 0.1);
+  border: 1px solid rgba(47, 111, 131, 0.24);
   border-radius: 999px;
   box-shadow: 0 4px 12px rgba(31, 41, 51, 0.05);
   color: var(--global-theme-color);
   display: inline-flex;
-  font-size: 0.95rem;
-  font-weight: 850;
+  font-size: 0.76rem;
+  font-weight: 800;
   justify-content: center;
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
   line-height: 1;
-  min-height: 34px;
-  padding: 0.52rem 0.88rem;
+  min-height: 0;
+  padding: 0.38rem 0.56rem;
   text-transform: none;
-}
-
-.publication-venue-badge[class*="venue-icml"] {
-  background: rgba(20, 119, 133, 0.14);
-  border-color: rgba(20, 119, 133, 0.34);
-  color: #147785;
-}
-
-.publication-venue-badge[class*="venue-tmlr"] {
-  background: rgba(101, 73, 151, 0.14);
-  border-color: rgba(101, 73, 151, 0.34);
-  color: #654997;
-}
-
-.publication-venue-badge[class*="venue-neurips"] {
-  background: rgba(143, 62, 62, 0.14);
-  border-color: rgba(143, 62, 62, 0.34);
-  color: #8f3e3e;
-}
-
-.publication-venue-badge[class*="venue-aaai"] {
-  background: rgba(37, 99, 145, 0.14);
-  border-color: rgba(37, 99, 145, 0.34);
-  color: #256391;
-}
-
-.publication-venue-badge[class*="venue-aamas"] {
-  background: rgba(67, 124, 91, 0.14);
-  border-color: rgba(67, 124, 91, 0.34);
-  color: #437c5b;
-}
-
-.publication-venue-badge[class*="venue-pricai"] {
-  background: rgba(154, 106, 31, 0.14);
-  border-color: rgba(154, 106, 31, 0.34);
-  color: #8a5e19;
 }
 
 .publication-venue-badge[class*="venue-under-review"],
