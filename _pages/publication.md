@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Publication
-permalink: /publication
+permalink: /publication/
 nav: true
 ---
 

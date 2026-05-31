@@ -8,6 +8,8 @@ arxiv: 2305.18427
 abbr: NeurIPS'23
 correspondence: Zheng, Zilong
 website: https://reedzyd.github.io/GenerativeReturnDecomposition/
+venue_url: https://proceedings.neurips.cc/paper_files/paper/2023/hash/402e12102d6ec3ea3df40ce1b23d423a-Abstract-Conference.html
+pdf: https://proceedings.neurips.cc/paper_files/paper/2023/file/402e12102d6ec3ea3df40ce1b23d423a-Paper-Conference.pdf
 booktitle: The Thirty-Seventh Annual Conference on Neural Information Processing Systems (NeurIPS)
 year: 2023
 selected: false

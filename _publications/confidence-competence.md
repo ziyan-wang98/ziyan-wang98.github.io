@@ -10,6 +10,7 @@ booktitle: The Pacific Rim International Conference on Artificial Intelligence (
 year: 2025
 selected: false
 priority: 4
+venue_url: https://doi.org/10.1007/978-981-95-7078-2_37
 abstract: >
     This paper evaluates whether large language models' confidence aligns with their competence in mathematical reasoning.
 bibtex: >

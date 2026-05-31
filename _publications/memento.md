@@ -13,6 +13,9 @@ priority: 2
 arxiv: 2604.09852
 image: memento.png
 blog: https://www.microsoft.com/en-us/research/articles/memento-teaching-llms-to-manage-their-own-context/
+website: https://www.microsoft.com/en-us/research/publication/memento-teaching-llms-to-manage-their-own-context/
+dataset: https://huggingface.co/datasets/microsoft/OpenMementos
+code: https://github.com/microsoft/memento
 abstract: >
     Memento trains language models to manage their own context, improving long-context reasoning and memory use.
 bibtex: >

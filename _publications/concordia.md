@@ -11,6 +11,9 @@ year: 2025
 selected: false
 priority: 3
 arxiv: 2512.03318
+venue_url: https://openreview.net/forum?id=yG4Fj0voJZ
+pdf: https://openreview.net/pdf?id=yG4Fj0voJZ
+code: https://github.com/google-deepmind/concordia
 abstract: >
     This work evaluates the generalization capabilities of LLM-based agents in mixed-motive scenarios using Concordia.
 bibtex: >

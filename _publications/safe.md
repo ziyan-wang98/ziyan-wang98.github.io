@@ -5,6 +5,8 @@ title: >
     Safe Reinforcement Learning with Free-form Natural Language Constraints and Pre-Trained Language Models
 author: Lou, Xingzhou and Zhang, Junge and Wang, Ziyan and Huang, Kaiqi and Du, Yali
 arxiv: 2401.07553
+venue_url: https://openreview.net/forum?id=xIBlzKofHC
+pdf: https://ifaamas.csc.liv.ac.uk/Proceedings/aamas2024/pdfs/p1274.pdf
 abbr: AAMAS'24
 booktitle: The 23rd International Conference on Autonomous Agents and Multi-Agent Systems (AAMAS)
 year: 2024
