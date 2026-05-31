@@ -9,7 +9,9 @@ abbr: Under Review
 booktitle: Under Review
 year: 2026
 selected: false
-priority: 2
+priority: 999
+back_matter: true
+back_priority: 99
 arxiv: 2604.09852
 image: memento.png
 blog: https://www.microsoft.com/en-us/research/articles/memento-teaching-llms-to-manage-their-own-context/

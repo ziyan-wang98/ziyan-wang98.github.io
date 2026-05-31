@@ -1,7 +1,7 @@
 <div class="publications">
   <p class="notes"><code>*</code> equal contribution, <code>&#x2709;</code> corresponding author</p>
 
-  {% assign all_publications = site.publications | sort: "priority" %}
+  {% assign all_publications = site.publications | where_exp: "item", "item.back_matter != true" | sort: "priority" %}
   {% assign years = all_publications | group_by: "year" %}
   {% assign yearsSorted = years | sort: "name" | reverse %}
   {% for y in yearsSorted %}
@@ -17,6 +17,18 @@
     </section>
     {% endif %}
   {% endfor %}
+
+  {% assign back_publications = site.publications | where: "back_matter", true | sort: "back_priority" %}
+  {% if back_publications != empty %}
+  <section class="publication-year publication-back-matter">
+    <h2>Additional Manuscripts</h2>
+    <ol class="bibliography publication-list">
+      {% for item in back_publications %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endif %}
 </div>
 
 <div class="modal fade" id="bibtex-modal" tabindex="-1" role="dialog" aria-labelledby="bibtex-modal" aria-hidden="true">

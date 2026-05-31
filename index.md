@@ -30,7 +30,6 @@ description: >
       <strong>RL and MARL.</strong> I develop learning methods for agents that coordinate under feedback, constraints, and strategic interaction, including
       <a href="{{ '/publication/#m3hf' | relative_url }}">M3HF</a>,
       <a href="{{ '/publication/#macca' | relative_url }}">MACCA</a>,
-      <a href="{{ '/publication/#vam' | relative_url }}">VAM</a>,
       <a href="{{ '/publication/#fisher-decorator' | relative_url }}">Fisher Decorator</a>,
       <a href="{{ '/publication/#plfb' | relative_url }}">policy learning from tutorial books</a>,
       <a href="{{ '/publication/#GRD' | relative_url }}">GRD</a>, and
@@ -42,7 +41,6 @@ description: >
       <a href="{{ '/publication/#chessgpt' | relative_url }}">ChessGPT</a>,
       <a href="{{ '/publication/#concordia' | relative_url }}">Concordia</a>,
       <a href="{{ '/publication/#bazaarbench' | relative_url }}">BazaarBench</a>,
-      <a href="{{ '/publication/#memento' | relative_url }}">Memento</a>,
       <a href="{{ '/publication/#instruction-relabeling' | relative_url }}">instruction relabeling</a>, and
       <a href="{{ '/publication/#confidence-competence' | relative_url }}">confidence-competence alignment</a>.
     </p>

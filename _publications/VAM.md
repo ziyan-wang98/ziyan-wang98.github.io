@@ -8,8 +8,10 @@ author: Zhang, Zhicheng and Wang, Ziyan and Du, Yali and Fang, Fei
 abbr: Under Review
 booktitle: Under Review
 year: 2026
-selected: true
-priority: 3
+selected: false
+priority: 900
+back_matter: true
+back_priority: 10
 equalauthor: Zhang, Zhicheng and Wang, Ziyan
 arxiv: 2602.16833
 image: vam.png
