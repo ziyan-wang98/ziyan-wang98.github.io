@@ -68,6 +68,7 @@ description: >
   {% include news.html %}
 {% endif %}
 
+{% comment %}
 <div id="education" class="section_break"></div>
 
 ## <i class="fas fa-graduation-cap section-icon"></i> Education
@@ -104,6 +105,7 @@ description: >
     </div>
   </div>
 </div>
+{% endcomment %}
 
 <div id="experience" class="section_break"></div>
 
