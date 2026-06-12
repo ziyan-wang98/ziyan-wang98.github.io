@@ -683,11 +683,13 @@ body {
   box-shadow: 0 10px 24px rgba(31, 41, 51, 0.12);
   cursor: pointer;
   min-height: 86px;
-  min-width: 86px;
+  max-width: calc(100vw - 36px);
+  min-width: 180px;
   padding: 0.55rem;
   position: fixed;
   right: 18px;
   text-align: center;
+  width: 190px;
   z-index: 999;
 
   > a,
@@ -698,23 +700,15 @@ body {
   }
 }
 
-.visitor-globe-link {
-  border-radius: 8px;
-  inset: 0;
-  position: absolute;
-  z-index: 20;
-}
-
-.visitor-globe:has(a:not(.visitor-globe-link)[href*="clustrmaps"]),
-.visitor-globe:has(iframe[src*="clustrmaps"]),
-.visitor-globe:has(img[src*="clustrmaps"]) {
+.visitor-globe:has(#mapmyvisitors-widget),
+.visitor-globe:has(iframe[src*="mapmyvisitors"]),
+.visitor-globe:has(img[src*="mapmyvisitors"]) {
   min-height: 0;
-  min-width: 0;
 }
 
-.visitor-globe:has(a:not(.visitor-globe-link)[href*="clustrmaps"]) .visitor-globe-fallback,
-.visitor-globe:has(iframe[src*="clustrmaps"]) .visitor-globe-fallback,
-.visitor-globe:has(img[src*="clustrmaps"]) .visitor-globe-fallback {
+.visitor-globe:has(#mapmyvisitors-widget) .visitor-globe-fallback,
+.visitor-globe:has(iframe[src*="mapmyvisitors"]) .visitor-globe-fallback,
+.visitor-globe:has(img[src*="mapmyvisitors"]) .visitor-globe-fallback {
   display: none;
 }
 
