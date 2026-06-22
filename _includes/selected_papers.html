@@ -1,7 +1,7 @@
 <div class="publications selected-publications">
   <p class="notes"><code>*</code> equal contribution, <code>&#x2709;</code> corresponding author</p>
 
-  {% assign selected_publications = site.publications | where: "selected", true %}
+  {% assign selected_publications = site.publications | where: "selected", true | where_exp: "item", "item.hidden != true" %}
   {% assign sorted_publications = selected_publications | sort: "priority" | group_by: "year" | sort: "name" | reverse %}
 
   <ol class="bibliography publication-list">

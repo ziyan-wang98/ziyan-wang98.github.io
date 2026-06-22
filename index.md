@@ -27,28 +27,25 @@ description: >
 
   <div class="research-overview" aria-label="Research overview">
     <p>
-      <strong>RL and MARL.</strong> I develop learning methods for agents that coordinate under feedback, constraints, and strategic interaction, including
-      <a href="{{ '/publication/#m3hf' | relative_url }}">M3HF</a>,
-      <a href="{{ '/publication/#macca' | relative_url }}">MACCA</a>,
-      <a href="{{ '/publication/#fisher-decorator' | relative_url }}">Fisher Decorator</a>,
-      <a href="{{ '/publication/#plfb' | relative_url }}">policy learning from tutorial books</a>,
-      <a href="{{ '/publication/#GRD' | relative_url }}">GRD</a>, and
-      <a href="{{ '/publication/#macpo' | relative_url }}">MACPO</a>.
+      <strong>My central question is how to distill executable policies from human knowledge.</strong>
+      Human knowledge appears as thinking patterns, direct instruction, books, and collective behavior; my work asks how learning agents can turn these media into robust decision-making policies.
     </p>
     <p>
-      <strong>Multi-LLM agents.</strong> I study how language-model agents communicate, reason, remember, and generalize in social or open-ended environments, including
-      <a href="{{ '/publication/#werewolf' | relative_url }}">Werewolf</a>,
-      <a href="{{ '/publication/#chessgpt' | relative_url }}">ChessGPT</a>,
-      <a href="{{ '/publication/#concordia' | relative_url }}">Concordia</a>,
-      <a href="{{ '/publication/#bazaarbench' | relative_url }}">BazaarBench</a>,
-      <a href="{{ '/publication/#instruction-relabeling' | relative_url }}">instruction relabeling</a>, and
-      <a href="{{ '/publication/#confidence-competence' | relative_url }}">confidence-competence alignment</a>.
+      <strong>In reinforcement learning and MARL,</strong> I study policy learning from books
+      (<a href="{{ '/publication/#plfb' | relative_url }}">PLFB</a>), human feedback
+      (<a href="{{ '/publication/#m3hf' | relative_url }}">M3HF</a>), causal credit assignment
+      (<a href="{{ '/publication/#macca' | relative_url }}">MACCA</a>,
+      <a href="{{ '/publication/#GRD' | relative_url }}">GRD</a>), and constrained decision-making
+      (<a href="{{ '/publication/#macpo' | relative_url }}">MACPO</a>,
+      <a href="{{ '/publication/#SMALL' | relative_url }}">SMALL</a>).
     </p>
     <p>
-      <strong>Safe and aligned autonomy.</strong> I build agents that can follow human intent and respect safety constraints, from
-      <a href="{{ '/publication/#SMALL' | relative_url }}">SMALL</a> and
-      <a href="{{ '/publication/#safe' | relative_url }}">safe RL with free-form natural-language constraints</a> to
-      <a href="{{ '/publication/#saute' | relative_url }}">Saute RL</a>, safe MARL benchmarks, and current work on multi-agent LLM monitoring.
+      <strong>In language-agent systems,</strong> I study how instructions, social interaction, and shared memory shape agent behavior, including
+      <a href="{{ '/publication/#instruction-relabeling' | relative_url }}">instruction relabeling</a>,
+      <a href="{{ '/publication/#werewolf' | relative_url }}">strategic discussion</a>,
+      <a href="{{ '/publication/#concordia' | relative_url }}">mixed-motive generalization</a>,
+      <a href="{{ '/publication/#bazaarbench' | relative_url }}">marketplace safety</a>, and
+      <a href="{{ '/publication/#memento' | relative_url }}">context management</a>.
     </p>
   </div>
 
@@ -58,6 +55,26 @@ description: >
     <a href="https://scholar.google.com/citations?user=tFihXQQAAAAJ&hl=en">Dr Kirill P. Kalinin</a>. I have also visited
     <a href="https://www.cmu.edu/">Carnegie Mellon University</a> with <a href="https://feifang.info/">Prof. Fei Fang</a> and worked with Microsoft Research's AI Frontier Group in Redmond.
   </p>
+</div>
+
+<div class="research-direction" aria-label="Research direction">
+  <div class="research-direction-copy">
+    <p class="eyebrow">Research direction</p>
+    <h2>Distilling Policy from Human Knowledge</h2>
+    <p>
+      My research goal is to distill policies from human knowledge. Knowledge can be implicit in reasoning patterns, shaped through direct instruction, preserved in books, and amplified through collective behavior; my papers study how agents can learn from these media to coordinate, adapt, and act safely.
+    </p>
+    <div class="knowledge-media-list" aria-label="Human knowledge media">
+      <span>Thinking patterns</span>
+      <span>Direct instruction</span>
+      <span>Books</span>
+      <span>Collective behavior</span>
+    </div>
+  </div>
+
+  <figure class="research-direction-figure">
+    <img src="{{ '/assets/img/research/knowledge-media.png' | relative_url }}" alt="Four media of human knowledge: thinking patterns, direct instruction, books, and collective behavior.">
+  </figure>
 </div>
 
 <div id="news" class="section_break"></div>
@@ -166,7 +183,7 @@ description: >
 
 ## <i class="fas fa-award section-icon"></i> Honors & Teaching
 
-- <b>Honors</b>: Oxford IDAI Fellowship, NeurIPS 2024 Scholar Award, NeurIPS 2024 Oral Presentation, King's PhD Scholarship, Hungarian State Scholarship
+- <b>Honors</b>: Oxford IDAI Fellowship, NeurIPS 2024 Scholar Award, NeurIPS 2024 Oral Presentation
 - <b>Teaching</b>: Oxford Machine Learning Summer School, Oxford MLx Fundamentals Summer School, and Optimisation Methods at King's College London
 
 <div id="services" class="section_break"></div>
