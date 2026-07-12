@@ -51,8 +51,7 @@ description: >
 
   <p>
     I am currently an Oxford IDAI Fellow working with <a href="https://www.robots.ox.ac.uk/~abibi/">Dr Adel Bibi</a> and
-    <a href="https://www.robots.ox.ac.uk/~phst/">Prof. Philip Torr</a>, and a research intern in the Future AI Group at Microsoft Research Cambridge, working with
-    <a href="https://scholar.google.com/citations?user=tFihXQQAAAAJ&hl=en">Dr Kirill P. Kalinin</a>. I have also visited
+    <a href="https://www.robots.ox.ac.uk/~phst/">Prof. Philip Torr</a>, and a research intern in the Future AI Group at Microsoft Research Cambridge. I have also visited
     <a href="https://www.cmu.edu/">Carnegie Mellon University</a> with <a href="https://feifang.info/">Prof. Fei Fang</a> and worked with Microsoft Research's AI Frontier Group in Redmond.
   </p>
 </div>
@@ -136,7 +135,7 @@ description: >
     <div>
       <h3>Research Internship, Future AI Group</h3>
       <p><strong>Microsoft Research Cambridge</strong>, Cambridge, UK · May 2026 - present</p>
-      <p>Working with <a href="https://scholar.google.com/citations?user=tFihXQQAAAAJ&hl=en">Dr Kirill P. Kalinin</a> on multi-agent LLM communication, coordination, and collaborative agent behavior.</p>
+      <p>Working on multi-agent LLM communication, coordination, and collaborative agent behavior.</p>
     </div>
   </div>
   <div class="timeline-item">
