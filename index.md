@@ -32,20 +32,13 @@ description: >
     </p>
     <p>
       <strong>In reinforcement learning and MARL,</strong> I study policy learning from books
-      (<a href="{{ '/publication/#plfb' | relative_url }}">PLFB</a>), human feedback
-      (<a href="{{ '/publication/#m3hf' | relative_url }}">M3HF</a>), causal credit assignment
-      (<a href="{{ '/publication/#macca' | relative_url }}">MACCA</a>,
-      <a href="{{ '/publication/#GRD' | relative_url }}">GRD</a>), and constrained decision-making
-      (<a href="{{ '/publication/#macpo' | relative_url }}">MACPO</a>,
-      <a href="{{ '/publication/#SMALL' | relative_url }}">SMALL</a>).
+      (PLFB), human feedback (M3HF), causal credit assignment
+      (MACCA, GRD), and constrained decision-making (MACPO, SMALL).
     </p>
     <p>
       <strong>In language-agent systems,</strong> I study how instructions, social interaction, and shared memory shape agent behavior, including
-      <a href="{{ '/publication/#instruction-relabeling' | relative_url }}">instruction relabeling</a>,
-      <a href="{{ '/publication/#werewolf' | relative_url }}">strategic discussion</a>,
-      <a href="{{ '/publication/#concordia' | relative_url }}">mixed-motive generalization</a>,
-      <a href="{{ '/publication/#bazaarbench' | relative_url }}">marketplace safety</a>, and
-      <a href="{{ '/publication/#memento' | relative_url }}">context management</a>.
+      instruction relabeling, strategic discussion, mixed-motive generalization,
+      marketplace safety, and context management.
     </p>
   </div>
 

@@ -13,7 +13,9 @@
     {% endfor %}
   </ol>
 
-  <p class="publication-more"><a href="{{ 'publication' | relative_url }}">View all publications</a></p>
+  {% if site.show_publication_page %}
+    <p class="publication-more"><a href="{{ 'publication' | relative_url }}">View all publications</a></p>
+  {% endif %}
 </div>
 
 <div class="modal fade" id="bibtex-modal" tabindex="-1" role="dialog" aria-labelledby="bibtex-modal" aria-hidden="true">
