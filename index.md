@@ -13,16 +13,15 @@ news: true
 selected_papers: true
 social: true
 description: >
-  Ph.D. Candidate · Cooperative AI Lab · King's College London
+  Postdoctoral Fellow · Harvard University
 ---
 
 <div class="hero-copy">
   <p class="eyebrow">Research overview</p>
   <p>
-    I am a fourth-year Ph.D. candidate at the <a href="https://coopai.kcl.ac.uk/">Cooperative AI Lab</a>,
-    <a href="https://www.kcl.ac.uk/">King's College London</a>, supervised by
-    <a href="https://yalidu.github.io/">Dr Yali Du</a> and
-    <a href="https://nms.kcl.ac.uk/sanjay.modgil/">Prof. Sanjay Modgil</a>. My work studies how learning agents can coordinate, communicate, and act safely in complex environments.
+    I am a Postdoctoral Fellow at <a href="https://www.harvard.edu/">Harvard University</a>,
+    working with <a href="https://teamcore.seas.harvard.edu/tambe/">Prof. Milind Tambe</a>.
+    My work studies how learning agents can coordinate, communicate, and act safely in complex environments.
   </p>
 
   <div class="research-overview" aria-label="Research overview">
@@ -38,14 +37,19 @@ description: >
     <p>
       <strong>In language-agent systems,</strong> I study how instructions, social interaction, and shared memory shape agent behavior, including
       instruction relabeling, strategic discussion, mixed-motive generalization,
-      marketplace safety, and context management.
+      marketplace safety (<a href="https://github.com/ziyan-wang98/BazaarBench">BazaarBench</a>), and context management.
     </p>
   </div>
 
   <p>
-    I am currently an Oxford IDAI Fellow working with <a href="https://www.robots.ox.ac.uk/~abibi/">Dr Adel Bibi</a> and
-    <a href="https://www.robots.ox.ac.uk/~phst/">Prof. Philip Torr</a>, and a research intern in the Future AI Group at Microsoft Research Cambridge. I have also visited
-    <a href="https://www.cmu.edu/">Carnegie Mellon University</a> with <a href="https://feifang.info/">Prof. Fei Fang</a> and worked with Microsoft Research's AI Frontier Group in Redmond.
+    Before Harvard, I conducted my Ph.D. research at the <a href="https://coopai.kcl.ac.uk/">Cooperative AI Lab</a>,
+    <a href="https://www.kcl.ac.uk/">King's College London</a>, supervised by
+    <a href="https://yalidu.github.io/">Dr Yali Du</a> and
+    <a href="https://nms.kcl.ac.uk/sanjay.modgil/">Prof. Sanjay Modgil</a>.
+    My research experience also includes the Oxford IDAI Fellowship with <a href="https://www.robots.ox.ac.uk/~abibi/">Dr Adel Bibi</a> and
+    <a href="https://www.robots.ox.ac.uk/~phst/">Prof. Philip Torr</a>, the Future AI Group at Microsoft Research Cambridge,
+    a visit to <a href="https://www.cmu.edu/">Carnegie Mellon University</a> with <a href="https://feifang.info/">Prof. Fei Fang</a>,
+    and Microsoft Research's AI Frontier Group in Redmond.
   </p>
 </div>
 
@@ -121,6 +125,16 @@ description: >
 ## <i class="fas fa-briefcase section-icon"></i> Experience & Visits
 
 <div class="timeline-list">
+  <div class="timeline-item">
+    <div class="timeline-icon timeline-logo">
+      <img src="{{ '/assets/img/logos/harvard.png' | relative_url }}" alt="Harvard University logo">
+    </div>
+    <div>
+      <h3>Postdoctoral Fellow</h3>
+      <p><strong>Harvard University</strong>, Cambridge, MA, US · Present</p>
+      <p>Working with <a href="https://teamcore.seas.harvard.edu/tambe/">Prof. Milind Tambe</a>.</p>
+    </div>
+  </div>
   <div class="timeline-item">
     <div class="timeline-icon timeline-logo">
       <img src="{{ '/assets/img/logos/microsoft.png' | relative_url }}" alt="Microsoft logo">

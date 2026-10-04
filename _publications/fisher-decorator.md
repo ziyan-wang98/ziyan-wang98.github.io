@@ -1,12 +1,12 @@
 ---
 layout: pub
-type: article
+type: inproceedings
 key: fisher-decorator
 title: >
     Fisher Decorator: Refining Flow Policy via a Local Transport Map
 author: Cheng, Xiaoyuan and Wang, Haoyu and Yuan, Wenxuan and Wang, Ziyan and Chen, Zonghao and Zeng, Li and Sun, Zhuo
-abbr: arXiv
-journal: arXiv preprint arXiv:2604.17919
+abbr: NeurIPS'26
+booktitle: The Fortieth Annual Conference on Neural Information Processing Systems (NeurIPS)
 year: 2026
 selected: false
 priority: 4
@@ -17,10 +17,10 @@ image: fisher_decorator.png
 abstract: >
     Fisher Decorator refines flow-based offline reinforcement learning policies through a local transport map, using Fisher information to make geometry-aware policy updates under KL-constrained optimization.
 bibtex: >
-    @article{cheng2026fisherdecorator,
+    @inproceedings{cheng2026fisherdecorator,
         title={Fisher Decorator: Refining Flow Policy via a Local Transport Map},
         author={Cheng, Xiaoyuan and Wang, Haoyu and Yuan, Wenxuan and Wang, Ziyan and Chen, Zonghao and Zeng, Li and Sun, Zhuo},
-        journal={arXiv preprint arXiv:2604.17919},
+        booktitle={The Fortieth Annual Conference on Neural Information Processing Systems},
         year={2026}
     }
 ---

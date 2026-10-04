@@ -10,6 +10,7 @@ booktitle: Under Review
 year: 2026
 selected: false
 priority: 1
+code: https://github.com/ziyan-wang98/BazaarBench
 abstract: >
     BazaarBench studies open-ended safety evaluation for multi-agent systems in consumer-to-consumer marketplace environments.
 bibtex: >
