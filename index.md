@@ -196,5 +196,5 @@ description: >
 
 ## <i class="fas fa-clipboard-check section-icon"></i> Professional Services
 
-- <b>Conference reviewer</b> for ICML 2023/24/25/26, NeurIPS 2023/24/25/26, ICLR 2024/25/26, AISTATS 2025/26, and AAMAS 2025/26
+- <b>Conference reviewer</b> for ICML 2023/24/25/26, NeurIPS 2023/24/25/26, ICLR 2024/25/26/27, AISTATS 2025/26, AAAI 2026, ACL ARR 2026, and AAMAS 2025/26/27
 - <b>Journal reviewer</b> for IEEE Robotics and Automation Letters, IEEE Transactions on Knowledge and Data Engineering, and IEEE Transactions on Artificial Intelligence
