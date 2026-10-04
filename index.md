@@ -189,7 +189,7 @@ description: >
 
 ## <i class="fas fa-award section-icon"></i> Honors & Teaching
 
-- <b>Honors</b>: COLM 2026 Oral Spotlight (Memento, 24/856), Oxford IDAI Fellowship, NeurIPS 2024 Scholar Award, NeurIPS 2024 Oral Presentation
+- <b>Honors</b>: COLM 2026 Oral Spotlight, Oxford IDAI Fellowship, NeurIPS 2024 Scholar Award, NeurIPS 2024 Oral Presentation
 - <b>Teaching</b>: Oxford Machine Learning Summer School, Oxford MLx Fundamentals Summer School, and Optimisation Methods at King's College London
 
 <div id="services" class="section_break"></div>
