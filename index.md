@@ -53,6 +53,14 @@ description: >
   </p>
 </div>
 
+<div id="news" class="section_break"></div>
+
+## <i class="fas fa-bullhorn section-icon"></i> News
+
+{% if page.news %}
+  {% include news.html %}
+{% endif %}
+
 <div class="research-direction" aria-label="Research direction">
   <div class="research-direction-copy">
     <p class="eyebrow">Research direction</p>
@@ -72,14 +80,6 @@ description: >
     <img src="{{ '/assets/img/research/knowledge-media.png' | relative_url }}" alt="Four media of human knowledge: thinking patterns, direct instruction, books, and collective behavior.">
   </figure>
 </div>
-
-<div id="news" class="section_break"></div>
-
-## <i class="fas fa-bullhorn section-icon"></i> News
-
-{% if page.news %}
-  {% include news.html %}
-{% endif %}
 
 {% comment %}
 <div id="education" class="section_break"></div>
