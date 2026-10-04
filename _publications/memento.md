@@ -6,6 +6,7 @@ title: >
     Memento: Teaching LLMs to Manage Their Own Context
 author: Kontonis, Vasilis and Zeng, Yuchen and Garg, Shivam and Chen, Lingjiao and Tang, Hao and Wang, Ziyan and Awadallah, Ahmed and Horvitz, Eric and Langford, John and Papailiopoulos, Dimitris
 abbr: COLM'26
+award: Oral Spotlight
 booktitle: Proceedings of the 3rd Conference on Language Modeling (COLM)
 year: 2026
 selected: false
