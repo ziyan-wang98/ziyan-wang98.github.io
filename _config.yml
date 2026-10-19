@@ -7,7 +7,7 @@ first_name: Ziyan
 middle_name:
 last_name: Wang
 chinese_name: 王梓岩
-# email: ziyan.wang@kcl.ac.uk
+email: ziyan_wang@seas.harvard.edu
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Postdoctoral Fellow at Harvard University, researching multi-agent reinforcement learning, language agents, and safe autonomy.
 footer_text: >

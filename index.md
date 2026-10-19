@@ -7,7 +7,7 @@ profile:
   align: left
   image: profile.jpg
   email: >
-    <p>Email: ziyan.wang<code>[at]</code>kcl<code>[dot]</code>ac<code>[dot]</code>uk</p>
+    <p>Email: ziyan_wang<code>[at]</code>seas<code>[dot]</code>harvard<code>[dot]</code>edu</p>
 
 news: true
 selected_papers: true
