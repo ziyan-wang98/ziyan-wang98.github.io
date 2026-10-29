@@ -211,6 +211,7 @@ table.sc-tab td:first-child { min-width: 9.5rem }
 <header class="top">
   <span class="sign" aria-hidden="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12h12M11 6l6 6-6 6"/><path d="M20 4v16"/></svg>Persona evacuation study · readout, updated 29 October 2026</span>
   <h1>Do survey personas steer evacuation agents?</h1>
+  <p><a href="https://ziyan-wang98.github.io/persona-evac-readout/simple/"><b>One-glance version</b></a>: the same comparisons with pictures only.</p>
   <p class="lede">We gave a frozen large language model (Qwen3.6-35B-A3B: 35 billion parameters, 3 billion used per step, thinking turned off) the 100 synthetic personas. Each persona is one person's answers to the five-question stadium evacuation survey. The model controlled dots in a two-dimensional stadium sector. Each time an agent has to decide, the model reads the persona and a text description of what the agent currently perceives, and chooses where to go and what to do. The simulator then carries that choice out: the dot walks cell by cell and waits when blocked, and asking staff only counts once it has actually reached them. To score whether an agent behaved like its persona, we look at what actually happened after its choices were carried out (its path and the events that took place), not at the action text the model wrote, because a choice can fail, be changed a few seconds later, or differ from what is then done.</p>
 </header>
 
