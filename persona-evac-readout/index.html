@@ -1470,7 +1470,7 @@ function scModeUI() {
   let note;
   if (SC.mode === "off") note = `These views use <b>thinking turned off</b>: ${scEsc(model)} decides without a reasoning step. Staged scenes have two runs per respondent, scene and condition; full evacuations have ${SHOW.crowd.n_runs} runs per condition.` +
     (SHOW_TB ? " Short-thinking results are available under the second switch." : " The same views for short thinking (256 tokens) are still running; they will appear under the second switch.");
-  else if (SC.tb === "ready" && d) note = `These views use <b>short thinking (256 tokens)</b>: ${scEsc(model)} reasons for up to 256 tokens before each decision. ` +
+  else if (SC.tb === "ready" && d) note = `These views use <b>short thinking (256 tokens)</b>: ${scEsc(model)} reasons for up to 256 tokens before each decision. In these runs the reasoning used all 256 tokens and was cut off before it finished in every one of the 18,213 decisions; the decision written after the cut was always valid. ` +
     `${d.examples ? `Staged scenes have ${d.examples.replicates.length === 1 ? "one run" : d.examples.replicates.length + " runs"} per respondent, scene and condition` : "Staged scenes are not in yet"}; ${d.crowd ? `full evacuations have ${d.crowd.n_runs} runs per condition` : "full evacuations are not in yet"}. ` +
     "With one run a clean contrast is easier to reach than with two, so compare it with thinking turned off restricted to its first run (given under the statistics).";
   else if (SC.tb === "loading") note = "Loading the short-thinking results…";
