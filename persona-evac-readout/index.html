@@ -1203,7 +1203,7 @@ function fanBuild() {
   const bh = c => (bc[c] || {}).behaviours || {};
   const said = c => { const r = sc.runs[c]; let n = 0, k = 0; if (r) for (let i = 0; i < r.N; i++) { const a = sc.answers[i]; if (!(a in sc.label_names) || r.label[i] == null) continue; n++; if (r.label[i] === a) k++; } return [k, n]; };
   if (FAN.colour === "answer") { const [kB, nB] = said("B0"), [kP, nP] = said("P");
-    document.getElementById("sc-f-sum").innerHTML = `Agents that did what their respondent answered: <b>with persona ${kP} of ${nP}</b>, no persona ${kB} of ${nB}. With no persona the agents ignore the answers, so only respondents whose answer happens to be what every agent does are counted as matching.`; }
+    document.getElementById("sc-f-sum").innerHTML = `Agents that did what their respondent answered: <b>with persona ${kP} of ${nP}</b>, no persona ${kB} of ${nB}. With no persona the model never sees the answers, so it matches only where an answer happens to be what the agents did anyway.`; }
   else document.getElementById("sc-f-sum").innerHTML = `<b>No persona:</b> ${scEsc(list("B0"))}. <b>With persona:</b> ${scEsc(list("P"))}. Different behaviours: ${bh("B0").distinct} with no persona against ${bh("P").distinct} with persona; spread ${f2(bh("B0").entropy_bits)} against ${f2(bh("P").entropy_bits)} bits (0 bits means every agent did the same thing).`;
   const se = ((scD().examples || {}).scene_examples || {})[FAN.v], run0 = sc.runs.P || sc.runs.B0, si = se && se.persona_id && run0 ? run0.ids.indexOf(se.persona_id) : -1;
   fanLegend(sc); FAN.sel = si >= 0 ? si : null; FAN.pre = si >= 0; fanSel(); fanHeat(); fanNotes(sc);
