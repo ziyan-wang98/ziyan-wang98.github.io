@@ -126,6 +126,7 @@ a { color: var(--with) }
     <div class="cell"><span class="tag without"><i></i>No persona</span><canvas id="one-a" role="img" aria-label="Path of this person, no persona"></canvas><span class="result" id="one-ra"></span></div>
     <div class="cell"><span class="tag with"><i></i>With persona</span><canvas id="one-b" role="img" aria-label="Path of this person, with persona"></canvas><span class="result" id="one-rb"></span></div>
   </div>
+  <p class="note">Grey dots are other spectators, moved by fixed rules; diamonds are staff.</p>
   <span class="clock" id="one-clock"></span>
 </section>
 
@@ -157,14 +158,14 @@ a { color: var(--with) }
 
 <section aria-labelledby="h3x">
   <h2 id="h3x">Do they do what they said?</h2>
-  <p class="note">Share of people whose dot did what they answered.</p>
+  <p class="note">Share of people whose dot did what they answered, over both runs of each person. The pictures above show the first run.</p>
   <div class="bars" id="bars"></div>
   <div class="legend"><span class="tag without"><i></i>No persona</span><span class="tag with"><i></i>With persona</span></div>
 </section>
 
 <section aria-labelledby="h4x">
   <h2 id="h4x">The whole crowd</h2>
-  <p class="note">100 people evacuating together, averaged over 16 runs. Stronger colour means more people.</p>
+  <p class="note">100 people evacuating together, averaged over 16 runs. Everyone is told their friend is at the food stall. Darker means more time spent on the phone in that spot.</p>
   <div id="crowd" style="display:grid;gap:2rem"></div>
 </section>
 
@@ -278,7 +279,7 @@ function oneShow() {
 
 /* ---- sections 2 and 3: one hundred people, left condition vs right condition ---- */
 function fanSection(prefix, src, conds, notes) {
-  let cur = "V3", mode = "answer";  // colour: the person's survey answer (default) or what the agent did
+  let cur = prefix === "demo" ? "V3" : "V2", mode = prefix === "demo" ? "did" : "answer";  // colour: the person's survey answer (default) or what the agent did
   const el = s => document.getElementById(`${prefix}-${s}`);
   const catOf = (F, run, i) => mode === "answer" ? F.answer_cat[i] : run.category[i];
   const insteadOf = (run, g) => { const x = (run.instead || {})[g.letter]; return x && x[1] >= 5 ? `<small>${x[1]} ${esc(x[0])} instead</small>` : ""; };
@@ -301,7 +302,7 @@ function fanSection(prefix, src, conds, notes) {
       if (mode === "answer") {
         head.textContent = `Did what they said: ${run.did_total[0]} of ${run.did_total[1]}`;
         list.innerHTML = F.answer_groups.map(g => g.behavioural
-          ? `<div><b>${run.did[g.letter]}</b><i style="background:var(${CATCOL[g.cat ?? 3]})"></i><span>of ${g.n} who said: ${esc(g.name)}</span></div>`
+          ? `<div><b>${run.did[g.letter]}</b><i style="background:var(${CATCOL[g.cat ?? 3]})"></i><span>of ${g.n} who said: ${esc(g.name)}${insteadOf(run, g)}</span></div>`
           : `<div><b>${g.n}</b><i style="background:var(${CATCOL[3]})"></i><span>said: ${esc(g.name)}</span></div>`).join("");
       } else {
         const counts = run.counts, top = Math.max(...Object.values(counts));
@@ -315,11 +316,11 @@ function fanSection(prefix, src, conds, notes) {
   return { show, redraw: () => pl.redraw() };
 }
 const many = fanSection("many", D.fanout, ["B0", "P"], {
-  answer: "With persona, the colours split up; with no persona, they move together.",
-  did: "" });
+  answer: "Each dot is one person in a separate run. With persona, the colours split up; with no persona, most go the same way.",
+  did: "Each dot is one person in a separate run. With persona, choices spread out; with no persona, most people make the same choice." });
 const demo = D.fanout_demo ? fanSection("demo", D.fanout_demo, ["D", "DP"], {
-  answer: "Demographics: age and home country.",
-  did: "Demographics: age and home country." }) : null;
+  answer: "Demographics: age and home country. With demographics alone, people act almost as with no persona; the survey answers split them up.",
+  did: "Demographics: age and home country. With demographics alone, people act almost as with no persona; the survey answers split them up." }) : null;
 document.getElementById("demo-section").hidden = !demo;
 
 /* ---- section 0: what a persona looks like ---- */
@@ -356,7 +357,7 @@ function bars() {
 /* ---- section 4: crowd heatmaps ---- */
 const CROWD = [
   { id: "act_call", title: "Who phones their friend", unit: v => `${Math.round(v)} of 100 phone` },
-  { id: "w150_210", title: "Still inside when Gate 7 gets blocked", unit: v => `${Math.round(v)} people`, numbersOnly: true },
+
 ];
 function crowd() {
   const box = document.getElementById("crowd");
