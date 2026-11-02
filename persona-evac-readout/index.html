@@ -1149,7 +1149,7 @@ function heroScene(v, T) {
   const evBox = document.getElementById(`sc-h-ev-${v}`), last = Math.max(...[pk.P, pk.B0].filter(Boolean).map(p => p.T - 1 + p.t0));
   const evs = (bg.events || []).filter(e => e[0] <= HERO.t && e[0] < last && scEventText(e));  // an event stamped on the final frame only marks the end of the scene
   let et = "Last observation: none yet";
-  if (evs.length) { const t0 = evs[evs.length - 1][0]; et = `Last observation, at ${sec(t0)}: ${evs.filter(e => e[0] === t0).map(scEventText).join("; ")}`; }
+  if (evs.length) { const t0 = evs[evs.length - 1][0]; et = `Last observation at t=${+(+t0).toFixed(1)}: ${evs.filter(e => e[0] === t0).map(scEventText).join("; ")}`; }
   if (evBox && HERO.ev[v] !== et) { evBox.textContent = et; HERO.ev[v] = et; }
 }
 function heroDraw(T) { if (!scD().examples) return; scClock("sc-h", HERO, heroMax()); for (const v of SCN) heroScene(v, T); }
