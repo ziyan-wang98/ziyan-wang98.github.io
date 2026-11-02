@@ -258,6 +258,7 @@ table.gt-grid caption { caption-side: top; text-align: left; font: 600 var(--ste
 #sc-s-intro, #sc-c-intro, #sc-a-intro { display: none !important }  /* no line under the headings */
 .intro { padding-block: 2.4rem 0 }
 .sc-badge { display: none !important }  /* no badges on the four scene cards */
+.sim-io ol { margin: .4rem 0 .6rem; padding-left: 1.4rem; display: grid; gap: .3rem }
 @media (max-width: 600px) { h1 { font-size: var(--step-3) } h2 { font-size: var(--step-2) } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important } }
 </style>
@@ -286,19 +287,19 @@ table.gt-grid caption { caption-side: top; text-align: left; font: 600 var(--ste
     </ol>
   </div>
   <div class="grid2 sim-io">
-    <div class="panel"><h3>What the agent is told</h3><ul>
-      <li>How long since the alarm</li>
-      <li>Where it is, and how well it walks</li>
-      <li>The people within 6 metres: seated, standing or walking, and which gate most walkers head for</li>
-      <li>The places it can go, with distance, walking time and queue length</li>
-      <li>Everything it has heard and seen: the alarm, announcements, staff, phone updates</li>
-      <li>Its last three decisions</li></ul>
-      <p class="cap">As text, whenever something changes and at least every 20 seconds; the same with or without a persona.</p></div>
-    <div class="panel"><h3>What it can do</h3><ul>
-      <li>Go somewhere: stay, Gate 3, Gate 7, the food stall, a staff member or its seat</li>
-      <li>Do one thing: nothing, check phone or screens, call the friend, ask staff, or collect belongings</li>
-      <li>Give a short reason</li></ul>
-      <p class="cap">The simulator walks the agent there and runs the activity. Scores come from what then happens on the map, not from the reason.</p></div>
+    <div class="panel"><h3>Observation space</h3><ol>
+      <li>Time since the alarm</li>
+      <li>Own position and walking ability</li>
+      <li>People within 6 metres: seated, standing or walking, and the gate most walkers head for</li>
+      <li>Reachable places, with distance, walking time and queue length</li>
+      <li>Events heard and seen: the alarm, announcements, staff instructions, phone updates</li>
+      <li>Its last three actions</li></ol>
+      <p class="cap">Given as text at each decision step: whenever something changes, and at least every 20 seconds. The same with or without a persona.</p></div>
+    <div class="panel"><h3>Action space</h3><ol>
+      <li>Move target: stay, Gate 3, Gate 7, the food stall, a staff member or its own seat</li>
+      <li>Activity: none, check phone or screens, call the friend, ask staff, or collect belongings</li>
+      <li>A short reason, not scored</li></ol>
+      <p class="cap">The language model is the policy: at each step it picks one move target and one activity. The simulator carries out the action, and scores come from the resulting trajectory.</p></div>
   </div>
 </section>
 
