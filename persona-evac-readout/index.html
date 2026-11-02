@@ -262,9 +262,11 @@ table.gt-grid caption { caption-side: top; text-align: left; font: 600 var(--ste
 #sc-mode-note { display: none !important }  /* no note under the model-setting switch */
 #sc-s-rows .sc-lead { display: none !important }  /* the bar charts show these numbers */
 #sc-c-nums, .grid2:has(> #sc-c-nums) { display: none !important }  /* no numbers panel under the full-evacuation heatmaps */
-.sim-crowd { display: grid; gap: .6rem }
-.sim-crowd h4 { font: 600 var(--step-0)/1.2 var(--f-display); margin: 0; display: flex; align-items: center }
-.sim-crowd canvas { width: 100%; height: auto; display: block; border-radius: 4px; border: 1px solid var(--rule) }
+.sim-anim { display: grid; gap: .8rem }
+.sim-anim > h4 { font: 600 var(--step-1)/1.2 var(--f-display); margin: 0 }
+.sim-anim .sc-pane h4 { font: 600 var(--step-0)/1.2 var(--f-display); margin: 0; display: flex; align-items: center }
+.sim-anim canvas { width: 100%; height: auto; display: block; border-radius: 4px; border: 1px solid var(--rule) }
+.sim-anim [hidden] { display: none !important }
 @media (max-width: 600px) { h1 { font-size: var(--step-3) } h2 { font-size: var(--step-2) } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important } }
 </style>
@@ -292,13 +294,22 @@ table.gt-grid caption { caption-side: top; text-align: left; font: 600 var(--ste
       <li><b>Full evacuation</b><span>All four situations in one eight-minute run, with 100 agents among 200 scripted spectators.</span></li>
     </ol>
   </div>
-  <div class="sim-crowd">
-    <h3 id="sim-c-title"></h3>
-    <div class="sc-two">
-      <div class="sc-pane"><h4 id="sim-c-hB0"></h4><canvas id="sim-c-B0" role="img"></canvas></div>
-      <div class="sc-pane"><h4 id="sim-c-hP"></h4><canvas id="sim-c-P" role="img"></canvas></div>
+  <div class="sim-anim">
+    <h4 id="h-sc-anim">Full evacuation · one run</h4>
+    <p class="cap col" id="sc-a-intro"></p>
+    <div class="rp-ctl">
+      <button type="button" id="sc-a-play" class="playbtn" aria-label="Pause"><svg viewBox="0 0 24 24" aria-hidden="true"><path id="sc-a-icon" d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button>
+      <div class="rp-track"><input type="range" id="sc-a-t" min="0" max="480" step="0.1" value="0" aria-label="Simulation time in seconds"><div class="rp-ticks" id="sc-a-ticks"></div></div>
+      <span class="mono rp-clock" id="sc-a-time">0 seconds</span>
     </div>
-    <div class="legend" id="sim-c-legend"></div>
+    <div class="ctl rp-opts"><span class="eyebrow">Speed</span><div class="chips" id="sc-a-speed"></div></div>
+    <div class="sc-two">
+      <div class="sc-pane"><div class="rp-head"><h4 id="sc-a-hB0"></h4><span class="mono rp-stat" id="sc-a-sB0"></span></div><canvas id="sc-a-B0" role="img" aria-label="No persona: one full evacuation, animated"></canvas></div>
+      <div class="sc-pane"><div class="rp-head"><h4 id="sc-a-hP"></h4><span class="mono rp-stat" id="sc-a-sP"></span></div><canvas id="sc-a-P" role="img" aria-label="With persona: one full evacuation, animated"></canvas></div>
+    </div>
+    <div class="legend" id="sc-a-legend"></div>
+    <div class="legend" id="sc-a-bub"></div>
+    <p class="cap" id="sc-a-cap"></p>
   </div>
   <div class="grid2 sim-io">
     <div class="panel"><h3>Observation space</h3><ol>
@@ -403,21 +414,6 @@ table.gt-grid caption { caption-side: top; text-align: left; font: 600 var(--ste
       <div class="legend" id="sc-c-legend"></div>
       <div class="grid2"><div class="panel" id="sc-c-nums"></div><p class="cap" id="sc-c-cap" hidden></p></div>
       <details><summary>All candidate views</summary><div class="scroll"><table class="sc-tab" id="sc-c-cands"></table></div></details>
-      <h4 id="h-sc-anim">Watch one run</h4>
-      <p class="cap col" id="sc-a-intro"></p>
-      <div class="rp-ctl">
-        <button type="button" id="sc-a-play" class="playbtn" aria-label="Pause"><svg viewBox="0 0 24 24" aria-hidden="true"><path id="sc-a-icon" d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button>
-        <div class="rp-track"><input type="range" id="sc-a-t" min="0" max="480" step="0.1" value="0" aria-label="Simulation time in seconds"><div class="rp-ticks" id="sc-a-ticks"></div></div>
-        <span class="mono rp-clock" id="sc-a-time">0 seconds</span>
-      </div>
-      <div class="ctl rp-opts"><span class="eyebrow">Speed</span><div class="chips" id="sc-a-speed"></div></div>
-      <div class="sc-two">
-        <div class="sc-pane"><div class="rp-head"><h4 id="sc-a-hB0"></h4><span class="mono rp-stat" id="sc-a-sB0"></span></div><canvas id="sc-a-B0" role="img" aria-label="No persona: one full evacuation, animated"></canvas></div>
-        <div class="sc-pane"><div class="rp-head"><h4 id="sc-a-hP"></h4><span class="mono rp-stat" id="sc-a-sP"></span></div><canvas id="sc-a-P" role="img" aria-label="With persona: one full evacuation, animated"></canvas></div>
-      </div>
-      <div class="legend" id="sc-a-legend"></div>
-      <div class="legend" id="sc-a-bub"></div>
-      <p class="cap" id="sc-a-cap"></p>
     </div>
   </div>
 </section>
@@ -1461,9 +1457,9 @@ function scRenderAll() {
     if (!has) for (const e of box.querySelectorAll(".head [id$='-intro']")) e.textContent = "";
     if (has) { try { fn(); } catch (e) { console.error("showcase", id, e); } }
   }
-  simCrowd(); HERO.dirty = FAN.dirty = CRA.dirty = true;
+  HERO.dirty = FAN.dirty = CRA.dirty = true;
 }
-function scRedraw() { simMap(); simCrowd(); HERO.rows = {}; HERO.dirty = FAN.dirty = CRA.dirty = true; if (scD().crowd) { crowdMaps(); craTicks(); } }
+function scRedraw() { simMap(); HERO.rows = {}; HERO.dirty = FAN.dirty = CRA.dirty = true; if (scD().crowd) { crowdMaps(); craTicks(); } }
 let scLast = 0;
 function scFrame(ts) {
   const dt = scLast ? Math.min(.1, (ts - scLast) / 1000) : 0; scLast = ts; let T = null;
@@ -1483,19 +1479,6 @@ function scInit() {
 }
 
 function bubLegends() { for (const [id, think, count] of [["sc-h-bub", true, false], ["sc-f-bub", false, true], ["sc-a-bub", false, true], ["ex-bub", true, false]]) document.getElementById(id).innerHTML = bubLegend(think, count); }
-function simCrowd() {  // the full-evacuation view with the largest difference, shown in "How the simulation works"
-  const cr = (SHOW && scD().crowd) || (SHOW && SHOW.crowd); if (!cr) return;
-  const vw = cr.views.find(x => x.id === "act_call"); if (!vw) return; const T = scTok(), vm = (vw.scale && vw.scale.vmax_p99) || 1;
-  document.getElementById("sim-c-title").textContent = `Full evacuation · ${vw.title}`;
-  for (const c of ["B0", "P"]) {
-    const cv = document.getElementById(`sim-c-${c}`); if (!cv) continue; const name = c === "P" ? "With persona" : "No persona";
-    document.getElementById(`sim-c-h${c}`).innerHTML = `${scMark(c)}${name}`; cv.setAttribute("aria-label", `${vw.title}: ${name.toLowerCase()}`);
-    const { ctx, w, h, k } = stage(cv), arr = c === "P" ? vw.with : vw.without; scBase(ctx, w, h, T, .35); ctx.fillStyle = T.heat;
-    for (let i = 0; i < 60; i++) for (let j = 0; j < 32; j++) { const x = arr[i * 32 + j]; if (!(x > 0)) continue; ctx.globalAlpha = Math.min(.95, Math.sqrt(x / vm)); ctx.fillRect(i * k, h - (j + 1) * k, k + .4, k + .4); }
-    ctx.globalAlpha = 1; scMapLabels(ctx, w, h, k, T, ["Gate 3", "Gate 7"], false);
-  }
-  document.getElementById("sim-c-legend").innerHTML = `<span><i class="sc-swatch" style="background:linear-gradient(90deg, transparent, var(--heat1))"></i>time spent there, average of ${cr.n_runs} runs</span>`;
-}
 function simMap() {  // the static map in "How the simulation works"
   const cv = document.getElementById("sim-map"); if (!cv || !V.map) return;
   const T = scTok(), { ctx, w, k, H } = scStageV(cv, 0), sz = w < 420 ? 10 : 11; scBase(ctx, w, H, T, 1, null);
