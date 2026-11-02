@@ -249,17 +249,59 @@ table.gt-grid caption { caption-side: top; text-align: left; font: 600 var(--ste
   .gt-note { font-size: .72rem }
   .gt-grid tr.need th[scope=row] { background: var(--bg) }
   .gt-grid tr.ours td { border-top: 0 } }
+.sim-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 1rem; align-items: start }
+#sim-map { width: 100%; height: auto; display: block; border-radius: 4px; border: 1px solid var(--rule); margin-bottom: .5rem }
+.sim-scenes { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; max-width: 62ch }
+.sim-scenes li { display: grid; gap: .1rem }
+.sim-io ul { margin: .4rem 0 .6rem; padding-left: 1.1rem; display: grid; gap: .3rem }
+.sim-io h3 { margin: 0 }
 @media (max-width: 600px) { h1 { font-size: var(--step-3) } h2 { font-size: var(--step-2) } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important } }
 </style>
 
 <main>
 <header class="top">
-  <span class="sign" aria-hidden="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12h12M11 6l6 6-6 6"/><path d="M20 4v16"/></svg>Persona evacuation study · readout, updated 1 November 2026</span>
+  <span class="sign" aria-hidden="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12h12M11 6l6 6-6 6"/><path d="M20 4v16"/></svg>Persona evacuation study · readout, updated 2 November 2026</span>
   <h1>Do survey personas steer evacuation agents?</h1>
   <p><a href="https://ziyan-wang98.github.io/persona-evac-readout/simple/"><b>One-glance version</b></a>, in pictures.</p>
-  <p class="lede">A <b>persona</b> is one synthetic respondent's answers to five survey questions, which Carter Blair's question-selection method picked from a pool of 100 questions. Each dot is an <b>agent</b>: a language model reads its persona and what it sees, and decides where it goes and what it does. Four questions each have a matching scene; the fifth sets how the agent walks.</p>
+  <p class="lede">A <b>persona</b> is one synthetic respondent's answers to five survey questions, which Carter Blair's question-selection method picked from a pool of 100 questions. Each dot is an <b>agent</b>: a language model reads its persona and what it sees, and decides where it goes and what it does.</p>
 </header>
+
+<section aria-labelledby="h-sim" id="sim">
+  <div class="head">
+    <p class="eyebrow">How the simulation works</p>
+    <h2 id="h-sim">Four scenes, one for each survey question</h2>
+    <p class="col">Each scene puts the agent in the situation its question asks about and keeps everything else equal, so each answer leads somewhere different on the map.</p>
+  </div>
+  <div class="sim-grid">
+    <div class="panel"><canvas id="sim-map" role="img" aria-label="Map of the stadium sector: seats, aisles, ramps, the concourse with the food stall, Gate 3, Gate 7 and three staff members"></canvas>
+      <p class="cap">A stylised sector, inspired by the National Stadium in Singapore; not its real floor plan.</p>
+      <div class="legend" id="sim-legend"></div></div>
+    <ol class="sim-scenes">
+      <li><b>Scene 1 · Alarm, no instruction</b><span>An alarm sounds with no explanation. Nearby spectators start to leave; an announcement comes two minutes later.</span></li>
+      <li><b>Scene 2 · Staff or crowd</b><span>In the concourse, a staff member names one gate while most people head for the other. Both gates are equally far, with equal queues.</span></li>
+      <li><b>Scene 3 · Stuck queue</b><span>The Gate 7 queue has stopped. Gate 3 is a short walk further, and its queue is moving.</span></li>
+      <li><b>Scene 4 · Friend at the food stall</b><span>The evacuation is announced while a friend is out of sight at the food stall.</span></li>
+      <li><b>Question 5 · Stairs and walking</b><span>Sets how fast the agent walks and whether it can use stairs.</span></li>
+      <li><b>Full evacuation</b><span>All four situations in one eight-minute run, with 100 agents among 200 scripted spectators.</span></li>
+    </ol>
+  </div>
+  <div class="grid2 sim-io">
+    <div class="panel"><h3>What the agent is told</h3><ul>
+      <li>How long since the alarm</li>
+      <li>Where it is, and how well it walks</li>
+      <li>The people within 6 metres: seated, standing or walking, and which gate most walkers head for</li>
+      <li>The places it can go, with distance, walking time and queue length</li>
+      <li>Everything it has heard and seen: the alarm, announcements, staff, phone updates</li>
+      <li>Its last three decisions</li></ul>
+      <p class="cap">As text, whenever something changes and at least every 20 seconds; the same with or without a persona.</p></div>
+    <div class="panel"><h3>What it can do</h3><ul>
+      <li>Go somewhere: stay, Gate 3, Gate 7, the food stall, a staff member or its seat</li>
+      <li>Do one thing: nothing, check phone or screens, call the friend, ask staff, or collect belongings</li>
+      <li>Give a short reason</li></ul>
+      <p class="cap">The simulator walks the agent there and runs the activity. Scores come from what then happens on the map, not from the reason.</p></div>
+  </div>
+</section>
 
 <section aria-labelledby="h-find">
   <div class="head"><h2 id="h-find">What we found</h2></div>
@@ -322,13 +364,6 @@ table.gt-grid caption { caption-side: top; text-align: left; font: 600 var(--ste
         <div class="panel scroll"><table class="sc-tab" id="sc-f-legend"></table></div>
         <div class="panel sc-sel" id="sc-f-sel"></div>
       </div>
-      <h4>Where they spent their time</h4>
-      <div class="sc-two">
-        <div class="sc-pane"><canvas id="sc-f-heatB0" role="img" aria-label="No persona: time spent in each square"></canvas><p class="cap" id="sc-f-cB0"></p></div>
-        <div class="sc-pane"><canvas id="sc-f-heatP" role="img" aria-label="With persona: time spent in each square"></canvas><p class="cap" id="sc-f-cP"></p></div>
-      </div>
-      <p class="cap" id="sc-f-js"></p>
-      <p class="cap" id="sc-f-notes"></p>
     </div>
   </div>
 
@@ -495,19 +530,14 @@ const VNAME = { V1: "Scene 1 · Alarm, no instruction", V2: "Scene 2 · Staff or
 const acc = (q, c) => V.accuracy.find(r => r.question === q && r.condition === c);
 
 /* ---------- what we found ---------- */
-function header() {
-  const Q = ["q1", "q2", "q3", "q4"], A = (q, c) => +acc(q, c).accuracy;
-  const pct = v => Math.round(100 * v) + "%", list = vs => vs.map(pct).join(" / ");
-  const f = [`<b>With a persona, agents mostly do what their respondent answered.</b> Thinking turned off: ${list(Q.map(q => A(q, "P")))} of the time in scenes 1 to 4, against ${list(Q.map(q => A(q, "B0")))} with no persona.`];
-  const tm = SHOW_TB && SHOW_TB.match;  // short thinking, compacted by build_page.py
-  if (tm && SCN.every(v => tm[v])) f.push(`<b>Short thinking lowers the match.</b> Thinking cut off at 256 tokens: ${list(SCN.map(v => tm[v][0]))} with persona, ${list(SCN.map(v => tm[v][1]))} with no persona.`);
-  const flip = ["q2", "q3", "q4"].map(q => Math.round(100 * A(q, "P~" + q)));
-  f.push(`<b>Each question steers its own scene.</b> Without the question, the match in its scene falls to ${list(Q.map(q => A(q, "P-" + q)))}; with the answer flipped, ${Math.min(...flip)}% to ${Math.max(...flip)}% follow the new answer, but only ${pct(A("q1", "P~q1"))} at the alarm.`);
+function header() {  // the summary, in the order of the talk; the numbers live in sections 3 and 4 and the remove-or-flip table
+  const f = [`<b>Agents follow their answers.</b> With the survey answers, agents mostly do what their respondent said; with no persona, they mostly do not.`,
+    `<b>Each question steers its own scene.</b> Take a question out and that behaviour goes away; flip the answer and most agents flip with it, except at the alarm.`];
   const dm = SHOW.demo, DS = ["V2", "V3", "V4"];  // demographics only against demographics and survey answers, thinking turned off
-  if (dm && DS.every(v => dm[v])) { const r = (v, c) => dm[v][c][0] / dm[v][c][1];
-    f.push(`<b>Demographics alone do not steer agents.</b> Given only age and home country, agents do what their respondent answered ${list(DS.map(v => r(v, "D")))} of the time in scenes 2 to 4; with the survey answers added, ${list(DS.map(v => r(v, "DP")))} (<a href="https://ziyan-wang98.github.io/persona-evac-readout/simple/">one-glance page</a>).`); }
-  const wh = ((SHOW.crowd.views.find(x => x.id === "whole") || {}).numbers || {}).headline;
-  if (wh) f.push(`<b>Personas make the crowd clear later.</b> In full evacuations, 90 of the 100 agents are out after ${Math.round(wh.with)} seconds on average with persona, against ${Math.round(wh.without)} with no persona.`);
+  if (dm && DS.every(v => dm[v])) f.push(`<b>Age and home country alone change little.</b> Agents given only these still act alike; the survey answers are what make them differ (<a href="https://ziyan-wang98.github.io/persona-evac-readout/simple/">one-glance page</a>).`);
+  if (SHOW.crowd) f.push(`<b>In a full evacuation, personas change timing and actions more than routes.</b> Agents with a persona wait and phone their friend more, so the crowd clears later; the routes stay about the same.`);
+  const tm = SHOW_TB && SHOW_TB.match;  // short thinking, compacted by build_page.py
+  if (tm && SCN.every(v => tm[v])) f.push(`<b>Short thinking tells the same story, a little weaker.</b> The thinking always reached its 256-token limit before it finished.`);
   f.push(`<b>Realism is not tested yet.</b> See <a href="#gt">the missing piece</a> below.`);
   document.getElementById("findings").innerHTML = f.map(s => `<li><span>${s}</span></li>`).join("");
 }
@@ -1156,7 +1186,7 @@ function fanBuild() {
   else { const top = c => Math.max(0, ...((bc[c] || {}).category_counts || []).map(x => x[1])), n = c => (sc.runs[c] || {}).N || 100;
     document.getElementById("sc-f-sum").innerHTML = `<span class="muted">The scene: ${scEsc(sc.timeline || "")}</span><br>Most common choice: no persona ${top("B0")} of ${n("B0")}, <b>with persona ${top("P")} of ${n("P")}</b>.`; }
   const se = ((scD().examples || {}).scene_examples || {})[FAN.v], run0 = sc.runs.P || sc.runs.B0, si = se && se.persona_id && run0 ? run0.ids.indexOf(se.persona_id) : -1;
-  fanLegend(sc); FAN.sel = si >= 0 ? si : null; FAN.pre = si >= 0; fanSel(); fanHeat(); fanNotes(sc);
+  fanLegend(sc); FAN.sel = si >= 0 ? si : null; FAN.pre = si >= 0; fanSel();
   FAN.t = REDUCED ? fanMax() : 0; FAN.hold = 0; FAN.dirty = true;
 }
 function fanLegend(sc) {
@@ -1190,34 +1220,6 @@ function fanSel() {
   const why = sc.runs.P && sc.runs.P.reason ? sc.runs.P.reason[i] : "";
   box.innerHTML = `<h4>${WHO(run.ids[i])}</h4>${FAN.pre ? '<p class="cap">Clearest example in this scene. Point at or tap any dot.</p>' : ""}<p>Survey answer: “${scEsc(sc.answer_names[ans] || ans)}”</p><p>${scMark("B0")}no persona: ${scEsc(lab("B0"))}</p><p>${scMark("P")}with persona: ${scEsc(lab("P"))}</p>` +
     (why ? "" : "");
-}
-function fanNotes(sc) {
-  const g = {}; for (const s of sc.starts || []) { const key = `${s.x},${s.y}`; if (!g[key]) g[key] = { name: s.name, n: 0 }; g[key].n += s.respondents; }
-  const S = Object.values(g), starts = S.length === 1 ? "" : `Starting spots: ${S.map(s => `${s.n} respondents at the ${s.name}`).join("; ")}.`;
-  let al = "";
-  if (sc.align) { const n = (sc.align.flags.match(/1/g) || []).length;
-    al = fanAligned(sc) ? ` Mirrored left to right for the ${n} respondents whose staff member named Gate 7.`
-      : ` The staff member named Gate 3 for ${100 - n} respondents and Gate 7 for ${n}.`; }
-  const y0 = fanY0(sc), lower = Object.entries(sc._below || {}).filter(e => e[1] > 0).map(([c, n]) => `${n} ${n === 1 ? "agent" : "agents"} ${c === "P" ? "with persona" : "with no persona"}`);
-  const crop = y0 > 0 ? ` The stands below ${y0} metres are left out because ${lower.length ? `all agents stay above them except ${lower.join(" and ")}, which walk down into the stands and leave the picture there` : "no agent goes there"}.` : "";
-  document.getElementById("sc-f-notes").textContent = `${starts}${al}`;
-}
-function fanHeat() {
-  const sc = fanScene(); if (!sc) return; const T = scTok(), al = fanAligned(sc), H = al && sc.heat_aligned ? sc.heat_aligned : sc.heat;
-  let vmax = 1; for (const c of ["B0", "P"]) for (const x of H[c] || []) if (x > vmax) vmax = x; const L = Math.log1p(vmax);
-  const y0 = fanY0(sc);
-  for (const c of ["B0", "P"]) {
-    const cv = document.getElementById(`sc-f-heat${c}`), arr = H[c]; if (!cv || !arr) continue;
-    const { ctx, w, k, H: Hp } = scStageV(cv, y0); scBase(ctx, w, Hp, T, .35, al ? altRows() : null); ctx.fillStyle = T.heat;
-    for (let i = 0; i < 60; i++) for (let j = 0; j < 32; j++) { const x = arr[i * 32 + j]; if (!(x > 0)) continue; ctx.globalAlpha = Math.min(.95, .1 + .85 * Math.log1p(x) / L); ctx.fillRect(i * k, Hp - (j + 1) * k, k + .4, k + .4); }
-    ctx.globalAlpha = 1; scMapLabels(ctx, w, Hp, k, T, fanGates(al), !al);
-    const b = ((sc.stats && sc.stats.by_condition) || {})[c] || {};
-    document.getElementById(`sc-f-c${c}`).innerHTML = `${scMark(c)}${condLabel(c)}: ${b.cells_visited != null ? `${b.cells_visited} one-metre squares visited` : ""}`;
-  }
-  const js = sc.stats && sc.stats.js;
-  document.getElementById("sc-f-js").textContent = "" +
-    (js && js.with_persona_vs_no_persona != null ? (js.ratio_to_repeat_noise ? `The two maps differ ${f2(js.ratio_to_repeat_noise, 1)} times as much as two runs of the same condition do.`
-      : `Jensen-Shannon distance between the two maps: ${f2(js.with_persona_vs_no_persona)}, where 0 means identical.`) + (sc.align ? "" : "") : "");
 }
 function fanPane(c, T, sc, al) {
   const run = sc.runs[c], cv = document.getElementById(`sc-f-${c}`); if (!cv || !run) return; prep(run);
@@ -1452,7 +1454,7 @@ function scRenderAll() {
   }
   HERO.dirty = FAN.dirty = CRA.dirty = true;
 }
-function scRedraw() { HERO.rows = {}; HERO.dirty = FAN.dirty = CRA.dirty = true; if (scD().fanout) fanHeat(); if (scD().crowd) { crowdMaps(); craTicks(); } }
+function scRedraw() { simMap(); HERO.rows = {}; HERO.dirty = FAN.dirty = CRA.dirty = true; if (scD().crowd) { crowdMaps(); craTicks(); } }
 let scLast = 0;
 function scFrame(ts) {
   const dt = scLast ? Math.min(.1, (ts - scLast) / 1000) : 0; scLast = ts; let T = null;
@@ -1472,7 +1474,16 @@ function scInit() {
 }
 
 function bubLegends() { for (const [id, think, count] of [["sc-h-bub", true, false], ["sc-f-bub", false, true], ["sc-a-bub", false, true], ["ex-bub", true, false]]) document.getElementById(id).innerHTML = bubLegend(think, count); }
-function render() { header(); questionTest(); gtGrid(); bubLegends(); exControls(); explorer(); scInit(); }
+function simMap() {  // the static map in "How the simulation works"
+  const cv = document.getElementById("sim-map"); if (!cv || !V.map) return;
+  const T = scTok(), { ctx, w, k, H } = scStageV(cv, 0), sz = w < 420 ? 10 : 11; scBase(ctx, w, H, T, 1, null);
+  for (const [x, y] of [[30, 1], [30, 23.5], [46, 26]]) diamond(ctx, x * k, H - y * k, Math.max(3.2, k * .45), T.staff);
+  scMapLabels(ctx, w, H, k, T, ["Gate 3", "Gate 7"], true);
+  scText(ctx, "seats", 17.75 * k, H - 10 * k, T, "center", sz, 400); scText(ctx, "concourse", 20 * k, H - 25 * k, T, "center", sz, 400);
+  document.getElementById("sim-legend").innerHTML = [["--wall", "wall"], ["--seat", "seat row"], ["--stairs", "aisle stairs"], ["--ramp", "ramp (step-free)"], ["--gate", "gate"], ["--food", "food stall"]].map(([v, n]) => `<span><i class="sw" style="background:var(${v})"></i>${n}</span>`).join("") +
+    `<span><i class="sw" style="background:var(--staffdot);transform:rotate(45deg) scale(.75)"></i>staff</span>`;
+}
+function render() { header(); simMap(); questionTest(); gtGrid(); bubLegends(); exControls(); explorer(); scInit(); }
 render();
 const rerender = () => { mapCache.clear(); EX.dirty = true; scRedraw(); };
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", rerender);
