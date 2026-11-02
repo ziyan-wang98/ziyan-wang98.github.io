@@ -20,7 +20,7 @@ img { max-width: 100% }
 <style>
 /* Layout: one reading column (~68ch) with figures allowed to run wider; sections read like a lab readout, top to bottom. */
 :root {
-  --bg: #f3f6f5; --surface: #ffffff; --ink: #14201b; --muted: #55655e; --rule: #d5ded9; --soft: #e8eeeb;
+  --bg: #ffffff; --surface: #ffffff; --ink: #14201b; --muted: #55655e; --rule: #d5ded9; --soft: #e8eeeb;
   --exit: #00754a; --on-exit: #ffffff; --b0: #b5600a; --b1: #8a7a5b; --t: #5345c4; --oracle: #5d6d7a; --edit: #0a7d86; --drop: #7f9b8c;
   --wall: #2b3833; --floor: #e7edea; --seat: #cfd9d4; --stairs: #aebdb6; --ramp: #c6e0cf; --gate: #00754a; --outside: #d8ece0; --food: #e6bf74;
   --heat0: #f3f6f5; --heat1: #3346c9; --pos: #00754a; --neg: #b5600a;
@@ -255,6 +255,7 @@ table.gt-grid caption { caption-side: top; text-align: left; font: 600 var(--ste
 .sim-scenes li { display: grid; gap: .1rem }
 .sim-io ul { margin: .4rem 0 .6rem; padding-left: 1.1rem; display: grid; gap: .3rem }
 .sim-io h3 { margin: 0 }
+#sc-s-intro, #sc-c-intro, #sc-a-intro { display: none !important }  /* no line under the headings */
 @media (max-width: 600px) { h1 { font-size: var(--step-3) } h2 { font-size: var(--step-2) } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important } }
 </style>
@@ -271,7 +272,6 @@ table.gt-grid caption { caption-side: top; text-align: left; font: 600 var(--ste
   <div class="head">
     <p class="eyebrow">How the simulation works</p>
     <h2 id="h-sim">Four scenes, one for each survey question</h2>
-    <p class="col">Each scene puts the agent in the situation its question asks about and keeps everything else equal, so each answer leads somewhere different on the map.</p>
   </div>
   <div class="sim-grid">
     <div class="panel"><canvas id="sim-map" role="img" aria-label="Map of the stadium sector: seats, aisles, ramps, the concourse with the food stall, Gate 3, Gate 7 and three staff members"></canvas>
@@ -311,7 +311,6 @@ table.gt-grid caption { caption-side: top; text-align: left; font: 600 var(--ste
 <section aria-labelledby="h-show" class="sc" id="showcase">
   <div class="head">
     <h2 id="h-show">With and without a persona: the clearest differences</h2>
-    <p class="col">Same respondent, same scene. With persona, the prompt also holds the respondent's survey answers.</p>
   </div>
   <div class="panel sc-mode">
     <div class="ctl"><span class="eyebrow">Model setting</span><div class="chips" id="sc-mode" role="group" aria-label="Model setting"></div></div>
@@ -343,7 +342,6 @@ table.gt-grid caption { caption-side: top; text-align: left; font: 600 var(--ste
     <div class="head">
       <p class="eyebrow">2 · All 100 respondents</p>
       <h3 id="h-sc-fan">Same start: with persona, more agents do what their respondent answered</h3>
-      <p class="col cap">Each dot is one respondent's agent in its own run. Colour shows the survey answer or what the agent did. With persona the colours split up; with no persona they move together.</p>
     </div>
     <div class="sc-arriving" hidden></div>
     <div class="sc-body">
@@ -423,7 +421,6 @@ table.gt-grid caption { caption-side: top; text-align: left; font: 600 var(--ste
   <div class="head">
     <p class="eyebrow">The core problem</p>
     <h2 id="h-gt">The missing piece: real people's answers and movements, together</h2>
-    <p class="gt-lead">To know which questions are worth asking, we need the same people's questionnaire answers and their movement in an emergency. Our results so far only show that agents act on their answers.</p>
   </div>
   <div class="panel scroll gt-wrap" role="region" aria-labelledby="gt-cap" tabindex="0"><table class="gt-grid" id="gt-grid"></table></div>
   <p class="cap gt-src">From our dataset notes of 27 and 31 October 2026. Question mark: not confirmed. Sources:
@@ -439,7 +436,6 @@ table.gt-grid caption { caption-side: top; text-align: left; font: 600 var(--ste
 
   <div class="gt-did">
     <h3>What we did with real data so far</h3>
-    <p class="cap">Three open datasets, processed and checked against their papers. Our agents have not been tested on them yet.</p>
     <div class="grid3">
       <div class="panel gt-card">
         <h4>BaSiGo</h4>
@@ -484,7 +480,6 @@ table.gt-grid caption { caption-side: top; text-align: left; font: 600 var(--ste
 <section aria-labelledby="h-explore">
   <div class="head">
     <h2 id="h-explore">Agent explorer</h2>
-    <p class="col">Pick a respondent: each map shows its agent in one scene, one dot per condition, with the model's latest decision below.</p>
   </div>
   <div class="ctl">
     <label for="persona-sel" class="eyebrow">Respondent</label><select id="persona-sel"></select>
