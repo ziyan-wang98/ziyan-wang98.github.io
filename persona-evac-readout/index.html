@@ -256,11 +256,16 @@ table.gt-grid caption { caption-side: top; text-align: left; font: 600 var(--ste
 .sim-io ul { margin: .4rem 0 .6rem; padding-left: 1.1rem; display: grid; gap: .3rem }
 .sim-io h3 { margin: 0 }
 #sc-s-intro, #sc-c-intro, #sc-a-intro { display: none !important }  /* no line under the headings */
+.intro { padding-block: 2.4rem 0 }
 @media (max-width: 600px) { h1 { font-size: var(--step-3) } h2 { font-size: var(--step-2) } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important } }
 </style>
 
 <main>
+
+<div class="intro">
+  <p class="lede">A <b>persona</b> is one synthetic respondent's answers to five survey questions, which Carter Blair's question-selection method picked from a pool of 100 questions. Each dot is an <b>agent</b>: a language model, Qwen3.6-35B-A3B, reads its persona and what it sees, and decides where it goes and what it does.</p>
+</div>
 
 <section aria-labelledby="h-sim" id="sim">
   <div class="head">
