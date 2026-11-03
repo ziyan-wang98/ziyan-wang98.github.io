@@ -463,25 +463,25 @@ svg.paper .refh { stroke: var(--surface); stroke-width: 4.5 }
       <div class="panel gt-card">
         <h4><a href="https://ped.fz-juelich.de/da/doku.php?id=socgrp">BaSiGo</a></h4>
         <dl class="gt-dl">
-          <dt>In the data</dt><dd>18 recorded runs of 12 people leaving a 10 by 10 metre room through two doors. Each group ran twice: told to stay together in threes, or to leave alone. Head positions 16 times a second. No questionnaire.</dd>
-          <dt>In our code</dt><dd><code>src/pevac/gt/basigo.py</code> reads the raw tracks, turns camera pixels into metres, recovers who belongs to which three, and works out when each person starts moving and leaves the room.</dd>
-          <dt>How we can use it</dt><dd>Rebuild the room in our simulator, give agents the same instruction as the real people, and compare when and how they leave. A check on the companion question.</dd>
+          <dt>In the data</dt><dd>18 runs of 12 people leaving a room, told to stay in threes or leave alone; no questionnaire.</dd>
+          <dt>In our code</dt><dd>Tracks in metres, with each person's start and exit time.</dd>
+          <dt>How we can use it</dt><dd>Rebuild the room and check the companion question.</dd>
         </dl>
       </div>
       <div class="panel gt-card">
         <h4><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5046946/">Moussaïd and colleagues 2016</a></h4>
         <dl class="gt-dl">
-          <dt>In the data</dt><dd>22 recorded sessions of 36 people in a desktop virtual building with four exits, one of them open. Low or high stress; some players saw an arrow to the open exit, and the data say who. Positions about 10 times a second. No questionnaire.</dd>
-          <dt>In our code</dt><dd><code>src/pevac/gt/moussaid2016.py</code> reads the sessions, rebuilds the walls and exits in metres, and works out each player's route, exit and time.</dd>
-          <dt>How we can use it</dt><dd>Rebuild the building, tell some agents where the open exit is, as the real players were told, and compare how the others follow them. A check on the follow-the-crowd question.</dd>
+          <dt>In the data</dt><dd>22 sessions of 36 players in a virtual building, some shown the open exit; no questionnaire.</dd>
+          <dt>In our code</dt><dd>The building in metres, with each player's route, exit and time.</dd>
+          <dt>How we can use it</dt><dd>Rebuild it and check the follow-the-crowd question.</dd>
         </dl>
       </div>
       <div class="panel gt-card">
         <h4><a href="https://ped.fz-juelich.de/da/doku.php?id=information_propagation">Jülich 2022</a></h4>
         <dl class="gt-dl">
-          <dt>In the data</dt><dd>40 recorded runs of 33 to 41 people waiting at a blocked bottleneck while a whispered message is passed on. Positions 25 times a second. After each run, every person filled in a questionnaire, tied to their own track by a marker on their hat: 184 people.</dd>
-          <dt>In our code</dt><dd><code>src/pevac/gt/infoprop.py</code> reads the tracks and the questionnaires, joins each person's answers to their own track, and marks when the crowd is stopped, the message comes in and the way reopens.</dd>
-          <dt>How we can use it</dt><dd>The only open data with each person's answers next to their own movement. Build a persona from each person's answers, give it to an agent, and compare its movement with that person's real track.</dd>
+          <dt>In the data</dt><dd>184 people at a blocked bottleneck, each with a questionnaire tied to their own track.</dd>
+          <dt>In our code</dt><dd>Each person's answers joined to their own track.</dd>
+          <dt>How we can use it</dt><dd>Give agents those answers and compare with each person's real track.</dd>
         </dl>
       </div>
     </div>
