@@ -437,11 +437,11 @@ svg.paper .refh { stroke: var(--surface); stroke-width: 4.5 }
   <div class="panel sc-srow"><div id="qt-chart"></div>
     <ul class="qt-read">
       <li><b>Full persona</b>: all five questions and answers are in the prompt.</li>
-      <li><b>Question removed</b>: this scene's question and its answer are taken out; the bar still counts runs that match the respondent's original answer.</li>
-      <li><b>Answer flipped</b>: this scene's answer is swapped for a contrasting one; the bar counts runs that match the new answer.</li>
+      <li><b>Question removed</b>: only this scene's question and its answer are taken out; the other four stay.</li>
+      <li><b>Answer flipped</b>: only this scene's answer is swapped for a contrasting one; the other four stay.</li>
       <li><b>No persona</b>: no survey at all.</li>
     </ul>
-    <p class="cap">Each bar: share of runs in which the agent did what the answer says. Error bars: 95% interval.</p></div>
+    <p class="cap">Every bar: share of runs in which the agent did what the respondent originally answered. A bar far below full persona means that question drives the behaviour. Error bars: 95% interval.</p></div>
 </section>
 
 <section aria-labelledby="h-gt" class="gt" id="gt">
@@ -554,7 +554,7 @@ const acc = (q, c) => V.accuracy.find(r => r.question === q && r.condition === c
 /* ---------- what we found ---------- */
 function header() {  // the summary, in the order of the talk; the numbers live in sections 3 and 4 and the remove-or-flip table
   const f = [`<b>Agents follow their answers.</b> With the survey answers, agents mostly do what their respondent said; with no persona, they mostly do not.`,
-    `<b>Each question steers its own scene.</b> Take a question out and that behaviour goes away; flip the answer and most agents flip with it, except at the alarm.`];
+    `<b>Each question steers its own scene.</b> Take a question out, or flip its answer, and far fewer agents do what the respondent originally said.`];
   const dm = SHOW.demo, DS = ["V2", "V3", "V4"];  // demographics only against demographics and survey answers, thinking turned off
   if (dm && DS.every(v => dm[v])) f.push(`<b>Age and home country alone change little.</b> Agents given only these still act alike; the survey answers are what make them differ (<a href="https://ziyan-wang98.github.io/persona-evac-readout/simple/">one-glance page</a>).`);
   if (SHOW.crowd) f.push(`<b>In a full evacuation, personas change timing and actions more than routes.</b> Agents with a persona wait and phone their friend more, so the crowd clears later; the routes stay about the same.`);
@@ -565,11 +565,14 @@ function header() {  // the summary, in the order of the talk; the numbers live 
 }
 
 /* ---------- remove or flip one answer: does the behaviour in that question's scene change? ---------- */
-function questionTest() {  // remove or flip one answer, as a paper-style bar chart
+const FLIP_ORIG = {"q1": {"v": 0.2684, "lo": 0.1596, "hi": 0.3807}, "q2": {"v": 0.01, "lo": 0.0, "hi": 0.0319}, "q3": {"v": 0.1753, "lo": 0.0859, "hi": 0.2745}, "q4": {"v": 0.2, "lo": 0.1162, "hi": 0.2982}};  // flipped-answer runs scored against the original answer (flip_vs_original.py on mvp_v)
+function questionTest() {  // remove or flip one answer, as a paper-style bar chart; every bar is scored against the respondent's original answer
   const cols = [["P", "Full persona", "var(--exit)"], ["P-", "Question removed", "var(--drop)"], ["P~", "Answer flipped", "var(--edit)"], ["B0", "No persona", "var(--b0)"]];
   const Q = ["q1", "q2", "q3", "q4"], G = Q.map(q => { const t = VNAME["V" + q[1]], i = t.indexOf(" · "); return i > 0 ? [t.slice(0, i), t.slice(i + 3)] : [t, ""]; });
-  document.getElementById("qt-chart").innerHTML = paperChart({ label: "Each question steers its own scene", groups: G, ymax: 1, ticks: [0, .25, .5, .75, 1], fmt: x => Math.round(100 * x) + "%", W: 760, ylabel: "Runs that match the answer",
-    series: cols.map(([c, name, color]) => ({ name, color, data: Q.map(q => { const r = acc(q, c === "P-" || c === "P~" ? c + q : c); return r ? { v: +r.accuracy, ci: r.acc_lo != null ? [+r.acc_lo, +r.acc_hi] : null } : null; }) })) });
+  const val = (c, q) => { if (c === "P~") { const f = FLIP_ORIG[q]; return f ? { v: f.v, ci: [f.lo, f.hi] } : null; }
+    const r = acc(q, c === "P-" ? c + q : c); return r ? { v: +r.accuracy, ci: r.acc_lo != null ? [+r.acc_lo, +r.acc_hi] : null } : null; };
+  document.getElementById("qt-chart").innerHTML = paperChart({ label: "Each question steers its own scene", groups: G, ymax: 1, ticks: [0, .25, .5, .75, 1], fmt: x => Math.round(100 * x) + "%", W: 760, ylabel: "Runs that match the original answer",
+    series: cols.map(([c, name, color]) => ({ name, color, data: Q.map(q => val(c, q)) })) });
 }
 
 /* ---------- the missing piece: what each data source has ---------- */
