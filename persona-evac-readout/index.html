@@ -279,6 +279,11 @@ svg.paper .yl, svg.paper .lg { font-size: 12px }
 svg.paper .vl { font-size: 11px; font-family: var(--f-mono); paint-order: stroke; stroke: var(--surface); stroke-width: 3px; stroke-linejoin: round }
 svg.paper .refh { stroke: var(--surface); stroke-width: 4.5 }
 .qt-read { margin: .4rem 0 0; padding-left: 1.1rem; display: grid; gap: .25rem; font-size: var(--step--1); max-width: 92ch }
+.gt-dl { margin: 0; display: grid; gap: .2rem }
+.gt-dl dt { font: 600 var(--step--1)/1.3 var(--f-mono); letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-top: .55rem }
+.gt-dl dt:first-child { margin-top: 0 }
+.gt-dl dd { margin: 0 }
+.gt-dl code { font: 400 .82em/1.3 var(--f-mono) }
 @media (max-width: 600px) { h1 { font-size: var(--step-3) } h2 { font-size: var(--step-2) } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important } }
 </style>
@@ -456,34 +461,28 @@ svg.paper .refh { stroke: var(--surface); stroke-width: 4.5 }
     <h3>Open datasets we have processed (our agents not yet run on them)</h3>
     <div class="grid3">
       <div class="panel gt-card">
-        <h4>BaSiGo</h4>
-        <p>We processed all 18 recorded runs: all 9 groups of 12 people left later when told to stay in threes.</p>
-        <div class="gt-chart" role="img" aria-label="Average time to leave the room: told to leave alone, 5.65 seconds; told to stay in threes, 6.82 seconds.">
-          <p class="gt-ct">Average time to leave the room</p>
-          <div class="gt-row"><span>Told to leave alone</span><b>5.65 seconds</b><i style="--v:70.6%"></i></div>
-          <div class="gt-row"><span>Told to stay in threes</span><b>6.82 seconds</b><i style="--v:85.3%"></i></div>
-        </div>
+        <h4><a href="https://ped.fz-juelich.de/da/doku.php?id=socgrp">BaSiGo</a></h4>
+        <dl class="gt-dl">
+          <dt>In the data</dt><dd>18 recorded runs of 12 people leaving a 10 by 10 metre room through two doors. Each group ran twice: told to stay together in threes, or to leave alone. Head positions 16 times a second. No questionnaire.</dd>
+          <dt>In our code</dt><dd><code>src/pevac/gt/basigo.py</code> reads the raw tracks, turns camera pixels into metres, recovers who belongs to which three, and works out when each person starts moving and leaves the room.</dd>
+          <dt>How we can use it</dt><dd>Rebuild the room in our simulator, give agents the same instruction as the real people, and compare when and how they leave. A check on the companion question.</dd>
+        </dl>
       </div>
       <div class="panel gt-card">
-        <h4>Moussaïd and colleagues 2016</h4>
-        <p>We processed all 22 recorded sessions: under stress, a few players who know the way get most of the 36 out.</p>
-        <div class="gt-chart" role="img" aria-label="Players out within 50 seconds under stress, by how many saw an arrow to the safe exit: none, 3 percent; 4 of 36, 87 percent; 12 of 36, 78 percent; all 36, 88 percent.">
-          <p class="gt-ct">Out within 50 seconds under stress, by how many saw an arrow to the safe exit</p>
-          <div class="gt-row"><span>None of 36</span><b>3%</b><i style="--v:3%"></i></div>
-          <div class="gt-row"><span>4 of 36</span><b>87%</b><i style="--v:87%"></i></div>
-          <div class="gt-row"><span>12 of 36</span><b>78%</b><i style="--v:78%"></i></div>
-          <div class="gt-row"><span>All 36</span><b>88%</b><i style="--v:88%"></i></div>
-        </div>
+        <h4><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5046946/">Moussaïd and colleagues 2016</a></h4>
+        <dl class="gt-dl">
+          <dt>In the data</dt><dd>22 recorded sessions of 36 people in a desktop virtual building with four exits, one of them open. Low or high stress; some players saw an arrow to the open exit, and the data say who. Positions about 10 times a second. No questionnaire.</dd>
+          <dt>In our code</dt><dd><code>src/pevac/gt/moussaid2016.py</code> reads the sessions, rebuilds the walls and exits in metres, and works out each player's route, exit and time.</dd>
+          <dt>How we can use it</dt><dd>Rebuild the building, tell some agents where the open exit is, as the real players were told, and compare how the others follow them. A check on the follow-the-crowd question.</dd>
+        </dl>
       </div>
       <div class="panel gt-card">
-        <h4>Jülich 2022</h4>
-        <p>We joined 184 people's questionnaires to their own tracks, over 40 recorded runs; the paper's rates match.</p>
-        <div class="gt-chart" role="img" aria-label="Stopped with no explanation, share who said they heard the whispered message, by distance from where it came in: under 1.5 metres, 46 percent; 1.5 to 2.25 metres, 8 percent; 2.25 to 3 metres, 0 percent.">
-          <p class="gt-ct">Stopped with no explanation: said they heard the whispered message, by distance from where it came in</p>
-          <div class="gt-row"><span>Under 1.5 metres</span><b>46%</b><i style="--v:46%"></i></div>
-          <div class="gt-row"><span>1.5 to 2.25 metres</span><b>8%</b><i style="--v:8%"></i></div>
-          <div class="gt-row"><span>2.25 to 3 metres</span><b>0%</b><i style="--v:0%"></i></div>
-        </div>
+        <h4><a href="https://ped.fz-juelich.de/da/doku.php?id=information_propagation">Jülich 2022</a></h4>
+        <dl class="gt-dl">
+          <dt>In the data</dt><dd>40 recorded runs of 33 to 41 people waiting at a blocked bottleneck while a whispered message is passed on. Positions 25 times a second. After each run, every person filled in a questionnaire, tied to their own track by a marker on their hat: 184 people.</dd>
+          <dt>In our code</dt><dd><code>src/pevac/gt/infoprop.py</code> reads the tracks and the questionnaires, joins each person's answers to their own track, and marks when the crowd is stopped, the message comes in and the way reopens.</dd>
+          <dt>How we can use it</dt><dd>The only open data with each person's answers next to their own movement. Build a persona from each person's answers, give it to an agent, and compare its movement with that person's real track.</dd>
+        </dl>
       </div>
     </div>
   </div>
