@@ -1336,7 +1336,7 @@ function statsBuild() {
   const c4 = paperChart({ label: "Exact match with the answer", groups: G, ymax: 1, ticks: T4, fmt: pp, ylabel: "Runs that match the answer",
     series: [{ name: "With persona", color: W, data: S.map(v => { const d = mt(st.scenes[v]); return { v: d.with.match_rate, ci: d.with.match_rate_ci95 }; }) },
              { name: "No persona", color: N0, data: S.map(v => { const d = mt(st.scenes[v]); return { v: d.without.match_rate, ci: d.without.match_rate_ci95 }; }) }],
-    ref: { name: "Everyone picks the most common answer", data: S.map(v => (mt(st.scenes[v]).baseline || {}).match_rate) } });
+    ref: { name: "Baseline: every agent does the most common answer", data: S.map(v => (mt(st.scenes[v]).baseline || {}).match_rate) } });
   const c1 = paperChart({ label: "Behaviour changed by the persona", groups: G, ymax: 1, ticks: T4, fmt: pp, ylabel: "Respondents whose behaviour changed",
     series: [{ name: "With persona against no persona", color: "var(--oracle)", data: S.map(v => { const c = ch(st.scenes[v]); return { v: c.value, ci: c.ci95 }; }) }],
     ref: noisy ? { name: "Two runs with the same prompt", data: S.map(v => nz(ch(st.scenes[v]))) } : null });
