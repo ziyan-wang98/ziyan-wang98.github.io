@@ -437,8 +437,8 @@ svg.paper .refh { stroke: var(--surface); stroke-width: 4.5 }
   <div class="panel sc-srow"><div id="qt-chart"></div>
     <ul class="qt-read">
       <li><b>Full persona</b>: all five questions and answers are in the prompt.</li>
-      <li><b>Question removed</b>: only this scene's question and its answer are taken out; the other four stay.</li>
-      <li><b>Answer flipped</b>: only this scene's answer is swapped for a contrasting one; the other four stay.</li>
+      <li><b>This scene's question removed</b>: only this scene's question and its answer are taken out; the other four stay.</li>
+      <li><b>This scene's answer flipped</b>: only this scene's answer is swapped for a contrasting one; the other four stay.</li>
       <li><b>No persona</b>: no survey at all.</li>
     </ul>
     <p class="cap">Every bar: share of runs in which the agent did what the respondent originally answered. A bar far below full persona means that question drives the behaviour. Error bars: 95% interval.</p></div>
@@ -450,23 +450,14 @@ svg.paper .refh { stroke: var(--surface); stroke-width: 4.5 }
     <h2 id="h-gt">The missing piece: real people's answers and movements, together</h2>
   </div>
   <div class="panel scroll gt-wrap" role="region" aria-labelledby="gt-cap" tabindex="0"><table class="gt-grid" id="gt-grid"></table></div>
-  <p class="cap gt-src">From our dataset notes of 27 and 31 October 2026. Question mark: not confirmed. Sources:
-    <a href="https://ped.fz-juelich.de/da/doku.php?id=information_propagation">Jülich 2022</a> ·
-    <a href="https://ped.fz-juelich.de/da/doku.php?id=croma">CroMa 2021</a> ·
-    <a href="https://arxiv.org/abs/1210.5553">Dresden 2012</a> ·
-    <a href="https://doi.org/10.3389/frobt.2016.00043">Kinateder and Warren 2016</a> ·
-    <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0166908">Haghani and colleagues 2016</a> ·
-    <a href="https://aclanthology.org/2025.acl-long.1438/">wildfire surveys</a> ·
-    <a href="https://huggingface.co/datasets/LLM-Digital-Twin/Twin-2K-500">Twin-2K-500</a> ·
-    <a href="https://ped.fz-juelich.de/da/doku.php?id=socgrp">BaSiGo</a> ·
-    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5046946/">Moussaïd and colleagues 2016</a></p>
+  <p class="cap gt-src">From our dataset notes, 27 October to 2 November 2026. Question mark: not confirmed. Each name links to its paper or dataset.</p>
 
   <div class="gt-did">
-    <h3>What we did with real data so far</h3>
+    <h3>Open datasets we have processed (our agents not yet run on them)</h3>
     <div class="grid3">
       <div class="panel gt-card">
         <h4>BaSiGo</h4>
-        <p>All 18 runs processed: all 9 groups of 12 people left later when told to stay in threes.</p>
+        <p>We processed all 18 recorded runs: all 9 groups of 12 people left later when told to stay in threes.</p>
         <div class="gt-chart" role="img" aria-label="Average time to leave the room: told to leave alone, 5.65 seconds; told to stay in threes, 6.82 seconds.">
           <p class="gt-ct">Average time to leave the room</p>
           <div class="gt-row"><span>Told to leave alone</span><b>5.65 seconds</b><i style="--v:70.6%"></i></div>
@@ -475,7 +466,7 @@ svg.paper .refh { stroke: var(--surface); stroke-width: 4.5 }
       </div>
       <div class="panel gt-card">
         <h4>Moussaïd and colleagues 2016</h4>
-        <p>All 22 runs processed: under stress, a few players who know the way get most of the 36 out.</p>
+        <p>We processed all 22 recorded sessions: under stress, a few players who know the way get most of the 36 out.</p>
         <div class="gt-chart" role="img" aria-label="Players out within 50 seconds under stress, by how many saw an arrow to the safe exit: none, 3 percent; 4 of 36, 87 percent; 12 of 36, 78 percent; all 36, 88 percent.">
           <p class="gt-ct">Out within 50 seconds under stress, by how many saw an arrow to the safe exit</p>
           <div class="gt-row"><span>None of 36</span><b>3%</b><i style="--v:3%"></i></div>
@@ -486,7 +477,7 @@ svg.paper .refh { stroke: var(--surface); stroke-width: 4.5 }
       </div>
       <div class="panel gt-card">
         <h4>Jülich 2022</h4>
-        <p>184 people's questionnaires joined to their own tracks, over 40 runs. The paper's rates match.</p>
+        <p>We joined 184 people's questionnaires to their own tracks, over 40 recorded runs; the paper's rates match.</p>
         <div class="gt-chart" role="img" aria-label="Stopped with no explanation, share who said they heard the whispered message, by distance from where it came in: under 1.5 metres, 46 percent; 1.5 to 2.25 metres, 8 percent; 2.25 to 3 metres, 0 percent.">
           <p class="gt-ct">Stopped with no explanation: said they heard the whispered message, by distance from where it came in</p>
           <div class="gt-row"><span>Under 1.5 metres</span><b>46%</b><i style="--v:46%"></i></div>
@@ -498,7 +489,7 @@ svg.paper .refh { stroke: var(--surface); stroke-width: 4.5 }
   </div>
 
   <div class="gt-next">
-    <div class="gt-miss"><h3>Missing</h3><p>Open data with the same real people's answers and movements in an emergency: Dresden 2012 and Kinateder and Warren 2016 have both, but are not public. No dataset has real people answering our questions.</p></div>
+    <div class="gt-miss"><h3>Missing</h3><p>Open data with the same real people's answers and movements in an emergency: Dresden 2012, Kinateder and Warren 2016, and Shipman and colleagues 2024 have both, but are not public; we are asking the authors. No dataset has real people answering our questions.</p></div>
     <div class="gt-build"><h3>We can build</h3><p>Our scenes in a browser, played by people who answered the questionnaire. Replicas of BaSiGo and Moussaïd, to test agents against real crowds.</p></div>
     <div class="gt-scale"><h3>We can compute or scale up</h3><p>Which questions predict other answers, on 2,058 real people (Twin-2K-500). Which answers leave a trace in movement, in simulation.</p></div>
   </div>
@@ -567,7 +558,7 @@ function header() {  // the summary, in the order of the talk; the numbers live 
 /* ---------- remove or flip one answer: does the behaviour in that question's scene change? ---------- */
 const FLIP_ORIG = {"q1": {"v": 0.2684, "lo": 0.1596, "hi": 0.3807}, "q2": {"v": 0.01, "lo": 0.0, "hi": 0.0319}, "q3": {"v": 0.1753, "lo": 0.0859, "hi": 0.2745}, "q4": {"v": 0.2, "lo": 0.1162, "hi": 0.2982}};  // flipped-answer runs scored against the original answer (flip_vs_original.py on mvp_v)
 function questionTest() {  // remove or flip one answer, as a paper-style bar chart; every bar is scored against the respondent's original answer
-  const cols = [["P", "Full persona", "var(--exit)"], ["P-", "Question removed", "var(--drop)"], ["P~", "Answer flipped", "var(--edit)"], ["B0", "No persona", "var(--b0)"]];
+  const cols = [["P", "Full persona", "var(--exit)"], ["P-", "This scene's question removed", "var(--drop)"], ["P~", "This scene's answer flipped", "var(--edit)"], ["B0", "No persona", "var(--b0)"]];
   const Q = ["q1", "q2", "q3", "q4"], G = Q.map(q => { const t = VNAME["V" + q[1]], i = t.indexOf(" · "); return i > 0 ? [t.slice(0, i), t.slice(i + 3)] : [t, ""]; });
   const val = (c, q) => { if (c === "P~") { const f = FLIP_ORIG[q]; return f ? { v: f.v, ci: [f.lo, f.hi] } : null; }
     const r = acc(q, c === "P-" ? c + q : c); return r ? { v: +r.accuracy, ci: r.acc_lo != null ? [+r.acc_lo, +r.acc_hi] : null } : null; };
@@ -586,6 +577,7 @@ const GT_ROWS = [
   ["CroMa 2021", "crowd-management experiments", "y", "y", "u", "n", "y|some parts not yet out"],
   ["Dresden 2012", "lecture-hall evacuation", "y", "y|a week before", "y|88 of 301 people", "y|unannounced", "n|ask the authors"],
   ["Kinateder and Warren 2016", "fire alarm, real and virtual-reality rooms", "y|head tracking", "y|after the test", "y", "y|fire alarm", "n|ask the authors"],
+  ["Shipman and colleagues 2024", "knife-attack scenario, real and virtual-reality rooms", "y|position tags", "y|before the run", "y", "y|staged knife attack", "n|ask the authors"],
   ["Haghani and colleagues 2016", "stated and real exit choices", "n|exit choices only", "y|picture choices", "n|different people", "y|mock evacuations", "y"],
   ["Wildfire surveys", "2018, 2019 and 2021 fires", "n", "y|plus own decision", "n", "y|real fires", "n|not public"],
   ["Twin-2K-500", "2,058 adults in the United States", "n", "y|about 500 questions", "n", "n", "y"],
@@ -593,6 +585,11 @@ const GT_ROWS = [
   ["Moussaïd and colleagues 2016", "virtual crowd evacuation", "y", "n", "n", "y|virtual building", "y|no licence stated"],
   ["Our synthetic respondents", "100, made by a language model", "y|simulated", "y", "y", "y|simulated", "y", "ours"],
 ];
+const GT_LINKS = { "Jülich 2022": "https://ped.fz-juelich.de/da/doku.php?id=information_propagation", "CroMa 2021": "https://ped.fz-juelich.de/da/doku.php?id=croma",
+  "Dresden 2012": "https://arxiv.org/abs/1210.5553", "Kinateder and Warren 2016": "https://doi.org/10.3389/frobt.2016.00043",
+  "Shipman and colleagues 2024": "https://doi.org/10.1038/s41598-024-55253-9", "Haghani and colleagues 2016": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0166908",
+  "Wildfire surveys": "https://aclanthology.org/2025.acl-long.1438/", "Twin-2K-500": "https://huggingface.co/datasets/LLM-Digital-Twin/Twin-2K-500",
+  "BaSiGo": "https://ped.fz-juelich.de/da/doku.php?id=socgrp", "Moussaïd and colleagues 2016": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5046946/" };
 function gtGrid() {
   const ICON = { y: ["Yes", '<path d="M4.5 12.8l4.6 4.6L19.5 7"/>'], n: ["No", '<path d="M7.5 7.5l9 9M16.5 7.5l-9 9"/>'],
     u: ["Not confirmed", '<circle cx="12" cy="12" r="9.5" stroke-dasharray="3 2.6"/><text x="12" y="12.8" text-anchor="middle" dominant-baseline="central">?</text>'] };
@@ -601,7 +598,7 @@ function gtGrid() {
   const t = document.getElementById("gt-grid"); t.setAttribute("role", "table"); t.setAttribute("lang", "en");  // roles: phones lay the rows out as grids
   t.innerHTML = `<caption id="gt-cap">What each data source has</caption><thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">Data source</th>` +
     GT_COLS.map((c, j) => `<th scope="col" role="columnheader"${j === 2 ? ' class="key"' : ""}>${c}</th>`).join("") + '</tr></thead><tbody role="rowgroup">' +
-    GT_ROWS.map(r => `<tr role="row"${r[7] ? ` class="${r[7]}"` : ""}><th scope="row" role="rowheader"><b>${r[0]}</b><span>${r[1]}</span></th>${r.slice(2, 7).map(cell).join("")}</tr>`).join("") + "</tbody>";
+    GT_ROWS.map(r => `<tr role="row"${r[7] ? ` class="${r[7]}"` : ""}><th scope="row" role="rowheader"><b>${GT_LINKS[r[0]] ? `<a href="${GT_LINKS[r[0]]}">${r[0]}</a>` : r[0]}</b><span>${r[1]}</span></th>${r.slice(2, 7).map(cell).join("")}</tr>`).join("") + "</tbody>";
 }
 
 /* ---------- map + agent explorer ---------- */
