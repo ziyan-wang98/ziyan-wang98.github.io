@@ -268,6 +268,16 @@ table.gt-grid caption { caption-side: top; text-align: left; font: 600 var(--ste
 .sim-anim canvas { width: 100%; height: auto; display: block; border-radius: 4px; border: 1px solid var(--rule) }
 .sim-anim [hidden] { display: none !important }
 #h-sc-anim { display: none !important }  /* no title above the full-evacuation animation */
+svg.paper { width: 100%; height: auto; display: block; font-family: var(--f-body); max-width: 760px }
+svg.paper .ax { stroke: var(--ink); stroke-width: 1.1 }
+svg.paper .eb { stroke: var(--ink); stroke-width: 1.3; fill: none }
+svg.paper .ref { stroke: var(--ink); stroke-width: 1.5; stroke-dasharray: 6 4 }
+svg.paper text { fill: var(--ink) }
+svg.paper .tk, svg.paper .xl2 { font-size: 11px; fill: var(--muted) }
+svg.paper .xl { font-size: 12.5px; font-weight: 700 }
+svg.paper .yl, svg.paper .lg { font-size: 12px }
+svg.paper .vl { font-size: 11px; font-family: var(--f-mono); paint-order: stroke; stroke: var(--surface); stroke-width: 3px; stroke-linejoin: round }
+svg.paper .refh { stroke: var(--surface); stroke-width: 4.5 }
 @media (max-width: 600px) { h1 { font-size: var(--step-3) } h2 { font-size: var(--step-2) } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important } }
 </style>
@@ -1261,6 +1271,26 @@ function fanPick(c, ev) {
 }
 
 /* --- 3 · statistics --- */
+function paperChart(o) {  // paper-style grouped bars as SVG: left and bottom axes, outward ticks, error bars with caps, dashed reference per group
+  const W = 640, H = 310, m = { l: 62, r: 10, t: 34, b: 56 }, pw = W - m.l - m.r, ph = H - m.t - m.b, n = o.groups.length, gw = pw / n, k = o.series.length;
+  const bw = Math.min(52, gw * .74 / k), y = v => m.t + ph * (1 - Math.max(0, Math.min(1, v / o.ymax))), tf = o.tfmt || o.fmt;
+  let s = `<svg class="paper" viewBox="0 0 ${W} ${H}" role="img" aria-label="${scEsc(o.label)}">`, lab = "";
+  for (const t of o.ticks) { const yy = y(t); s += `<line x1="${m.l - 5}" x2="${m.l}" y1="${yy}" y2="${yy}" class="ax"/><text x="${m.l - 8}" y="${yy}" class="tk" text-anchor="end" dominant-baseline="middle">${tf(t)}</text>`; }
+  o.groups.forEach((g, gi) => {
+    const cx = m.l + gw * (gi + .5), x0 = cx - bw * k / 2;
+    o.series.forEach((se, si) => { const d = se.data[gi]; if (!d || d.v == null) return; const x = x0 + si * bw, yv = y(d.v);
+      s += `<rect x="${x + 2}" y="${yv}" width="${bw - 4}" height="${Math.max(0, m.t + ph - yv)}" style="fill:${se.color}"/>`;
+      if (d.ci) { const xc = x + bw / 2, a = y(d.ci[1]), b = y(d.ci[0]); s += `<path d="M${xc} ${a}V${b}M${xc - 5} ${a}H${xc + 5}M${xc - 5} ${b}H${xc + 5}" class="eb"/>`; }
+      lab += `<text x="${x + bw / 2}" y="${Math.min(yv, d.ci ? y(d.ci[1]) : yv) - 6}" class="vl" text-anchor="middle">${o.fmt(d.v)}</text>`; });
+    if (o.ref && o.ref.data[gi] != null) { const yr = y(o.ref.data[gi]); s += `<line x1="${x0 - 7}" x2="${x0 + bw * k + 7}" y1="${yr}" y2="${yr}" class="refh"/><line x1="${x0 - 7}" x2="${x0 + bw * k + 7}" y1="${yr}" y2="${yr}" class="ref"/>`; }
+    s += `<text x="${cx}" y="${m.t + ph + 19}" class="xl" text-anchor="middle">${scEsc(g[0])}</text><text x="${cx}" y="${m.t + ph + 36}" class="xl2" text-anchor="middle">${scEsc(g[1] || "")}</text>`;
+  });
+  s += `<path d="M${m.l} ${m.t}V${m.t + ph}H${m.l + pw}" class="ax" fill="none"/><text transform="translate(15 ${m.t + ph / 2}) rotate(-90)" class="yl" text-anchor="middle">${scEsc(o.ylabel)}</text>`;
+  let lx = m.l + 12; const ly = 13;
+  for (const se of o.series) { s += `<rect x="${lx}" y="${ly - 6}" width="14" height="11" style="fill:${se.color}"/><text x="${lx + 20}" y="${ly}" class="lg" dominant-baseline="middle">${scEsc(se.name)}</text>`; lx += 34 + se.name.length * 6.4; }
+  if (o.ref) s += `<line x1="${lx}" x2="${lx + 24}" y1="${ly}" y2="${ly}" class="ref"/><text x="${lx + 30}" y="${ly}" class="lg" dominant-baseline="middle">${scEsc(o.ref.name)}</text>`;
+  return s + lab + "</svg>";
+}
 function statsBuild() {
   const st = scD().stats; if (!st) return; const S = SCN.filter(v => st.scenes[v]); if (!S.length) return;
   const runs = st.scenes[S[0]].runs_per_respondent, both = runsPhrase(runs), mP = scMark("P"), mB = scMark("B0"), W = "var(--exit)", N0 = "var(--b0)";
@@ -1301,7 +1331,21 @@ function statsBuild() {
       scBar("no persona", mB, d.without.match_rate, d.without.match_rate_ci95, b.match_rate, pc(d.without.match_rate), N0) +
       ""; },
     "");
-  document.getElementById("sc-s-rows").innerHTML = r4 + r1 + `<details><summary>One more measure</summary>${r2}</details>`;
+  const G = S.map(v => { const t = sceneTitle(v), i = t.indexOf(" · "); return i > 0 ? [t.slice(0, i), t.slice(i + 3)] : [t, ""]; });
+  const pp = x => Math.round(100 * x) + "%", T4 = [0, .25, .5, .75, 1], box = (title, chart) => `<div class="panel sc-srow"><h4>${title}</h4>${chart}</div>`;
+  const c4 = paperChart({ label: "Exact match with the answer", groups: G, ymax: 1, ticks: T4, fmt: pp, ylabel: "Runs that match the answer",
+    series: [{ name: "With persona", color: W, data: S.map(v => { const d = mt(st.scenes[v]); return { v: d.with.match_rate, ci: d.with.match_rate_ci95 }; }) },
+             { name: "No persona", color: N0, data: S.map(v => { const d = mt(st.scenes[v]); return { v: d.without.match_rate, ci: d.without.match_rate_ci95 }; }) }],
+    ref: { name: "Everyone picks the most common answer", data: S.map(v => (mt(st.scenes[v]).baseline || {}).match_rate) } });
+  const c1 = paperChart({ label: "Behaviour changed by the persona", groups: G, ymax: 1, ticks: T4, fmt: pp, ylabel: "Respondents whose behaviour changed",
+    series: [{ name: "With persona against no persona", color: "var(--oracle)", data: S.map(v => { const c = ch(st.scenes[v]); return { v: c.value, ci: c.ci95 }; }) }],
+    ref: noisy ? { name: "Two runs with the same prompt", data: S.map(v => nz(ch(st.scenes[v]))) } : null });
+  const HB = Math.max(...S.map(v => mi(st.scenes[v]).answer_entropy_bits || 1)), TB = []; for (let t = 0; t <= HB + 1e-9; t += .5) TB.push(t);
+  const c2 = paperChart({ label: "Information about the answer", groups: G, ymax: HB, ticks: TB, fmt: x => f2(x), tfmt: x => f2(x, 1), ylabel: "Bits about the answer",
+    series: [{ name: "With persona", color: W, data: S.map(v => { const d = mi(st.scenes[v]); return { v: d.with.bits, ci: d.with.ci95 }; }) },
+             { name: "No persona", color: N0, data: S.map(v => ({ v: mi(st.scenes[v]).without.bits })) }],
+    ref: { name: "Chance", data: S.map(v => mi(st.scenes[v]).with.null_mean_bits || 0) } });
+  document.getElementById("sc-s-rows").innerHTML = box("Exact match with the answer", c4) + box("Behaviour changed by the persona", c1) + `<details><summary>One more measure</summary>${box("Information about the answer", c2)}</details>`;
 }
 function typicalBuild() {
   const ex = scD().examples, box = document.getElementById("sc-s-typical"); if (!ex) { box.hidden = true; return; } box.hidden = false;
