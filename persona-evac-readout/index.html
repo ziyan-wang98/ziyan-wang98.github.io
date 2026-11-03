@@ -278,6 +278,7 @@ svg.paper .xl { font-size: 12.5px; font-weight: 700 }
 svg.paper .yl, svg.paper .lg { font-size: 12px }
 svg.paper .vl { font-size: 11px; font-family: var(--f-mono); paint-order: stroke; stroke: var(--surface); stroke-width: 3px; stroke-linejoin: round }
 svg.paper .refh { stroke: var(--surface); stroke-width: 4.5 }
+.qt-read { margin: .4rem 0 0; padding-left: 1.1rem; display: grid; gap: .25rem; font-size: var(--step--1); max-width: 92ch }
 @media (max-width: 600px) { h1 { font-size: var(--step-3) } h2 { font-size: var(--step-2) } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important } }
 </style>
@@ -433,8 +434,14 @@ svg.paper .refh { stroke: var(--surface); stroke-width: 4.5 }
     <p class="eyebrow">Remove or flip one answer</p>
     <h2 id="h-qt">Each question steers its own scene</h2>
   </div>
-  <div class="panel scroll qt-wrap"><table class="qt" id="qt-table"></table></div>
-  <p class="cap">Share of agents that did what their answer says; with the answer flipped, what the new answer says.</p>
+  <div class="panel sc-srow"><div id="qt-chart"></div>
+    <ul class="qt-read">
+      <li><b>Full persona</b>: all five questions and answers are in the prompt.</li>
+      <li><b>Question removed</b>: this scene's question and its answer are taken out; the bar still counts runs that match the respondent's original answer.</li>
+      <li><b>Answer flipped</b>: this scene's answer is swapped for a contrasting one; the bar counts runs that match the new answer.</li>
+      <li><b>No persona</b>: no survey at all.</li>
+    </ul>
+    <p class="cap">Each bar: share of runs in which the agent did what the answer says. Error bars: 95% interval.</p></div>
 </section>
 
 <section aria-labelledby="h-gt" class="gt" id="gt">
@@ -558,12 +565,11 @@ function header() {  // the summary, in the order of the talk; the numbers live 
 }
 
 /* ---------- remove or flip one answer: does the behaviour in that question's scene change? ---------- */
-function questionTest() {
-  const cols = [["P", "With persona", "--exit"], ["P-", "Question removed", "--drop"], ["P~", "Answer flipped", "--edit"], ["B0", "No persona", "--b0"]];
-  const cell = (r, v) => { if (!r) return "<td>–</td>"; const x = +r.accuracy;
-    return `<td class="num">${Math.round(100 * x)}%<span class="qt-bar"><i style="width:${(100 * x).toFixed(1)}%;background:var(${v})"></i></span></td>`; };
-  document.getElementById("qt-table").innerHTML = `<thead><tr><th>Scene</th>${cols.map(c => `<th>${c[1]}</th>`).join("")}</tr></thead><tbody>` +
-    ["q1", "q2", "q3", "q4"].map(q => `<tr><td>${VNAME["V" + q[1]]}</td>${cols.map(([c, , v]) => cell(acc(q, c === "P-" || c === "P~" ? c + q : c), v)).join("")}</tr>`).join("") + "</tbody>";
+function questionTest() {  // remove or flip one answer, as a paper-style bar chart
+  const cols = [["P", "Full persona", "var(--exit)"], ["P-", "Question removed", "var(--drop)"], ["P~", "Answer flipped", "var(--edit)"], ["B0", "No persona", "var(--b0)"]];
+  const Q = ["q1", "q2", "q3", "q4"], G = Q.map(q => { const t = VNAME["V" + q[1]], i = t.indexOf(" · "); return i > 0 ? [t.slice(0, i), t.slice(i + 3)] : [t, ""]; });
+  document.getElementById("qt-chart").innerHTML = paperChart({ label: "Each question steers its own scene", groups: G, ymax: 1, ticks: [0, .25, .5, .75, 1], fmt: x => Math.round(100 * x) + "%", W: 760, ylabel: "Runs that match the answer",
+    series: cols.map(([c, name, color]) => ({ name, color, data: Q.map(q => { const r = acc(q, c === "P-" || c === "P~" ? c + q : c); return r ? { v: +r.accuracy, ci: r.acc_lo != null ? [+r.acc_lo, +r.acc_hi] : null } : null; }) })) });
 }
 
 /* ---------- the missing piece: what each data source has ---------- */
@@ -1272,7 +1278,7 @@ function fanPick(c, ev) {
 
 /* --- 3 · statistics --- */
 function paperChart(o) {  // paper-style grouped bars as SVG: left and bottom axes, outward ticks, error bars with caps, dashed reference per group
-  const W = 640, H = 310, m = { l: 62, r: 10, t: 34, b: 56 }, pw = W - m.l - m.r, ph = H - m.t - m.b, n = o.groups.length, gw = pw / n, k = o.series.length;
+  const W = o.W || 640, H = 310, m = { l: 62, r: 10, t: 34, b: 56 }, pw = W - m.l - m.r, ph = H - m.t - m.b, n = o.groups.length, gw = pw / n, k = o.series.length;
   const bw = Math.min(52, gw * .74 / k), y = v => m.t + ph * (1 - Math.max(0, Math.min(1, v / o.ymax))), tf = o.tfmt || o.fmt;
   let s = `<svg class="paper" viewBox="0 0 ${W} ${H}" role="img" aria-label="${scEsc(o.label)}">`, lab = "";
   for (const t of o.ticks) { const yy = y(t); s += `<line x1="${m.l - 5}" x2="${m.l}" y1="${yy}" y2="${yy}" class="ax"/><text x="${m.l - 8}" y="${yy}" class="tk" text-anchor="end" dominant-baseline="middle">${tf(t)}</text>`; }
