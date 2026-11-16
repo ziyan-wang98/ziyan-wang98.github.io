@@ -1,0 +1,1461 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>Opus 5.5 max (Teacher) #2 | Teaching by Curriculum</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"><style>:root{--bg:#ffffff;--fg:#111114;--fg2:#3f3f46;--mut:#686871;--line:#e5e5e8;--axis:#cdcdd4;--card:#f7f7f8;--acc:#c43c19;--ring:rgba(17,17,20,.08);--chip:#efeff2;--hover:rgba(17,17,20,.03);--shadow:none;--track:#e9e9ed;--base:#a1a1aa;--raised:#ffffff;--s1:#0072b2;--s2:#e69f00;--s3:#009e73;--s4:#d55e00;--s5:#cc79a7;--s6:#56b4e9;--s7:#a63d8f;--s8:#f0e442;--h0:#f7f7f8;--ht0:#111114;--h1:#d8e6ef;--ht1:#111114;--h2:#b9d6e6;--ht2:#111114;--h3:#9ac5de;--ht3:#111114;--h4:#7cb4d5;--ht4:#111114;--h5:#5da4cc;--ht5:#ffffff;--h6:#3e93c4;--ht6:#ffffff;--h7:#1f83bb;--ht7:#ffffff;--h8:#0072b2;--ht8:#ffffff;color-scheme:light}
+/* Prose is capped at 100 characters a line; tables, charts and verbatim documents run the full
+   width of main (960px). */
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+::selection{background:color-mix(in srgb,var(--acc) 22%,transparent)}
+main{max-width:960px;margin:0 auto;padding:20px max(16px,env(safe-area-inset-right,0px)) 72px max(16px,env(safe-area-inset-left,0px))}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--axis);text-underline-offset:3px}a:hover{text-decoration-color:var(--acc)}
+h1{font-size:40px;line-height:1.12;margin:0 0 10px;font-weight:600;letter-spacing:-.02em;text-wrap:balance}
+h2{font-size:22px;line-height:1.25;margin:52px 0 12px;font-weight:600;letter-spacing:-.01em;text-wrap:balance}
+h2.sec{font-size:28px;margin:0 0 20px;letter-spacing:-.02em}
+h2.sec{border-left:3px solid #000;padding-left:12px}
+header.site{position:sticky;top:0;z-index:4;background:var(--bg);border-bottom:1px solid var(--line)}
+nav.report-nav{max-width:960px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;gap:20px;font-size:14px}
+.report-nav a{display:block;padding:14px 0;text-decoration:none;white-space:nowrap;color:var(--fg2)}
+.report-nav a:hover,.report-nav a:focus-visible{color:var(--fg);text-decoration:underline}
+.report-nav .back{color:var(--fg);font-weight:600}
+.report-nav .back{border-right:1px solid var(--line);padding-right:20px}
+.report-nav .sections{display:flex;gap:20px;margin:0;padding:0;list-style:none}
+.report-nav .sections li{margin:0}
+header.site + main{padding-top:36px}
+@media (max-width:680px){
+  nav.report-nav{flex-wrap:wrap;gap:0 16px}
+  .report-nav a{padding:9px 0}
+  .report-nav .back{border:0;padding-right:0}
+  .report-nav .sections{order:1;flex-basis:100%;overflow-x:auto;gap:clamp(8px,2.5vw,16px);border-top:1px solid var(--line)}
+  .report-nav .sections a{padding-inline:2px}
+}
+@media (max-width:360px){
+  .report-nav .sections{gap:7px}
+  .report-nav .sections a{padding-inline:0}
+}
+main:has(> .samples){min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;
+                     gap:clamp(18px,3vh,36px);padding-block:clamp(36px,5vh,44px) clamp(28px,4vh,40px)}
+.landing-title{align-self:flex-start;display:flex;align-items:center;gap:.23em;color:#000;
+               font-family:Optima,"URW Classico","IBM Plex Sans",sans-serif;
+               font-size:clamp(38px,5vw,54px);margin:0}
+.landing-title img{width:1.06em;height:.96em;object-fit:contain;flex:none}
+@media (min-width:1000px){.landing-title{margin-inline-start:-18px}}
+.intro{font-size:18px;line-height:1.62;color:var(--fg2)}
+.intro p,.intro ul{margin:0}
+.intro p,.intro li{text-wrap:pretty}
+.intro ul{margin-top:12px}
+.intro li+li{margin-top:9px}
+.samples h2{font-size:28px;margin:0 0 16px}
+.team{font-size:15px;line-height:1.55;color:var(--fg2)}
+.team p{margin:0;text-wrap:pretty}
+.affiliation{white-space:nowrap}
+.affiliation img{width:1em;height:1em;object-fit:contain;vertical-align:-.16em;margin-inline-end:.28em}
+.landing-contact{text-align:center;font-size:14px;color:var(--fg2)}
+.landing-contact a{white-space:nowrap}
+@media (max-width:600px){
+  main:has(> .samples){gap:28px;padding-block:28px 36px}
+}
+h3{font-size:17px;margin:30px 0 8px;font-weight:600}h4,h5,h6{font-size:15px;margin:18px 0 6px;font-weight:600}
+p,ul,ol{margin:8px 0}li{margin:3px 0}ul,ol{padding-left:22px}
+.sub{color:var(--fg2);margin:0;font-size:16px}
+.lede p{margin:0 0 8px}.lede p:last-child{margin-bottom:0}
+.lede-l{font-size:15px;font-weight:600;color:var(--fg);margin:0 0 6px}
+.blk{margin:24px 0}.blk>:last-child{margin-bottom:0}
+details.fold{border:0;padding:0;margin:14px 0 4px}details.fold>summary{color:var(--fg2);font-weight:500}
+details.fold>summary:hover{color:var(--fg)}details.fold figure.fig{margin:14px 0 8px}
+.blk .lede-l{margin-bottom:6px}.formula-line{font-size:15px}.formula-line b{font-weight:600}
+.mut{color:var(--fg2)}.na{color:var(--mut)}.small{font-size:13px}
+h3 .fname{font-size:13px;font-weight:400;color:var(--mut);margin-left:8px;font-family:"IBM Plex Mono",ui-monospace,monospace}
+code{font:12.5px/1.4 "IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--chip);border-radius:2px;padding:1px 4px}
+pre{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:12px 14px;overflow:auto}pre code{background:none;padding:0}
+.tw{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums;width:100%;border-top:1.5px solid var(--fg);border-bottom:1.5px solid var(--fg)}
+th,td{text-align:left;padding:9px 12px 9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child>td{border-bottom:0}td:last-child,th:last-child{padding-right:0}
+th{font-weight:600;font-size:12.5px;line-height:1.3;color:var(--fg2);vertical-align:bottom;padding-top:10px;border-bottom:1px solid var(--fg2)}
+td.nw{white-space:nowrap}td.n,th.n,.right{text-align:right}.center{text-align:center}
+tbody tr:hover>td{background:var(--hover)}
+tr.best td{font-weight:600}
+td.run{min-width:150px}.rn{display:inline-flex;align-items:center;gap:8px}
+.key{flex:none;width:9px;height:9px;border-radius:50%;display:inline-block}
+.rnote{font-size:12.5px;color:var(--fg2);font-weight:400;margin-top:2px;line-height:1.4}td.run.k .rnote{padding-left:17px}
+.chip,.badge{display:inline-block;font-size:12px;line-height:20px;padding:0 8px;border-radius:10px;background:var(--chip);
+color:var(--fg2);white-space:nowrap;font-weight:500}.badge{margin-left:6px}
+tr.sep td{border-bottom:1px solid var(--line);padding-top:22px;font-size:12px;font-weight:500;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+tr.sep:hover>td{background:none!important}
+.bar{display:inline-flex;align-items:center;gap:8px}
+.bar .track,.meter{position:relative;height:6px;background:var(--track)}
+.bar .track{width:clamp(56px,14vw,170px)}
+table.lb td.n{white-space:nowrap}table.lb th:first-child,table.lb td:first-child{width:34px}
+table.lb td.sc .bar{justify-content:flex-end;width:100%}table.lb .bar .track{width:clamp(56px,10vw,120px)}
+.fill{position:absolute;left:0;top:0;bottom:0;background:var(--fg)}.fill.b{background:var(--base)}
+.ref{position:absolute;top:-4px;bottom:-4px;width:2px;margin-left:-1px;background:var(--fg);border-radius:1px;opacity:.55}
+.bv{min-width:3.1em;text-align:right}
+.bar.hd{display:flex;justify-content:flex-end;align-items:flex-end}.track.lbl{background:none;height:22px}
+.reflbl{position:absolute;bottom:8px;white-space:nowrap;font-style:normal;font-size:11.5px;font-weight:500;color:var(--fg2)}
+.refmark{position:absolute;bottom:-2px;height:7px;width:2px;margin-left:-1px;background:var(--fg);opacity:.55;border-radius:1px}
+.pill{display:inline-block;min-width:4.2em;text-align:center;padding:1px 8px;border-radius:2px}
+td.hc{padding-top:5px;padding-bottom:5px}
+.heatkey{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--fg2);margin:6px 0 4px}
+.heatkey .ramp{display:flex;gap:2px}.heatkey .ramp i{width:14px;height:10px;border-radius:2px;display:block}
+nav.crumb{font-size:14px;margin-bottom:20px}nav.crumb a{color:var(--fg2);text-decoration:none}nav.crumb a:hover{text-decoration:underline}
+nav.tabs{display:flex;width:fit-content;max-width:100%;overflow-x:auto;gap:6px;margin-left:-12px}
+nav.tabs a{padding:6px 12px;color:var(--mut);white-space:nowrap;font-weight:500;font-size:15px;text-decoration:none;border-radius:6px}
+nav.tabs a:hover{color:var(--fg)}
+nav.tabs a[aria-current=page]{color:var(--fg);font-weight:600;box-shadow:inset 0 -2.5px 0 var(--acc);border-radius:0}
+[id]{scroll-margin-top:72px}
+@media (max-width:680px){header.site + main [id]{scroll-margin-top:108px}}
+
+section.tab{margin-top:64px;font-size:17px;line-height:1.6}
+section.tab :is(p,ul,ol,blockquote){max-width:70ch;overflow-wrap:anywhere}
+main > h1 + section.tab{margin-top:32px}
+thead:not(:has(th:not(:empty))){display:none}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.tile,.chart,details.about{background:var(--card);border:1px solid var(--line);border-radius:3px}
+.tile{padding:14px 16px 10px}
+.tile .l{font-size:13px;color:var(--fg2);font-weight:500}
+.tile .v{font-size:34px;font-weight:600;line-height:1.15;margin:4px 0 2px;letter-spacing:-.02em}.tile.hero .v{font-size:54px}
+.tile .s{font-size:13px;color:var(--fg2);min-height:1.6em}
+.scoredef{display:grid;grid-template-columns:minmax(200px,auto) 1fr;gap:12px 40px;align-items:center;margin:12px 0 24px}
+.scoredef.bare{display:block;margin:20px 0 28px;padding:14px 18px;border-left:3px solid var(--line)}
+.doc :not(pre)>code{overflow-wrap:anywhere}
+section.tab p{margin:0 0 10px}section.tab p>strong:first-child{font-weight:600}
+section.tab ul,section.tab ol{margin:0 0 14px}section.tab li{margin:2px 0;line-height:1.5}section.tab li>p{margin:0}
+section.tab ul{list-style:none;padding-left:1.4em}section.tab ul>li{position:relative}
+section.tab ul>li::before{content:"";position:absolute;left:-1.1em;top:.62em;width:5px;height:5px;background:#000;transform:rotate(45deg)}
+section.tab ol{padding-left:1.6em}.doc ul{list-style:disc;padding-left:22px}.doc ul>li::before{content:none}
+section.tab h3{font-size:19px;margin:26px 0 8px}
+#analysis h3{font-size:21px}
+#analysis h4{font-size:16px}
+.bestline{margin:10px 0 0;font-size:14.5px;color:var(--fg2)}.bestline b{color:var(--acc);font-weight:600;font-variant-numeric:tabular-nums}
+.bestline a{color:var(--fg);text-decoration:none}.bestline .logo{width:15px;height:15px;vertical-align:-2px;margin-right:5px}.bestline a:hover{text-decoration:underline}
+.logo{width:16px;height:16px;flex:none;display:inline-block}.eff{color:var(--mut);font-weight:400;margin-left:2px}tr.best .eff{font-weight:400}
+.hero{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:10px 32px;margin:26px 0 6px}
+.hero .n b{font-size:72px;font-weight:500;letter-spacing:-.045em;line-height:1;display:block;font-variant-numeric:tabular-nums}.hero .n span{font-size:14px;color:var(--fg2)}
+.hero .facts{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:14px;color:var(--fg2);margin:0 0 8px}
+.scoredef .l{font-size:13px;color:var(--fg2);font-weight:500}
+.scoredef .formula{font-size:27px;font-weight:600;line-height:1.2;margin-top:2px;white-space:nowrap}
+.scoredef .defs{font-size:13.5px;color:var(--fg2);line-height:1.5;columns:2;column-gap:28px}
+.scoredef .defs p{margin:0;break-inside:avoid;max-width:none}
+@media (max-width:640px){.scoredef{grid-template-columns:1fr}.scoredef .defs{columns:1}.scoredef .defs p+p{margin-top:6px}.scoredef .formula{white-space:normal;font-size:23px}}
+.tile .meter{margin:12px 0 4px}.meter.neutral{background:var(--line)}.meter.neutral .fill{background:var(--mut)}
+.meter .pt{position:absolute;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;box-shadow:0 0 0 2px var(--card)}
+.scale{display:flex;justify-content:space-between;font-size:11px;color:var(--mut);font-variant-numeric:tabular-nums}
+.callout{border-left:3px solid var(--acc);background:var(--card);padding:9px 14px;border-radius:0 8px 8px 0;font-size:13.5px;color:var(--fg2);margin:12px 0}
+details.about{padding:0 18px;margin:16px 0}
+details.about>summary{padding:13px 0;font-weight:600;cursor:pointer}details.about>summary .mut{font-weight:400}
+details.about[open]>summary{border-bottom:1px solid var(--line);margin-bottom:12px}
+details.about dl.fields{margin:0 0 16px}
+dl.fields{display:grid;grid-template-columns:200px 1fr;gap:10px 18px;margin:10px 0}
+dl.fields dt{color:var(--fg2);font-size:14px;font-weight:500}dl.fields dd{margin:0}dl.fields dd>p:first-child{margin-top:0}
+@media (max-width:640px){dl.fields{grid-template-columns:1fr}dl.fields dd{margin-bottom:8px}}
+figure{margin:20px 0}figure.fig{margin:28px 0 36px}figure.fig svg{width:100%;max-width:760px;height:auto;display:block;margin:0 auto}figure>img{display:block;margin:0 auto}
+figure.fig-passk svg{max-width:480px}figure.fig-components svg{max-width:620px}figure.fig svg text{font-family:"IBM Plex Sans",system-ui,sans-serif}figure img{max-width:100%;border:1px solid var(--line);border-radius:3px;background:#fff}
+figcaption{font-size:15px;line-height:1.55;color:var(--fg2);margin:0 0 12px}figcaption .lead{color:var(--acc);font-weight:600}
+.chart{position:relative;padding:18px 18px 8px}
+.chart svg{width:100%;height:auto;display:block}
+.legend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--fg2);margin-bottom:4px}
+.legend span{display:inline-flex;align-items:center;gap:6px}.sw{width:14px;height:3px;border-radius:2px;display:inline-block}
+.sw.dk{width:8px;height:8px;transform:rotate(45deg);border-radius:1px;background:var(--fg2)}
+.panel{fill:none}.lbl-end{font-size:12px;fill:var(--fg);font-weight:550}.lbl-end.mut{fill:var(--mut);font-weight:400}.bar.base{fill:var(--base)}figcaption.mut{margin:-6px 0 0}.grid{stroke:var(--line);stroke-width:1}.vgrid{display:none}.axis{stroke:none}.ref{stroke:var(--mut);stroke-width:1;stroke-dasharray:4 3}
+.tick{fill:var(--mut);font-size:11px;font-variant-numeric:tabular-nums}.tick.grp{font-size:11px;letter-spacing:.06em;text-transform:uppercase}.single{fill:var(--base);stroke:var(--card);stroke-width:1.5}.sw.single{background:var(--base)}
+
+.line{fill:none;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round;opacity:.8}
+.dot{stroke:var(--card);stroke-width:1.5;cursor:default}.bar{cursor:default}.bar:hover,.bar:focus{stroke:var(--fg);outline:none}.dia{stroke:var(--card);stroke-width:1.5}
+.dot:hover,.dot:focus,.dia:hover,.dia:focus{stroke:var(--fg);outline:none}
+.runpt{fill:var(--fg);stroke:var(--card);stroke-width:1.5;outline:none}.runpt:hover,.runpt:focus{stroke:var(--fg)}
+.runpick{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px}
+.rp{font:inherit;font-size:12.5px;line-height:20px;padding:2px 10px;border-radius:2px;border:1px solid var(--line);background:var(--raised);color:var(--fg);cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.rp:hover{border-color:var(--axis)}.rp.off{opacity:.42;background:transparent}.rp-all,.rp-none{color:var(--fg2);background:transparent}
+.s1.line,.st-sd.s1,.st-mean.s1{stroke:var(--s1)}.s1.dot,.s1.dia,.s1.bar,.sw.s1,.key.s1,.pt.s1,.fill.s1,.st-dot.s1{fill:var(--s1);background:var(--s1)}.s2.line,.st-sd.s2,.st-mean.s2{stroke:var(--s2)}.s2.dot,.s2.dia,.s2.bar,.sw.s2,.key.s2,.pt.s2,.fill.s2,.st-dot.s2{fill:var(--s2);background:var(--s2)}.s3.line,.st-sd.s3,.st-mean.s3{stroke:var(--s3)}.s3.dot,.s3.dia,.s3.bar,.sw.s3,.key.s3,.pt.s3,.fill.s3,.st-dot.s3{fill:var(--s3);background:var(--s3)}.s4.line,.st-sd.s4,.st-mean.s4{stroke:var(--s4)}.s4.dot,.s4.dia,.s4.bar,.sw.s4,.key.s4,.pt.s4,.fill.s4,.st-dot.s4{fill:var(--s4);background:var(--s4)}.s5.line,.st-sd.s5,.st-mean.s5{stroke:var(--s5)}.s5.dot,.s5.dia,.s5.bar,.sw.s5,.key.s5,.pt.s5,.fill.s5,.st-dot.s5{fill:var(--s5);background:var(--s5)}.s6.line,.st-sd.s6,.st-mean.s6{stroke:var(--s6)}.s6.dot,.s6.dia,.s6.bar,.sw.s6,.key.s6,.pt.s6,.fill.s6,.st-dot.s6{fill:var(--s6);background:var(--s6)}.s7.line,.st-sd.s7,.st-mean.s7{stroke:var(--s7)}.s7.dot,.s7.dia,.s7.bar,.sw.s7,.key.s7,.pt.s7,.fill.s7,.st-dot.s7{fill:var(--s7);background:var(--s7)}.s8.line,.st-sd.s8,.st-mean.s8{stroke:var(--s8)}.s8.dot,.s8.dia,.s8.bar,.sw.s8,.key.s8,.pt.s8,.fill.s8,.st-dot.s8{fill:var(--s8);background:var(--s8)}.h0{background:var(--h0);color:var(--ht0)}.h1{background:var(--h1);color:var(--ht1)}.h2{background:var(--h2);color:var(--ht2)}.h3{background:var(--h3);color:var(--ht3)}.h4{background:var(--h4);color:var(--ht4)}.h5{background:var(--h5);color:var(--ht5)}.h6{background:var(--h6);color:var(--ht6)}.h7{background:var(--h7);color:var(--ht7)}.h8{background:var(--h8);color:var(--ht8)}
+.tip{position:absolute;pointer-events:none;background:var(--fg);color:var(--bg);font-size:12.5px;padding:5px 8px;border-radius:5px;max-width:320px}
+details{border-top:1px solid var(--line);padding:6px 0}details>summary{cursor:pointer;padding:4px 0}
+details[open]>summary{margin-bottom:6px}
+.doc{max-width:calc(70ch + 56px);background:var(--card);border:1px solid var(--line);border-radius:3px;padding:22px 28px 18px}
+.doc>:first-child{margin-top:0}@media (max-width:640px){.doc{padding:16px}}
+.badge{display:inline-block;font-size:12px;color:var(--fg2);border:1px solid var(--line);border-radius:10px;padding:0 8px;margin-left:6px}
+blockquote{margin:8px 0;padding-left:12px;border-left:2px solid var(--line);color:var(--fg2)}
+.pk{display:flex;flex-wrap:wrap;gap:12px 24px}.spark{position:relative;flex:none;width:400px}.spark>svg{display:block;width:100%;height:auto;overflow:visible}
+.pk-h{font-size:13px;color:var(--fg2);margin:0 0 4px}.pk-h b{color:var(--fg);font-weight:600}.spark .tip{white-space:nowrap}
+.st-l{font-size:12.5px;fill:var(--fg)}.st-l.st-b{fill:var(--mut)}.st-v{font-size:12px;font-weight:600;fill:var(--fg);font-variant-numeric:tabular-nums}
+.st-dot{stroke:var(--bg);stroke-width:1.5;outline:none}.st-dot.st-base{fill:var(--base)}.st-sd{stroke-width:1.5;opacity:.6}.st-mean{stroke-width:2.5}
+.spark .grid{stroke:var(--line)}
+td.best{font-size:24px;font-weight:600;line-height:1.2;white-space:nowrap}
+.task{display:grid;grid-template-columns:minmax(200px,1fr) minmax(0,2.6fr);gap:16px 26px;padding:26px 0;border-top:1px solid var(--line);align-items:center}
+.task:first-child{border-top:0;padding-top:8px}
+.task:last-child{padding-bottom:0}
+.t-title{font-size:24px;font-weight:600;line-height:1.25;color:var(--fg)}
+a.t-title{text-decoration-color:currentColor}
+.t-sub{margin:6px 0 10px;color:var(--fg2)}.t-meta{margin:2px 0;font-size:13.5px;color:var(--mut)}
+.t-plots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.t-plots .spark{width:100%;margin:0}
+.t-plots figcaption{margin:0 0 4px;font-size:13px;font-weight:600;color:var(--fg2)}
+.t-plots .logo{width:14px;height:14px}
+.t-plots .line{stroke-width:2.2;opacity:1}
+@media (max-width:860px){
+  .task{grid-template-columns:1fr;gap:14px;padding:20px 0}
+  .t-title{font-size:22px}
+}
+@media (max-width:560px){.t-plots{grid-template-columns:minmax(0,400px);gap:14px}}
+@media (max-width:360px){.landing-title{font-size:34px}.t-title{font-size:20px}}
+@media (max-width:600px) and (max-height:680px){
+  main:has(> .samples){gap:20px;padding-top:20px}
+  .samples h2{margin-bottom:10px}
+  .task{gap:10px;padding-block:14px}
+}
+@media (min-width:861px) and (max-height:980px){
+  main:has(> .samples){gap:clamp(10px,2vh,18px);padding-block:22px 18px}
+  .landing-title{font-size:clamp(42px,6vh,50px)}
+  .intro{font-size:16px;line-height:1.5}
+  .intro ul{margin-top:8px}.intro li+li{margin-top:6px}
+  .samples h2{font-size:24px;margin-bottom:8px}
+  .task{padding-block:12px}
+  .t-plots .spark>svg{max-height:clamp(90px,14vh,112px)}
+}
+td.best .small{font-size:13px;letter-spacing:0;font-weight:400}
+
+.traj [id]{scroll-margin-top:190px}
+nav.runtabs{margin:16px 0 4px}nav.runtabs a{display:inline-flex;align-items:center;gap:7px}
+nav.runtabs .ts{color:var(--mut);font-variant-numeric:tabular-nums;font-weight:400}nav.runtabs a[aria-current=page] .ts{color:var(--fg2)}
+.traj h1 .eff{font-size:.5em;letter-spacing:0;font-weight:400;margin-left:6px}
+.traj .facts{display:flex;flex-wrap:wrap;gap:6px 28px;margin:14px 0 6px;font-size:14px;color:var(--fg2)}
+.facts b{color:var(--fg);font-weight:600;font-variant-numeric:tabular-nums}
+.spine{position:sticky;top:0;z-index:3;background:var(--bg);padding:8px 0 6px;border-bottom:1px solid var(--line);margin-top:16px}
+.spine svg{width:100%;height:auto;display:block;cursor:default}
+.spine a{cursor:pointer}.spine .stripz{cursor:pointer;fill:transparent}
+.ckl{stroke-width:1;opacity:.45}.cursor{stroke:var(--fg);stroke-width:1.5}
+.tk-c{fill:var(--axis)}.tk-m{fill:var(--fg)}.tk-u{fill:var(--base)}.tk-n{fill:var(--acc)}
+.tip{position:absolute;pointer-events:none;background:var(--fg);color:var(--bg);font-size:12.5px;padding:5px 8px;border-radius:5px;max-width:420px;z-index:5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:12px 0 4px;font-size:13px;color:var(--fg2)}
+.tools input{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:5px 10px;width:240px}
+.tools button{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:5px 10px;cursor:pointer}
+.keys{display:flex;gap:12px;margin-left:auto}.keys i{display:inline-block;width:3px;height:11px;margin-right:5px;vertical-align:-1px}
+.ch{margin-top:30px}
+.chh{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 18px;border-bottom:1px solid var(--axis);padding-bottom:6px;margin-bottom:12px}
+.chh .k{font-weight:650;font-size:16px}.chh b{font-size:18px;font-weight:650;font-variant-numeric:tabular-nums}
+.up{color:#006300}.down{color:#d03b3b}
+.st{display:grid;grid-template-columns:62px minmax(0,1fr);gap:0 12px;margin:8px 0}
+.g{font:11.5px/1.5 "IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--mut);padding-top:3px;text-decoration:none}.g:hover{color:var(--acc);text-decoration:none}
+.b>p:first-child{margin-top:0}.b>p:last-child{margin-bottom:0}
+.prompt{background:var(--card);border:1px solid var(--ring);border-radius:8px;padding:12px 16px}
+.lbl{font-size:12.5px;color:var(--fg2);font-weight:600;margin-bottom:4px}
+.note{background:var(--card);border-left:3px solid var(--acc);border-radius:0 6px 6px 0;padding:8px 12px}
+details.grp,details.sub,details.rsn,details.call{border:0;padding:0}
+details.grp>summary,details.sub>summary,details.rsn>summary{cursor:pointer;color:var(--fg2);font-size:14px;padding:2px 0}
+details.grp[open]>summary,details.sub[open]>summary,details.rsn[open]>summary{margin-bottom:4px}
+.meta{color:var(--mut);font-size:12.5px;margin-left:6px}
+.calls{border-left:2px solid var(--line);padding-left:12px;margin:2px 0 8px}.subb{border-left:2px solid var(--axis);padding-left:12px;margin:2px 0 8px}
+details.call>summary{cursor:pointer;display:flex;gap:8px;align-items:baseline;padding:2px 0;font-size:13px;list-style:none}
+details.call>summary::-webkit-details-marker{display:none}
+.cn{font:11.5px "IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--mut);white-space:nowrap}
+.l{font:12.5px/1.5 "IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1;color:var(--fg);background:none;border:0;padding:0}
+.bad{font-size:11.5px;color:#d03b3b;white-space:nowrap}
+.w{font-size:12.5px;color:var(--mut);padding:2px 0}
+.call pre{margin:4px 0;max-height:440px;font-size:12.5px;white-space:pre-wrap;overflow-wrap:anywhere}
+.call pre.out{background:none}
+.rsn .rb{font-size:14px;color:var(--fg2);border-left:2px solid var(--line);padding-left:12px}
+::highlight(hit){background:#eda10066;color:inherit}
+@media (max-width:640px){.spine{position:static}.traj [id]{scroll-margin-top:12px}.st{grid-template-columns:44px minmax(0,1fr);gap:0 8px}.keys{margin-left:0}.tools input{width:100%}}
+
+.submission-summary{margin:14px 0}
+.submission-files{overflow-wrap:anywhere}
+.spine-label{font-size:12px;color:var(--fg2);margin:0 0 4px}
+
+/* Crafter page additions */
+
+table.lb .bv{min-width:3.9em}
+
+table.lb td.refrun .rn{color:var(--fg2)}
+.doc h4{font-size:15px;margin:18px 0 6px}.doc h5{font-size:14.5px;margin:16px 0 6px}
+.doc table{font-size:13px}
+details.fold.doc-fold>summary{font-weight:600;color:var(--fg)}
+.hourly td,.hourly th{text-align:right}.hourly td:first-child,.hourly th:first-child{text-align:left}
+p.cap-note{font-size:13.5px;color:var(--fg2);margin:4px 0 0}
+
+section.tab .lede{margin-bottom:12px}
+table.lb td.run .rn{white-space:nowrap}
+table.lb.t1 .bar .track{width:clamp(48px,8vw,84px)}
+
+/* Teaching by Curriculum additions */
+p.tabs-lab{margin:16px 0 0;font-size:13px;color:var(--mut)}
+p.tabs-lab + nav.runtabs{margin-top:2px}
+details.fold.doc-fold>summary{font-weight:600;color:var(--fg)}
+.submission-summary ul,.submission-summary ol{margin:0 0 12px}
+section.ch h3{margin:28px 0 8px}
+
+table.curr td{font-size:13.5px;line-height:1.45}
+table.curr td.bn{width:15%}
+table.curr td.bn b{display:inline-block;min-width:1.1em;margin-right:2px}
+table.curr td.wk{width:25%}
+table.curr td.pr{width:37%}
+table.curr td.ba{width:23%}
+table.curr.brief td.bn{width:23%}
+table.curr.brief td.wk{width:35%}
+table.curr.brief td.ba{width:42%}
+table.curr .kept{display:block;margin-top:4px;color:var(--fg2);font-weight:500}
+table.curr .chg{display:block;margin-top:4px;font-size:12.5px;color:var(--fg2)}
+span.nw{white-space:nowrap}
+.fig-m{display:none}
+figure.fig .fig-m svg{max-width:420px}
+@media (max-width:640px){.fig-d{display:none}.fig-m{display:block}
+
+  table.curr,table.curr tbody,table.curr tr,table.curr td{display:block;width:auto}
+  table.curr thead{display:none}
+  table.curr tr{padding:12px 0;border-bottom:1px solid var(--line)}
+  table.curr td{border:0;padding:3px 0}
+  table.curr td.bn,table.curr td.wk,table.curr td.pr,table.curr td.ba,
+  table.curr.brief td.bn,table.curr.brief td.wk,table.curr.brief td.ba{width:auto}
+  table.curr td.bn{font-weight:600}
+  table.curr td[data-l]::before{content:attr(data-l);display:block;font-size:12px;font-weight:600;color:var(--mut);
+    text-transform:uppercase;letter-spacing:.04em;margin-top:6px}
+}
+</style></head><body><main><nav class="crumb" aria-label="Report navigation"><a href="../index.html#results">← Back</a></nav><div class="traj"><h1>Opus 5.5 max (Teacher) #2</h1><p class="sub">Claude Code 2.1.318 running claude-opus-5-5 at max effort, UltraCode off · from untrained <span class="nw">Qwen3.5-0.8B</span> (Student)</p><p class="tabs-lab"><span class="nw">Qwen3.5-0.8B</span> (Student)'s held-out progression after 8 hours, by run</p><nav class="tabs runtabs" aria-label="Runs of Opus 5.5 max (Teacher)"><a href="opus-1.html"><i class="key s2"></i>#1 <span class="ts">44.94</span></a><a href="opus-2.html" aria-current=page><i class="key s2"></i>#2 <span class="ts">40.38</span></a><a href="opus-3.html"><i class="key s2"></i>#3 <span class="ts">51.14</span></a><a href="opus-4.html"><i class="key s2"></i>#4 <span class="ts">39.77</span></a><a href="opus-5.html"><i class="key s2"></i>#5 <span class="ts">53.85</span></a></nav><div class="facts"><span>Held-out progression of <span class="nw">Qwen3.5-0.8B</span> (Student) after 8 hours <b>40.38%</b></span><span>Crafter score <b>17.05</b></span><span>Agent time <b>7h 02m</b></span><span>Turns <b>243</b></span><span>Tool calls <b>253 (+28 by 1 sub-agent)</b></span><span>Output tokens <b>350,998</b></span><span>Cost <b>$25.73</b></span></div><section class="ch" id="final"><header class="chh"><div><span class="k">Trace summary</span></div><div><b>40.38%</b> <span class="mut small">held-out progression of <span class="nw">Qwen3.5-0.8B</span> (Student) after 8 hours</span></div></header><p class="mut">Started from untrained <span class="nw">Qwen3.5-0.8B</span> (Student), with the prompt and the sandbox's lab package; no other code.</p><h3 id="submission">Submission</h3><p>Opus 5.5 max (Teacher) submitted <code>v481</code>, the last checkpoint of its single training line: 37.59% on the 100 development worlds and 41.64% on 300 (<code>v405</code>: 38.32% and 39.58%), from 4.59% in this run's own check of the untrained weights. The submitted weights were not averaged or edited. Three averages were tried and marked auxiliary; one of them, of <code>v120</code> and <code>v245</code>, was the submission for a while as a safety net. The last, of <code>v405</code> and <code>v481</code>, scored the same as <code>v481</code> on 300 worlds (41.76%) and was not used.</p><h3 id="teaching-process">Teaching process</h3><ul><li><strong>Movement by search.</strong> <span class="nw">Qwen3.5-0.8B</span> (Student)&#x27;s only move was West, so rewards could not teach the other directions. From its own moments, Opus 5.5 max (Teacher)&#x27;s code tried short action sequences in exact copies of the game and kept the first moves of the shortest ones after which the game showed the goal: wood, water, a cow. Moves toward a visible tree rose from 1% to 24%, and development from 11.32% to 15.55% in about 20 minutes.</li><li><strong>Crafting chain.</strong> Tables in 3% → 88% of games, wood pickaxe 0% → 59%. <span class="nw">Qwen3.5-0.8B</span> (Student) then placed tables everywhere (18% of all actions), which the next block removed.</li><li><strong>Forgetting.</strong> Skills whose lessons left the mix faded (sapling 73% → 46%): when every copy of a lesson succeeds, comparing copies gives no push. A small reward when all copies succeed stopped it, 28.27% → 31.59%.</li><li><strong>Night.</strong> 39 of 65 zombie deaths came while <span class="nw">Qwen3.5-0.8B</span> (Student) slept at night, which the game text does not show. Sleep practice only at low energy plus a night lesson: 31.59% → 36.27%.</li><li><strong>What did not work.</strong> Stone tools stayed rare in full games (held-out 4% and 9%), although <span class="nw">Qwen3.5-0.8B</span> (Student) made them in 19 to 75% of practice set up for it. Iron, diamonds and eating plants stayed near 0%.</li><li><strong>Accounting.</strong> 99.4% of training steps reached the submitted weights. 193,344 trained samples: 137,324 of <span class="nw">Qwen3.5-0.8B</span> (Student)&#x27;s own decisions in practice copies, 37,336 search targets, 18,684 single tried actions. No plain training on full games.</li></ul><h3 id="curriculum">Curriculum, block by block</h3><figcaption><span class="nw">Qwen3.5-0.8B</span> (Student)'s progression on the 100 development worlds before → after each block, with the achievement rates that moved most (percentage of games). Every block of the run is listed.</figcaption><div class="tw"><table class="curr"><thead><tr><th>Block</th><th>Weakness and evidence</th><th>Practice and method</th><th>Development before → after</th></tr></thead><tbody><tr><td class="bn"><b>1a</b> Go and get it: trees, water, cows<div class="rnote">about 25 minutes of training</div></td><td class="wk" data-l="Weakness and evidence">It did not walk to resources it saw, and a third of its outputs were not action names. Moves under 3% of actions; wood in 5% of games although trees are in view near most starts; invalid outputs 39%.</td><td class="pr" data-l="Practice and method">Moments from its own scout games with a tree (1 to 3 steps away at weight 2, or 4 to 8 steps away), water (1 to 6 steps, drink at most 7) or a cow (1 to 5 steps, food at most 7) in view; 8 copies played by <span class="nw">Qwen3.5-0.8B</span> (Student), each scored 1 plus up to 0.5 for speed on success and -1 on death; an invalid output cost -1. Single actions tried in a copy of the game became targets where the game showed they worked. A clipped policy-gradient update with the group as baseline; learning rate 1e-6, then 5e-7; 192 samples per step. <span class="chg">During the block: The bonus for other achievements made Do on grass (saplings) the main positive in the far-tree lesson; the bonus was removed and tree distance became a curriculum (next to a tree, 2 to 3 steps, far trees at weight 0 for now). After about 10 steps invalid outputs fell from 39% to about 2%, but tried-action targets were 80% Place Plant and <span class="nw">Qwen3.5-0.8B</span> (Student) played Do 48% and Place Plant 32% of the time. Fixes: tried actions became targets only on missed opportunities (<span class="nw">Qwen3.5-0.8B</span> (Student)&#x27;s own next action at that moment did not work), capped at 20 a minute per reason; a dense reward on <span class="nw">Qwen3.5-0.8B</span> (Student)&#x27;s own decisions for getting closer to the target or facing it; learning rate 1e-6 → 5e-7. <span class="nw">Qwen3.5-0.8B</span> (Student)&#x27;s only move was Move West (untrained: West 2.4%, the other three 0.01-0.04%), so rewards could never reach trees to the north, south or east; this led to the search lesson of block 1b.</span></td><td class="ba" data-l="Development before → after">4.59 → 11.32. Invalid outputs 38.9% → 0.1%, place plant 5% → 98%, zombie wins 5% → 22%, wood 5% → 10%. Lost: wake up 17% → 1%. With a tree within 4 steps it moved toward it 1% of the time: the format was fixed and Do learned, but not walking. <span class="kept">Kept as a checkpoint; the next block went on from it.</span></td></tr><tr><td class="bn"><b>1b</b> Walk to what it needs, found by search<div class="rnote">about 20 minutes of training</div></td><td class="wk" data-l="Weakness and evidence">It still did not move: rewards can only strengthen what <span class="nw">Qwen3.5-0.8B</span> (Student) samples, and it sampled only Move West. Moves 2% of actions; with a tree in view it moved toward it 1% of the time.</td><td class="pr" data-l="Practice and method">Search: from moments of its own games, sequences of moves (4 at most) followed by the lesson&#x27;s action were tried in exact copies of the game, and the first actions of the shortest sequences after which the game showed wood, a drink or a cow became targets for that exact prompt, only where <span class="nw">Qwen3.5-0.8B</span> (Student)&#x27;s own action at that moment was not one of them; up to 240 a minute per lesson. The reward lessons of block 1a went on. Supervised targets from the search, alongside the clipped policy-gradient update of block 1a; learning rate 5e-7. <span class="chg">During the block: An independent sub-agent&#x27;s review of the data code found no violation of the rule on training targets; the bugs it found were fixed. Scouts and branches were cut to 96 scout games and 256 branch games, because with 950 live games each game advanced one step every 35 seconds and groups went stale before they finished.</span></td><td class="ba" data-l="Development before → after">11.32 → 15.55. Wood 10% → 80%, drink 3% → 56%; moves 53% of actions; with a tree within 4 steps it moved toward it 24% of the time (1% before). Lost: zombie wins 22% → 9%, place plant 98% → 83%. <span class="kept">Kept and submitted.</span></td></tr><tr><td class="bn"><b>2</b> Table, wood pickaxe, wood sword<div class="rnote">about 20 minutes of training</div></td><td class="wk" data-l="Weakness and evidence">It did not turn wood into a table or tools. With 2 or more wood and no table, Place Table about 0% over 7,438 moments (of 17,257); table in 3% of games, no pickaxe or sword at all.</td><td class="pr" data-l="Practice and method">Reward lessons: place a table (2 or more wood, no table, 6 decisions); make a wood pickaxe or sword (a table within 3 steps, 1 or more wood, 8 decisions, with a reward for getting closer to the table); collect more wood while tools are still to make. Search lessons for Place Table, Make Wood Pickaxe and Make Wood Sword at full rate, because <span class="nw">Qwen3.5-0.8B</span> (Student) never sampled those actions, so search and tried-action targets had to seed them. Wood lessons were down-weighted; drink and cow went on. As before: the clipped policy-gradient update on <span class="nw">Qwen3.5-0.8B</span> (Student)&#x27;s own decisions, plus search and tried-action targets. <span class="chg">During the block: A copy that succeeds now becomes a scout and keeps playing from mid-game (up to 128 extra scouts), because scouts advanced one step per engine step and mid- and late-game moments (thirst, hunger, night, zombies) were starved.</span></td><td class="ba" data-l="Development before → after">15.55 → 25.05. Table 3% → 88%, wood pickaxe 0% → 59%, wood sword 0% → 47%, zombie wins 9% → 34%. Lost: drink 56% → 36%, sapling 90% → 75%. New problem: Place Table was 18% of all actions. <span class="kept">Kept and submitted.</span></td></tr><tr><td class="bn"><b>3</b> Survival: zombies, sleep, drink, food<div class="rnote">about 23 minutes of training</div></td><td class="wk" data-l="Weakness and evidence">It died to zombies and arrows, had stopped sleeping, rarely ate, and its games were short. Zombies killed 54% and arrows 15%; wake up 5% (untrained 17%); cow 14%; games about 175 steps.</td><td class="pr" data-l="Practice and method">Reward lessons: a zombie within 3 steps (+1.5 for a kill, -0.25 per health point lost, -1 for death, 14 decisions); sleep at energy 7 or less with no zombie within 6 (success: wake up, 60 decisions); drink and cow weighted up. Search lessons: the shortest way to kill a zombie, and Sleep, kept only if the game then showed waking up without death. Crafting lessons kept at weight 1, wood lessons at 0.2 to 0.5. <span class="chg">During the block: The cow and zombie searches failed (15 of 16 found nothing) because the search&#x27;s duplicate check ignored the health of creatures, so hits looked like no progress; it now counts the health of creatures within 2 steps.</span></td><td class="ba" data-l="Development before → after">25.05 → 29.45. Wake up 2% → 90%, cow 9% → 22%, place stone 3% → 13%. Lost a little: zombie wins 34% → 28%, wood pickaxe 59% → 53%. In 30 of 100 games it was asleep within 5 steps of death: it now slept outdoors at night. <span class="kept">Kept and submitted.</span></td></tr><tr><td class="bn"><b>4</b> Stone tier and night survival<div class="rnote">about 29 minutes of training</div></td><td class="wk" data-l="Weakness and evidence">The stone tier was mostly absent, and it died in the first night, often asleep. Stone 17%, place stone 13%, furnace 4%, coal 4%, stone pickaxe 2%, stone sword 0%; holding stone, Place Stone was not among its 5 most common actions (264 moments). Median game end at step 165; zombies 58% of deaths; 30% of deaths asleep.</td><td class="pr" data-l="Practice and method">Reward and search lessons for stone, place stone, stone pickaxe, stone sword, furnace and coal; a new night lesson (night moments, 30 steps, -0.3 per health point lost, +1 per zombie defeated, -2 for death); sleep practice only by day; earlier lessons at lower weight. <span class="chg">During the block: The engine now saves its scouts when stopped and resumes them, so restarts no longer reset mid-game moments.</span></td><td class="ba" data-l="Development before → after">29.45 → 27.09 (within noise). Drink 34% → 50%, place stone 13% → 23%, furnace 4% → 12%, coal 4% → 12%. Lost: sapling 73% → 52%, cow 22% → 7%, zombie wins 28% → 16%, wood sword 56% → 42%. New problem: Place Furnace was 32% of actions at energy 3 or less. The night lesson never ran: all scouts were near step 51, and night begins near step 180. <span class="kept">Not submitted (<code>v120</code> stayed the submission), but not reverted: the next block continued from <code>v190</code>, whose stone-tier and drinking gains Opus 5.5 max (Teacher) judged real.</span></td></tr><tr><td class="bn"><b>5</b> Bring back faded skills<div class="rnote">about 28 minutes of training</div></td><td class="wk" data-l="Weakness and evidence">Skills whose lessons had left the mix faded, and it placed furnaces everywhere. Against block 3: sapling 73% → 52%, place plant 70% → 51%, cow 22% → 7%, zombie wins 28% → 16%, wood sword 56% → 42%; Place Furnace 32% of actions at energy 3 or less.</td><td class="pr" data-l="Practice and method">More weight on cows, zombies and wood tools, with their searches; tried-action targets up to 40 a minute per reason (saplings and planting come from them); the stone tier kept; furnace down to 0.3. <span class="chg">During the block: Search rate halved (120 a minute per search lesson) so that the reward lessons on <span class="nw">Qwen3.5-0.8B</span> (Student)&#x27;s own choices got a larger share; a search for the next new achievement was tried and rejected (dominated by lucky saplings); a lava lesson was added (lava within 2 steps, 10 decisions, -2 for dying); collecting more wood was extended to wood needed for stone tools.</span></td><td class="ba" data-l="Development before → after">27.09 → 28.27. Cow 7% → 42%, drink 50% → 61%, zombie wins 16% → 25%. Still below block 3: sapling 46% (73%), place plant 46% (70%), wood sword 36% (56%). With each copy compared to its group, a lesson that every copy has mastered teaches only relative speed, so nothing kept such skills while other lessons wore them down. <span class="kept">Not submitted (<code>v120</code> stayed the best); the next block went on from <code>v245</code> with a new method.</span></td></tr><tr><td class="bn"><b>6</b> Rehearsal against fading<div class="rnote">about 27 minutes of training</div></td><td class="wk" data-l="Weakness and evidence">Mastered skills (saplings, planting, wood sword) faded while new ones were learned. From block 3 to block 5: sapling 73% → 46%, place plant 70% → 46%, wood sword 56% → 36%.</td><td class="pr" data-l="Practice and method">Rehearsal: when every copy of a lesson succeeded, 0.3 was added to every copy&#x27;s advantage, so <span class="nw">Qwen3.5-0.8B</span> (Student)&#x27;s own successful decisions got a push of their own. New reward lessons: take a sapling (grass in front or next to it, 10 decisions) and plant it (6 decisions). Wood tools up to 1.0; learning rate 5e-7 → 3.5e-7 to reduce drift. The clipped policy-gradient update with rehearsal.</td><td class="ba" data-l="Development before → after">28.27 → 31.59, the best main-line checkpoint so far. Zombie wins 25% → 36%, wood sword 36% → 50%, drink 61% → 67%; sapling and place plant 51% and 50%, still below block 3. Zombie deaths rose to 65, and 39 of them were asleep within the last 20 steps: the sleeping habit had spread to any dip in energy, at night too. <span class="kept">Kept as the best main-line checkpoint; at this point the submission was the auxiliary average of <code>v120</code> and <code>v245</code> (32.73%), as a safety net.</span></td></tr><tr><td class="bn"><b>7</b> Safe sleeping and night survival<div class="rnote">about 23 minutes of training</div></td><td class="wk" data-l="Weakness and evidence">It slept outdoors at night, where zombies killed it; the game text does not show night. 39 of 65 zombie deaths came while asleep within the last 20 steps; 58 with a zombie adjacent; energy at death about 8.</td><td class="pr" data-l="Practice and method">The sleep lesson only at energy 3 or less (weight 0.15); the Sleep search nearly off (0.2 → 0.05), with wake up kept by rehearsal; the night lesson up (1.0 → 1.5, 15 decisions) and zombies up (1.0 → 1.2); saplings 1.2, planting 0.8; rehearsal on.</td><td class="ba" data-l="Development before → after">31.59 → 36.27. Zombie wins 36% → 66%, cow 43% → 65%, sapling 51% → 73%, place plant 50% → 73%; wake up 93% → 90%. Zombie deaths 65 → 49, of them asleep within 20 steps 39 → 22. The stone tier stayed flat. <span class="kept">Kept and submitted (the unaveraged main line replaced the auxiliary average as the submission).</span></td></tr><tr><td class="bn"><b>8</b> Stone tools chain<div class="rnote">about 25 minutes of training</div></td><td class="wk" data-l="Weakness and evidence">It rarely made stone tools in full games, although it could when set up for it. Stone pickaxe 0% and stone sword 1% in full games, against 19-75% success in lessons at fixed weights: it rarely got wood, stone and a table together.</td><td class="pr" data-l="Practice and method">Block 7&#x27;s mix with more weight on stone pickaxe and stone sword (0.6 → 1.0) and on collecting more wood (0.5 → 0.8, including wood needed for stone tools); rehearsal on; learning rate 3.5e-7 → 3e-7.</td><td class="ba" data-l="Development before → after">36.27 → 38.32 (300 worlds: 39.58). Stone 24% → 37%, place stone 23% → 35%, furnace 16% → 25%, coal 10% → 20%, stone pickaxe 0% → 3%, stone sword 1% → 4%. Lost a little: wake up 90% → 83%, zombie wins 66% → 51%, cow 65% → 55%. <span class="kept">Kept and submitted.</span></td></tr><tr><td class="bn"><b>9</b> Settle at a lower learning rate<div class="rnote">about 41 minutes of training</div></td><td class="wk" data-l="Weakness and evidence">No new weakness: the block was meant to settle <span class="nw">Qwen3.5-0.8B</span> (Student) before the final checks.</td><td class="pr" data-l="Practice and method">Block 8&#x27;s mix (all lessons and rehearsal), with only the learning rate lowered, to 2e-7.</td><td class="ba" data-l="Development before → after">38.32 → 37.59 (within noise); on 300 worlds 39.58 → 41.64. Furnace 25% → 29%, stone sword 4% → 6%, cow 55% → 60%. Lost: sapling 74% → 59%, place plant 74% → 58%, wake up 83% → 79%. <span class="kept">Kept and submitted after the 300-world check; it stayed the final submission.</span></td></tr></tbody></table></div><h3 id="final-summary">Final summary, in Opus 5.5 max (Teacher)'s words</h3><div class="submission-summary"><p>The final submission is in place: <code>/submission/model.safetensors</code> holds main-line checkpoint <strong>v481</strong> (no weight averaging), and <code>check_submission</code> passes.</p>
+<p><strong>Final development score</strong></p>
+<ul>
+<li><strong>Official 100 dev worlds:</strong> 37.59% progression, Crafter score 14.08% (untrained model: 4.59% / 1.04%).</li>
+<li><strong>300 dev worlds:</strong> 41.64% progression (95% interval 40.2–43.1), Crafter score 16.83%. I chose v481 over v405 on this run (v405: 39.58% on 300, though 38.32% vs 37.59% on the official 100, within noise).</li>
+</ul>
+<p><strong>How the curriculum got there.</strong> Each block was a named lesson with the weakness and evidence written down first in <code>/app/NOTES.md</code>. Progression on the official 100 after each block:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Lesson</th>
+<th>Progression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1a</td>
+<td>Format fix and &quot;go and get it&quot;</td>
+<td>4.6 → 11.3</td>
+</tr>
+<tr>
+<td>1b</td>
+<td>Search from the model's own moments</td>
+<td>15.6</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Crafting chain: table, wood pickaxe, wood sword</td>
+<td>25.1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Survival: sleep, zombies, food</td>
+<td>29.5</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Stone tier</td>
+<td>27.1 (gains, but forgetting)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Consolidation</td>
+<td>28.3</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Rehearsal of mastered skills</td>
+<td>31.6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Safe sleeping and night survival</td>
+<td>36.3</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Stone tools</td>
+<td>38.3</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Consolidation at lower learning rate</td>
+<td>37.6 (41.6 on 300)</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Block 1:</strong> the model only ever moved West, so rewards alone could not teach navigation. Searching short action sequences in exact copies of its own game moments, and keeping only the first moves the game showed succeed, fixed this in about 10 training steps.</li>
+<li><strong>Block 4–5:</strong> stone tier, drink and food improved, but sapling, cow, zombie fighting and wood tools were forgotten. The cause was the training method: once every practice copy of a lesson succeeded, the lesson gave no push at all, so mastered skills decayed.</li>
+<li><strong>Block 6:</strong> adding a small reward when all copies succeed (&quot;rehearsal&quot;) stopped the forgetting.</li>
+<li><strong>Block 7:</strong> 39 of 65 zombie deaths happened while the agent slept outdoors at night, which the text prompt never shows. Limiting sleep practice to low energy and adding a night-survival lesson cut that to 22 of 49.</li>
+</ul>
+<p><strong>Training figures you asked for</strong></p>
+<ul>
+<li><strong>Share of training steps in the final weights:</strong> 1,001 of 1,007 optimizer steps (99.4%). The other 6 were lost at two early trainer restarts.</li>
+<li><strong>Plain full-game training:</strong> 0% of training card time and 0 samples. Full games were played only to supply practice moments and to monitor progress.</li>
+<li><strong>Training data:</strong> 193,344 trained samples:
+<ul>
+<li>137,324 rewarded decisions the model made itself in practice branches;</li>
+<li>37,336 search targets;</li>
+<li>18,684 one-step targets where trying an action showed it worked.</li>
+</ul>
+</li>
+<li><strong>Rule check:</strong> a separate sub-agent reviewed the code that builds training data against the training-target rule. It found no violation; the bugs it did find were fixed.</li>
+</ul>
+<p><strong>Weight averaging:</strong> I tried three averages and marked them all auxiliary. avg(v120, v245) helped (32.7% vs 29.5%/28.3%) and briefly served as a safety-net submission. avg(v305, v360) and avg(v405, v481) gave no gain, so they're not used.</p>
+<p>Still missing: iron, diamond, eat_plant and skeleton remain near 0%, stone pickaxe and sword stay at 0–6%, and zombies are still about half of all deaths.</p>
+<p>Notes, per-block results and the full achievement table are in <code>/app/NOTES.md</code> and <code>/app/logs/compare_all.txt</code>; the code is in <code>/app/src/cl</code>.</p>
+</div><h3 id="development-evaluations">Development evaluations</h3><p>Every call of <code>evaluate</code> in the run: <span class="nw">Qwen3.5-0.8B</span> (Student)'s progression on the public development worlds. Only 100-world calls are official. Kind: auxiliary marks averaged or edited weights.</p><figure class="fig"><figcaption><span class="nw">Qwen3.5-0.8B</span> (Student)'s development progression at every evaluation of this run. ◆ marks its held-out progression after 8 hours.</figcaption><div class="fig-d"><svg role="img" aria-label="Development evaluations of Opus 5.5 max (Teacher) #2" xmlns:xlink="http://www.w3.org/1999/xlink" width="510.465703pt" height="205.831445pt" viewBox="0 0 510.465703 205.831445" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="fr2-figure_1">
+  <g id="fr2-patch_1">
+   <path d="M 0 205.831445 
+L 510.465703 205.831445 
+L 510.465703 -0 
+L 0 -0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="fr2-axes_1">
+   <g id="fr2-patch_2">
+    <path d="M 34.113281 174.170664 
+L 391.233281 174.170664 
+L 391.233281 21.710664 
+L 34.113281 21.710664 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="fr2-matplotlib.axis_1">
+    <g id="fr2-xtick_1">
+     <g id="fr2-line2d_1">
+      <defs>
+       <path id="fr2-mb67ae6d3f0" d="M 0 0 
+L 0 3 
+" style="stroke: #686871; stroke-width: 0.5"/>
+      </defs>
+      <g>
+       <use xlink:href="#fr2-mb67ae6d3f0" x="34.113281" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_1">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="34.113281" y="187.508555" transform="rotate(-0 34.113281 187.508555)">0</text>
+     </g>
+    </g>
+    <g id="fr2-xtick_2">
+     <g id="fr2-line2d_2">
+      <g>
+       <use xlink:href="#fr2-mb67ae6d3f0" x="74.239124" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_2">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="74.239124" y="187.508555" transform="rotate(-0 74.239124 187.508555)">1</text>
+     </g>
+    </g>
+    <g id="fr2-xtick_3">
+     <g id="fr2-line2d_3">
+      <g>
+       <use xlink:href="#fr2-mb67ae6d3f0" x="114.364967" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_3">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="114.364967" y="187.508555" transform="rotate(-0 114.364967 187.508555)">2</text>
+     </g>
+    </g>
+    <g id="fr2-xtick_4">
+     <g id="fr2-line2d_4">
+      <g>
+       <use xlink:href="#fr2-mb67ae6d3f0" x="154.490809" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_4">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="154.490809" y="187.508555" transform="rotate(-0 154.490809 187.508555)">3</text>
+     </g>
+    </g>
+    <g id="fr2-xtick_5">
+     <g id="fr2-line2d_5">
+      <g>
+       <use xlink:href="#fr2-mb67ae6d3f0" x="194.616652" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_5">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="194.616652" y="187.508555" transform="rotate(-0 194.616652 187.508555)">4</text>
+     </g>
+    </g>
+    <g id="fr2-xtick_6">
+     <g id="fr2-line2d_6">
+      <g>
+       <use xlink:href="#fr2-mb67ae6d3f0" x="234.742495" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_6">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="234.742495" y="187.508555" transform="rotate(-0 234.742495 187.508555)">5</text>
+     </g>
+    </g>
+    <g id="fr2-xtick_7">
+     <g id="fr2-line2d_7">
+      <g>
+       <use xlink:href="#fr2-mb67ae6d3f0" x="274.868337" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_7">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="274.868337" y="187.508555" transform="rotate(-0 274.868337 187.508555)">6</text>
+     </g>
+    </g>
+    <g id="fr2-xtick_8">
+     <g id="fr2-line2d_8">
+      <g>
+       <use xlink:href="#fr2-mb67ae6d3f0" x="314.99418" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_8">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="314.99418" y="187.508555" transform="rotate(-0 314.99418 187.508555)">7</text>
+     </g>
+    </g>
+    <g id="fr2-xtick_9">
+     <g id="fr2-line2d_9">
+      <g>
+       <use xlink:href="#fr2-mb67ae6d3f0" x="355.120023" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_9">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="355.120023" y="187.508555" transform="rotate(-0 355.120023 187.508555)">8</text>
+     </g>
+    </g>
+    <g id="fr2-text_10">
+     <text style="font-size: 10px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #111114" x="212.673281" y="201.269102" transform="rotate(-0 212.673281 201.269102)">Hours of the run</text>
+    </g>
+   </g>
+   <g id="fr2-matplotlib.axis_2">
+    <g id="fr2-ytick_1">
+     <g id="fr2-line2d_10">
+      <path d="M 34.113281 174.170664 
+L 391.233281 174.170664 
+" clip-path="url(#fr2-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2-line2d_11">
+      <defs>
+       <path id="fr2-m70c286cfab" d="M 0 0 
+L -3 0 
+" style="stroke: #686871; stroke-width: 0.5"/>
+      </defs>
+      <g>
+       <use xlink:href="#fr2-m70c286cfab" x="34.113281" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_11">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="177.589609" transform="rotate(-0 27.613281 177.589609)">0</text>
+     </g>
+    </g>
+    <g id="fr2-ytick_2">
+     <g id="fr2-line2d_12">
+      <path d="M 34.113281 143.678664 
+L 391.233281 143.678664 
+" clip-path="url(#fr2-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2-line2d_13">
+      <g>
+       <use xlink:href="#fr2-m70c286cfab" x="34.113281" y="143.678664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_12">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="147.097609" transform="rotate(-0 27.613281 147.097609)">10</text>
+     </g>
+    </g>
+    <g id="fr2-ytick_3">
+     <g id="fr2-line2d_14">
+      <path d="M 34.113281 113.186664 
+L 391.233281 113.186664 
+" clip-path="url(#fr2-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2-line2d_15">
+      <g>
+       <use xlink:href="#fr2-m70c286cfab" x="34.113281" y="113.186664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_13">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="116.605609" transform="rotate(-0 27.613281 116.605609)">20</text>
+     </g>
+    </g>
+    <g id="fr2-ytick_4">
+     <g id="fr2-line2d_16">
+      <path d="M 34.113281 82.694664 
+L 391.233281 82.694664 
+" clip-path="url(#fr2-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2-line2d_17">
+      <g>
+       <use xlink:href="#fr2-m70c286cfab" x="34.113281" y="82.694664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_14">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="86.113609" transform="rotate(-0 27.613281 86.113609)">30</text>
+     </g>
+    </g>
+    <g id="fr2-ytick_5">
+     <g id="fr2-line2d_18">
+      <path d="M 34.113281 52.202664 
+L 391.233281 52.202664 
+" clip-path="url(#fr2-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2-line2d_19">
+      <g>
+       <use xlink:href="#fr2-m70c286cfab" x="34.113281" y="52.202664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_15">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="55.621609" transform="rotate(-0 27.613281 55.621609)">40</text>
+     </g>
+    </g>
+    <g id="fr2-ytick_6">
+     <g id="fr2-line2d_20">
+      <path d="M 34.113281 21.710664 
+L 391.233281 21.710664 
+" clip-path="url(#fr2-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2-line2d_21">
+      <g>
+       <use xlink:href="#fr2-m70c286cfab" x="34.113281" y="21.710664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_16">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="25.129609" transform="rotate(-0 27.613281 25.129609)">50</text>
+     </g>
+    </g>
+    <g id="fr2-text_17">
+     <text style="font-size: 10px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #111114" x="9.758438" y="97.940664" transform="rotate(-90 9.758438 97.940664)">Development progression (%)</text>
+    </g>
+   </g>
+   <g id="fr2-line2d_22">
+    <path d="M 37.572129 160.172092 
+L 96.79386 139.659209 
+L 113.622639 126.769325 
+L 137.658018 97.801925 
+L 149.18216 84.358003 
+L 179.208328 91.565092 
+L 204.676201 87.961547 
+L 215.401839 74.378581 
+L 232.034 77.843692 
+L 254.39212 63.567947 
+L 261.526495 65.36972 
+L 274.382815 57.330809 
+L 306.635967 59.548492 
+" clip-path="url(#fr2-p10722841bc)" style="fill: none; stroke: #e69f00; stroke-opacity: 0.55; stroke-linecap: square"/>
+   </g>
+   <g id="fr2-patch_3">
+    <path d="M 34.113281 174.170664 
+L 34.113281 21.710664 
+" style="fill: none; stroke: #686871; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="fr2-patch_4">
+    <path d="M 34.113281 174.170664 
+L 391.233281 174.170664 
+" style="fill: none; stroke: #686871; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="fr2-PathCollection_1">
+    <defs>
+     <path id="fr2-mea7dcc0b60" d="M 0 1.5 
+C 0.397805 1.5 0.77937 1.341951 1.06066 1.06066 
+C 1.341951 0.77937 1.5 0.397805 1.5 0 
+C 1.5 -0.397805 1.341951 -0.77937 1.06066 -1.06066 
+C 0.77937 -1.341951 0.397805 -1.5 0 -1.5 
+C -0.397805 -1.5 -0.77937 -1.341951 -1.06066 -1.06066 
+C -1.341951 -0.77937 -1.5 -0.397805 -1.5 0 
+C -1.5 0.397805 -1.341951 0.77937 -1.06066 1.06066 
+C -0.77937 1.341951 -0.397805 1.5 0 1.5 
+z
+" style="stroke: #a1a1aa"/>
+    </defs>
+    <g clip-path="url(#fr2-p10722841bc)">
+     <use xlink:href="#fr2-mea7dcc0b60" x="286.709474" y="53.496135" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     <use xlink:href="#fr2-mea7dcc0b60" x="314.215739" y="47.212953" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     <use xlink:href="#fr2-mea7dcc0b60" x="315.395439" y="46.84339" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+    </g>
+   </g>
+   <g id="fr2-text_18">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #8f6a00" x="333.046797" y="53.263223" transform="rotate(-0 333.046797 53.263223)">held-out 40.38</text>
+   </g>
+   <g id="fr2-PathCollection_2">
+    <defs>
+     <path id="fr2-m5b99a169e4" d="M -2 2 
+L 2 2 
+L 2 -2 
+L -2 -2 
+z
+" style="stroke: #686871"/>
+    </defs>
+    <g clip-path="url(#fr2-p10722841bc)">
+     <use xlink:href="#fr2-m5b99a169e4" x="37.572129" y="160.172092" style="fill: #686871; stroke: #686871"/>
+    </g>
+   </g>
+   <g id="fr2-PathCollection_3">
+    <defs>
+     <path id="fr2-mefb3ac1f74" d="M 0 1.732051 
+C 0.459345 1.732051 0.899939 1.549551 1.224745 1.224745 
+C 1.549551 0.899939 1.732051 0.459345 1.732051 0 
+C 1.732051 -0.459345 1.549551 -0.899939 1.224745 -1.224745 
+C 0.899939 -1.549551 0.459345 -1.732051 0 -1.732051 
+C -0.459345 -1.732051 -0.899939 -1.549551 -1.224745 -1.224745 
+C -1.549551 -0.899939 -1.732051 -0.459345 -1.732051 0 
+C -1.732051 0.459345 -1.549551 0.899939 -1.224745 1.224745 
+C -0.899939 1.549551 -0.459345 1.732051 0 1.732051 
+z
+" style="stroke: #8f6a00"/>
+    </defs>
+    <g clip-path="url(#fr2-p10722841bc)">
+     <use xlink:href="#fr2-mefb3ac1f74" x="96.79386" y="139.659209" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr2-mefb3ac1f74" x="113.622639" y="126.769325" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr2-mefb3ac1f74" x="137.658018" y="97.801925" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr2-mefb3ac1f74" x="149.18216" y="84.358003" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr2-mefb3ac1f74" x="179.208328" y="91.565092" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr2-mefb3ac1f74" x="204.676201" y="87.961547" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr2-mefb3ac1f74" x="232.034" y="77.843692" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr2-mefb3ac1f74" x="254.39212" y="63.567947" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr2-mefb3ac1f74" x="274.382815" y="57.330809" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr2-mefb3ac1f74" x="306.635967" y="59.548492" style="fill: #8f6a00; stroke: #8f6a00"/>
+    </g>
+   </g>
+   <g id="fr2-PathCollection_4">
+    <defs>
+     <path id="fr2-m23c4993109" d="M 0 2 
+C 0.530406 2 1.03916 1.789267 1.414214 1.414214 
+C 1.789267 1.03916 2 0.530406 2 0 
+C 2 -0.530406 1.789267 -1.03916 1.414214 -1.414214 
+C 1.03916 -1.789267 0.530406 -2 0 -2 
+C -0.530406 -2 -1.03916 -1.789267 -1.414214 -1.414214 
+C -1.789267 -1.03916 -2 -0.530406 -2 0 
+C -2 0.530406 -1.789267 1.03916 -1.414214 1.414214 
+C -1.03916 1.789267 -0.530406 2 0 2 
+z
+" style="stroke: #8f6a00; stroke-width: 0.9"/>
+    </defs>
+    <g clip-path="url(#fr2-p10722841bc)">
+     <use xlink:href="#fr2-m23c4993109" x="215.401839" y="74.378581" style="fill: #ffffff; stroke: #8f6a00; stroke-width: 0.9"/>
+     <use xlink:href="#fr2-m23c4993109" x="261.526495" y="65.36972" style="fill: #ffffff; stroke: #8f6a00; stroke-width: 0.9"/>
+    </g>
+   </g>
+   <g id="fr2-PathCollection_5">
+    <defs>
+     <path id="fr2-mdd71ef553d" d="M -0 3.605551 
+L 3.605551 0 
+L 0 -3.605551 
+L -3.605551 -0 
+z
+" style="stroke: #ffffff; stroke-width: 0.5"/>
+    </defs>
+    <g clip-path="url(#fr2-p10722841bc)">
+     <use xlink:href="#fr2-mdd71ef553d" x="328.231696" y="51.054883" style="fill: #8f6a00; stroke: #ffffff; stroke-width: 0.5"/>
+    </g>
+   </g>
+   <g id="fr2-legend_1">
+    <g id="fr2-PathCollection_6">
+     <g>
+      <use xlink:href="#fr2-m5b99a169e4" x="50.263281" y="9.787422" style="fill: #686871; stroke: #686871"/>
+     </g>
+    </g>
+    <g id="fr2-text_19">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="61.313281" y="12.018672" transform="rotate(-0 61.313281 12.018672)">untrained weights</text>
+    </g>
+    <g id="fr2-PathCollection_7">
+     <g>
+      <use xlink:href="#fr2-mefb3ac1f74" x="158.684766" y="9.787422" style="fill: #8f6a00; stroke: #8f6a00"/>
+     </g>
+    </g>
+    <g id="fr2-text_20">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="169.734766" y="12.018672" transform="rotate(-0 169.734766 12.018672)">trained weights</text>
+    </g>
+    <g id="fr2-PathCollection_8">
+     <g>
+      <use xlink:href="#fr2-m23c4993109" x="256.3325" y="9.787422" style="fill: #ffffff; stroke: #8f6a00; stroke-width: 0.9"/>
+     </g>
+    </g>
+    <g id="fr2-text_21">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="267.3825" y="12.018672" transform="rotate(-0 267.3825 12.018672)">auxiliary weights</text>
+    </g>
+    <g id="fr2-PathCollection_9">
+     <g>
+      <use xlink:href="#fr2-mea7dcc0b60" x="360.015234" y="9.787422" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     </g>
+    </g>
+    <g id="fr2-text_22">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="371.065234" y="12.018672" transform="rotate(-0 371.065234 12.018672)">other world counts (not official)</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="fr2-p10722841bc">
+   <rect x="34.113281" y="21.710664" width="357.12" height="152.46"/>
+  </clipPath>
+ </defs>
+</svg></div><div class="fig-m"><svg role="img" aria-label="Development evaluations of Opus 5.5 max (Teacher) #2" xmlns:xlink="http://www.w3.org/1999/xlink" width="256.7592pt" height="247.880289pt" viewBox="0 0 256.7592 247.880289" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="fr2m-figure_1">
+  <g id="fr2m-patch_1">
+   <path d="M 0 247.880289 
+L 256.7592 247.880289 
+L 256.7592 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="fr2m-axes_1">
+   <g id="fr2m-patch_2">
+    <path d="M 36.9792 146.152969 
+L 254.5992 146.152969 
+L 254.5992 7.552969 
+L 36.9792 7.552969 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="fr2m-matplotlib.axis_1">
+    <g id="fr2m-xtick_1">
+     <g id="fr2m-line2d_1">
+      <defs>
+       <path id="fr2m-mb67ae6d3f0" d="M 0 0 
+L 0 3 
+" style="stroke: #686871; stroke-width: 0.5"/>
+      </defs>
+      <g>
+       <use xlink:href="#fr2m-mb67ae6d3f0" x="36.9792" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_1">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="36.9792" y="159.490859" transform="rotate(-0 36.9792 159.490859)">0</text>
+     </g>
+    </g>
+    <g id="fr2m-xtick_2">
+     <g id="fr2m-line2d_2">
+      <g>
+       <use xlink:href="#fr2m-mb67ae6d3f0" x="62.733046" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_2">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="62.733046" y="159.490859" transform="rotate(-0 62.733046 159.490859)">1</text>
+     </g>
+    </g>
+    <g id="fr2m-xtick_3">
+     <g id="fr2m-line2d_3">
+      <g>
+       <use xlink:href="#fr2m-mb67ae6d3f0" x="88.486892" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_3">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="88.486892" y="159.490859" transform="rotate(-0 88.486892 159.490859)">2</text>
+     </g>
+    </g>
+    <g id="fr2m-xtick_4">
+     <g id="fr2m-line2d_4">
+      <g>
+       <use xlink:href="#fr2m-mb67ae6d3f0" x="114.240738" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_4">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="114.240738" y="159.490859" transform="rotate(-0 114.240738 159.490859)">3</text>
+     </g>
+    </g>
+    <g id="fr2m-xtick_5">
+     <g id="fr2m-line2d_5">
+      <g>
+       <use xlink:href="#fr2m-mb67ae6d3f0" x="139.994585" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_5">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="139.994585" y="159.490859" transform="rotate(-0 139.994585 159.490859)">4</text>
+     </g>
+    </g>
+    <g id="fr2m-xtick_6">
+     <g id="fr2m-line2d_6">
+      <g>
+       <use xlink:href="#fr2m-mb67ae6d3f0" x="165.748431" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_6">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="165.748431" y="159.490859" transform="rotate(-0 165.748431 159.490859)">5</text>
+     </g>
+    </g>
+    <g id="fr2m-xtick_7">
+     <g id="fr2m-line2d_7">
+      <g>
+       <use xlink:href="#fr2m-mb67ae6d3f0" x="191.502277" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_7">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="191.502277" y="159.490859" transform="rotate(-0 191.502277 159.490859)">6</text>
+     </g>
+    </g>
+    <g id="fr2m-xtick_8">
+     <g id="fr2m-line2d_8">
+      <g>
+       <use xlink:href="#fr2m-mb67ae6d3f0" x="217.256123" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_8">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="217.256123" y="159.490859" transform="rotate(-0 217.256123 159.490859)">7</text>
+     </g>
+    </g>
+    <g id="fr2m-xtick_9">
+     <g id="fr2m-line2d_9">
+      <g>
+       <use xlink:href="#fr2m-mb67ae6d3f0" x="243.009969" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_9">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="243.009969" y="159.490859" transform="rotate(-0 243.009969 159.490859)">8</text>
+     </g>
+    </g>
+    <g id="fr2m-text_10">
+     <text style="font-size: 10px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #111114" x="145.7892" y="173.251406" transform="rotate(-0 145.7892 173.251406)">Hours of the run</text>
+    </g>
+   </g>
+   <g id="fr2m-matplotlib.axis_2">
+    <g id="fr2m-ytick_1">
+     <g id="fr2m-line2d_10">
+      <path d="M 36.9792 146.152969 
+L 254.5992 146.152969 
+" clip-path="url(#fr2m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2m-line2d_11">
+      <defs>
+       <path id="fr2m-m70c286cfab" d="M 0 0 
+L -3 0 
+" style="stroke: #686871; stroke-width: 0.5"/>
+      </defs>
+      <g>
+       <use xlink:href="#fr2m-m70c286cfab" x="36.9792" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_11">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="149.571914" transform="rotate(-0 30.4792 149.571914)">0</text>
+     </g>
+    </g>
+    <g id="fr2m-ytick_2">
+     <g id="fr2m-line2d_12">
+      <path d="M 36.9792 118.432969 
+L 254.5992 118.432969 
+" clip-path="url(#fr2m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2m-line2d_13">
+      <g>
+       <use xlink:href="#fr2m-m70c286cfab" x="36.9792" y="118.432969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_12">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="121.851914" transform="rotate(-0 30.4792 121.851914)">10</text>
+     </g>
+    </g>
+    <g id="fr2m-ytick_3">
+     <g id="fr2m-line2d_14">
+      <path d="M 36.9792 90.712969 
+L 254.5992 90.712969 
+" clip-path="url(#fr2m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2m-line2d_15">
+      <g>
+       <use xlink:href="#fr2m-m70c286cfab" x="36.9792" y="90.712969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_13">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="94.131914" transform="rotate(-0 30.4792 94.131914)">20</text>
+     </g>
+    </g>
+    <g id="fr2m-ytick_4">
+     <g id="fr2m-line2d_16">
+      <path d="M 36.9792 62.992969 
+L 254.5992 62.992969 
+" clip-path="url(#fr2m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2m-line2d_17">
+      <g>
+       <use xlink:href="#fr2m-m70c286cfab" x="36.9792" y="62.992969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_14">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="66.411914" transform="rotate(-0 30.4792 66.411914)">30</text>
+     </g>
+    </g>
+    <g id="fr2m-ytick_5">
+     <g id="fr2m-line2d_18">
+      <path d="M 36.9792 35.272969 
+L 254.5992 35.272969 
+" clip-path="url(#fr2m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2m-line2d_19">
+      <g>
+       <use xlink:href="#fr2m-m70c286cfab" x="36.9792" y="35.272969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_15">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="38.691914" transform="rotate(-0 30.4792 38.691914)">40</text>
+     </g>
+    </g>
+    <g id="fr2m-ytick_6">
+     <g id="fr2m-line2d_20">
+      <path d="M 36.9792 7.552969 
+L 254.5992 7.552969 
+" clip-path="url(#fr2m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2m-line2d_21">
+      <g>
+       <use xlink:href="#fr2m-m70c286cfab" x="36.9792" y="7.552969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_16">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="10.971914" transform="rotate(-0 30.4792 10.971914)">50</text>
+     </g>
+    </g>
+    <g id="fr2m-text_17">
+     <text style="font-size: 10px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #111114" x="12.624356" y="76.852969" transform="rotate(-90 12.624356 76.852969)">Development progression (%)</text>
+    </g>
+   </g>
+   <g id="fr2m-line2d_22">
+    <path d="M 39.199182 133.426994 
+L 77.209283 114.778918 
+L 88.010446 103.060843 
+L 103.437 76.726843 
+L 110.833505 64.505095 
+L 130.105108 71.056994 
+L 146.451074 67.781044 
+L 153.335077 55.432893 
+L 164.010046 58.582994 
+L 178.360089 45.605044 
+L 182.939123 47.243019 
+L 191.190655 39.934918 
+L 211.891597 41.950994 
+" clip-path="url(#fr2m-p94085b5d64)" style="fill: none; stroke: #e69f00; stroke-opacity: 0.55; stroke-linecap: square"/>
+   </g>
+   <g id="fr2m-patch_3">
+    <path d="M 36.9792 146.152969 
+L 36.9792 7.552969 
+" style="fill: none; stroke: #686871; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="fr2m-patch_4">
+    <path d="M 36.9792 146.152969 
+L 254.5992 146.152969 
+" style="fill: none; stroke: #686871; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="fr2m-PathCollection_1">
+    <defs>
+     <path id="fr2m-mea7dcc0b60" d="M 0 1.5 
+C 0.397805 1.5 0.77937 1.341951 1.06066 1.06066 
+C 1.341951 0.77937 1.5 0.397805 1.5 0 
+C 1.5 -0.397805 1.341951 -0.77937 1.06066 -1.06066 
+C 0.77937 -1.341951 0.397805 -1.5 0 -1.5 
+C -0.397805 -1.5 -0.77937 -1.341951 -1.06066 -1.06066 
+C -1.341951 -0.77937 -1.5 -0.397805 -1.5 0 
+C -1.5 0.397805 -1.341951 0.77937 -1.06066 1.06066 
+C -0.77937 1.341951 -0.397805 1.5 0 1.5 
+z
+" style="stroke: #a1a1aa"/>
+    </defs>
+    <g clip-path="url(#fr2m-p94085b5d64)">
+     <use xlink:href="#fr2m-mea7dcc0b60" x="199.102237" y="36.448851" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     <use xlink:href="#fr2m-mea7dcc0b60" x="216.756498" y="30.736868" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     <use xlink:href="#fr2m-mea7dcc0b60" x="217.513662" y="30.400902" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+    </g>
+   </g>
+   <g id="fr2m-PathCollection_2">
+    <defs>
+     <path id="fr2m-m5b99a169e4" d="M -2 2 
+L 2 2 
+L 2 -2 
+L -2 -2 
+z
+" style="stroke: #686871"/>
+    </defs>
+    <g clip-path="url(#fr2m-p94085b5d64)">
+     <use xlink:href="#fr2m-m5b99a169e4" x="39.199182" y="133.426994" style="fill: #686871; stroke: #686871"/>
+    </g>
+   </g>
+   <g id="fr2m-PathCollection_3">
+    <defs>
+     <path id="fr2m-mefb3ac1f74" d="M 0 1.732051 
+C 0.459345 1.732051 0.899939 1.549551 1.224745 1.224745 
+C 1.549551 0.899939 1.732051 0.459345 1.732051 0 
+C 1.732051 -0.459345 1.549551 -0.899939 1.224745 -1.224745 
+C 0.899939 -1.549551 0.459345 -1.732051 0 -1.732051 
+C -0.459345 -1.732051 -0.899939 -1.549551 -1.224745 -1.224745 
+C -1.549551 -0.899939 -1.732051 -0.459345 -1.732051 0 
+C -1.732051 0.459345 -1.549551 0.899939 -1.224745 1.224745 
+C -0.899939 1.549551 -0.459345 1.732051 0 1.732051 
+z
+" style="stroke: #8f6a00"/>
+    </defs>
+    <g clip-path="url(#fr2m-p94085b5d64)">
+     <use xlink:href="#fr2m-mefb3ac1f74" x="77.209283" y="114.778918" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr2m-mefb3ac1f74" x="88.010446" y="103.060843" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr2m-mefb3ac1f74" x="103.437" y="76.726843" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr2m-mefb3ac1f74" x="110.833505" y="64.505095" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr2m-mefb3ac1f74" x="130.105108" y="71.056994" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr2m-mefb3ac1f74" x="146.451074" y="67.781044" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr2m-mefb3ac1f74" x="164.010046" y="58.582994" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr2m-mefb3ac1f74" x="178.360089" y="45.605044" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr2m-mefb3ac1f74" x="191.190655" y="39.934918" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr2m-mefb3ac1f74" x="211.891597" y="41.950994" style="fill: #8f6a00; stroke: #8f6a00"/>
+    </g>
+   </g>
+   <g id="fr2m-PathCollection_4">
+    <defs>
+     <path id="fr2m-m23c4993109" d="M 0 2 
+C 0.530406 2 1.03916 1.789267 1.414214 1.414214 
+C 1.789267 1.03916 2 0.530406 2 0 
+C 2 -0.530406 1.789267 -1.03916 1.414214 -1.414214 
+C 1.03916 -1.789267 0.530406 -2 0 -2 
+C -0.530406 -2 -1.03916 -1.789267 -1.414214 -1.414214 
+C -1.789267 -1.03916 -2 -0.530406 -2 0 
+C -2 0.530406 -1.789267 1.03916 -1.414214 1.414214 
+C -1.03916 1.789267 -0.530406 2 0 2 
+z
+" style="stroke: #8f6a00; stroke-width: 0.9"/>
+    </defs>
+    <g clip-path="url(#fr2m-p94085b5d64)">
+     <use xlink:href="#fr2m-m23c4993109" x="153.335077" y="55.432893" style="fill: #ffffff; stroke: #8f6a00; stroke-width: 0.9"/>
+     <use xlink:href="#fr2m-m23c4993109" x="182.939123" y="47.243019" style="fill: #ffffff; stroke: #8f6a00; stroke-width: 0.9"/>
+    </g>
+   </g>
+   <g id="fr2m-PathCollection_5">
+    <defs>
+     <path id="fr2m-mdd71ef553d" d="M -0 3.605551 
+L 3.605551 0 
+L 0 -3.605551 
+L -3.605551 -0 
+z
+" style="stroke: #ffffff; stroke-width: 0.5"/>
+    </defs>
+    <g clip-path="url(#fr2m-p94085b5d64)">
+     <use xlink:href="#fr2m-mdd71ef553d" x="225.752317" y="34.229531" style="fill: #8f6a00; stroke: #ffffff; stroke-width: 0.5"/>
+    </g>
+   </g>
+   <g id="fr2m-legend_1">
+    <g id="fr2m-PathCollection_6">
+     <g>
+      <use xlink:href="#fr2m-m5b99a169e4" x="14.06" y="187.044391" style="fill: #686871; stroke: #686871"/>
+     </g>
+    </g>
+    <g id="fr2m-text_18">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="25.11" y="189.275641" transform="rotate(-0 25.11 189.275641)">untrained weights</text>
+    </g>
+    <g id="fr2m-PathCollection_7">
+     <g>
+      <use xlink:href="#fr2m-mefb3ac1f74" x="14.06" y="199.795055" style="fill: #8f6a00; stroke: #8f6a00"/>
+     </g>
+    </g>
+    <g id="fr2m-text_19">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="25.11" y="202.026305" transform="rotate(-0 25.11 202.026305)">trained weights</text>
+    </g>
+    <g id="fr2m-PathCollection_8">
+     <g>
+      <use xlink:href="#fr2m-m23c4993109" x="14.06" y="212.545719" style="fill: #ffffff; stroke: #8f6a00; stroke-width: 0.9"/>
+     </g>
+    </g>
+    <g id="fr2m-text_20">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="25.11" y="214.776969" transform="rotate(-0 25.11 214.776969)">auxiliary weights</text>
+    </g>
+    <g id="fr2m-PathCollection_9">
+     <g>
+      <use xlink:href="#fr2m-mea7dcc0b60" x="14.06" y="225.296383" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     </g>
+    </g>
+    <g id="fr2m-text_21">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="25.11" y="227.527633" transform="rotate(-0 25.11 227.527633)">other world counts (not official)</text>
+    </g>
+    <g id="fr2m-PathCollection_10">
+     <g>
+      <use xlink:href="#fr2m-mdd71ef553d" x="14.06" y="238.047047" style="fill: #8f6a00; stroke: #ffffff; stroke-width: 0.5"/>
+     </g>
+    </g>
+    <g id="fr2m-text_22">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="25.11" y="240.278297" transform="rotate(-0 25.11 240.278297)">held-out 40.38</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="fr2m-p94085b5d64">
+   <rect x="36.9792" y="7.552969" width="217.62" height="138.6"/>
+  </clipPath>
+ </defs>
+</svg></div></figure><div class="tw"><table><thead><tr><th class="n">Hours</th><th>Weights</th><th class="n">Worlds</th><th class="n">Progression</th><th class="n">Crafter score</th><th class="n">Steps per game</th><th>Kind</th><th class="center">Official</th></tr></thead><tbody><tr><td class="n">0.09</td><td><code>base</code></td><td class="n">100</td><td class="n">4.59</td><td class="n">1.04</td><td class="n">160</td><td>untrained</td><td class="center">✓</td></tr><tr><td class="n">1.56</td><td><code>b1_v21</code></td><td class="n">100</td><td class="n">11.32</td><td class="n">1.52</td><td class="n">175</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">1.98</td><td><code>b1b_v35</code></td><td class="n">100</td><td class="n">15.55</td><td class="n">2.36</td><td class="n">175</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">2.58</td><td><code>b2_v70</code></td><td class="n">100</td><td class="n">25.05</td><td class="n">6.80</td><td class="n">176</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">2.87</td><td><code>b3_v120</code></td><td class="n">100</td><td class="n">29.45</td><td class="n">9.35</td><td class="n">168</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">3.62</td><td><code>b4_v190</code></td><td class="n">100</td><td class="n">27.09</td><td class="n">9.18</td><td class="n">181</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">4.25</td><td><code>b5_v00245</code></td><td class="n">100</td><td class="n">28.27</td><td class="n">9.07</td><td class="n">170</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">4.52</td><td><code>aux_avg_v120_v245</code></td><td class="n">100</td><td class="n">32.73</td><td class="n">11.06</td><td class="n">193</td><td>auxiliary</td><td class="center">✓</td></tr><tr><td class="n">4.93</td><td><code>b6_v00305</code></td><td class="n">100</td><td class="n">31.59</td><td class="n">11.03</td><td class="n">183</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">5.49</td><td><code>b7_v00360</code></td><td class="n">100</td><td class="n">36.27</td><td class="n">12.01</td><td class="n">203</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">5.67</td><td><code>aux_avg_v305_v360</code></td><td class="n">100</td><td class="n">35.68</td><td class="n">12.77</td><td class="n">188</td><td>auxiliary</td><td class="center">✓</td></tr><tr><td class="n">5.99</td><td><code>b8_v00405</code></td><td class="n">100</td><td class="n">38.32</td><td class="n">14.97</td><td class="n">186</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">6.30</td><td><code>b8_v405_300</code></td><td class="n">300</td><td class="n">39.58</td><td class="n">15.28</td><td class="n">198</td><td>trained</td><td class="center"></td></tr><tr><td class="n">6.79</td><td><code>b9_v481</code></td><td class="n">100</td><td class="n">37.59</td><td class="n">14.08</td><td class="n">194</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">6.98</td><td><code>b9_v481_300</code></td><td class="n">300</td><td class="n">41.64</td><td class="n">16.83</td><td class="n">199</td><td>trained</td><td class="center"></td></tr><tr><td class="n">7.01</td><td><code>aux_avg_v405_v481_300</code></td><td class="n">300</td><td class="n">41.76</td><td class="n">16.03</td><td class="n">197</td><td>auxiliary</td><td class="center"></td></tr></tbody></table></div><h3 id="notes">NOTES.md</h3><p>Opus 5.5 max (Teacher)'s notes as it left them at the end of the run.</p><details class="fold doc-fold" id="notes-md"><summary>NOTES.md</summary><div class="doc"><h4>Crafter curriculum for Qwen3.5-0.8B — working notes</h4>
+<h5>Setup (my code, under /app/src/cl)</h5>
+<ul>
+<li><code>gamepool.py</code>: game workers with exact snapshots (save/restore of crafter_lab.levels states), branch restore,
+one-step action probes. Tested: restored copies replay identically (1600/1600 frames).</li>
+<li><code>engine.py</code>: actor (vLLM, current weights, swaps new versions in place). Three kinds of play:
+<ul>
+<li>scouts: full games on training worlds with the current weights. Source of start moments and a live monitor.
+Not trained on (unless <code>plain_fraction</code> &gt; 0, counted as plain full-game training).</li>
+<li>lesson branches: a scout moment (exact game snapshot + identical 16-step prompt history) is copied K=8 times and
+each copy is played on by the model's own sampled actions for up to H steps. Lesson reward per branch, group
+baseline (GRPO-style), PPO-clip update on the model's own outputs. Invalid outputs (model's own) get -1.</li>
+<li>probes: from a scout moment, each non-move action is tried once in a copy of the game. An action is a target
+only if the game's response shows it worked (new achievement, or wood/stone/coal/iron/diamond/food gained, or
+drink gained when drink &lt;= 6). Supervised target on that exact prompt.</li>
+</ul>
+</li>
+<li><code>trainer.py</code>: learner. Reads shards, newest first, drops samples &gt; 4 versions old, PPO-clip (eps 0.2) for &quot;pg&quot;,
+weighted log-likelihood for &quot;sft&quot;, AdamW, publishes a weights version every 3 optimizer steps.</li>
+<li>MPS daemon on; engine 0.22 of card memory, trainer 0.45, evaluations 0.2.</li>
+</ul>
+<h5>Baseline (untrained), official 100 dev worlds</h5>
+<p>progression 4.59%, Crafter score 1.04%, invalid outputs 38.9%, mean length 160 steps, stuck 72% of steps.
+Actions: Noop 63% (incl. invalid), Do 31%, all moves &lt; 3%. Deaths: zombie 58, arrow 18, other 15, thirst 9.
+Achievements: sapling 60, wake_up 17, eat_cow 6, wood 5, zombie 5, place_plant 5, drink 3, everything else 0.
+Invalid outputs are near-misses and invented actions: <code>noop</code>, <code>do</code>, <code>NOOP</code>, <code>Eat</code>, <code>Eat Cow</code>, <code>Drink</code>, <code>Action: Do</code>,
+<code>Eat Plant</code>, <code>Wood</code>, <code>MOVE WEST</code>...</p>
+<p>Diagnosis: the model does not move toward anything it sees and a third of its outputs are not action names. Every
+achievement past sapling needs the agent to walk to a resource and face it, so this is the first weakness to fix.</p>
+<h5>Block 1 — lesson &quot;go and get it&quot; (+ format penalty, + probe targets)</h5>
+<ul>
+<li>Weakness: no navigation to visible resources; invalid outputs. Evidence: baseline above (moves &lt; 3% of actions,
+collect_wood 5% although trees are visible near most starts, invalid 39%).</li>
+<li>Practice: moments from the model's own scout games where a tree (dist 1-3: <code>wood_near</code>, weight 2; dist 4-8:
+<code>wood_far</code>), water (dist 1-6, drink &lt;= 7: <code>drink</code>) or cow (dist 1-5, food &lt;= 7: <code>cow</code>) is visible. 8 branches,
+H = 2d + 6 (cow 2d + 10). Branch return: 1 + 0.5 * (1 - t/H) on success, +0.3 per other new achievement,
+-1 on death. Invalid output -1 on that decision. Probes as above.</li>
+<li>Method: PPO-clip with group baseline, lr 1e-6, 192 samples per step.</li>
+<li>Should move: lesson success rates (measured in engine log), invalid outputs in scouts -&gt; &lt; 10%,
+full-game collect_wood -&gt; &gt; 40%, collect_drink, eat_cow up; progression &gt; 12%.</li>
+<li>Keep if dev progression rises by &gt;= 3 points over baseline; otherwise go back to base weights and rethink.</li>
+</ul>
+<h6>Block 1, first 15 minutes: what the data showed, and two fixes (14:20-14:40)</h6>
+<ul>
+<li>Lesson success at base weights (measured at fixed weights in the engine): wood_near (d 2-3) 6-8% of branches,
+wood_far (d 4-8) 0%. The +0.3 &quot;other achievement&quot; bonus made Do-on-grass (sapling) the main positive in wood_far.
+Fix: distance curriculum wood_adj (d=1) / wood_near (d 2-3) / wood_far (weight 0 for now); side bonus removed.</li>
+<li>After ~10 optimizer steps invalid outputs fell from 39% to ~2% in scout games (format penalty works), but probe
+targets were 80% <code>Place Plant</code> (most common working action) and scouts now played Do 48% / Place Plant 32%,
+wood_near success fell to 1%. A lesson created the next weakness within minutes.
+Fixes: (1) probe targets only on missed opportunities (the model's own next action at that exact moment did not
+work), rate-capped per reason (20/min); (2) dense potential-based shaping on the model's own decisions in collect
+lessons: phi = -distance to target + 1 if facing it, per-decision reward 0.5 * (dphi - group mean dphi).
+lr lowered to 5e-7 (policy moved |log ratio| up to 4 within a few steps at 1e-6).</li>
+</ul>
+<h6>Block 1, 14:45-15:00: the exploration failure, and the search lesson</h6>
+<ul>
+<li>Data showed the model's only movement is <code>Move West</code> (base model: West 2.4%, East/North/South 0.01-0.04%).
+Policy gradient only reinforces what is sampled, so trees north/south/east of the agent never produced a positive
+example; wood_near flat-group rate stayed at 0.85. Shaping alone cannot fix a missing action.</li>
+<li>New lesson type <code>search</code> (cl/gamepool.py search_first_actions): from a scout moment (the model's own game),
+breadth-first trials of action sequences (4 moves + the lesson's action) in exact copies of the game, stepping
+exactly as the evaluation does; the first actions of the shortest sequences after which the game shows the goal
+count up (collect_wood / collect_drink / eat_cow / place_table / make_wood_pickaxe / make_wood_sword) become
+targets for that exact prompt -- only if the model's own action at that moment was not one of them (missed
+opportunities, DAgger-like). Rate-capped per lesson (60/min). CPU only; no card time.
+CPU test: tree moments solved 50/51 (mean depth 3.6), water 18/19.</li>
+<li>Independent review of the data code (sub-agent) found no rule violation; fixed its bugs: cow shaping punished the
+killing blow (cow vanishes -&gt; potential drop), invalid outputs in winning branches could net a positive value,
+scripted test play is now refused outside test run dirs and dropped by the trainer, trainer resume version,
+reused envs built a different world, shard name collisions, negative weights on sft targets.</li>
+<li>Machinery fixes: eval OOM (trainer allocator grew after the eval engine measured memory) -&gt; trainer cap 0.38,
+micro-batch 64k tokens; lockstep latency (950 live games at ~30/s = one step per game every 35 s, groups 12 min
+old when done, dropped as stale) -&gt; 96 scouts + 256 branch games.</li>
+<li>Trainer restarted from v21 (fresh Adam) at 14:54.</li>
+</ul>
+<h6>Block 1a result (v21, 14:24-14:54, ~25 card-minutes of training): official dev 100</h6>
+<p>progression 11.32% (base 4.59%), Crafter score 1.52%, invalid 0.1% (base 38.9%), mean length 175.
+Achievements: sapling 98, place_plant 98, defeat_zombie 22, eat_cow 16, collect_wood 10, drink 3, wake_up 1 (base 17).
+Actions: Do 56%, Place Plant 42%, moves 2%. Facing a tree: Place Plant 67% / Do 33% (base Do 0%).
+Tree visible within 4: moves toward it 1% (base 2%). =&gt; format fixed, Do learned, navigation NOT learned; lost
+wake_up (17 -&gt; 1, the model no longer sleeps). Kept as checkpoint keep/v00021 (better than base by 6.7 points).</p>
+<h5>Block 1b — search lesson for navigation (15:00-)</h5>
+<ul>
+<li>Weakness: no movement (moves 2% of actions; toward a visible tree 1%). Evidence: b1_v21 eval above.</li>
+<li>Lesson: search targets for s_wood / s_water / s_cow (prob 1.0 / 1.0 / 0.5 of matching scout moments) and crafting
+searches, rate up to 240/min per lesson; PG branch lessons continue.</li>
+<li>Should move: share of moves in scouts &gt; 20%; tree-visible &quot;toward&quot; rate &gt; 30%; full-game collect_wood &gt; 40%,
+collect_drink &gt; 15%; progression &gt; 15%. Revert to v21 if progression drops below 9%.</li>
+</ul>
+<h6>Block 1b result (v35, 15:00-15:20, ~20 card-minutes): official dev 100</h6>
+<p>progression 15.55% (1a: 11.32%), Crafter 2.36%, invalid 0.8%, length 175. collect_wood 80 (10), drink 56 (3),
+sapling 90, place_plant 83 (98), eat_cow 14, zombie 9 (22), wake_up 5, place_table 3, skeleton 2.
+Actions: Do 37%, moves 53%. Tree visible within 4: toward 24% (1%). Lesson success at fixed weights rose:
+wood_near 7% -&gt; 32%, wood_far 0-5% -&gt; 36%. Forgot: defeat_zombie 22 -&gt; 9 (less Do spam), place_plant 98 -&gt; 83.
+=&gt; KEEP. Submitted v35 (check_submission valid).
+New weakness: 7438 moments (of 17257) with wood &gt;= 2 and no table: Place Table ~0%. place_table 3% of games,
+no pickaxe/sword at all. Deaths: zombie 54, arrow 15.</p>
+<h5>Block 2 — crafting chain: table, wood pickaxe, wood sword (15:30-)</h5>
+<ul>
+<li>Evidence: above (wood&gt;=2 &amp; no table: Place Table ~0% over 7438 moments; tools 0%).</li>
+<li>Lessons: PG branch lessons <code>table</code> (wood&gt;=2, no table, H 6), <code>wood_pickaxe</code> / <code>wood_sword</code> (table within 3,
+wood&gt;=1, H 8, shaping toward table), <code>wood_more</code> (collect more wood after the first, while tools missing);
+search lessons s_table, s_wood_pickaxe, s_wood_sword at prob 1.0 (Place Table / Make ... is never sampled, so
+search/probe targets must seed it); wood lessons down-weighted, drink/cow continue.</li>
+<li>Should move: place_table &gt; 40% of games, make_wood_pickaxe / sword &gt; 20%; progression &gt; 20%.
+Lesson success (table) should rise from ~0. Revert to v35 if progression &lt; 13%.</li>
+</ul>
+<h6>Block 2 progress (15:22-15:45)</h6>
+<p>Lesson success at fixed weights: table 0% -&gt; 31% -&gt; 59%, wood_pickaxe 0% -&gt; 66%, wood_sword 0% -&gt; 77% in ~20 min;
+wood lessons 75-100% (mastered, down-weighted to 0.2-0.5). Probe/search targets for Place Table / Make Wood
+Pickaxe / Make Wood Sword seeded actions the model never sampled before.
+Machinery: scouts advance one step per lockstep engine step (~16 s), so a 200-step game takes ~50 min and every
+engine restart resets them: mid/late-game moments (thirst, hunger, night, zombies) were starved. Added promotion:
+a branch that succeeds becomes a scout (keeps playing from mid-game), up to 128 extra scouts.</p>
+<h5>Block 3 — survival: zombies, sleep, drink, food (15:47-)</h5>
+<ul>
+<li>Weakness: deaths by zombie 54% (+ arrow 15%) of games; wake_up 5% (base 17%, the model stopped sleeping);
+eat_cow 14%; games last ~175 steps. Evidence: b1b_v35 eval (b2_v70 eval running).</li>
+<li>Lessons: PG <code>zombie</code> (zombie within 3; +1.5 defeat, -0.25 per health lost, -1 death, H 14), <code>sleep</code> (energy &lt;= 7,
+no zombie within 6; success wake_up, H 60), drink and cow up-weighted (1.5); search <code>s_zombie</code> (shortest kill),
+<code>s_sleep</code> (Sleep kept only if the game then shows wake_up without death; selector: first sleep of the game when
+energy &lt;= 8, or energy &lt;= 3); crafting lessons kept at weight 1, wood lessons at 0.2-0.5.</li>
+<li>Should move: defeat_zombie, wake_up up (&gt; 30%), zombie deaths down, longer games; eat_cow / drink up.
+Crafting achievements must not fall back. Revert to the block-2 checkpoint if progression drops.</li>
+</ul>
+<h6>Block 2 result (v70, 15:22-15:42, ~20 card-minutes): official dev 100</h6>
+<p>progression 25.05% (1b: 15.55%), Crafter 6.80% (2.36%), invalid 0.9%, length 176.
+place_table 88 (3), make_wood_pickaxe 59 (0), make_wood_sword 47 (0), collect_wood 93 (80), defeat_zombie 34 (9),
+collect_stone 20 (0), coal 7, furnace 5, place_stone 3; drink 36 (56, lost), sapling 75 (90), place_plant 72 (83),
+eat_cow 9 (14), wake_up 2 (5). Deaths: zombie 47, arrow 15, thirst/hunger 18.
+New weakness created by the lesson: <code>Place Table</code> is 18% of all actions (spammed in every context: 17-31% when
+facing grass, zombie near, low energy...). Water visible &amp; thirsty: moves toward it 8%.
+=&gt; KEEP; submitted v70.</p>
+<h6>Block 3 result (v120, 15:47-16:10, ~23 card-minutes): official dev 100</h6>
+<p>progression 29.45% (block 2: 25.05%), Crafter 9.35% (6.80%), length 168 (176).
+wake_up 90 (2) &lt;- sleep trial lesson; eat_cow 22 (9); place_stone 13 (3); make_wood_sword 56 (47), pickaxe 53 (59),
+place_table 86, wood 93; drink 34 (36, flat); defeat_zombie 28 (34); stone 17 (20); coal 4, furnace 4,
+stone pickaxe 2. Deaths: zombie 58 (47), arrow 14. Place Table spam gone (not in top-5 actions), but
+Make Wood Pickaxe / Sword 8% each of all actions. 30/100 games: asleep within 5 steps of death -&gt; the model
+learned to sleep and now sleeps outdoors at night (zombies hit sleepers for 7). =&gt; KEEP; submitted v120.
+Search fix: cow/zombie searches failed (15/16 none) because the de-dup key ignored creature health (hits looked
+like no progress); key now includes health of creatures within 2; cow search 6/6 in CPU test.</p>
+<h5>Block 4 — stone tier + night survival (16:25-)</h5>
+<ul>
+<li>Weakness 1: stone tier mostly absent: stone 17, place_stone 13, furnace 4, coal 4, stone pickaxe 2, sword 0.
+Evidence: b3_v120; &quot;has stone, no place_stone yet&quot;: Place Stone not in top-5 actions (264 moments).</li>
+<li>Weakness 2: dies in the first night (median end step 165; zombie 58%); 30% of deaths asleep.</li>
+<li>Lessons: PG stone / place_stone / stone_pickaxe / stone_sword / furnace / coal + searches for each;
+new PG lesson <code>night</code> (night moments, 30 steps, -0.3/health lost, +1/zombie defeated, -2 death); sleep lesson and
+sleep trial restricted to daylight; earlier lessons kept at reduced weight.</li>
+<li>Should move: collect_stone &gt; 40, place_stone &gt; 30, stone pickaxe/sword &gt; 15, furnace &gt; 10; zombie deaths down,
+length up. Keep if progression &gt; 29.5 + 3 or stone tier clearly up without losses elsewhere.
+Machinery: engine now saves its scouts on SIGTERM and resumes them (--resume-scouts), so restarts no longer reset
+mid-game moments.</li>
+</ul>
+<h6>Block 4 result (v190, 16:24-16:53, ~29 card-minutes): official dev 100</h6>
+<p>progression 27.09% (block 3: 29.45%; -2.4, within noise), Crafter 9.18 (9.35), length 181 (168).
+Gained: drink 50 (34), place_stone 23 (13), furnace 12 (4), coal 12 (4), stone 23 (17), stone sword 2;
+arrow deaths 8 (14). Forgot (skills out of or reduced in the mix): sapling 52 (73), place_plant 51 (70),
+eat_cow 7 (22), defeat_zombie 16 (28), wood sword 42 (56), pickaxe 46 (53), table 77 (86). New spam:
+Place Furnace (32% of actions at energy &lt;= 3). Zombie deaths 58 (58). Night lesson never ran: all scouts were at
+env step ~51 (lockstep scouts advance one step per engine step; night begins ~step 180) -&gt; added scout-only
+substeps. =&gt; NOT submitted (v120 stays). Main line continues from v190 (its stone-tier/drink gains are real) with
+a consolidation block; go back to v120 if block 5 does not beat it.</p>
+<h5>Block 5 — consolidation: bring back forgotten skills, keep the stone tier (17:12-)</h5>
+<ul>
+<li>Weakness: forgetting (sapling/plant, cow, zombie, wood tools) + Place Furnace spam. Evidence: block 4 vs 3 above.</li>
+<li>Mix: cow 1.5 (+ s_cow 0.8), zombie 1.0 (+ s_zombie 0.6), wood tools 0.8 (+ searches 0.5), probes up to 40/min per
+reason (sapling / place_plant targets come from probes), stone tier kept 0.5-0.8 (stone pickaxe / sword searches
+1.0), furnace down to 0.3 (search 0.2), night 1.0 once scouts reach night.</li>
+<li>Should move: sapling/plant back to ~70, eat_cow &gt; 20, zombie &gt; 25, wood tools &gt; 50, keep stone tier gains;
+progression &gt; 30. Otherwise go back to v120.</li>
+<li>17:05-17:30 in block 5: search rate halved (120/min per search lesson) so PG on the model's own choices gets a
+larger share; search for &quot;next new achievement&quot; tried on CPU and rejected (dominated by RNG-lucky saplings);
+added <code>lava</code> lesson (lava within 2, H 10, -2 for dying; 75% of its branches died at first) and extended
+wood_more to &quot;need wood for stone tools&quot;. Scouts on training worlds (v205-234): progression 30.3%, 177 steps.</li>
+</ul>
+<h6>Block 5 result (v245, 17:02-17:30, ~28 card-minutes): official dev 100</h6>
+<p>progression 28.27% (b4 27.09, b3 29.45), Crafter 9.07, length 170. eat_cow 42 (b3 22, b4 7), drink 61 (34/50),
+zombie 25 (28/16), coal 12, furnace 9; still lost vs b3: sapling 46 (73), place_plant 46 (70), wood sword 36 (56).
+Moves are 72% of actions (Do 19%, b3 33%) -&gt; fewer Do on grass -&gt; fewer saplings. Zombie deaths 57.
+Diagnosis of the forgetting: with group-relative advantages, a mastered lesson (all 8 branches succeed) only
+teaches relative speed (slower successful branches are pushed down) -- no absolute push keeps the skill, while other
+lessons' gradients erode it. Not submitted (v120 stays best).</p>
+<h5>Block 6 — consolidation with rehearsal (17:45-)</h5>
+<ul>
+<li>Weakness: forgetting of mastered skills (sapling/plant, wood sword) while new ones are learned; evidence above.</li>
+<li>Method change: rehearsal -- when all branches of a group succeed (prob 0.5), add +0.3 to every advantage
+(the model's own successful decisions get an absolute push; relative speed signal kept). New PG lessons
+<code>sapling</code> (collect_sapling not yet, grass in front/adjacent, H 10) and <code>plant</code> (sapling held, place_plant not
+yet, H 6). Wood tools up to 1.0. lr 5e-7 -&gt; 3.5e-7 to reduce drift.</li>
+<li>Should move: sapling/plant back &gt; 65, wood sword &gt; 50 while keeping cow &gt; 35, drink &gt; 55; progression &gt; 31.
+If not above v120 (29.45) after this block, go back to v120 with this mix.</li>
+<li>AUXILIARY (weight averaging, not part of the main line): average of v120 and v245 evaluated separately.</li>
+<li>AUXILIARY result: average(v120, v245) = 32.73% progression, Crafter 11.06, length 193 (v120 29.45, v245 28.27):
+wood tools 59/60, zombie 43, stone 29, place_stone 28, furnace 20, drink 56. Submitted as a safety net (marked
+auxiliary); the main line keeps training without averaging and is scored on its own.</li>
+</ul>
+<h6>Block 6 result (v305, 17:45-18:12, ~27 card-minutes): official dev 100</h6>
+<p>progression 31.59% (b5 28.27, b3 29.45) -- best unaveraged main-line checkpoint. Crafter 11.03, length 183.
+drink 67, eat_cow 43, wake_up 93, zombie 36, stone 26, place_stone 26, furnace 11, coal 12, wood tools 50/50,
+sapling/plant 51/50 (b3 73/70, still below). Deaths: zombie 65 (b5 57), arrow 9 (14). =&gt; KEEP (main line best).
+Zombie deaths dissected (65): 39 asleep within the last 20 steps, 58 with a zombie adjacent, energy at death ~8:
+the wake_up habit spread into sleeping whenever energy dips, including at night (night is not in the text).</p>
+<h5>Block 7 — safe sleeping and night survival (18:30-)</h5>
+<ul>
+<li>Weakness: sleeping outdoors at night (39/65 zombie deaths asleep). Evidence above.</li>
+<li>Mix: PG <code>sleep</code> only at energy &lt;= 3 (weight 0.15); sleep trial search 0.2 -&gt; 0.05 (wake_up kept by rehearsal);
+<code>night</code> 1.0 -&gt; 1.5 (H 15), <code>zombie</code> 1.0 -&gt; 1.2; <code>sapling</code> 1.2, <code>plant</code> 0.8; rehearsal on.</li>
+<li>Should move: zombie deaths &lt; 50, asleep-at-death count down, length up, wake_up stays &gt; 80;
+progression &gt; 31.6. Otherwise keep v305 as the main-line best.</li>
+</ul>
+<h6>Block 7 result (v360, 18:23-18:46, ~23 card-minutes): official dev 100</h6>
+<p>progression 36.27% (b6 31.59), Crafter 12.01 (11.03), length 203 (183). sapling/plant 73/73 (51/50, recovered),
+eat_cow 65 (43), defeat_zombie 66 (36), drink 71 (67), wake_up 90 (93), defeat_skeleton 3; stone tier flat
+(stone 24, place_stone 23, furnace 16, coal 10). Deaths: zombie 49 (65), of them asleep within 20 steps 22 (39).
+=&gt; KEEP; submitted v360 (main line, unaveraged).</p>
+<h5>Block 8 — stone tools chain within the block-7 mix, lr 3e-7 (18:50-)</h5>
+<ul>
+<li>Weakness: stone pickaxe 0 / stone sword 1 in full games (lesson success at fixed weights 19-75%: the model can
+craft them when set up, but rarely gets wood + stone + table together). Evidence: b7_v00360.</li>
+<li>Mix change: stone_pickaxe / stone_sword 0.6 -&gt; 1.0, wood_more 0.5 -&gt; 0.8 (wood_more includes &quot;need wood for
+stone tools&quot;); everything else as block 7, rehearsal on; lr 3.5e-7 -&gt; 3e-7.</li>
+<li>Should move: stone pickaxe/sword &gt; 10 without losing block-7 gains; keep if progression &gt;= 36.3 - 3 and stone
+tools up; otherwise v360 stays.</li>
+</ul>
+<h6>Block 8 result (v405, 18:50-19:15, ~25 card-minutes): official dev 100</h6>
+<p>progression 38.32% (b7 36.27), Crafter 14.97 (12.01), length 186 (203). stone 37 (24), place_stone 35 (23),
+furnace 25 (16), coal 20 (10), stone pickaxe 3 (0), stone sword 4 (1), wood tools 61/62 (49/56), sapling/plant 74/74,
+drink 72, skeleton 5. Lost a little: wake_up 83 (90), defeat_zombie 51 (66), eat_cow 55 (65). =&gt; KEEP; submitted.
+AUXILIARY: avg(v305, v360) = 35.68% (v360 alone 36.27) -&gt; averaging no longer helps; not used.</p>
+<h5>Block 9 — consolidation, lr annealed to 2e-7 (19:27-20:10)</h5>
+<ul>
+<li>Lesson: same mix as block 8 (all lessons + rehearsal of mastered skills), only the learning rate goes down, to
+settle the policy before the final checks. Keep the final checkpoint only if it is not worse than v405 by more
+than noise on 100 worlds and confirm on 300.</li>
+<li>v405 confirmation on 300 worlds (not official count): progression 39.58% (95% CI 38.21-40.92), Crafter 15.28,
+length 198.</li>
+</ul>
+<h6>Block 9 result (v481, 19:27-20:08, ~41 card-minutes, lr 2e-7): official dev 100</h6>
+<p>progression 37.59% (v405 38.32, within noise), Crafter 14.08, length 194. furnace 29 (25), coal 22 (20), stone
+sword 6 (4), drink 75 (72), cow 60 (55), wood 97, table 90; lost sapling/plant 59/58 (74/74), wake_up 79 (83).
+300-world confirmation (not official count): v481 41.64% (95% CI 40.15-43.09), Crafter 16.83, length 199;
+v405 39.58% (38.21-40.92), Crafter 15.28. =&gt; v481 chosen; submitted (check_submission valid).
+AUXILIARY (weight averaging, last step, not used): avg(v405, v481) on 300 worlds 41.76% (40.39-43.12), Crafter 16.03
+-- same as v481 within noise (rule set beforehand: the average had to beat the unaveraged line by &gt;= 1.5 points).</p>
+<h5>Final</h5>
+<ul>
+<li>Submission: /submission/model.safetensors = main-line checkpoint v481 (no averaging or weight editing).
+Official dev 100: 37.59% progression, Crafter 14.08%. 300 worlds: 41.64% progression, Crafter 16.83%.
+(Untrained model: 4.59% / 1.04%.)</li>
+<li>Training: 1007 optimizer steps in total; 1001 of them (99.4%) are in the lineage of the final weights (discarded:
+4 steps of a first trainer restarted after a batching fix, 2 steps after v21 at the 14:54 restart).
+193,344 trained samples: 137,324 policy-gradient samples on the model's own decisions in lesson branches,
+37,336 search targets, 18,684 probe targets. Plain full-game training: 0 samples, 0% of training card time
+(scouts play full games only as a source of moments and a monitor).</li>
+<li>Card use: trainer and engine ran side by side under MPS from 13:59 to 20:08 (about 6.1 h); evaluations shared
+the card; weights published every 2-3 optimizer steps and swapped into the engine in place.</li>
+</ul>
+<h6>Progression by block (official dev 100)</h6>
+<p>base 4.59 -&gt; 1a 11.32 -&gt; 1b 15.55 -&gt; 2 25.05 -&gt; 3 29.45 -&gt; 4 27.09 -&gt; 5 28.27 -&gt; 6 31.59 -&gt; 7 36.27 -&gt; 8 38.32 -&gt; 9 37.59
+(full achievement table: /app/logs/compare_all.txt)</p>
+<h6>What carried over (curriculum lessons that worked)</h6>
+<ol>
+<li>Exploration failures cannot be fixed by rewards: the model's only move was West; search in exact game copies
+from its own moments (keep the first actions of the shortest sequences that the game shows succeed) seeded all
+four directions in ~10 optimizer steps; the same seeded Place Table / Make ... / Sleep later.</li>
+<li>Only missed opportunities as targets (the model's own next action did not work) avoided the Place Plant /
+Place Table spam that all-states targets caused.</li>
+<li>Group-relative advantages give mastered lessons no absolute push; skills out of focus decayed (block 4/5).
+Rehearsal (+0.3 when every branch succeeds) stopped the forgetting (block 6: 28.3 -&gt; 31.6; block 7: 36.3).</li>
+<li>Diagnose deaths, not only achievements: 39/65 zombie deaths were asleep at night (night is not in the text);
+restricting sleep practice to low energy + the night lesson cut asleep deaths to 22/49 and raised zombie kills.</li>
+<li>Machinery mattered as much as lessons: lockstep latency, stale samples, prefix-cache ordering of branch groups
+(2x engine throughput), persistent scouts across engine restarts, scout-only substeps to reach night.</li>
+</ol>
+</div></details></section></div></main><script>
+(function(){
+ function open(){var h=decodeURIComponent(location.hash.slice(1)),el=h&&document.getElementById(h);
+  if(el&&el.tagName==='DETAILS')el.open=true}
+ addEventListener('hashchange',open);open();
+ document.querySelectorAll('.chart,.spark').forEach(function(f){var tip=f.querySelector('.tip');
+  function on(e){var t=e.target.getAttribute&&e.target.getAttribute('data-tip');if(!t)return;tip.textContent=t;tip.hidden=false;
+   var b=f.getBoundingClientRect(),r=e.target.getBoundingClientRect();
+   tip.style.left=Math.max(0,Math.min(r.left-b.left+12,b.width-tip.offsetWidth))+'px';tip.style.top=(r.top-b.top-34)+'px';}
+  function off(){tip.hidden=true}
+  f.addEventListener('mouseover',on);f.addEventListener('focusin',on);f.addEventListener('mouseout',off);f.addEventListener('focusout',off);});
+})();
+</script></body></html>
