@@ -1,0 +1,1589 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>GPT-6 Astra xhigh (Teacher) #2 | Teaching by Curriculum</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"><style>:root{--bg:#ffffff;--fg:#111114;--fg2:#3f3f46;--mut:#686871;--line:#e5e5e8;--axis:#cdcdd4;--card:#f7f7f8;--acc:#c43c19;--ring:rgba(17,17,20,.08);--chip:#efeff2;--hover:rgba(17,17,20,.03);--shadow:none;--track:#e9e9ed;--base:#a1a1aa;--raised:#ffffff;--s1:#0072b2;--s2:#e69f00;--s3:#009e73;--s4:#d55e00;--s5:#cc79a7;--s6:#56b4e9;--s7:#a63d8f;--s8:#f0e442;--h0:#f7f7f8;--ht0:#111114;--h1:#d8e6ef;--ht1:#111114;--h2:#b9d6e6;--ht2:#111114;--h3:#9ac5de;--ht3:#111114;--h4:#7cb4d5;--ht4:#111114;--h5:#5da4cc;--ht5:#ffffff;--h6:#3e93c4;--ht6:#ffffff;--h7:#1f83bb;--ht7:#ffffff;--h8:#0072b2;--ht8:#ffffff;color-scheme:light}
+/* Prose is capped at 100 characters a line; tables, charts and verbatim documents run the full
+   width of main (960px). */
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+::selection{background:color-mix(in srgb,var(--acc) 22%,transparent)}
+main{max-width:960px;margin:0 auto;padding:20px max(16px,env(safe-area-inset-right,0px)) 72px max(16px,env(safe-area-inset-left,0px))}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--axis);text-underline-offset:3px}a:hover{text-decoration-color:var(--acc)}
+h1{font-size:40px;line-height:1.12;margin:0 0 10px;font-weight:600;letter-spacing:-.02em;text-wrap:balance}
+h2{font-size:22px;line-height:1.25;margin:52px 0 12px;font-weight:600;letter-spacing:-.01em;text-wrap:balance}
+h2.sec{font-size:28px;margin:0 0 20px;letter-spacing:-.02em}
+h2.sec{border-left:3px solid #000;padding-left:12px}
+header.site{position:sticky;top:0;z-index:4;background:var(--bg);border-bottom:1px solid var(--line)}
+nav.report-nav{max-width:960px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;gap:20px;font-size:14px}
+.report-nav a{display:block;padding:14px 0;text-decoration:none;white-space:nowrap;color:var(--fg2)}
+.report-nav a:hover,.report-nav a:focus-visible{color:var(--fg);text-decoration:underline}
+.report-nav .back{color:var(--fg);font-weight:600}
+.report-nav .back{border-right:1px solid var(--line);padding-right:20px}
+.report-nav .sections{display:flex;gap:20px;margin:0;padding:0;list-style:none}
+.report-nav .sections li{margin:0}
+header.site + main{padding-top:36px}
+@media (max-width:680px){
+  nav.report-nav{flex-wrap:wrap;gap:0 16px}
+  .report-nav a{padding:9px 0}
+  .report-nav .back{border:0;padding-right:0}
+  .report-nav .sections{order:1;flex-basis:100%;overflow-x:auto;gap:clamp(8px,2.5vw,16px);border-top:1px solid var(--line)}
+  .report-nav .sections a{padding-inline:2px}
+}
+@media (max-width:360px){
+  .report-nav .sections{gap:7px}
+  .report-nav .sections a{padding-inline:0}
+}
+main:has(> .samples){min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;
+                     gap:clamp(18px,3vh,36px);padding-block:clamp(36px,5vh,44px) clamp(28px,4vh,40px)}
+.landing-title{align-self:flex-start;display:flex;align-items:center;gap:.23em;color:#000;
+               font-family:Optima,"URW Classico","IBM Plex Sans",sans-serif;
+               font-size:clamp(38px,5vw,54px);margin:0}
+.landing-title img{width:1.06em;height:.96em;object-fit:contain;flex:none}
+@media (min-width:1000px){.landing-title{margin-inline-start:-18px}}
+.intro{font-size:18px;line-height:1.62;color:var(--fg2)}
+.intro p,.intro ul{margin:0}
+.intro p,.intro li{text-wrap:pretty}
+.intro ul{margin-top:12px}
+.intro li+li{margin-top:9px}
+.samples h2{font-size:28px;margin:0 0 16px}
+.team{font-size:15px;line-height:1.55;color:var(--fg2)}
+.team p{margin:0;text-wrap:pretty}
+.affiliation{white-space:nowrap}
+.affiliation img{width:1em;height:1em;object-fit:contain;vertical-align:-.16em;margin-inline-end:.28em}
+.landing-contact{text-align:center;font-size:14px;color:var(--fg2)}
+.landing-contact a{white-space:nowrap}
+@media (max-width:600px){
+  main:has(> .samples){gap:28px;padding-block:28px 36px}
+}
+h3{font-size:17px;margin:30px 0 8px;font-weight:600}h4,h5,h6{font-size:15px;margin:18px 0 6px;font-weight:600}
+p,ul,ol{margin:8px 0}li{margin:3px 0}ul,ol{padding-left:22px}
+.sub{color:var(--fg2);margin:0;font-size:16px}
+.lede p{margin:0 0 8px}.lede p:last-child{margin-bottom:0}
+.lede-l{font-size:15px;font-weight:600;color:var(--fg);margin:0 0 6px}
+.blk{margin:24px 0}.blk>:last-child{margin-bottom:0}
+details.fold{border:0;padding:0;margin:14px 0 4px}details.fold>summary{color:var(--fg2);font-weight:500}
+details.fold>summary:hover{color:var(--fg)}details.fold figure.fig{margin:14px 0 8px}
+.blk .lede-l{margin-bottom:6px}.formula-line{font-size:15px}.formula-line b{font-weight:600}
+.mut{color:var(--fg2)}.na{color:var(--mut)}.small{font-size:13px}
+h3 .fname{font-size:13px;font-weight:400;color:var(--mut);margin-left:8px;font-family:"IBM Plex Mono",ui-monospace,monospace}
+code{font:12.5px/1.4 "IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--chip);border-radius:2px;padding:1px 4px}
+pre{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:12px 14px;overflow:auto}pre code{background:none;padding:0}
+.tw{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums;width:100%;border-top:1.5px solid var(--fg);border-bottom:1.5px solid var(--fg)}
+th,td{text-align:left;padding:9px 12px 9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child>td{border-bottom:0}td:last-child,th:last-child{padding-right:0}
+th{font-weight:600;font-size:12.5px;line-height:1.3;color:var(--fg2);vertical-align:bottom;padding-top:10px;border-bottom:1px solid var(--fg2)}
+td.nw{white-space:nowrap}td.n,th.n,.right{text-align:right}.center{text-align:center}
+tbody tr:hover>td{background:var(--hover)}
+tr.best td{font-weight:600}
+td.run{min-width:150px}.rn{display:inline-flex;align-items:center;gap:8px}
+.key{flex:none;width:9px;height:9px;border-radius:50%;display:inline-block}
+.rnote{font-size:12.5px;color:var(--fg2);font-weight:400;margin-top:2px;line-height:1.4}td.run.k .rnote{padding-left:17px}
+.chip,.badge{display:inline-block;font-size:12px;line-height:20px;padding:0 8px;border-radius:10px;background:var(--chip);
+color:var(--fg2);white-space:nowrap;font-weight:500}.badge{margin-left:6px}
+tr.sep td{border-bottom:1px solid var(--line);padding-top:22px;font-size:12px;font-weight:500;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+tr.sep:hover>td{background:none!important}
+.bar{display:inline-flex;align-items:center;gap:8px}
+.bar .track,.meter{position:relative;height:6px;background:var(--track)}
+.bar .track{width:clamp(56px,14vw,170px)}
+table.lb td.n{white-space:nowrap}table.lb th:first-child,table.lb td:first-child{width:34px}
+table.lb td.sc .bar{justify-content:flex-end;width:100%}table.lb .bar .track{width:clamp(56px,10vw,120px)}
+.fill{position:absolute;left:0;top:0;bottom:0;background:var(--fg)}.fill.b{background:var(--base)}
+.ref{position:absolute;top:-4px;bottom:-4px;width:2px;margin-left:-1px;background:var(--fg);border-radius:1px;opacity:.55}
+.bv{min-width:3.1em;text-align:right}
+.bar.hd{display:flex;justify-content:flex-end;align-items:flex-end}.track.lbl{background:none;height:22px}
+.reflbl{position:absolute;bottom:8px;white-space:nowrap;font-style:normal;font-size:11.5px;font-weight:500;color:var(--fg2)}
+.refmark{position:absolute;bottom:-2px;height:7px;width:2px;margin-left:-1px;background:var(--fg);opacity:.55;border-radius:1px}
+.pill{display:inline-block;min-width:4.2em;text-align:center;padding:1px 8px;border-radius:2px}
+td.hc{padding-top:5px;padding-bottom:5px}
+.heatkey{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--fg2);margin:6px 0 4px}
+.heatkey .ramp{display:flex;gap:2px}.heatkey .ramp i{width:14px;height:10px;border-radius:2px;display:block}
+nav.crumb{font-size:14px;margin-bottom:20px}nav.crumb a{color:var(--fg2);text-decoration:none}nav.crumb a:hover{text-decoration:underline}
+nav.tabs{display:flex;width:fit-content;max-width:100%;overflow-x:auto;gap:6px;margin-left:-12px}
+nav.tabs a{padding:6px 12px;color:var(--mut);white-space:nowrap;font-weight:500;font-size:15px;text-decoration:none;border-radius:6px}
+nav.tabs a:hover{color:var(--fg)}
+nav.tabs a[aria-current=page]{color:var(--fg);font-weight:600;box-shadow:inset 0 -2.5px 0 var(--acc);border-radius:0}
+[id]{scroll-margin-top:72px}
+@media (max-width:680px){header.site + main [id]{scroll-margin-top:108px}}
+
+section.tab{margin-top:64px;font-size:17px;line-height:1.6}
+section.tab :is(p,ul,ol,blockquote){max-width:70ch;overflow-wrap:anywhere}
+main > h1 + section.tab{margin-top:32px}
+thead:not(:has(th:not(:empty))){display:none}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.tile,.chart,details.about{background:var(--card);border:1px solid var(--line);border-radius:3px}
+.tile{padding:14px 16px 10px}
+.tile .l{font-size:13px;color:var(--fg2);font-weight:500}
+.tile .v{font-size:34px;font-weight:600;line-height:1.15;margin:4px 0 2px;letter-spacing:-.02em}.tile.hero .v{font-size:54px}
+.tile .s{font-size:13px;color:var(--fg2);min-height:1.6em}
+.scoredef{display:grid;grid-template-columns:minmax(200px,auto) 1fr;gap:12px 40px;align-items:center;margin:12px 0 24px}
+.scoredef.bare{display:block;margin:20px 0 28px;padding:14px 18px;border-left:3px solid var(--line)}
+.doc :not(pre)>code{overflow-wrap:anywhere}
+section.tab p{margin:0 0 10px}section.tab p>strong:first-child{font-weight:600}
+section.tab ul,section.tab ol{margin:0 0 14px}section.tab li{margin:2px 0;line-height:1.5}section.tab li>p{margin:0}
+section.tab ul{list-style:none;padding-left:1.4em}section.tab ul>li{position:relative}
+section.tab ul>li::before{content:"";position:absolute;left:-1.1em;top:.62em;width:5px;height:5px;background:#000;transform:rotate(45deg)}
+section.tab ol{padding-left:1.6em}.doc ul{list-style:disc;padding-left:22px}.doc ul>li::before{content:none}
+section.tab h3{font-size:19px;margin:26px 0 8px}
+#analysis h3{font-size:21px}
+#analysis h4{font-size:16px}
+.bestline{margin:10px 0 0;font-size:14.5px;color:var(--fg2)}.bestline b{color:var(--acc);font-weight:600;font-variant-numeric:tabular-nums}
+.bestline a{color:var(--fg);text-decoration:none}.bestline .logo{width:15px;height:15px;vertical-align:-2px;margin-right:5px}.bestline a:hover{text-decoration:underline}
+.logo{width:16px;height:16px;flex:none;display:inline-block}.eff{color:var(--mut);font-weight:400;margin-left:2px}tr.best .eff{font-weight:400}
+.hero{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:10px 32px;margin:26px 0 6px}
+.hero .n b{font-size:72px;font-weight:500;letter-spacing:-.045em;line-height:1;display:block;font-variant-numeric:tabular-nums}.hero .n span{font-size:14px;color:var(--fg2)}
+.hero .facts{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:14px;color:var(--fg2);margin:0 0 8px}
+.scoredef .l{font-size:13px;color:var(--fg2);font-weight:500}
+.scoredef .formula{font-size:27px;font-weight:600;line-height:1.2;margin-top:2px;white-space:nowrap}
+.scoredef .defs{font-size:13.5px;color:var(--fg2);line-height:1.5;columns:2;column-gap:28px}
+.scoredef .defs p{margin:0;break-inside:avoid;max-width:none}
+@media (max-width:640px){.scoredef{grid-template-columns:1fr}.scoredef .defs{columns:1}.scoredef .defs p+p{margin-top:6px}.scoredef .formula{white-space:normal;font-size:23px}}
+.tile .meter{margin:12px 0 4px}.meter.neutral{background:var(--line)}.meter.neutral .fill{background:var(--mut)}
+.meter .pt{position:absolute;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;box-shadow:0 0 0 2px var(--card)}
+.scale{display:flex;justify-content:space-between;font-size:11px;color:var(--mut);font-variant-numeric:tabular-nums}
+.callout{border-left:3px solid var(--acc);background:var(--card);padding:9px 14px;border-radius:0 8px 8px 0;font-size:13.5px;color:var(--fg2);margin:12px 0}
+details.about{padding:0 18px;margin:16px 0}
+details.about>summary{padding:13px 0;font-weight:600;cursor:pointer}details.about>summary .mut{font-weight:400}
+details.about[open]>summary{border-bottom:1px solid var(--line);margin-bottom:12px}
+details.about dl.fields{margin:0 0 16px}
+dl.fields{display:grid;grid-template-columns:200px 1fr;gap:10px 18px;margin:10px 0}
+dl.fields dt{color:var(--fg2);font-size:14px;font-weight:500}dl.fields dd{margin:0}dl.fields dd>p:first-child{margin-top:0}
+@media (max-width:640px){dl.fields{grid-template-columns:1fr}dl.fields dd{margin-bottom:8px}}
+figure{margin:20px 0}figure.fig{margin:28px 0 36px}figure.fig svg{width:100%;max-width:760px;height:auto;display:block;margin:0 auto}figure>img{display:block;margin:0 auto}
+figure.fig-passk svg{max-width:480px}figure.fig-components svg{max-width:620px}figure.fig svg text{font-family:"IBM Plex Sans",system-ui,sans-serif}figure img{max-width:100%;border:1px solid var(--line);border-radius:3px;background:#fff}
+figcaption{font-size:15px;line-height:1.55;color:var(--fg2);margin:0 0 12px}figcaption .lead{color:var(--acc);font-weight:600}
+.chart{position:relative;padding:18px 18px 8px}
+.chart svg{width:100%;height:auto;display:block}
+.legend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--fg2);margin-bottom:4px}
+.legend span{display:inline-flex;align-items:center;gap:6px}.sw{width:14px;height:3px;border-radius:2px;display:inline-block}
+.sw.dk{width:8px;height:8px;transform:rotate(45deg);border-radius:1px;background:var(--fg2)}
+.panel{fill:none}.lbl-end{font-size:12px;fill:var(--fg);font-weight:550}.lbl-end.mut{fill:var(--mut);font-weight:400}.bar.base{fill:var(--base)}figcaption.mut{margin:-6px 0 0}.grid{stroke:var(--line);stroke-width:1}.vgrid{display:none}.axis{stroke:none}.ref{stroke:var(--mut);stroke-width:1;stroke-dasharray:4 3}
+.tick{fill:var(--mut);font-size:11px;font-variant-numeric:tabular-nums}.tick.grp{font-size:11px;letter-spacing:.06em;text-transform:uppercase}.single{fill:var(--base);stroke:var(--card);stroke-width:1.5}.sw.single{background:var(--base)}
+
+.line{fill:none;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round;opacity:.8}
+.dot{stroke:var(--card);stroke-width:1.5;cursor:default}.bar{cursor:default}.bar:hover,.bar:focus{stroke:var(--fg);outline:none}.dia{stroke:var(--card);stroke-width:1.5}
+.dot:hover,.dot:focus,.dia:hover,.dia:focus{stroke:var(--fg);outline:none}
+.runpt{fill:var(--fg);stroke:var(--card);stroke-width:1.5;outline:none}.runpt:hover,.runpt:focus{stroke:var(--fg)}
+.runpick{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px}
+.rp{font:inherit;font-size:12.5px;line-height:20px;padding:2px 10px;border-radius:2px;border:1px solid var(--line);background:var(--raised);color:var(--fg);cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.rp:hover{border-color:var(--axis)}.rp.off{opacity:.42;background:transparent}.rp-all,.rp-none{color:var(--fg2);background:transparent}
+.s1.line,.st-sd.s1,.st-mean.s1{stroke:var(--s1)}.s1.dot,.s1.dia,.s1.bar,.sw.s1,.key.s1,.pt.s1,.fill.s1,.st-dot.s1{fill:var(--s1);background:var(--s1)}.s2.line,.st-sd.s2,.st-mean.s2{stroke:var(--s2)}.s2.dot,.s2.dia,.s2.bar,.sw.s2,.key.s2,.pt.s2,.fill.s2,.st-dot.s2{fill:var(--s2);background:var(--s2)}.s3.line,.st-sd.s3,.st-mean.s3{stroke:var(--s3)}.s3.dot,.s3.dia,.s3.bar,.sw.s3,.key.s3,.pt.s3,.fill.s3,.st-dot.s3{fill:var(--s3);background:var(--s3)}.s4.line,.st-sd.s4,.st-mean.s4{stroke:var(--s4)}.s4.dot,.s4.dia,.s4.bar,.sw.s4,.key.s4,.pt.s4,.fill.s4,.st-dot.s4{fill:var(--s4);background:var(--s4)}.s5.line,.st-sd.s5,.st-mean.s5{stroke:var(--s5)}.s5.dot,.s5.dia,.s5.bar,.sw.s5,.key.s5,.pt.s5,.fill.s5,.st-dot.s5{fill:var(--s5);background:var(--s5)}.s6.line,.st-sd.s6,.st-mean.s6{stroke:var(--s6)}.s6.dot,.s6.dia,.s6.bar,.sw.s6,.key.s6,.pt.s6,.fill.s6,.st-dot.s6{fill:var(--s6);background:var(--s6)}.s7.line,.st-sd.s7,.st-mean.s7{stroke:var(--s7)}.s7.dot,.s7.dia,.s7.bar,.sw.s7,.key.s7,.pt.s7,.fill.s7,.st-dot.s7{fill:var(--s7);background:var(--s7)}.s8.line,.st-sd.s8,.st-mean.s8{stroke:var(--s8)}.s8.dot,.s8.dia,.s8.bar,.sw.s8,.key.s8,.pt.s8,.fill.s8,.st-dot.s8{fill:var(--s8);background:var(--s8)}.h0{background:var(--h0);color:var(--ht0)}.h1{background:var(--h1);color:var(--ht1)}.h2{background:var(--h2);color:var(--ht2)}.h3{background:var(--h3);color:var(--ht3)}.h4{background:var(--h4);color:var(--ht4)}.h5{background:var(--h5);color:var(--ht5)}.h6{background:var(--h6);color:var(--ht6)}.h7{background:var(--h7);color:var(--ht7)}.h8{background:var(--h8);color:var(--ht8)}
+.tip{position:absolute;pointer-events:none;background:var(--fg);color:var(--bg);font-size:12.5px;padding:5px 8px;border-radius:5px;max-width:320px}
+details{border-top:1px solid var(--line);padding:6px 0}details>summary{cursor:pointer;padding:4px 0}
+details[open]>summary{margin-bottom:6px}
+.doc{max-width:calc(70ch + 56px);background:var(--card);border:1px solid var(--line);border-radius:3px;padding:22px 28px 18px}
+.doc>:first-child{margin-top:0}@media (max-width:640px){.doc{padding:16px}}
+.badge{display:inline-block;font-size:12px;color:var(--fg2);border:1px solid var(--line);border-radius:10px;padding:0 8px;margin-left:6px}
+blockquote{margin:8px 0;padding-left:12px;border-left:2px solid var(--line);color:var(--fg2)}
+.pk{display:flex;flex-wrap:wrap;gap:12px 24px}.spark{position:relative;flex:none;width:400px}.spark>svg{display:block;width:100%;height:auto;overflow:visible}
+.pk-h{font-size:13px;color:var(--fg2);margin:0 0 4px}.pk-h b{color:var(--fg);font-weight:600}.spark .tip{white-space:nowrap}
+.st-l{font-size:12.5px;fill:var(--fg)}.st-l.st-b{fill:var(--mut)}.st-v{font-size:12px;font-weight:600;fill:var(--fg);font-variant-numeric:tabular-nums}
+.st-dot{stroke:var(--bg);stroke-width:1.5;outline:none}.st-dot.st-base{fill:var(--base)}.st-sd{stroke-width:1.5;opacity:.6}.st-mean{stroke-width:2.5}
+.spark .grid{stroke:var(--line)}
+td.best{font-size:24px;font-weight:600;line-height:1.2;white-space:nowrap}
+.task{display:grid;grid-template-columns:minmax(200px,1fr) minmax(0,2.6fr);gap:16px 26px;padding:26px 0;border-top:1px solid var(--line);align-items:center}
+.task:first-child{border-top:0;padding-top:8px}
+.task:last-child{padding-bottom:0}
+.t-title{font-size:24px;font-weight:600;line-height:1.25;color:var(--fg)}
+a.t-title{text-decoration-color:currentColor}
+.t-sub{margin:6px 0 10px;color:var(--fg2)}.t-meta{margin:2px 0;font-size:13.5px;color:var(--mut)}
+.t-plots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.t-plots .spark{width:100%;margin:0}
+.t-plots figcaption{margin:0 0 4px;font-size:13px;font-weight:600;color:var(--fg2)}
+.t-plots .logo{width:14px;height:14px}
+.t-plots .line{stroke-width:2.2;opacity:1}
+@media (max-width:860px){
+  .task{grid-template-columns:1fr;gap:14px;padding:20px 0}
+  .t-title{font-size:22px}
+}
+@media (max-width:560px){.t-plots{grid-template-columns:minmax(0,400px);gap:14px}}
+@media (max-width:360px){.landing-title{font-size:34px}.t-title{font-size:20px}}
+@media (max-width:600px) and (max-height:680px){
+  main:has(> .samples){gap:20px;padding-top:20px}
+  .samples h2{margin-bottom:10px}
+  .task{gap:10px;padding-block:14px}
+}
+@media (min-width:861px) and (max-height:980px){
+  main:has(> .samples){gap:clamp(10px,2vh,18px);padding-block:22px 18px}
+  .landing-title{font-size:clamp(42px,6vh,50px)}
+  .intro{font-size:16px;line-height:1.5}
+  .intro ul{margin-top:8px}.intro li+li{margin-top:6px}
+  .samples h2{font-size:24px;margin-bottom:8px}
+  .task{padding-block:12px}
+  .t-plots .spark>svg{max-height:clamp(90px,14vh,112px)}
+}
+td.best .small{font-size:13px;letter-spacing:0;font-weight:400}
+
+.traj [id]{scroll-margin-top:190px}
+nav.runtabs{margin:16px 0 4px}nav.runtabs a{display:inline-flex;align-items:center;gap:7px}
+nav.runtabs .ts{color:var(--mut);font-variant-numeric:tabular-nums;font-weight:400}nav.runtabs a[aria-current=page] .ts{color:var(--fg2)}
+.traj h1 .eff{font-size:.5em;letter-spacing:0;font-weight:400;margin-left:6px}
+.traj .facts{display:flex;flex-wrap:wrap;gap:6px 28px;margin:14px 0 6px;font-size:14px;color:var(--fg2)}
+.facts b{color:var(--fg);font-weight:600;font-variant-numeric:tabular-nums}
+.spine{position:sticky;top:0;z-index:3;background:var(--bg);padding:8px 0 6px;border-bottom:1px solid var(--line);margin-top:16px}
+.spine svg{width:100%;height:auto;display:block;cursor:default}
+.spine a{cursor:pointer}.spine .stripz{cursor:pointer;fill:transparent}
+.ckl{stroke-width:1;opacity:.45}.cursor{stroke:var(--fg);stroke-width:1.5}
+.tk-c{fill:var(--axis)}.tk-m{fill:var(--fg)}.tk-u{fill:var(--base)}.tk-n{fill:var(--acc)}
+.tip{position:absolute;pointer-events:none;background:var(--fg);color:var(--bg);font-size:12.5px;padding:5px 8px;border-radius:5px;max-width:420px;z-index:5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:12px 0 4px;font-size:13px;color:var(--fg2)}
+.tools input{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:5px 10px;width:240px}
+.tools button{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:5px 10px;cursor:pointer}
+.keys{display:flex;gap:12px;margin-left:auto}.keys i{display:inline-block;width:3px;height:11px;margin-right:5px;vertical-align:-1px}
+.ch{margin-top:30px}
+.chh{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 18px;border-bottom:1px solid var(--axis);padding-bottom:6px;margin-bottom:12px}
+.chh .k{font-weight:650;font-size:16px}.chh b{font-size:18px;font-weight:650;font-variant-numeric:tabular-nums}
+.up{color:#006300}.down{color:#d03b3b}
+.st{display:grid;grid-template-columns:62px minmax(0,1fr);gap:0 12px;margin:8px 0}
+.g{font:11.5px/1.5 "IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--mut);padding-top:3px;text-decoration:none}.g:hover{color:var(--acc);text-decoration:none}
+.b>p:first-child{margin-top:0}.b>p:last-child{margin-bottom:0}
+.prompt{background:var(--card);border:1px solid var(--ring);border-radius:8px;padding:12px 16px}
+.lbl{font-size:12.5px;color:var(--fg2);font-weight:600;margin-bottom:4px}
+.note{background:var(--card);border-left:3px solid var(--acc);border-radius:0 6px 6px 0;padding:8px 12px}
+details.grp,details.sub,details.rsn,details.call{border:0;padding:0}
+details.grp>summary,details.sub>summary,details.rsn>summary{cursor:pointer;color:var(--fg2);font-size:14px;padding:2px 0}
+details.grp[open]>summary,details.sub[open]>summary,details.rsn[open]>summary{margin-bottom:4px}
+.meta{color:var(--mut);font-size:12.5px;margin-left:6px}
+.calls{border-left:2px solid var(--line);padding-left:12px;margin:2px 0 8px}.subb{border-left:2px solid var(--axis);padding-left:12px;margin:2px 0 8px}
+details.call>summary{cursor:pointer;display:flex;gap:8px;align-items:baseline;padding:2px 0;font-size:13px;list-style:none}
+details.call>summary::-webkit-details-marker{display:none}
+.cn{font:11.5px "IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--mut);white-space:nowrap}
+.l{font:12.5px/1.5 "IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1;color:var(--fg);background:none;border:0;padding:0}
+.bad{font-size:11.5px;color:#d03b3b;white-space:nowrap}
+.w{font-size:12.5px;color:var(--mut);padding:2px 0}
+.call pre{margin:4px 0;max-height:440px;font-size:12.5px;white-space:pre-wrap;overflow-wrap:anywhere}
+.call pre.out{background:none}
+.rsn .rb{font-size:14px;color:var(--fg2);border-left:2px solid var(--line);padding-left:12px}
+::highlight(hit){background:#eda10066;color:inherit}
+@media (max-width:640px){.spine{position:static}.traj [id]{scroll-margin-top:12px}.st{grid-template-columns:44px minmax(0,1fr);gap:0 8px}.keys{margin-left:0}.tools input{width:100%}}
+
+.submission-summary{margin:14px 0}
+.submission-files{overflow-wrap:anywhere}
+.spine-label{font-size:12px;color:var(--fg2);margin:0 0 4px}
+
+/* Crafter page additions */
+
+table.lb .bv{min-width:3.9em}
+
+table.lb td.refrun .rn{color:var(--fg2)}
+.doc h4{font-size:15px;margin:18px 0 6px}.doc h5{font-size:14.5px;margin:16px 0 6px}
+.doc table{font-size:13px}
+details.fold.doc-fold>summary{font-weight:600;color:var(--fg)}
+.hourly td,.hourly th{text-align:right}.hourly td:first-child,.hourly th:first-child{text-align:left}
+p.cap-note{font-size:13.5px;color:var(--fg2);margin:4px 0 0}
+
+section.tab .lede{margin-bottom:12px}
+table.lb td.run .rn{white-space:nowrap}
+table.lb.t1 .bar .track{width:clamp(48px,8vw,84px)}
+
+/* Teaching by Curriculum additions */
+.doc{overflow-wrap:break-word}
+p.tabs-lab{margin:16px 0 0;font-size:13px;color:var(--mut)}
+p.tabs-lab + nav.runtabs{margin-top:2px}
+details.fold.doc-fold>summary{font-weight:600;color:var(--fg)}
+.submission-summary ul,.submission-summary ol{margin:0 0 12px}
+section.ch h3{margin:28px 0 8px}
+
+table.curr td{font-size:13.5px;line-height:1.45}
+table.curr td.bn{width:15%}
+table.curr td.bn b{display:inline-block;min-width:1.1em;margin-right:2px}
+table.curr td.wk{width:25%}
+table.curr td.pr{width:37%}
+table.curr td.ba{width:23%}
+table.curr.brief td.bn{width:23%}
+table.curr.brief td.wk{width:35%}
+table.curr.brief td.ba{width:42%}
+table.curr .kept{display:block;margin-top:4px;color:var(--fg2);font-weight:500}
+table.curr .chg{display:block;margin-top:4px;font-size:12.5px;color:var(--fg2)}
+span.nw{white-space:nowrap}
+.fig-m{display:none}
+figure.fig .fig-m svg{max-width:420px}
+@media (max-width:640px){.fig-d{display:none}.fig-m{display:block}
+
+  table.curr,table.curr tbody,table.curr tr,table.curr td{display:block;width:auto}
+  table.curr thead{display:none}
+  table.curr tr{padding:12px 0;border-bottom:1px solid var(--line)}
+  table.curr td{border:0;padding:3px 0}
+  table.curr td.bn,table.curr td.wk,table.curr td.pr,table.curr td.ba,
+  table.curr.brief td.bn,table.curr.brief td.wk,table.curr.brief td.ba{width:auto}
+  table.curr td.bn{font-weight:600}
+  table.curr td[data-l]::before{content:attr(data-l);display:block;font-size:12px;font-weight:600;color:var(--mut);
+    text-transform:uppercase;letter-spacing:.04em;margin-top:6px}
+}
+</style></head><body><main><nav class="crumb" aria-label="Report navigation"><a href="../index.html#results">← Back</a></nav><div class="traj"><h1><span class="nw">GPT-6 Astra</span> xhigh (Teacher) #2</h1><p class="sub">Codex 0.166.0 running gpt-6-astra at xhigh effort · from untrained <span class="nw">Qwen3.5-0.8B</span> (Student)</p><p class="tabs-lab"><span class="nw">Qwen3.5-0.8B</span> (Student)'s held-out progression after 8 hours, by run</p><nav class="tabs runtabs" aria-label="Runs of GPT-6 Astra xhigh (Teacher)"><a href="gpt-6-astra-1.html"><i class="key s1"></i>#1 <span class="ts">40.43</span></a><a href="gpt-6-astra-2.html" aria-current=page><i class="key s1"></i>#2 <span class="ts">46.29</span></a></nav><div class="facts"><span>Held-out progression of <span class="nw">Qwen3.5-0.8B</span> (Student) after 8 hours <b>46.29%</b></span><span>Crafter score <b>22.49</b></span><span>Agent time <b>7h 33m</b></span></div><section class="ch" id="final"><header class="chh"><div><span class="k">Trace summary</span></div><div><b>46.29%</b> <span class="mut small">held-out progression of <span class="nw">Qwen3.5-0.8B</span> (Student) after 8 hours</span></div></header><p class="mut">Started from untrained <span class="nw">Qwen3.5-0.8B</span> (Student), with the prompt and the sandbox's lab package; no other code.</p><h3 id="final-summary">Final summary, in <span class="nw">GPT-6 Astra</span> xhigh (Teacher)'s words</h3><div class="submission-summary"><p>Validated final weights (<code>/submission/model.safetensors</code>).</p>
+<p>The curriculum taught resource contact, mining, safe rest, and resuming work after waking.</p>
+<ul>
+<li><strong>Official 100 worlds:</strong> 48.05% progression; 23.94% paper score.</li>
+<li><strong>300-world check:</strong> 45.97% progression; 22.76% paper score.</li>
+<li><strong>Training steps retained:</strong> 2,200/4,252 — <strong>51.74%</strong>.</li>
+<li><strong>Plain full-game training:</strong> <strong>18.48%</strong> of recorded training time.</li>
+</ul>
+<p>The last auxiliary candidate scored 45.73% and was rejected. Completed in approximately 7h32m. Transfer to other games remains untested.</p>
+<p>Report (<code>/app/RESULTS.md</code>) · Curriculum notes (<code>/app/NOTES.md</code>)</p>
+</div><h3 id="development-evaluations">Development evaluations</h3><p>Every call of <code>evaluate</code> in the run: <span class="nw">Qwen3.5-0.8B</span> (Student)'s progression on the public development worlds. Only 100-world calls are official. Kind: auxiliary marks averaged or edited weights.</p><figure class="fig"><figcaption><span class="nw">Qwen3.5-0.8B</span> (Student)'s development progression at every evaluation of this run. ◆ marks its held-out progression after 8 hours.</figcaption><div class="fig-d"><svg role="img" aria-label="Development evaluations of GPT-6 Astra xhigh (Teacher) #2" xmlns:xlink="http://www.w3.org/1999/xlink" width="510.465703pt" height="205.831445pt" viewBox="0 0 510.465703 205.831445" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="fr2-figure_1">
+  <g id="fr2-patch_1">
+   <path d="M 0 205.831445 
+L 510.465703 205.831445 
+L 510.465703 -0 
+L 0 -0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="fr2-axes_1">
+   <g id="fr2-patch_2">
+    <path d="M 34.113281 174.170664 
+L 391.233281 174.170664 
+L 391.233281 21.710664 
+L 34.113281 21.710664 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="fr2-matplotlib.axis_1">
+    <g id="fr2-xtick_1">
+     <g id="fr2-line2d_1">
+      <defs>
+       <path id="fr2-mb67ae6d3f0" d="M 0 0 
+L 0 3 
+" style="stroke: #686871; stroke-width: 0.5"/>
+      </defs>
+      <g>
+       <use xlink:href="#fr2-mb67ae6d3f0" x="34.113281" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_1">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="34.113281" y="187.508555" transform="rotate(-0 34.113281 187.508555)">0</text>
+     </g>
+    </g>
+    <g id="fr2-xtick_2">
+     <g id="fr2-line2d_2">
+      <g>
+       <use xlink:href="#fr2-mb67ae6d3f0" x="74.239124" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_2">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="74.239124" y="187.508555" transform="rotate(-0 74.239124 187.508555)">1</text>
+     </g>
+    </g>
+    <g id="fr2-xtick_3">
+     <g id="fr2-line2d_3">
+      <g>
+       <use xlink:href="#fr2-mb67ae6d3f0" x="114.364967" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_3">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="114.364967" y="187.508555" transform="rotate(-0 114.364967 187.508555)">2</text>
+     </g>
+    </g>
+    <g id="fr2-xtick_4">
+     <g id="fr2-line2d_4">
+      <g>
+       <use xlink:href="#fr2-mb67ae6d3f0" x="154.490809" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_4">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="154.490809" y="187.508555" transform="rotate(-0 154.490809 187.508555)">3</text>
+     </g>
+    </g>
+    <g id="fr2-xtick_5">
+     <g id="fr2-line2d_5">
+      <g>
+       <use xlink:href="#fr2-mb67ae6d3f0" x="194.616652" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_5">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="194.616652" y="187.508555" transform="rotate(-0 194.616652 187.508555)">4</text>
+     </g>
+    </g>
+    <g id="fr2-xtick_6">
+     <g id="fr2-line2d_6">
+      <g>
+       <use xlink:href="#fr2-mb67ae6d3f0" x="234.742495" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_6">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="234.742495" y="187.508555" transform="rotate(-0 234.742495 187.508555)">5</text>
+     </g>
+    </g>
+    <g id="fr2-xtick_7">
+     <g id="fr2-line2d_7">
+      <g>
+       <use xlink:href="#fr2-mb67ae6d3f0" x="274.868337" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_7">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="274.868337" y="187.508555" transform="rotate(-0 274.868337 187.508555)">6</text>
+     </g>
+    </g>
+    <g id="fr2-xtick_8">
+     <g id="fr2-line2d_8">
+      <g>
+       <use xlink:href="#fr2-mb67ae6d3f0" x="314.99418" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_8">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="314.99418" y="187.508555" transform="rotate(-0 314.99418 187.508555)">7</text>
+     </g>
+    </g>
+    <g id="fr2-xtick_9">
+     <g id="fr2-line2d_9">
+      <g>
+       <use xlink:href="#fr2-mb67ae6d3f0" x="355.120023" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_9">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="355.120023" y="187.508555" transform="rotate(-0 355.120023 187.508555)">8</text>
+     </g>
+    </g>
+    <g id="fr2-text_10">
+     <text style="font-size: 10px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #111114" x="212.673281" y="201.269102" transform="rotate(-0 212.673281 201.269102)">Hours of the run</text>
+    </g>
+   </g>
+   <g id="fr2-matplotlib.axis_2">
+    <g id="fr2-ytick_1">
+     <g id="fr2-line2d_10">
+      <path d="M 34.113281 174.170664 
+L 391.233281 174.170664 
+" clip-path="url(#fr2-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2-line2d_11">
+      <defs>
+       <path id="fr2-m70c286cfab" d="M 0 0 
+L -3 0 
+" style="stroke: #686871; stroke-width: 0.5"/>
+      </defs>
+      <g>
+       <use xlink:href="#fr2-m70c286cfab" x="34.113281" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_11">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="177.589609" transform="rotate(-0 27.613281 177.589609)">0</text>
+     </g>
+    </g>
+    <g id="fr2-ytick_2">
+     <g id="fr2-line2d_12">
+      <path d="M 34.113281 148.760664 
+L 391.233281 148.760664 
+" clip-path="url(#fr2-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2-line2d_13">
+      <g>
+       <use xlink:href="#fr2-m70c286cfab" x="34.113281" y="148.760664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_12">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="152.179609" transform="rotate(-0 27.613281 152.179609)">10</text>
+     </g>
+    </g>
+    <g id="fr2-ytick_3">
+     <g id="fr2-line2d_14">
+      <path d="M 34.113281 123.350664 
+L 391.233281 123.350664 
+" clip-path="url(#fr2-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2-line2d_15">
+      <g>
+       <use xlink:href="#fr2-m70c286cfab" x="34.113281" y="123.350664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_13">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="126.769609" transform="rotate(-0 27.613281 126.769609)">20</text>
+     </g>
+    </g>
+    <g id="fr2-ytick_4">
+     <g id="fr2-line2d_16">
+      <path d="M 34.113281 97.940664 
+L 391.233281 97.940664 
+" clip-path="url(#fr2-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2-line2d_17">
+      <g>
+       <use xlink:href="#fr2-m70c286cfab" x="34.113281" y="97.940664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_14">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="101.359609" transform="rotate(-0 27.613281 101.359609)">30</text>
+     </g>
+    </g>
+    <g id="fr2-ytick_5">
+     <g id="fr2-line2d_18">
+      <path d="M 34.113281 72.530664 
+L 391.233281 72.530664 
+" clip-path="url(#fr2-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2-line2d_19">
+      <g>
+       <use xlink:href="#fr2-m70c286cfab" x="34.113281" y="72.530664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_15">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="75.949609" transform="rotate(-0 27.613281 75.949609)">40</text>
+     </g>
+    </g>
+    <g id="fr2-ytick_6">
+     <g id="fr2-line2d_20">
+      <path d="M 34.113281 47.120664 
+L 391.233281 47.120664 
+" clip-path="url(#fr2-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2-line2d_21">
+      <g>
+       <use xlink:href="#fr2-m70c286cfab" x="34.113281" y="47.120664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_16">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="50.539609" transform="rotate(-0 27.613281 50.539609)">50</text>
+     </g>
+    </g>
+    <g id="fr2-ytick_7">
+     <g id="fr2-line2d_22">
+      <path d="M 34.113281 21.710664 
+L 391.233281 21.710664 
+" clip-path="url(#fr2-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2-line2d_23">
+      <g>
+       <use xlink:href="#fr2-m70c286cfab" x="34.113281" y="21.710664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2-text_17">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="25.129609" transform="rotate(-0 27.613281 25.129609)">60</text>
+     </g>
+    </g>
+    <g id="fr2-text_18">
+     <text style="font-size: 10px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #111114" x="9.758438" y="97.940664" transform="rotate(-90 9.758438 97.940664)">Development progression (%)</text>
+    </g>
+   </g>
+   <g id="fr2-line2d_24">
+    <path d="M 38.695208 160.888095 
+L 62.705812 104.40878 
+L 103.525734 77.843641 
+L 146.725281 80.153664 
+L 178.189023 52.087049 
+L 224.306473 60.172256 
+L 265.038522 83.965164 
+L 301.663681 60.865187 
+L 329.37894 66.178164 
+L 334.974712 57.977595 
+" clip-path="url(#fr2-p10722841bc)" style="fill: none; stroke: #0072b2; stroke-opacity: 0.55; stroke-linecap: square"/>
+   </g>
+   <g id="fr2-patch_3">
+    <path d="M 34.113281 174.170664 
+L 34.113281 21.710664 
+" style="fill: none; stroke: #686871; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="fr2-patch_4">
+    <path d="M 34.113281 174.170664 
+L 391.233281 174.170664 
+" style="fill: none; stroke: #686871; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="fr2-PathCollection_1">
+    <defs>
+     <path id="fr2-mea7dcc0b60" d="M 0 1.5 
+C 0.397805 1.5 0.77937 1.341951 1.06066 1.06066 
+C 1.341951 0.77937 1.5 0.397805 1.5 0 
+C 1.5 -0.397805 1.341951 -0.77937 1.06066 -1.06066 
+C 0.77937 -1.341951 0.397805 -1.5 0 -1.5 
+C -0.397805 -1.5 -0.77937 -1.341951 -1.06066 -1.06066 
+C -1.341951 -0.77937 -1.5 -0.397805 -1.5 0 
+C -1.5 0.397805 -1.341951 0.77937 -1.06066 1.06066 
+C -0.77937 1.341951 -0.397805 1.5 0 1.5 
+z
+" style="stroke: #a1a1aa"/>
+    </defs>
+    <g clip-path="url(#fr2-p10722841bc)">
+     <use xlink:href="#fr2-mea7dcc0b60" x="72.389814" y="103.022664" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     <use xlink:href="#fr2-mea7dcc0b60" x="111.609133" y="77.959256" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     <use xlink:href="#fr2-mea7dcc0b60" x="187.632286" y="57.361656" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+    </g>
+   </g>
+   <g id="fr2-text_19">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #111114" x="353.827971" y="58.758496" transform="rotate(-0 353.827971 58.758496)">held-out 46.29</text>
+   </g>
+   <g id="fr2-PathCollection_2">
+    <defs>
+     <path id="fr2-m5b99a169e4" d="M -2 2 
+L 2 2 
+L 2 -2 
+L -2 -2 
+z
+" style="stroke: #686871"/>
+    </defs>
+    <g clip-path="url(#fr2-p10722841bc)">
+     <use xlink:href="#fr2-m5b99a169e4" x="38.695208" y="160.888095" style="fill: #686871; stroke: #686871"/>
+    </g>
+   </g>
+   <g id="fr2-PathCollection_3">
+    <defs>
+     <path id="fr2-m3a3c859172" d="M 0 1.732051 
+C 0.459345 1.732051 0.899939 1.549551 1.224745 1.224745 
+C 1.549551 0.899939 1.732051 0.459345 1.732051 0 
+C 1.732051 -0.459345 1.549551 -0.899939 1.224745 -1.224745 
+C 0.899939 -1.549551 0.459345 -1.732051 0 -1.732051 
+C -0.459345 -1.732051 -0.899939 -1.549551 -1.224745 -1.224745 
+C -1.549551 -0.899939 -1.732051 -0.459345 -1.732051 0 
+C -1.732051 0.459345 -1.549551 0.899939 -1.224745 1.224745 
+C -0.899939 1.549551 -0.459345 1.732051 0 1.732051 
+z
+" style="stroke: #0072b2"/>
+    </defs>
+    <g clip-path="url(#fr2-p10722841bc)">
+     <use xlink:href="#fr2-m3a3c859172" x="62.705812" y="104.40878" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr2-m3a3c859172" x="103.525734" y="77.843641" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr2-m3a3c859172" x="146.725281" y="80.153664" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr2-m3a3c859172" x="178.189023" y="52.087049" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr2-m3a3c859172" x="224.306473" y="60.172256" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr2-m3a3c859172" x="265.038522" y="83.965164" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr2-m3a3c859172" x="301.663681" y="60.865187" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr2-m3a3c859172" x="329.37894" y="66.178164" style="fill: #0072b2; stroke: #0072b2"/>
+    </g>
+   </g>
+   <g id="fr2-PathCollection_4">
+    <defs>
+     <path id="fr2-m2bae2241eb" d="M 0 2 
+C 0.530406 2 1.03916 1.789267 1.414214 1.414214 
+C 1.789267 1.03916 2 0.530406 2 0 
+C 2 -0.530406 1.789267 -1.03916 1.414214 -1.414214 
+C 1.03916 -1.789267 0.530406 -2 0 -2 
+C -0.530406 -2 -1.03916 -1.789267 -1.414214 -1.414214 
+C -1.789267 -1.03916 -2 -0.530406 -2 0 
+C -2 0.530406 -1.789267 1.03916 -1.414214 1.414214 
+C -1.03916 1.789267 -0.530406 2 0 2 
+z
+" style="stroke: #0072b2; stroke-width: 0.9"/>
+    </defs>
+    <g clip-path="url(#fr2-p10722841bc)">
+     <use xlink:href="#fr2-m2bae2241eb" x="334.974712" y="57.977595" style="fill: #ffffff; stroke: #0072b2; stroke-width: 0.9"/>
+    </g>
+   </g>
+   <g id="fr2-PathCollection_5">
+    <defs>
+     <path id="fr2-m741e196f2c" d="M -0 3.605551 
+L 3.605551 0 
+L 0 -3.605551 
+L -3.605551 -0 
+z
+" style="stroke: #ffffff; stroke-width: 0.5"/>
+    </defs>
+    <g clip-path="url(#fr2-p10722841bc)">
+     <use xlink:href="#fr2-m741e196f2c" x="349.01287" y="56.550156" style="fill: #0072b2; stroke: #ffffff; stroke-width: 0.5"/>
+    </g>
+   </g>
+   <g id="fr2-legend_1">
+    <g id="fr2-PathCollection_6">
+     <g>
+      <use xlink:href="#fr2-m5b99a169e4" x="50.263281" y="9.787422" style="fill: #686871; stroke: #686871"/>
+     </g>
+    </g>
+    <g id="fr2-text_20">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="61.313281" y="12.018672" transform="rotate(-0 61.313281 12.018672)">untrained weights</text>
+    </g>
+    <g id="fr2-PathCollection_7">
+     <g>
+      <use xlink:href="#fr2-m3a3c859172" x="158.684766" y="9.787422" style="fill: #0072b2; stroke: #0072b2"/>
+     </g>
+    </g>
+    <g id="fr2-text_21">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="169.734766" y="12.018672" transform="rotate(-0 169.734766 12.018672)">trained weights</text>
+    </g>
+    <g id="fr2-PathCollection_8">
+     <g>
+      <use xlink:href="#fr2-m2bae2241eb" x="256.3325" y="9.787422" style="fill: #ffffff; stroke: #0072b2; stroke-width: 0.9"/>
+     </g>
+    </g>
+    <g id="fr2-text_22">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="267.3825" y="12.018672" transform="rotate(-0 267.3825 12.018672)">auxiliary weights</text>
+    </g>
+    <g id="fr2-PathCollection_9">
+     <g>
+      <use xlink:href="#fr2-mea7dcc0b60" x="360.015234" y="9.787422" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     </g>
+    </g>
+    <g id="fr2-text_23">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="371.065234" y="12.018672" transform="rotate(-0 371.065234 12.018672)">other world counts (not official)</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="fr2-p10722841bc">
+   <rect x="34.113281" y="21.710664" width="357.12" height="152.46"/>
+  </clipPath>
+ </defs>
+</svg></div><div class="fig-m"><svg role="img" aria-label="Development evaluations of GPT-6 Astra xhigh (Teacher) #2" xmlns:xlink="http://www.w3.org/1999/xlink" width="256.7592pt" height="247.880289pt" viewBox="0 0 256.7592 247.880289" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="fr2m-figure_1">
+  <g id="fr2m-patch_1">
+   <path d="M 0 247.880289 
+L 256.7592 247.880289 
+L 256.7592 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="fr2m-axes_1">
+   <g id="fr2m-patch_2">
+    <path d="M 36.9792 146.152969 
+L 254.5992 146.152969 
+L 254.5992 7.552969 
+L 36.9792 7.552969 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="fr2m-matplotlib.axis_1">
+    <g id="fr2m-xtick_1">
+     <g id="fr2m-line2d_1">
+      <defs>
+       <path id="fr2m-mb67ae6d3f0" d="M 0 0 
+L 0 3 
+" style="stroke: #686871; stroke-width: 0.5"/>
+      </defs>
+      <g>
+       <use xlink:href="#fr2m-mb67ae6d3f0" x="36.9792" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_1">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="36.9792" y="159.490859" transform="rotate(-0 36.9792 159.490859)">0</text>
+     </g>
+    </g>
+    <g id="fr2m-xtick_2">
+     <g id="fr2m-line2d_2">
+      <g>
+       <use xlink:href="#fr2m-mb67ae6d3f0" x="62.733046" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_2">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="62.733046" y="159.490859" transform="rotate(-0 62.733046 159.490859)">1</text>
+     </g>
+    </g>
+    <g id="fr2m-xtick_3">
+     <g id="fr2m-line2d_3">
+      <g>
+       <use xlink:href="#fr2m-mb67ae6d3f0" x="88.486892" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_3">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="88.486892" y="159.490859" transform="rotate(-0 88.486892 159.490859)">2</text>
+     </g>
+    </g>
+    <g id="fr2m-xtick_4">
+     <g id="fr2m-line2d_4">
+      <g>
+       <use xlink:href="#fr2m-mb67ae6d3f0" x="114.240738" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_4">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="114.240738" y="159.490859" transform="rotate(-0 114.240738 159.490859)">3</text>
+     </g>
+    </g>
+    <g id="fr2m-xtick_5">
+     <g id="fr2m-line2d_5">
+      <g>
+       <use xlink:href="#fr2m-mb67ae6d3f0" x="139.994585" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_5">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="139.994585" y="159.490859" transform="rotate(-0 139.994585 159.490859)">4</text>
+     </g>
+    </g>
+    <g id="fr2m-xtick_6">
+     <g id="fr2m-line2d_6">
+      <g>
+       <use xlink:href="#fr2m-mb67ae6d3f0" x="165.748431" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_6">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="165.748431" y="159.490859" transform="rotate(-0 165.748431 159.490859)">5</text>
+     </g>
+    </g>
+    <g id="fr2m-xtick_7">
+     <g id="fr2m-line2d_7">
+      <g>
+       <use xlink:href="#fr2m-mb67ae6d3f0" x="191.502277" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_7">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="191.502277" y="159.490859" transform="rotate(-0 191.502277 159.490859)">6</text>
+     </g>
+    </g>
+    <g id="fr2m-xtick_8">
+     <g id="fr2m-line2d_8">
+      <g>
+       <use xlink:href="#fr2m-mb67ae6d3f0" x="217.256123" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_8">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="217.256123" y="159.490859" transform="rotate(-0 217.256123 159.490859)">7</text>
+     </g>
+    </g>
+    <g id="fr2m-xtick_9">
+     <g id="fr2m-line2d_9">
+      <g>
+       <use xlink:href="#fr2m-mb67ae6d3f0" x="243.009969" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_9">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="243.009969" y="159.490859" transform="rotate(-0 243.009969 159.490859)">8</text>
+     </g>
+    </g>
+    <g id="fr2m-text_10">
+     <text style="font-size: 10px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #111114" x="145.7892" y="173.251406" transform="rotate(-0 145.7892 173.251406)">Hours of the run</text>
+    </g>
+   </g>
+   <g id="fr2m-matplotlib.axis_2">
+    <g id="fr2m-ytick_1">
+     <g id="fr2m-line2d_10">
+      <path d="M 36.9792 146.152969 
+L 254.5992 146.152969 
+" clip-path="url(#fr2m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2m-line2d_11">
+      <defs>
+       <path id="fr2m-m70c286cfab" d="M 0 0 
+L -3 0 
+" style="stroke: #686871; stroke-width: 0.5"/>
+      </defs>
+      <g>
+       <use xlink:href="#fr2m-m70c286cfab" x="36.9792" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_11">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="149.571914" transform="rotate(-0 30.4792 149.571914)">0</text>
+     </g>
+    </g>
+    <g id="fr2m-ytick_2">
+     <g id="fr2m-line2d_12">
+      <path d="M 36.9792 123.052969 
+L 254.5992 123.052969 
+" clip-path="url(#fr2m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2m-line2d_13">
+      <g>
+       <use xlink:href="#fr2m-m70c286cfab" x="36.9792" y="123.052969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_12">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="126.471914" transform="rotate(-0 30.4792 126.471914)">10</text>
+     </g>
+    </g>
+    <g id="fr2m-ytick_3">
+     <g id="fr2m-line2d_14">
+      <path d="M 36.9792 99.952969 
+L 254.5992 99.952969 
+" clip-path="url(#fr2m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2m-line2d_15">
+      <g>
+       <use xlink:href="#fr2m-m70c286cfab" x="36.9792" y="99.952969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_13">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="103.371914" transform="rotate(-0 30.4792 103.371914)">20</text>
+     </g>
+    </g>
+    <g id="fr2m-ytick_4">
+     <g id="fr2m-line2d_16">
+      <path d="M 36.9792 76.852969 
+L 254.5992 76.852969 
+" clip-path="url(#fr2m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2m-line2d_17">
+      <g>
+       <use xlink:href="#fr2m-m70c286cfab" x="36.9792" y="76.852969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_14">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="80.271914" transform="rotate(-0 30.4792 80.271914)">30</text>
+     </g>
+    </g>
+    <g id="fr2m-ytick_5">
+     <g id="fr2m-line2d_18">
+      <path d="M 36.9792 53.752969 
+L 254.5992 53.752969 
+" clip-path="url(#fr2m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2m-line2d_19">
+      <g>
+       <use xlink:href="#fr2m-m70c286cfab" x="36.9792" y="53.752969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_15">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="57.171914" transform="rotate(-0 30.4792 57.171914)">40</text>
+     </g>
+    </g>
+    <g id="fr2m-ytick_6">
+     <g id="fr2m-line2d_20">
+      <path d="M 36.9792 30.652969 
+L 254.5992 30.652969 
+" clip-path="url(#fr2m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2m-line2d_21">
+      <g>
+       <use xlink:href="#fr2m-m70c286cfab" x="36.9792" y="30.652969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_16">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="34.071914" transform="rotate(-0 30.4792 34.071914)">50</text>
+     </g>
+    </g>
+    <g id="fr2m-ytick_7">
+     <g id="fr2m-line2d_22">
+      <path d="M 36.9792 7.552969 
+L 254.5992 7.552969 
+" clip-path="url(#fr2m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr2m-line2d_23">
+      <g>
+       <use xlink:href="#fr2m-m70c286cfab" x="36.9792" y="7.552969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr2m-text_17">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="10.971914" transform="rotate(-0 30.4792 10.971914)">60</text>
+     </g>
+    </g>
+    <g id="fr2m-text_18">
+     <text style="font-size: 10px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #111114" x="12.624356" y="76.852969" transform="rotate(-90 12.624356 76.852969)">Development progression (%)</text>
+    </g>
+   </g>
+   <g id="fr2m-line2d_24">
+    <path d="M 39.920004 134.077906 
+L 55.330656 82.733074 
+L 81.529981 58.582948 
+L 109.256613 60.682969 
+L 129.45089 35.167864 
+L 159.050311 42.518053 
+L 185.193237 64.147969 
+L 208.70025 43.14799 
+L 226.488649 47.977969 
+L 230.080166 40.522906 
+" clip-path="url(#fr2m-p94085b5d64)" style="fill: none; stroke: #0072b2; stroke-opacity: 0.55; stroke-linecap: square"/>
+   </g>
+   <g id="fr2m-patch_3">
+    <path d="M 36.9792 146.152969 
+L 36.9792 7.552969 
+" style="fill: none; stroke: #686871; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="fr2m-patch_4">
+    <path d="M 36.9792 146.152969 
+L 254.5992 146.152969 
+" style="fill: none; stroke: #686871; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="fr2m-PathCollection_1">
+    <defs>
+     <path id="fr2m-mea7dcc0b60" d="M 0 1.5 
+C 0.397805 1.5 0.77937 1.341951 1.06066 1.06066 
+C 1.341951 0.77937 1.5 0.397805 1.5 0 
+C 1.5 -0.397805 1.341951 -0.77937 1.06066 -1.06066 
+C 0.77937 -1.341951 0.397805 -1.5 0 -1.5 
+C -0.397805 -1.5 -0.77937 -1.341951 -1.06066 -1.06066 
+C -1.341951 -0.77937 -1.5 -0.397805 -1.5 0 
+C -1.5 0.397805 -1.341951 0.77937 -1.06066 1.06066 
+C -0.77937 1.341951 -0.397805 1.5 0 1.5 
+z
+" style="stroke: #a1a1aa"/>
+    </defs>
+    <g clip-path="url(#fr2m-p94085b5d64)">
+     <use xlink:href="#fr2m-mea7dcc0b60" x="61.546109" y="81.472969" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     <use xlink:href="#fr2m-mea7dcc0b60" x="86.718124" y="58.688053" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     <use xlink:href="#fr2m-mea7dcc0b60" x="135.511831" y="39.962962" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+    </g>
+   </g>
+   <g id="fr2m-PathCollection_2">
+    <defs>
+     <path id="fr2m-m5b99a169e4" d="M -2 2 
+L 2 2 
+L 2 -2 
+L -2 -2 
+z
+" style="stroke: #686871"/>
+    </defs>
+    <g clip-path="url(#fr2m-p94085b5d64)">
+     <use xlink:href="#fr2m-m5b99a169e4" x="39.920004" y="134.077906" style="fill: #686871; stroke: #686871"/>
+    </g>
+   </g>
+   <g id="fr2m-PathCollection_3">
+    <defs>
+     <path id="fr2m-m3a3c859172" d="M 0 1.732051 
+C 0.459345 1.732051 0.899939 1.549551 1.224745 1.224745 
+C 1.549551 0.899939 1.732051 0.459345 1.732051 0 
+C 1.732051 -0.459345 1.549551 -0.899939 1.224745 -1.224745 
+C 0.899939 -1.549551 0.459345 -1.732051 0 -1.732051 
+C -0.459345 -1.732051 -0.899939 -1.549551 -1.224745 -1.224745 
+C -1.549551 -0.899939 -1.732051 -0.459345 -1.732051 0 
+C -1.732051 0.459345 -1.549551 0.899939 -1.224745 1.224745 
+C -0.899939 1.549551 -0.459345 1.732051 0 1.732051 
+z
+" style="stroke: #0072b2"/>
+    </defs>
+    <g clip-path="url(#fr2m-p94085b5d64)">
+     <use xlink:href="#fr2m-m3a3c859172" x="55.330656" y="82.733074" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr2m-m3a3c859172" x="81.529981" y="58.582948" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr2m-m3a3c859172" x="109.256613" y="60.682969" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr2m-m3a3c859172" x="129.45089" y="35.167864" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr2m-m3a3c859172" x="159.050311" y="42.518053" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr2m-m3a3c859172" x="185.193237" y="64.147969" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr2m-m3a3c859172" x="208.70025" y="43.14799" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr2m-m3a3c859172" x="226.488649" y="47.977969" style="fill: #0072b2; stroke: #0072b2"/>
+    </g>
+   </g>
+   <g id="fr2m-PathCollection_4">
+    <defs>
+     <path id="fr2m-m2bae2241eb" d="M 0 2 
+C 0.530406 2 1.03916 1.789267 1.414214 1.414214 
+C 1.789267 1.03916 2 0.530406 2 0 
+C 2 -0.530406 1.789267 -1.03916 1.414214 -1.414214 
+C 1.03916 -1.789267 0.530406 -2 0 -2 
+C -0.530406 -2 -1.03916 -1.789267 -1.414214 -1.414214 
+C -1.789267 -1.03916 -2 -0.530406 -2 0 
+C -2 0.530406 -1.789267 1.03916 -1.414214 1.414214 
+C -1.03916 1.789267 -0.530406 2 0 2 
+z
+" style="stroke: #0072b2; stroke-width: 0.9"/>
+    </defs>
+    <g clip-path="url(#fr2m-p94085b5d64)">
+     <use xlink:href="#fr2m-m2bae2241eb" x="230.080166" y="40.522906" style="fill: #ffffff; stroke: #0072b2; stroke-width: 0.9"/>
+    </g>
+   </g>
+   <g id="fr2m-PathCollection_5">
+    <defs>
+     <path id="fr2m-m741e196f2c" d="M -0 3.605551 
+L 3.605551 0 
+L 0 -3.605551 
+L -3.605551 -0 
+z
+" style="stroke: #ffffff; stroke-width: 0.5"/>
+    </defs>
+    <g clip-path="url(#fr2m-p94085b5d64)">
+     <use xlink:href="#fr2m-m741e196f2c" x="239.090234" y="39.225234" style="fill: #0072b2; stroke: #ffffff; stroke-width: 0.5"/>
+    </g>
+   </g>
+   <g id="fr2m-legend_1">
+    <g id="fr2m-PathCollection_6">
+     <g>
+      <use xlink:href="#fr2m-m5b99a169e4" x="14.06" y="187.044391" style="fill: #686871; stroke: #686871"/>
+     </g>
+    </g>
+    <g id="fr2m-text_19">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="25.11" y="189.275641" transform="rotate(-0 25.11 189.275641)">untrained weights</text>
+    </g>
+    <g id="fr2m-PathCollection_7">
+     <g>
+      <use xlink:href="#fr2m-m3a3c859172" x="14.06" y="199.795055" style="fill: #0072b2; stroke: #0072b2"/>
+     </g>
+    </g>
+    <g id="fr2m-text_20">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="25.11" y="202.026305" transform="rotate(-0 25.11 202.026305)">trained weights</text>
+    </g>
+    <g id="fr2m-PathCollection_8">
+     <g>
+      <use xlink:href="#fr2m-m2bae2241eb" x="14.06" y="212.545719" style="fill: #ffffff; stroke: #0072b2; stroke-width: 0.9"/>
+     </g>
+    </g>
+    <g id="fr2m-text_21">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="25.11" y="214.776969" transform="rotate(-0 25.11 214.776969)">auxiliary weights</text>
+    </g>
+    <g id="fr2m-PathCollection_9">
+     <g>
+      <use xlink:href="#fr2m-mea7dcc0b60" x="14.06" y="225.296383" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     </g>
+    </g>
+    <g id="fr2m-text_22">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="25.11" y="227.527633" transform="rotate(-0 25.11 227.527633)">other world counts (not official)</text>
+    </g>
+    <g id="fr2m-PathCollection_10">
+     <g>
+      <use xlink:href="#fr2m-m741e196f2c" x="14.06" y="238.047047" style="fill: #0072b2; stroke: #ffffff; stroke-width: 0.5"/>
+     </g>
+    </g>
+    <g id="fr2m-text_23">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="25.11" y="240.278297" transform="rotate(-0 25.11 240.278297)">held-out 46.29</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="fr2m-p94085b5d64">
+   <rect x="36.9792" y="7.552969" width="217.62" height="138.6"/>
+  </clipPath>
+ </defs>
+</svg></div></figure><div class="tw"><table><thead><tr><th class="n">Hours</th><th>Weights</th><th class="n">Worlds</th><th class="n">Progression</th><th class="n">Crafter score</th><th class="n">Steps per game</th><th>Kind</th><th class="center">Official</th></tr></thead><tbody><tr><td class="n">0.11</td><td><code>baseline</code></td><td class="n">100</td><td class="n">5.23</td><td class="n">1.16</td><td class="n">174</td><td>untrained</td><td class="center">✓</td></tr><tr><td class="n">0.71</td><td><code>contact500</code></td><td class="n">100</td><td class="n">27.45</td><td class="n">8.54</td><td class="n">191</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">0.95</td><td><code>contact500_300</code></td><td class="n">300</td><td class="n">28.00</td><td class="n">8.78</td><td class="n">184</td><td>trained</td><td class="center"></td></tr><tr><td class="n">1.73</td><td><code>mining1200</code></td><td class="n">100</td><td class="n">37.91</td><td class="n">18.67</td><td class="n">196</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">1.93</td><td><code>mining1200_300</code></td><td class="n">300</td><td class="n">37.86</td><td class="n">17.97</td><td class="n">189</td><td>trained</td><td class="center"></td></tr><tr><td class="n">2.81</td><td><code>rest1800</code></td><td class="n">100</td><td class="n">37.00</td><td class="n">16.30</td><td class="n">233</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">3.59</td><td><code>resume2200</code></td><td class="n">100</td><td class="n">48.05</td><td class="n">23.94</td><td class="n">234</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">3.83</td><td><code>resume2200_300</code></td><td class="n">300</td><td class="n">45.97</td><td class="n">22.76</td><td class="n">225</td><td>trained</td><td class="center"></td></tr><tr><td class="n">4.74</td><td><code>upgrade2900</code></td><td class="n">100</td><td class="n">44.86</td><td class="n">21.68</td><td class="n">247</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">5.76</td><td><code>hazard2700</code></td><td class="n">100</td><td class="n">35.50</td><td class="n">15.51</td><td class="n">230</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">6.67</td><td><code>water2800</code></td><td class="n">100</td><td class="n">44.59</td><td class="n">20.90</td><td class="n">216</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">7.36</td><td><code>restlocation2400</code></td><td class="n">100</td><td class="n">42.50</td><td class="n">20.26</td><td class="n">207</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">7.50</td><td><code>aux_water_half</code></td><td class="n">100</td><td class="n">45.73</td><td class="n">21.07</td><td class="n">231</td><td>auxiliary</td><td class="center">✓</td></tr></tbody></table></div><h3 id="notes">NOTES.md</h3><p><span class="nw">GPT-6 Astra</span> xhigh (Teacher)'s notes as it left them at the end of the run.</p><details class="fold doc-fold" id="notes-md"><summary>NOTES.md</summary><div class="doc"><h4>Crafter curriculum experiment</h4>
+<p>Started 2026-11-19 at 09:06 UTC. Deadline about 17:06 UTC.</p>
+<h5>Block ledger and current status</h5>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Lesson</th>
+<th>Updates / update minutes</th>
+<th>Official 100 progression</th>
+<th>Decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Contact before interaction</td>
+<td>500 / 28.70</td>
+<td>5.2273% → 27.4545%</td>
+<td>Keep; 300-world confirmation 28.0000%.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Use the pickaxe you made</td>
+<td>700 / 33.67</td>
+<td>27.4545% → 37.9091%</td>
+<td>Keep; 300-world confirmation 37.8636%.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Rest while fed and safe</td>
+<td>600 / 28.90</td>
+<td>37.9091% → 37.0000%</td>
+<td>Failed acceptance; repaired in block 4 before promotion.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Resume work after waking</td>
+<td>400 / 18.53</td>
+<td>37.0000% → 48.0455%</td>
+<td>Keep; 300-world confirmation 45.9697%. Current submission.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Convert stock into the next tool</td>
+<td>700 / 27.14</td>
+<td>48.0455% → 44.8636%</td>
+<td>Drop; restore exact 2200.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Keep progressing around visible hazards</td>
+<td>500 / 24.92</td>
+<td>48.0455% → 35.5000%</td>
+<td>Drop; restore exact 2200. Entire block charged plain full-game.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Replenish before leaving</td>
+<td>600 / 28.38</td>
+<td>48.0455% → 44.5909%</td>
+<td>Drop; restore exact 2200.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Rest where a complete rest succeeds</td>
+<td>252 / 12.55 (200 selected, 52 discarded tail)</td>
+<td>48.0455% → 42.5000%</td>
+<td>Drop; entire block charged plain full-game.</td>
+</tr>
+<tr>
+<td>Auxiliary</td>
+<td>Half of the water-lesson weight delta</td>
+<td>Zero optimizer updates</td>
+<td>45.7273%</td>
+<td>Reject; no demonstrated gain. Unedited2200 is final.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The chronological entries below preserve the evidence and decisions known at each point. Historical pending statuses are superseded by later results. <strong>Current validated submission is unedited step 2200: 48.0455% progression / 23.9399% paper score on official 100, and 45.9697% / 22.7601% on 300.</strong> Training accounting includes all dropped branches. All training finished: 2200/4252 executed updates currently reach the submission (51.7404%); 18.4768% of summed optimizer elapsed time is conservatively charged plain full-game. The one final auxiliary blend failed its predeclared gate; unedited2200 is final. No training followed averaging.</p>
+<h5>Protocol and accounting</h5>
+<p>Only Qwen3.5-0.8B is used, with the exact BALROG prompt, tokenizer, architecture, and temperature 1.0. Official full-game evaluations use <code>evaluate</code> on 100 public worlds with the default sampling seed.</p>
+<p>Training uses own-play moments in short practice episodes and independently game-tested counterfactual actions; no scripted demonstration actions. Counterfactual labels preserve the exact original prompt. Scripted CPU tests are excluded from data. One final auxiliary interpolation is predeclared after all training, with a separately preserved unedited scored checkpoint. All blocks and checkpoints are tracked here; only root updates the submission. MPS is enabled for concurrent training and inference.</p>
+<p>Accounting note for any future <code>natural_contact</code> use: conservatively charge natural-reset training to the plain/full-game allocation even if truncated as a contact exercise, and keep that allocation below 30% of training time. None has been trained so far.</p>
+<h5>Round 0 — Diagnosis (initial status: running)</h5>
+<p>The official base evaluation started immediately. Supplied reference: progression 5.2%, invalid output 38–39%, mostly <code>Do</code>/<code>Noop</code>, little movement. Hypothesis: failure to produce and ground movement/turning prevents useful resource contact. Verify against our own evaluation before training.</p>
+<p>Candidate first lesson: <strong>Contact before interaction</strong>. From model-generated practice trajectories, execute candidate actions from exact snapshots and retain only those whose game outcomes prove useful displacement, gathering, interaction damage, or achievement. Test short action sequences to identify necessary turning actions. Use randomized short natural-map practice with no prompt hints. No full-game training is planned (0%).</p>
+<h5>Block 1 — Contact before interaction</h5>
+<h6>Predeclared diagnosis, method, and thresholds</h6>
+<p>Official baseline <code>baseline</code>: progression <strong>5.2273%</strong>, paper score <strong>1.1596%</strong>, invalid <strong>39.57%</strong>, mean length 173.82 decisions. Wood 6%, drink 5%, table 0%, wood pickaxe 0%, sapling 64%. Action shares: <code>Noop</code> 60.38%, <code>Do</code> 35.08%, all movement 1.82% (almost entirely West). Deaths: zombie 61%, arrow 10%, needs 11%.</p>
+<p>Transcript episode 0: the player stays at the same starting position through death at decision 179, with repeated <code>Noop</code> and a final invalid <code>Eat Zombie</code>. This confirms the specific weakness: movement/turning is almost absent, preventing resource contact.</p>
+<p>Lesson method: 70% randomized contact subgames and 30% workshop prerequisite rehearsal, with 48 decisions per subgame. Counterfactual positive SFT only: all 17 one-step actions plus every <code>Move + Do</code> and <code>Move + Move + Do</code>, retaining the highest measured successful outcomes. A tiny secondary objective for observed displacement into a new cell supplies exploration only when no interaction outcome wins. Use the exact original prompt/history, with no hints. Forced sleep states are excluded. Own-policy episode actions remain unchanged. Targets do not come from scripts. Outcome provenance is stored per example; CPU tests are excluded.</p>
+<p>The two rates intended to move:</p>
+<ul>
+<li><strong>Useful-action opportunity hit rate</strong> on short contact practice: baseline to be logged by the producer before updates; target <strong>≥25%</strong>.</li>
+<li><strong>Full-game <code>collect_wood</code> rate</strong>: baseline <strong>6%</strong>; target <strong>≥35%</strong>.</li>
+</ul>
+<p>Also require progression <strong>≥8.23% (+3 pp)</strong> to keep the block as a demonstrated benefit. If format improves but wood does not, revise the movement lesson instead of accepting an imitation metric. Keep intermediate checkpoints every 100 steps.</p>
+<p>Initial block cap: 500 optimizer steps, all layers except embeddings, learning rate 3e-7, batch size 32, warmup 10. Planned duration: 30–50 minutes, depending on throughput. Full-game training share: 0%. This is one main lineage. Make the formal decision after the official 100 full games; provisional trained weights may be retained for recovery.</p>
+<h6>Initial fixed-weight probe and release</h6>
+<p>Initial fixed-weight practice probe: contact best-success action hit <strong>2.50% (49/1960)</strong>, workshop <strong>1.51% (11/728)</strong>, validity 73.1% on these easier starts.</p>
+<p>An independent audit of the first 2,112 rows passed all target/action/evidence consistency checks. Positive-target distribution: 937 contact wood successes, 234 drink, 234 plant, and 117 sapling; workshop includes diverse real tool/build successes. There are no explicit negative labels or penalties: sequence NLL increases only verified successful actions and normalizes alternatives. Contact contains some incidental early-achievement rehearsal (plant), recorded rather than hidden.</p>
+<p>Training was released at <strong>09:13 UTC</strong>, after baseline diagnosis and audit. GPU training minutes will be read from the trainer ledger.</p>
+<h6>Early audit correction and progress</h6>
+<p><strong>09:15 — Data audit correction.</strong> Extended 32-step <code>Sleep</code> trials were producing too many wake-up positives in contact/workshop, even at high energy. Their labels were game-valid but unrelated to the named deficit. The producer was restarted with extended sleep trials restricted to survival lessons. Already-produced successful rows remain as early rehearsal and will age out of rolling replay. The contact/workshop core outcome rule is unchanged.</p>
+<p>The updated producer records the full executed action prefix and level-generator version for exact provenance. Detailed independent audit: <code>/app/data_audit.md</code>. Scripted CPU tests never enter <code>/app/data</code>.</p>
+<p>A stronger baseline replay metric: adjacent-tree useful actions <strong>6/560 = 1.07%</strong>; adjacent-water useful actions <strong>14/470 = 2.98%</strong>. All 100 replays were exact.</p>
+<p>At the first published checkpoint, <strong>step 57</strong>, practice validity rose to 87.24%; useful-action agreement was 14.86% for contact and 12.81% for workshop in the first mixed-history window. The publication interval had been reduced to 50 steps for fresher own-play data. Moves became directionally diverse. <strong>This was not a full-game result and was not yet acceptance.</strong></p>
+<p>Training throughput after compilation was approximately 20 steps/minute at batch size 32, with GPU utilization often 100%. The producer ran at approximately 43 decisions/second under sharing. Extended sleep targets disappeared from the latest shard distribution after the correction; old examples remained in replay temporarily.</p>
+<h6>Completion, timing, and evaluation launch</h6>
+<p>Block 1 completed at <strong>09:43 UTC</strong>:</p>
+<ul>
+<li>500 optimizer steps and 16,000 sampled decisions.</li>
+<li>Training-step elapsed time: <strong>1,722.16 seconds = 28.70 minutes</strong> under MPS. This includes forward/backward/update waits and initial kernel compilation; it is not an isolated GPU-active-time measurement.</li>
+<li>Total trainer elapsed time: 1,747.06 seconds.</li>
+<li>Plain full-game training: 0 minutes.</li>
+<li>Endpoint: <code>/app/run/step-000500</code>. Every published checkpoint was retained.</li>
+</ul>
+<p>The official 100-world, default-seed evaluation <code>contact500</code> launched automatically with GPU memory fraction 0.22; its full-game outcome was pending at this entry. The CPU endpoint validity check also launched.</p>
+<p>The most recent source-457 practice windows showed contact useful-action agreement of 41–51%, workshop 28–36%, and validity 99.2–99.9%. Aggregate per-version metrics: <code>/app/block1_practice_summary.jsonl</code>.</p>
+<p>Intermediate analysis: direction agreement among selected successful wood trials was near chance at source 157, then 43% at source 257 and 60% at source 307. Direct <code>Do</code> agreement rose from 75% to 79%.</p>
+<p>A clean <code>wood_direction</code> subgame was prepared: a single visible tree, short histories, and only successful wood outcomes. It was not trained; the decision will come from full-game evidence. Prepared combat, survival, mining, and navigation tools are similarly inactive until a named round justifies them.</p>
+<h6>Full-game result and keep decision</h6>
+<p>Official <code>contact500</code>, 100 default-seed worlds:</p>
+<ul>
+<li><strong>Progression: 27.4545%</strong>, with 95% CI 25.45–29.41.</li>
+<li><strong>Paper score: 8.5379%</strong>.</li>
+<li><strong>Invalid output: 0.4291%</strong>.</li>
+<li>Mean length: 191.1 decisions.</li>
+</ul>
+<p>Baseline progression <strong>5.2273% → 27.4545% (+22.2273 pp)</strong> is a clear improvement. <strong>KEEP</strong>, and promote to submission after validation.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Achievement rate</th>
+<th style="text-align:right">Baseline</th>
+<th style="text-align:right">Block 1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wood</td>
+<td style="text-align:right">6%</td>
+<td style="text-align:right">95%</td>
+</tr>
+<tr>
+<td>Table</td>
+<td style="text-align:right">0%</td>
+<td style="text-align:right">90%</td>
+</tr>
+<tr>
+<td>Wood pickaxe</td>
+<td style="text-align:right">0%</td>
+<td style="text-align:right">55%</td>
+</tr>
+<tr>
+<td>Wood sword</td>
+<td style="text-align:right">0%</td>
+<td style="text-align:right">59%</td>
+</tr>
+<tr>
+<td>Stone</td>
+<td style="text-align:right">0%</td>
+<td style="text-align:right">18%</td>
+</tr>
+<tr>
+<td>Plant</td>
+<td style="text-align:right">5%</td>
+<td style="text-align:right">53%</td>
+</tr>
+<tr>
+<td>Drink</td>
+<td style="text-align:right">5%</td>
+<td style="text-align:right">62%</td>
+</tr>
+<tr>
+<td>Zombie</td>
+<td style="text-align:right">6%</td>
+<td style="text-align:right">39%</td>
+</tr>
+<tr>
+<td>Wake</td>
+<td style="text-align:right">21%</td>
+<td style="text-align:right">46%</td>
+</tr>
+<tr>
+<td>Sapling</td>
+<td style="text-align:right">64%</td>
+<td style="text-align:right">54%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Sapling 64% → 54% is the notable regression. Coal is 3%, stone pickaxe 1%, and stone sword 2%; higher tiers remain absent. Death counts: zombie 56, arrow 5, needs 21, lava 3, other 15. Movement is 69.24%, <code>Noop</code> 0.44%; stuck rate is 2.04%, versus baseline 74.55%.</p>
+<p>CPU replay: adjacent-tree useful action <strong>1278/2337 = 54.69%</strong>, versus baseline 6/560 = 1.07%; adjacent-stone useful choice <strong>164/890 = 18.43%</strong>; feasible crafting choice <strong>117/460 = 25.43%</strong>. The first lesson's full-game wood target of ≥35% is greatly exceeded.</p>
+<p>At this entry, next-lesson selection was pending more detailed stone, station, and combat/needs opportunity analysis; no new training had begun. The best scored, unedited checkpoint was <code>/app/run/step-000500</code>; atomic submission promotion/check was requested. No auxiliary weight edits.</p>
+<h6>300-world confirmation</h6>
+<p>After the official 100 completed, <code>contact500_300</code> launched on 300 public worlds using the same weights and default sampling seed, while the next lesson's code/probes were prepared. This was evaluation only, not training.</p>
+<p>The 300-world confirmation completed with <strong>progression 28.0000%</strong>, <strong>paper score 8.7760%</strong>, <strong>invalid output 0.4138%</strong>, and mean length 183.65 decisions. This supports the official 100-world result of 27.45%; step 500 remains promoted and validated.</p>
+<h5>Block 2 — Use the pickaxe you made</h5>
+<h6>Predeclared diagnosis, method, and thresholds (initial status: not started)</h6>
+<p>Specific weakness: acquiring a wooden pickaxe does not lead to mining. On official <code>contact500</code>, only <strong>18/55</strong> pickaxe games collected stone; the 37 failures retained a median of 109 decisions. Collectable adjacent stone received useful actions <strong>164/890 = 18.43%</strong>, versus 54.69% for trees.</p>
+<p>Concrete example: episode 6 at decision 46 faces stone with wood pickaxe 1 and healthy vitals, chooses <code>Move South</code>, then wanders for 9 more decisions. The station-return hypothesis was tested: 76/90 table games eventually reached feasible wood-pickaxe crafting, and 55 crafted. Return inefficiency exists but does not explain most stone failures. See <code>/app/diagnosis_contact500.md</code>.</p>
+<p>Designed practice: the new <code>mining_basic</code> subgame starts with wood pickaxe 1, wood 1–4, zero stone/coal, nearby randomized stone/coal, randomized facing, and a table for subsequent upgrades. Targets are game-tested only. The outcome objective prioritizes fresh stone/coal and stone pickaxe/stone sword; it excludes lower-tier crafts and <code>Place Stone</code> so the audited earlier contamination cannot dominate.</p>
+<p>Planned mixture: <strong>50% <code>mining_basic</code>, 25% contact, 25% workshop</strong>. First collect approximately 10 minutes of fixed-step-500 practice and inspect target distribution/success before training.</p>
+<p>The two intended rates:</p>
+<ul>
+<li><code>mining_basic</code> own-policy <strong><code>collect_stone</code> completion within 48 decisions</strong>: measure the baseline before training; target <strong>≥80%</strong>.</li>
+<li>Full-game <strong><code>collect_stone</code> ≥40%, from 18%</strong>.</li>
+</ul>
+<p>Additional transfer diagnostic: adjacent-stone useful choices <strong>≥45%, from 18.43%</strong>. Keep criterion: progression <strong>≥30.45% (+3 pp)</strong> without wood/table falling more than 10 pp. Differences below 3 pp are inconclusive; assess achievements and the 300-world check. Stone-tool rates should increase from 1%/2%. Keep step 500 as fallback.</p>
+<p>Plan 700 additional all-layer updates (<strong>500 → 1200</strong>), learning rate 3e-7, batch size 32. One persistent v2 trainer will pause at the boundary for full evaluation. Retain all checkpoints. Full-game training share: 0%; these are modified short subgames.</p>
+<h6>Frozen-policy preflight and independent audit</h6>
+<p>First approximately 6 minutes, frozen step 500, 249 mining episodes:</p>
+<ul>
+<li>Stone <strong>149/249 = 59.84%</strong>.</li>
+<li>Coal 94/249 = 37.75%.</li>
+<li>Stone pickaxe 14/249 = 5.62%.</li>
+<li>Stone sword 12/249 = 4.82%.</li>
+<li>Useful-action agreement 24.46%; overall validity 99.55%.</li>
+</ul>
+<p>The rest of the fixed-weight preflight continued while the persistent trainer initialized paused. Audit: 538 fresh mining rows focused exclusively on verified mineral or stone-pickaxe gains; 48 independent state/branch replays were exact. Actual choices wasted 29.9% of this audited sample on wood-pickaxe/sword actions; there were only 33 <code>Do</code> choices versus 139 verified <code>Do</code> targets. Independent review: <code>/app/block2_data_audit.md</code> and <code>/app/mining_data_audit.json</code>. <strong>No GPU training had started on block 2 at this entry.</strong></p>
+<p>Final frozen-policy preflight: approximately 10 minutes, 441 mining episodes:</p>
+<ul>
+<li><strong>Stone 277/441 = 62.81%</strong>.</li>
+<li><strong>Stone pickaxe 26/441 = 5.90%</strong>.</li>
+<li>Coal 155/441 = 35.15%.</li>
+<li>Stone sword 20/441 = 4.54%.</li>
+<li>Useful-action agreement 24.82%.</li>
+</ul>
+<p>The independent live audit passed. Release training with the predeclared <strong>50/25/25</strong> mix, primary lesson completion target <strong>80%</strong>, and full-game stone target <strong>40%</strong>. Secondary stone-pickaxe practice target: <strong>40%, from 5.90%</strong>. No navigation or auxiliary objective is enabled.</p>
+<p>Start the persistent v2 trainer from step 500 with fresh AdamW, because v1 did not save the optimizer. Future blocks retain live fp32 weights and optimizer moments across boundaries. This optimizer restart is recorded as a method transition, not concealed as an identical continuation.</p>
+<h6>Interim practice progress — full-game result still pending</h6>
+<p>At source 600, approximately 100 new updates:</p>
+<ul>
+<li>Mining practice stone <strong>88/94 = 93.62%</strong>.</li>
+<li>Coal 71/94 = 75.53%.</li>
+<li>Stone pickaxe 13/94 = 13.83%.</li>
+<li>Useful-action agreement: mining 48.13%, contact 43.83%, workshop 37.01%.</li>
+<li>Validity 99.37%.</li>
+</ul>
+<p>The recent mining-target distribution includes 280 stone-pickaxe successes among 3,466 source-600 rows (approximately 8.08%), up from 9/538 = 1.67% in the initial audited sample. Learning to mine has opened more upgrade opportunities in the learner's own play; no handcrafted upgrade demonstrations were introduced.</p>
+<p><strong>These practice results do not establish acceptance. Block 2's full-game result and keep decision remain pending.</strong></p>
+<h6>Systems throughput probe</h6>
+<p>A 40-second systems throughput probe paused only the producer parent, always resuming it in <code>finally</code>, while the same lesson training continued from replay. Mean step time changed from <strong>2.81 seconds → 2.33 seconds (approximately 17%)</strong>. Normal continuous production was retained because freshness is worth the small throughput cost. No lesson mix or targets changed. Logged in <code>/app/throughput_probe.json</code>.</p>
+<p>Formatting-only consolidation at 10:27 UTC: the original chronological notes are preserved in <code>/app/NOTES_raw_1027.md</code> (SHA-256 <code>71b1a093bdccc056d24e7424f449fdd5d21b09f98b66e4bc16b61a8b221f1d84</code>). No thresholds, results, or decisions changed.</p>
+<h6>Block 2 training boundary — 10:44 UTC</h6>
+<p>Completed exactly 700 updates (500 → 1200), 22,400 sampled decisions, and 19,995 distinct training rows. Measured optimizer-update elapsed time was 2,019.94 seconds = <strong>33.67 training GPU minutes</strong> under MPS; total trainer wall time through step 1200 was 38.06 minutes, including refresh, probes, and publication. Every update served the named 50/25/25 mining/contact/workshop mixture; plain full-game training remained <strong>0%</strong>.</p>
+<p>Saved scored candidate <code>/app/run_v2/step-001200</code> plus exact fp32/Adam/RNG checkpoint <code>/app/run_v2/checkpoint-001200</code>. CPU <code>check_submission</code> passed (320 text tensors, 752.4M parameters). The trainer paused with the live optimizer retained. Official 100-world <code>mining1200</code> launched with default seed 0. The validated submission remains step 500 until the full-game result is assessed.</p>
+<p>The fixed 128-example heldout original-prompt probe (established at 600) increased overall target probability .3959 → .4839; contact .4013 → .4427, mining .4543 → .5907, workshop .3061 → .4255. This is supporting evidence only; full-game acceptance remains pending.</p>
+<p>At 10:47 UTC, once the official evaluator finished engine initialization, the fixed-1200 producer was paused to give full-game evaluation the GPU. This is a systems pause only: training was already paused at 1200; no objective or data filtering changed. The completed fixed-policy practice log is retained.</p>
+<p>Final fixed-step-1200 practice window (146 completed mining episodes): stone 146/146 = <strong>100%</strong>, coal 143/146 = 97.95%, stone pickaxe 106/146 = <strong>72.60%</strong>, stone sword 64/146 = 43.84%. Mining useful-action agreement was 73.44%; contact 50.78%; workshop 49.94%. Validity was 13,224/13,248 = 99.82%. The primary lesson target of 80% and secondary stone-pickaxe target of 40% are met in practice. The full-game result is still pending. These logs include small episode overlap at swap boundaries, as in earlier practice-window estimates.</p>
+<h6>Block 2 full-game result and decision — KEEP</h6>
+<p>Official 100-world <code>mining1200</code>: <strong>progression 37.9091%</strong> (prior 27.4545%, <strong>+10.4545 pp</strong>), paper score 18.6733%, invalid output 0.1891%. Full-game stone 58% exceeds the 40% target; adjacent useful stone actions at 55.07% exceed the 45% diagnostic target. Wood 99%, table 93%, wood pickaxe 72%, coal 36%, stone pickaxe 31%, stone sword 24%, furnace 31%, iron 6%. Earlier wood/table skills were retained and improved. All 100 CPU trajectories replayed exactly. Block 2 decisively meets its keep criterion; step 1200 was atomically promoted and <code>check_submission</code> passed. Full 300-world confirmation <code>mining1200_300</code> launched with default seed 0.</p>
+<p>Important forgetting: wake 46% → 6%, sapling 54% → 31%, plant 53% → 30%. Cow 9% → 42% and zombie 39% → 65% improved, but mean duration 191.1 → 195.7 barely changed. Deaths: zombie 38, arrow 17, lava 13, other 17, and needs 15. Safe-rest diagnosis is next: low-energy Sleep 6/2471 = .24%. Station upgrade is no longer the first bottleneck; its prepared files remain inactive. Complete comparison: <code>/app/comparison_mining1200.md</code>; replay: <code>/app/diagnosis_mining1200.md</code>.</p>
+<h5>Block 3 — Rest while fed and safe (predeclared; training not started)</h5>
+<p>Specific weakness: mining training forgot conditional rest. Official <code>mining1200</code> wake_up is 6%, versus 46% at <code>contact500</code>. Exact CPU replay finds <strong>5/4,246 = .118%</strong> Sleep choices with energy ≤6, food and drink each ≥3, and no visible threat, across 88 games. Even excluding threats within 6 cells gives 4/3,184 = .126%. The issue is a missing action choice in suitable states, not only unsafe surroundings. Episode 63, decision 217: health 7, food 6, drink 7, energy 2, no threat within 6 cells, both stone tools; chooses <code>Move South</code>, then 14 more movements. All 17 other-death cases still have positive needs, so they are not counted as exhaustion evidence.</p>
+<p>Designed lesson <code>rest_basic</code>: 80% safe starts with varied natural-land patch, facing, energy 1–6, food/drink ≥5, health 5–9, and inventory tiers; 20% matched low-energy starts with one nearby zombie and a usable sword. Competing resources prevent a blank-arena cue. The standard prompt/history remain unchanged. Horizon 112 permits a complete wake from energy 1. The target objective is game-observed energy recovery/wake, with actual zombie damage/defeat as an enabling outcome in threatened starts. Sleep is eligible only when a real trial recovers energy and incurs no health loss at any intervening step. Forced sleeping steps never produce labels. No novelty, crafting, or other-vital targets enter this lesson.</p>
+<p>Planned mixture: <strong>40% rest_basic, 25% mining_basic, 20% contact, 15% workshop</strong>. All previous lesson targets retain their definitions. Planned 600 updates, global 1200 → 1800, lr 3e-7, batch 32, exact continued optimizer. First run approximately 10 minutes at fixed 1200 and independently audit targets; no training before that audit.</p>
+<p>Two intended rates: <strong>safe rest-practice wake_up within 112 decisions ≥75%</strong> (baseline to measure), and official full-game <strong>wake_up ≥45%, from 6%</strong>. Corroborating diagnostic: safe, fed, energy ≤6 Sleep-choice rate should rise from .118% toward ≥10%. Keep criterion: full progression ≥40.91% (+3 pp), with wood and stone each no more than 10 pp below 99%/58%, and no substantial new unsafe-sleep failure. Inspect all 22 achievements and enemy/needs/lava deaths. Keep validated 1200 as fallback. Differences &lt;3 pp are inconclusive. Full-game training share remains 0%; this is short modified-state practice. Prepared <code>station_upgrade</code> and snapshot tools remain inactive.</p>
+<h6>Independent preflight review caught a safety-proof gap — no training occurred</h6>
+<p>The original V4 generic probe could retain a one-step Sleep energy gain when its longer trial was rejected for later injury. Auditing only the retained short sequence did not enforce the intended entire-rest safety criterion. Independent CPU counterexample: negative fatigue lets one Sleep step gain energy with health 9 → 9, but continuing sleep as a distant zombie arrives loses health 9 → 2. This can occur after interrupted own play even though level starts use fatigue 0. The trainer remains paused at 1200; none of this new lesson has been trained.</p>
+<p>V4 generation was stopped. All shards from this untrained V4 preflight will be quarantined (including their valid retention rows), so only corrected targets can enter block 3. V4b will audit every Sleep candidate through the full requested horizon/natural wake, require no intermediate health loss, and replace its evidence with the fully observed branch. This fixes the implementation to match the predeclared lesson; thresholds and mixture are unchanged. An independent regression test is required before restart.</p>
+<h6>Mining1200 300-world confirmation</h6>
+<p><code>mining1200_300</code> finished: <strong>progression 37.8636%</strong>, paper score 17.9748%, invalid output 0.2076%, mean 189.44 decisions. This agrees with official 100-world progression of 37.9091%, and exceeds <code>contact500_300</code> at 28.0% by 9.8636 points. Stone 63.67%, coal 42.33%, stone pickaxe 31%, furnace 37.33%; wake 4.33%, sapling 29%, plant 28%, confirming the retention problem. Promoted 1200 remains best and validated.</p>
+<p>Quarantine completed: 5 mixed V4 shards, 5346 rows, moved to <code>/app/quarantine/rest_preflight_v1</code>. All update logs confirm zero rest_basic training and last step 1200. The inactive log is <code>/app/logs/practice_rest_v1_quarantined.log</code>.</p>
+<h6>Corrected preflight target balance (before training)</h6>
+<p>Independent replay of 64 original states (32 of each initial subtype) and 37 full Sleep branches passed, with exact prompts/digests, monotone health, and no forced-sleep source targets. Every rest row has proof revision <code>rest_full_horizon_v2</code>.</p>
+<p>On 10,548 corrected-producer rows, initial-safe rest has 5,391 Sleep targets replacing 4,203 moves, 957 <code>Do</code>, 213 crafts/placements, 11 <code>Noop</code>, and 7 existing Sleep choices. Threatened-origin rest has 1,086 Sleep targets and 148 combat targets (41 <code>Do</code>, 107 moves); most Sleep cases are after the learner already defeated the zombie. Thus 97.8% of rest targets are Sleep: 20% threatened starts does <strong>not</strong> mean 20% combat examples. This measured distribution is accepted as the intended rest correction; training still samples the explicitly prescribed 40% rest / 60% retention mixture, not raw shard proportions. The live full-game unsafe-sleep check remains essential. Counts/report: <code>/app/rest_balance_preflight_partial.json</code>; independent proof audit: <code>/app/rest_data_audit.json</code>.</p>
+<h6>Corrected fixed-1200 preflight complete; release block 3</h6>
+<p>Ten-minute cutoff 11:17:46 UTC: safe wake <strong>6/104 = 5.77%</strong>, threatened wake 0/24; safe awake Sleep 17/12749 = 0.133%. Targets of 75% safe practice and 45% full-game wake are unchanged. The independent full-horizon audit passed before any rest update. Freeze baseline <code>/app/rest_baseline_1200.json</code> and code/control hashes <code>/app/block3_manifest.json</code>. Release exactly the planned 600 updates, 1200 → 1800, with the existing live fp32 model and Adam moments. No auxiliary weight edits.</p>
+<h6>Within-block data correction at approximately step 1424</h6>
+<p>The early own-play audit detected the next failure before the full-game test: source 1300 chose Sleep in 20 states with a current live zombie and a proved combat alternative. All 20 incurred damage during the initiated game-forced sleep; 15 died before another voluntary action. Crafter zombies inflict 7 damage on sleeping players. This is a new policy error, not a target-proof defect; the corrected candidate generator supplies combat targets in those states.</p>
+<p>The replay buffer obscured these new corrections: 21,310 rest rows from 1200, versus 173 from 1300 and 12 from 1400. Its rest targets were 97.78% Sleep. Simulating the existing <strong>maximum source-version lag 200</strong> filter at 1424 retained 6,396 rows (all four lesson groups available), including 185 current rest rows with 156 Sleep and 29 combat targets (84.32% Sleep). Lag 250 would still retain the old dominance at this point.</p>
+<p>Set only <code>replay_max_version_lag=200</code>, so approximately the last two published policy versions supply each lesson. This raises verified current danger contrasts without inventing labels or changing objectives, lesson proportions, learning rate, the 600-update boundary, or predeclared full-game thresholds. Retention groups each have 1,963–2,272 fresh rows; minimum pool 2,048 remains satisfied. Source/target counts and revision are saved in <code>/app/rest_freshness_root.json</code> and <code>/app/block3_freshness_revision.json</code>. Continue monitoring for repeated sampling of rare rest cases and forgetting; no full-game improvement is claimed from this correction.</p>
+<h6>Correction verified in sampled training data</h6>
+<p>Independent join of actual sampled IDs to original source rows found: updates 1201–1437 had 3,051 rest exposures, 64 combat (2.10%), and zero combat targets replacing original Sleep. The first filtered update was 1438. Updates 1438–1632 had 2,543 rest exposures, 875 combat (34.41%), including 270 combat targets replacing original Sleep. Actual lesson shares remained rest 40.75%, mining 24.09%, contact 20.34%, workshop 14.82%. All 432 updates' rest sample IDs joined exactly. See <code>/app/rest_sampling_pressure.json</code>.</p>
+<p>Current-visible-zombie samples: source 1300 own Sleep 28/34, source 1400 17/73, source 1500 7/33. Improvement from 1300 → 1400 predates freshness, so it cannot be attributed to that change. Early source 1600 has 0/27 Sleep; this is encouraging but selected and incomplete. Safe practice windows reached 40/40 at 1400 and 51/51 at 1500. Full-game acceptance remains pending. Independent evidence/audits are consolidated in <code>/app/rest_post1300_review.md</code>.</p>
+<h6>Block 3 training boundary — 11:48 UTC</h6>
+<p>Completed 600 updates, 1200 → 1800, and 19,200 sampled decisions. Update elapsed time under MPS was 1,733.892 seconds = <strong>28.90 minutes</strong>, with the same timing caveat as block 1. All 600 updates were reconciled to source rows. Actual lesson counts: rest 7,728 (40.25%), mining 4,780 (24.90%), contact 3,805 (19.82%), workshop 2,887 (15.04%). Post-filter 363 updates supplied 4,677 rest exposures, 1,677 combat (35.86%), including 317 combat corrections replacing original Sleep from 53 unique source IDs. The final 100 updates remained 34.80% combat within rest. No plain full-game training; no auxiliary weight edits.</p>
+<p>Saved <code>/app/run_v2/step-001800</code> and exact <code>/app/run_v2/checkpoint-001800</code>; CPU <code>check_submission</code> passed. The trainer paused, retaining live fp32/Adam. Official 100-world <code>rest1800</code> is scheduled automatically after the producer swaps to 1800; the existing 37.91% submission remains 1200 pending the full-game decision.</p>
+<p>Heldout 128-example retention probe at 1800: overall target probability .5342, versus .4839 at 1200; contact .5022 versus .4427, mining .6357 versus .5907, workshop .4639 versus .4255. These probes support retention but do not establish transfer.</p>
+<p>Final source-1700 practice windows: safe 81/81 wake; threatened 18/19 wake and 15/19 zombie defeat, with the previously stated version-overlap caveat. Current-visible-zombie 1700 audit: 4 Sleep / 57 states, three safe and one injured/fatal, across 13 episodes. The unsafe-sleep behavior is substantially reduced from early 1300; full-game safety remains unmeasured. Full monitor: <code>/app/rest_final_monitor.md</code>.</p>
+<h5>Block 3 full-game decision — not accepted or promoted</h5>
+<p>Official 100 <code>rest1800</code>: <strong>progression 37.00%</strong>, paper 16.3041%, invalid 0.3997%, mean 232.67 decisions. Versus mining1200, progression −0.91 pp is no reliable gain; stone 58% → 37% breaches the 10 pp retention guard. Coal 36 → 24, stonepick 31 → 13, stonesword 24 → 11, drink 74 → 58, iron 6 → 0, sapling 31 → 23, planting 30 → 23. Wake succeeds 95%, zombie 65 → 83%, cow 42 → 55%, wood 98%, table 90%. The practice skill transferred narrowly but failed the overall task. Keep validated 1200 in <code>/submission</code>; do not run 300 confirmation of this unpromoted candidate.</p>
+<p>Exact replay identifies overgeneralized rest, not a failure to output valid actions: 2,793 of 11,722 awake decisions at energy 9 choose ineffective Sleep (<strong>23.83%</strong>). Of 440 actual sleep starts, 319 start at energy 8; 306 are repeat starts after waking was already achieved. There are 38 deaths in game-forced sleeping states. Episode 1 decision 472: health 8, food 0, drink 1, energy 9, facing water; Sleep does nothing, while replayed Do raises drink 1 → 2. Original rest practice stopped at waking and supplied no post-wake productive targets. CPU diagnostics and all 22 comparisons: <code>/app/diagnosis_rest1800.md</code>.</p>
+<p>Retain 1800 only as an <strong>experimental repair starting point</strong>, not a scored improvement. This departure from an immediate rollback is deliberate: the new rest/combat skill was learned, the earlier-skill heldout probes improved, and the full-game failure is isolated to action gating and missing post-wake coverage. Repairing that verified failure avoids relearning rest from 1200. The confirmed 1200 checkpoint remains the fallback and submission; only a new full-game improvement can replace it.</p>
+<h5>Block 4 — Resume work after waking (predeclared; training not started)</h5>
+<p>Weakness and evidence: ineffective full-energy Sleep is 23.83% of awake energy 9 choices in rest1800; it displaces drinking, gathering and crafting despite a 95% wake-up rate. The concrete water example above proves an available useful action. Mining progress regressed even though heldout mining targets retained high probability, supporting a missing post-wake state contrast rather than loss of the underlying mining affordance.</p>
+<p>Designed <code>rest_resume</code> practice preserves the learner's actual history through low energy, its own Sleep choice, natural waking, and <strong>24 subsequent work decisions</strong>. No prompt hints or history reset at phase transition. Approximately 70% starts begin recovery at energy 5–8, 30% begin already rested at energy 9; vary basic inventories, resources, position/facing and safe/threatened contexts. Recovery uses the audited full-horizon rest proof. Work uses only real productive resource/craft/food/drink/combat outcomes or safe novel displacement; it cannot produce Sleep targets at full energy. Already-rested starts include low drink with visible water. No training targets from scripted phase tests.</p>
+<p>Planned mixture: <strong>35% rest_resume, 30% mining_basic, 15% workshop, 10% contact, 10% rest_basic</strong>. Keep the existing source-version lag 200 so corrected own-play states reach training. Continue live 1800 fp32/Adam, learning rate 3e-7, batch 32, <strong>400 updates 1800 → 2200</strong>. This is a shorter approximately 20-minute repair because the newly observed failure is specific and the existing rest proof is already audited.</p>
+<p>Before training, run approximately 5 minutes at frozen 1800, require at least 100 completed work phases and an independent source/phase/proof audit. This is a stated departure from the suggested 10-minute pilot: the failure is already measured on 100 full games and the reused rest proof passed extensive tests; the new work transition still requires explicit CPU/live verification. Extend the pilot if completion count or audit is inadequate.</p>
+<p>Two intended rates: <strong>at least 90% of work phases obtain a real resource/craft/vital goal within their first 8 decisions</strong> (baseline to measure), and <strong>full-game collect_stone ≥50% from 37%</strong>. Mechanism check: awake energy 9 ineffective Sleep ≤2% from 23.83%. Require full wake ≥45% and overall progression ≥40.91% (at least 3 pp above the confirmed 1200 best) for promotion; inspect all 22 achievements and death causes. Full-game training share remains 0%; these are designed short subgames. No auxiliary weight edits.</p>
+<h6>Block 4 preflight measurement clarification — 12:11 UTC, before any update</h6>
+<p>The producer initialized at 12:10 UTC with fixed step 1800. The independent reviewer found no target-rule problem, but identified two metric details. The preflight sample gate is revised from 100 completed 24-decision work phases to 100 episodes with at least eight work decisions observed, directly matching the within-eight objective. Reached-work counts and early deaths are reported separately; this is a pre-training measurement change, not an acceptance change. The strict success metric excludes combat-only outcomes, although those remain valid enabling training targets. Independent replay will calculate this strict resource/craft/vital success metric from actual own-action prefixes. The live telemetry's broader productive count is not substituted for it.</p>
+<p>Boundary watcher is active for official <code>resume2200</code> at step 2200. No block-4 optimizer update has started.</p>
+<h6>Block 4 fixed-weight preflight and release — 12:15 UTC</h6>
+<p>Fixed step 1800 producer ran from 12:10 to 12:15 before any update. Final logged windows contain 183 ended resume episodes, 180 with at least 8 work decisions; 3 ended before that point. Full-energy work Sleep was 1506/4463 = 33.744%. Safe recovery wakes 103/103; threatened 22/25. Independent exact own-prefix replay gives strict resource/craft/vital within 8 success <strong>137/189 = 72.487%</strong>; combat-only successes are excluded. Replay subset is positively-targetable published episodes, not an unbiased sample of every producer episode; the telemetry and replay populations remain separate. See <code>/app/resume_preflight_final.json</code>.</p>
+<p>Independent audit <code>/app/rest_resume_data_audit.json</code> passed 78 exact source/proof replays, 77 token-for-token valid original histories; 1 prior invalid completion requires raw completion for a full text comparison but exact source state/current status passed. Of 2076 audited work targets, 0 Sleep/PlaceStone/energy/health/wake labels. The 674 actual work Sleep choices are replaced with 432 proved moves, 69 Do, 170 PlaceTable, 3 MakeWoodSword. Recovery retains 246 Sleep + 57 combat targets. These are positive SFT alternatives proved by game response, without explicit negative rewards.</p>
+<p>Training released with the predeclared mix, learning rate 3e-7 and boundary 2200. Strict practice target remains 90%; full stone &gt;=50%, energy 9 Sleep &lt;=2%, wake &gt;=45%, progression &gt;=40.91%. Submitted 1200 remains protected.</p>
+<h6>Block 4 first 100-update audit — 12:22 UTC</h6>
+<p>Actual 3200 sampled examples: resume 1088 (34.0%), mining 969 (30.28%), workshop 475 (14.84%), contact 324 (10.13%), rest_basic 344 (10.75%). All 100 update ID joins passed. Resume contains 936 work and 152 recovery; every sampled work source has energy 9, no Sleep/PlaceStone targets. 295 exposures correct actual full-energy Sleep (275 unique source IDs), with 195 proved moves, 24 Do, 70 Table, 5 WoodSword, 1 Furnace. All five replay groups are present; no silent renormalization/data starvation. See <code>/app/resume_sampling_pressure_1900.json</code>.</p>
+<p>The fixed old 128-example probe declined from .5342 to .4830 overall (mining .6357 → .5439, contact .5022 → .4682, workshop .4639 → .4318). This is a retention warning, not a full-game finding. First two fresh 1900 windows have 4/491 full-energy Sleep choices versus 2350/7406 in accumulated 1800 windows. Keep the predeclared boundary and check actual practice outcomes plus official full games.</p>
+<h6>Block 4 endpoint and timing — 12:35 UTC</h6>
+<p>Completed 400 updates 1801–2200, 12,800 sampled examples, 10,542 unique IDs; summed update elapsed 1111.552 seconds = 18.53 minutes. Approximate active block wall 18.93 minutes. Learning rate 3e-7 throughout. Actual mix: resume 4367 (34.12%), mining 3948 (30.84%), workshop 1867 (14.59%), contact 1288 (10.06%), rest_basic 1330 (10.39%). All 400 resume ID joins passed. 3971 work exposures were at energy 9; 599 corrected own Sleep from 524 unique source IDs. Final replay retained all groups, although rest_basic had only 67 rows and therefore repeated rehearsal. Final fixed old probe overall .5342 → .5279, mining .6357 → .6290, workshop .4639 → .4253. This mostly resolves the early mining probability dip; workshop remains a retention warning.</p>
+<p>Exact fp32/optimizer checkpoint <code>/app/run_v2/checkpoint-002200</code> and policy <code>/app/run_v2/step-002200</code> are retained. Candidate passed CPU <code>check_submission</code>. Official 100-world <code>resume2200</code> launched; no promotion before full result. Plain full-game training remains 0%.</p>
+<h6>Block 4 final practice measurements — 12:40 UTC</h6>
+<p>The paused-producer audit confirms the strict within 8 target: source 2200 published episodes 94/96 = 97.92%, with a stricter cohort known to have started at 2200 giving 69/71 = 97.18%; zero replay errors. The corresponding baseline was 137/189 = 72.49%. Intermediate 2000 and 2100 cohorts were 98/101 = 97.03% and 97/102 = 95.10%. Whole logged 2200 windows contain 78 ended episodes, all 78 reaching eight work decisions; energy 9 Sleep 2/1957 = .1022%. Published-row replay includes positively-targetable unfinished episodes, so these are different populations and are explicitly not combined. Mining 2200 logged stone 94/94, coal 93/94, stonepick 75/94. See <code>/app/resume_block4_paused_practice_review.json</code> and <code>/app/resume_behavior_2200.json</code>. Official full-game result still pending; practice success alone is not acceptance.</p>
+<h6>Block 4 official result and keep decision — 12:42 UTC</h6>
+<p>Official 100 <code>resume2200</code>: <strong>progression 48.0455%</strong>, 95% CI 44.9545–50.9545; paper 23.9399%; invalid .1366%; mean 234.34 decisions. This is +10.1364 pp versus confirmed 1200 and +11.0455 pp versus 1800. Stone 56%, wake 96%, and exact awake energy 9 Sleep 4/10614 = .03769% pass all full-game gates. Exact replay had zero mismatches. Strict practice 69/71 = 97.18% passes the 90% supporting target. <strong>KEEP.</strong> Candidate was checked, atomically promoted to <code>/submission/model.safetensors</code>, and checked again.</p>
+<p>All 22 achievements were compared in <code>/app/resume2200_independent_comparison.md</code>. Versus 1200: coal +9, sapling +25, cow +31, furnace +20, plant +15, zombie +20 pp; stone −2, iron −2, wood −1, woodsword −3 pp. Current rates: wood 98, table 94, woodpick 80, woodsword 69, stone 56, coal 45, stonepick 32, stonesword 26, furnace 51, iron 4, drink 75, sapling 56, plant 45, zombie 85, skeleton 32, cow 73, wake 96, placestone 40; eatplant, irontools, diamond remain 0. Deaths: zombie 44, other 17, lava 14, drink 9, arrow 6, food 6, food+drink 4. Forced-sleep deaths 25 versus 38 at 1800. The repair improved progression without increasing mean game length materially (234.34 versus 232.67), consistent with making more useful decisions.</p>
+<p>The old producer was cleanly stopped after final measurement. Official 100 completed; 300-world confirmation <code>resume2200_300</code> started at 12:43 UTC with default seed. All 2200 optimizer updates lie on the newly submitted lineage, so retained-step share is 100% at this boundary. Plain full-game training remains 0%.</p>
+<h5>Block 5 — Convert stock into the next tool (predeclared before training)</h5>
+<h6>New full-game diagnosis and choice</h6>
+<p>Official <code>resume2200</code> has stone 56%, stonepick 32%, iron 4%, no iron tools. Of 1802 awake decisions with materials for the first stonepick, 1747 (96.9%) lack table adjacency. Only 55 are immediately feasible; 32 choose pick. All 23 missed feasible pick actions actually craft it (22 survive, 21 without health loss), although some original choices were also useful. At first stone, 43/56 games have wood but only 13/56 are near a table; 1121 decisions later hold stone but no wood, and 8 first PlaceStone uses exhaust stock before a stone tool.</p>
+<p>Iron funnel: 32 stonepick games → 20 see iron → 13 adjacent → 4 collect. Useful adjacent actions 18/108 = 16.7%; facing iron Do 4/34 = 11.8%. All 30 missed front iron Do interventions gain 1 iron and survive; 28 preserve health, 18 have no visible threat. Root read and exactly replayed episode 15 decision 105: health 7, food 6, drink 5, energy 9, stone 9, coal 4, woodpick 1, stonepick 1; text faces iron. Learner MoveNorth; tested Do gains iron 0 → 1 with health 7 unchanged. For forge, 94 complete iron-material moments all lack joint station adjacency; 129/145 furnace placements are &gt;2 cells from a table, only 4 placed while the player is near table.</p>
+<p>The prepared water lesson is <strong>not activated</strong>: the new full games partly repaired its original failure (low drink/front water Do 67.2%, repeated Do 50%, versus 10.6%/0% at 1800). The sharper current deficit is converting available materials and tools into the next tier. <code>/app/diagnosis_resume2200.md</code> and the exact proof JSONs preserve the evidence.</p>
+<h6>Lesson sequence and method</h6>
+<p>Planned sample mix: <strong>20% station_upgrade, 15% ore_step, 10% forge_step, 20% mining_basic, 15% rest_resume, 10% workshop, 5% contact, 5% rest_basic</strong>. Station practice targets only actual fresh stone-pickaxe success through explicit <code>station_goals=['make_stone_pickaxe']</code>; this is outcome-goal selection, not an action answer. Stop its real episode after the learner's own pick. Ore practice supplies a stonepick and visible iron among lower ore competitors; only actual fresh collect_iron success labels the original first action. Stop after own iron. Forge practice varies near/missing/separated stations; only actual fresh iron tool success can label. Continue after the first ironpick so leftover materials can produce genuine Sword opportunities. No branch-state prompts or labels are used. Retention stages keep their audited definitions.</p>
+<p>Forge starts intentionally provide wood 3–5, stone 4–6, coal/iron 1–2 as an introductory station lesson. This differs from real 94 ready-material moments, of which 60 have wood &lt;3 and 48 stone &lt;4. All four previously tested natural forge moments lacked a found ≤4-action solution. This is a transfer risk, not evidence that the full policy knows resource preparation. We will inspect actual full feasibility and drop/revise if the easy lesson does not transfer. Generic bounded forge search and its actual terminal proofs are independently audited; no crafted placement answers. Broad search costs ~2 seconds per hard practice source and can miss solutions.</p>
+<p>Run about 10 minutes fixed 2200 before training, with ≥100 completed episodes in each new stage or extend coverage. Independently audit live source/history/proof rows and action/lesson pressure. Planned 700 updates 2200 → 2900, lr 3e-7, batch 32, continued fp32/Adam, version lag 200. Existing producer/evaluation engines start sequentially. New practice engine may use GPU fraction .14 with max_num_seqs 256 (96 actual slots) to leave headroom beside 300-world confirmation; this differs from the lab default 1024-sequence engine that needed .20.</p>
+<p>The intended lesson rates: stone-pickaxe completion ≥80%, iron collection ≥80%, and any iron tool ≥60% within respectively 32, 24, 48 own decisions. Full-game targets: collect_iron ≥15% from 4, stonepick ≥45% from 32, and ironpick ≥5% from 0. <strong>Keep as a demonstrated policy improvement if official progression ≥51.05% (+3 pp) and no core wood/table/wake skill falls by &gt;10 pp.</strong> Inspect all 22 achievements, actual station feasibility, and lava deaths (14 baseline; 8/32 stonepick games die entering lava, 13/14 lava deaths see ore). If practice improves but full targets do not, treat the lesson hypothesis as failed and revise/drop its mix; only full games determine benefit. Confirm any new submission on 300 worlds. Step 2200 remains protected until that decision. Plain full-game training share 0%; no auxiliary weight edits.</p>
+<h6>Block 5 pilot allocation — before generation or training</h6>
+<p>The fixed-weight pilot uses equal episode shares of station_upgrade, ore_step, and forge_step to obtain the required 100 completed episodes per new stage efficiently. This is measurement only: training stays manually paused. After the pilot, restore the separately predeclared eight-lesson training mix before any optimizer update. All pilot targets still require actual game success and retain the original own-play prompt. The independent option/CPU audits passed; the standard prompt, older generators, and previous lesson behavior are preserved.</p>
+<h6>Block 5 pilot search-rate adjustment — before training</h6>
+<p>The first 768 decisions ran at 11.10 decisions/second because generic forge proof search is CPU-bound. Counterfactual probing is reduced to a random 25% of decisions for the rest of the fixed-weight pilot. This existing control changes only how often alternatives are tried; every real action still comes from the model, snapshots restore RNG/state exactly, and episode-success denominators still count actual play. Positive rows remain game-proved and independently audited. Restore probe_fraction=1.0 and the predeclared training mix before any update. This is a throughput adjustment to preflight measurement, not a lesson-goal or target-rule change.</p>
+<p>The 300-world confirmation of step 2200 completed: progression 45.9697%, 95% CI 44.3030–47.6064; paper 22.7601%; invalid .1615%; mean 225.01 decisions. It is 2.0758 pp below official 100 but 8.1061 pp above previous 300-world best. Core wood 98%, table 94.67%, stone 58.33%, stonepick 34.33%, wake 94.33%; iron 2.33%, irontools 0. The same submitted weights remain confirmed best. The 300 evaluator client was briefly paused during the new engine's profiling and automatically resumed after initialization; game state/RNG and all score-relevant settings were unchanged.</p>
+<h6>Block 5 early live audit</h6>
+<p>The first 1,032 published rows passed 88 exact original-history/source/outcome replays with no errors. Station targets have 241 actual pick proofs plus 60 actual resource fallbacks. Ore targets 262 moves + 34 Do all prove fresh iron; model Do 7/34 immediate iron opportunities. Forge targets 152 Table + 94 Furnace + 150 moves + 39 IronPick; model IronPick 0/39 immediately feasible opportunities.</p>
+<p>There are 84 Sword terminal witnesses attached to Table/Furnace/movement first actions; exact replay verified ALL 84 also produce Pick if only the terminal craft action changes. No direct Sword labels or actual postPick source cases occurred yet. The older short-search deduplicates by first action before 20/10 reweighting, so its witness need not globally prefer the Pick even when both work. This does not change those 84 first-action labels or their positive game proof. Actual post-Pick Sword practice will be checked after the learner begins to own Pick. <code>/app/forge_sword_source_clarification.json</code> records the distinction.</p>
+<h6>Block 5 fixed-weight baseline and release — 13:11 UTC</h6>
+<p>The pilot ran 15.27 minutes after initialization, extending the suggested 10 minutes to satisfy 100 completed episodes per stage. Frozen 2200 results: <strong>stonepick 112/149=75.17%, iron 32/129=24.81%, any iron tool 0/105=0%</strong>. These are actual episode outcomes, not trial successes. Fixed pilot total 11,520 decisions, 2,862 buffered/published positive examples, 12.59 cumulative decisions/second. The baseline file is <code>/app/block5_release.json</code>.</p>
+<p>Independent post-thinning audit passed 2,058 rows and 91 exact source/proof replays; 89 complete valid histories matched tokens, 2 prior invalid completion histories lacked raw prior completions but exact source/current frame/actual next action passed. Prospective actual sampler retained 25,286 of last 60,000 examples under lag 200; all eight requested groups are present.</p>
+<p>Forge's initial pool has 59 direct IronPick targets among 1,006 forge rows, so only about .188 direct IronPick examples per 32-decision batch are expected initially. This modest pressure is recorded and will be checked after the first weight publication, including whether own station preparation creates more direct crafting states. No new weight or action target heuristic is introduced.</p>
+<p>Restore probe_fraction=1.0 and the predeclared main mix 20 station/15 ore/10 forge/20 mining/15 resume/10 workshop/5 contact/5 rest. Release 700 updates 2200→2900 at lr 3e-7, batch 32 with live fp32/Adam. Boundary watcher <code>upgrade2900</code> is active. Submitted 2200 remains protected.</p>
+<h6>Block 5 first 100 updates and genuine craft checks</h6>
+<p>Actual updates 2201–2300 sampled 3,200 examples/2,632 unique IDs, with all 100 ID joins exact and 224.82 optimizer seconds. Mix station 665, ore 473, forge 319, mining 632, resume 479, workshop 329, contact 145, rest 158 matches plan. Forge exposures were 21 direct IronPick, 127 Table, 75 Furnace, 95 moves, 1 Do; no Sword-action targets. All groups remained available under lag 200. Fixed old probe overall .52789→.52463, mining .62896→.64683, contact .51176→.50758, workshop .42535→.39555. At 2400 overall recovered to .54406, mining .63636, workshop .42297.</p>
+<p>Exact source 2300 own craft replay: 6 IronPick attempts yield 4 fresh actual picks and 2 failures because stations are not yet co-located; 3 IronSword attempts fail with a move first proved necessary. All 9 survive without health loss. All 4 successful picks leave iron 0; three also coal 0 and two wood 0. No ≤4-step Sword proof exists from those post-action states. Thus actual crafting learning has begun, but productive post-Pick Sword coverage has not yet appeared in this small cohort. This is material exhaustion, not an early-reset bug.</p>
+<p>Source 2300 completion windows end 19/21 station, 19/26 ore, 2/21 forge; these include old weight prefixes and are not pure fixed-policy estimates. No mid-block mix change. See <code>/app/block5_actual_sampling_2300.json</code> and <code>/app/block5_actual_craft_2300.json</code>.</p>
+<h6>Block 5 freshness adjustment after observed starvation — 13:23 UTC</h6>
+<p>At step 2402, the lag 200 cutoff removed the fixed 2200 pilot and left only 366 retained rows; the next shard raised this to 1,368, still below min_samples 2,048. The producer was alive and playing 2400 at about 11 decisions/second; its CPU-bound trials and 1,024-row publication chunks could not replace a full two-version window fast enough. The trainer correctly waited rather than renormalizing missing lessons, but its status.json still showed the last publication; the append-only trainer log exposed the wait.</p>
+<p>Increase <strong>replay_max_version_lag 200→300</strong>, retaining one additional 100-update weight version. This is one sampling change, not an objective, target, learning-rate, or stage-mix change. Positive SFT witnesses remain valid game outcomes from the learner's own original moments. Source 2200 already has correct conditional rest and supplies needed new tier contrast; it is not ther earlier 1200 sleep-heavy rest pool. Keep all predeclared full-game and practice criteria. Independently check actual sampled ages and retention after resumption; if new data improves, source oldest naturally ages out.</p>
+<h6>Block 5 endpoint — 13:44 UTC</h6>
+<p>Completed 700 updates 2201–2900, 22,400 sampled examples, 1628.446 summed update seconds = 27.14 minutes. The live fp32/Adam state is paused at exact boundary 2900 and checkpointed. No second starvation occurred after lag 300; the last retained buffer had all eight lessons and 3,775 rows, though rest (12), ore (103), forge (141), and station (150) require repeated rehearsal. Full-block independent sampling and fixed-version practice audits are pending. Official <code>upgrade2900</code> is launching through the predeclared watcher. Step 2200 remains the validated submission until the full-game decision; no auxiliary edits and no plain full-game training.</p>
+<h6>Block 5 independent endpoint audit</h6>
+<p>All 700 update ID/action joins passed: 22,400 exposures from 11,612 distinct source IDs. Actual mix: station 4,567 (20.39%), ore 3,378 (15.08%), forge 2,227 (9.94%), mining 4,505 (20.11%), resume 3,385 (15.11%), workshop 2,186 (9.76%), contact 1,062 (4.74%), rest 1,090 (4.87%). Forge exposures include 322 direct IronPick and 40 direct IronSword; all 40 Sword sources already owned a Pick. There were 127 total post-owned-Pick forge exposures, including return movements. First update start to last end was 31.63 wall minutes; the only gap above ten seconds was the 232.676-second freshness wait at 2402→2403.</p>
+<p>The fixed old probe mean target probability rose .52789→.55686, but NLL worsened 1.0263→1.1990 (mining NLL .7798→1.1653). The two statistics describe different aspects of retention; neither replaces full-game validation. Candidate 2900 passed CPU submission validation. Sources: <code>block5_actual_sampling_2900.json</code>, <code>block5_timing_independent.json</code>.</p>
+<h6>Block 5 official result and DROP decision — 13:53 UTC</h6>
+<p>Official 100 <code>upgrade2900</code>: progression <strong>44.8636%</strong> (CI 42.1364–47.5011), paper <strong>21.6817%</strong>, invalid .1176%, mean 246.61 decisions. This is −3.1818 pp versus protected 2200 and fails the predeclared ≥51.05% gate. Full iron 5% misses 15%, stonepick 22% misses 45%, and ironpick remains 0% rather than ≥5%. <strong>DROP this block. Restore the exact 2200 fp32 masters and Adam state into a new run directory; do not carry the 700 failed updates into the next branch.</strong> The validated submission remains 2200.</p>
+<p>All 22 achievements were compared. Largest changes: sapling 56→25, plant 45→22, coal 45→27, furnace 51→39, stonepick 32→22, drink 75→67; wood 98→99, table 94→98, wake 96→99, cow 73→85, woodsword 69→84, stonesword 26→32. Conditional coal-adjacent useful choice fell 58.7→24.3%; immediately feasible first stonepick choice fell 32/55→22/112 despite more opportunities. Iron-facing Do improved 4/34→9/17 but only 22 games reached a stonepick. No full iron-tool opportunity had both stock and stations. Four awake IronPick attempts lack coal; another occurred during sleep. More short-game proficiency did not compose into full progression. The rich-tier lesson and its reduced early-skill rehearsal are not kept.</p>
+<p>Own fixed-2900 published practice cohort, with zero replay errors: station 10/10 completed; ore 7/8 succeeded, one incomplete; forge 5/5 already succeeded within 1–4 decisions but none completed the 48-decision episode. These small selected cohorts do not override the failed full result.</p>
+<p>Next branch will use only pre-rollback rehearsal sources (source step ≤2200) plus fresh current-policy play. This avoids silently retaining the dropped block through its replay buffer. Plain full-game training remains zero through block 5; all 2,900 executed updates are retained for accounting, but only 2,200 currently reach the submission (75.86%).</p>
+<h5>Block 6 — Keep progressing around visible hazards (predeclared before training)</h5>
+<p>Restore exact 2200 fp32 masters and Adam after rejecting block 5. Its official 100-world progression is 48.0455%, confirmed 45.9697% on 300. Exact replay attributes 14 lethal lava entries and 15 lethal arrow hits (coarse summary labels only six as arrows). Awake visible-arrow actions take actual arrow damage 118/1408 = 8.38%. All 14 lava fatalities have a tested surviving displacement; 11 explicitly show the fatal direction. Root read episode 8 decision 208: health 5, text says lava one step west, own MoveWest kills; tested East/North each preserve health 5. Episode 0 decision 74 sees an arrow two steps northwest and dies moving North; East/West/South alternatives preserve health. These are diagnosis-only probes, not target data.</p>
+<p>Lesson: retain exact natural snapshots and original 16-observation histories from the restored learner's 300-world evaluation, selected only by current text-visible lava within two cells or arrow within five. Use balanced deterministic reservoirs up to 240 sources per hazard, stable source-world holdout, no selection by future death or action. Each real practice continuation is 20 current-policy decisions, with no game dynamics reset or hinted prompt. All actual choices execute unchanged. Positive targets require a real five-decision outcome: all 17 original first actions, bounded second actions, then three aftermath Noops; reject death, any per-step health loss, or lava occupancy, and require real useful displacement/interaction. Only the original first action labels the original prompt. Source replay, history, proof, censoring, and unchanged older stages passed independent CPU review.</p>
+<p>Pilot at fixed 2200 for about ten minutes, hazard-only allocation with at least 200 resolved short episodes; extend if coverage is insufficient. Training stays paused. Primary lesson measure: completed 20-step, no-health-loss/no-lava, useful activity rate, with deaths in the denominator and non-death partials separately censored. Target an absolute ≥10-point gain over pilot, capped at 95%; report lava/arrow strata separately. Full-game mechanism targets: lava deaths ≤7/100 from 14, and awake visible-arrow hit rate ≤4% from 8.38%. Overall progression must reach ≥51.05% and no core wood/table/wake rate may fall by &gt;10 points to promote. Inspect all 22 achievements, coal/stonepick retention, and actual damage sources.</p>
+<p>Planned mixed training: <strong>30% hazard_snapshot, 30% mining_basic, 15% rest_resume, 15% workshop, 5% contact, 5% rest_basic</strong>. No advanced rich-tier lesson. Bootstrap rehearsal only from source versions 1900–2200; exclude every failed-branch source above 2200. Then use fresh current-policy data with lag 300, lr 3e-7, batch 32, <strong>500 updates 2200→2700 in run_v3</strong>, preserving exact optimizer state. This restores the successful block's 30% mining and 15% workshop shares.</p>
+<p>Conservatively charge the <strong>entire block's training update time</strong>, including its synthetic retention examples, as plain full-game training because it uses continuations of full-game snapshots. The prior 2,900 updates consumed 136.93 summed update minutes and zero plain training; the planned roughly 20-minute block remains far below 30%, with an explicit stop bound if accumulated plain time approaches 25% of all training update time. This is deliberately stricter accounting than charging only its 30% snapshot examples. No auxiliary weight edits.</p>
+<h6>Block 6 source bank and rollback verification — 14:00 UTC</h6>
+<p>The source collector exactly replayed all 300 accepted-checkpoint games (67,504 decisions), selecting 423 distinct snapshots from 167 worlds: 186 lava-near and 240 arrow-near reservoir entries, with overlap; 13 snapshots are held out by source world. No targets are stored in this frozen bank. The new trainer logged successful exact checkpoint restoration at step 2200, including optimizer/RNG; it remains manually paused. Rehearsal bootstrap contains 24,223 original records, including 1,787 held out, exclusively source versions 1900–2200. The old trainer and engine stopped cleanly before replacement.</p>
+<p>Independent attribution/probing now confirms all 15 actual arrow fatalities were awake, visible-arrow moments with a tested safe displacement, alongside 14/14 lava fatalities. This is one-step avoidability, not a claim that survival is guaranteed thereafter. The five-step proof and 20-step own-practice outcome are deliberately separate checks.</p>
+<p>The new adapter is the independently audited hazard copy with the reviewed empty-forge-search guard. No forge stage is in this block, so the guard is not exercised. A separate read-only timing watcher will pause training if conservative whole-block plain time reaches 25% of all executed training update time; the formal limit remains 30%. Accounting includes all dropped-branch training.</p>
+<h6>Block 6 fixed-weight pilot and training release — 14:18 UTC</h6>
+<p>Frozen first 10.124 minutes at restored 2200: 11,808 actual decisions; 643 resolved episodes, 476 completed the 20-decision horizon, 167 died, zero non-death censored. Strict safe-and-useful success <strong>233/643 = 36.2364%</strong>. The predeclared +10-point lesson target is now fixed at <strong>46.2364%</strong>. Lava-tag health preservation 107/269; arrow-tag 139/388 (tags overlap, and these secondary rates are not the strict primary outcome). 7,053 positive opportunities and 4,755 empty/forced/cleared opportunities were all retained in the play denominator.</p>
+<p>The pilot continued at frozen weights while live provenance review finished; the baseline remains the fixed first-ten-minute aggregate. Independent 12-row audit passed exact source/world state, original prompt tokens, and every step of all five-step proof health traces. Cases include Noop, tool, held-out source world, 18-action own continuation, old invalid history and new invalid history. No death, terminal step, lava occupancy or interim health decrease occurs in accepted proofs. Broader 64-row audit continues during training. Root checked all 32,635 currently published/rehearsal schemas and all six sampler groups before release; no failed-branch source was present.</p>
+<p>Release <strong>500 updates 2200→2700</strong>, lr 3e-7, batch 32, mix 30 hazard / 30 mining / 15 resume / 15 workshop / 5 contact / 5 rest. Source code hashes match the preflight manifest. Exact restored Adam/fp32 remain live. Full-game gates are unchanged. Entire mixed block is charged plain; the 25% conservative guard and official <code>hazard2700</code> boundary watcher are active.</p>
+<h6>Block 6 broader audit and accounting robustness — 14:20 UTC</h6>
+<p>Independent live replay expanded to 64 cases with zero errors. Across 11,590 positive hazard rows: 79.86% movement, 17.93% Do, .81% Noop, 1.40% tools, zero Sleep or placements. Held-out coverage is 483 rows from six worlds / 12 snapshots; a published-positive-final-decision subset has 5/16 strict successes, versus 168/486 in training-world rows. These selected subsets exclude episodes whose final state had no positive target, so they cannot replace full-window practice rates. Reports: <code>block6_live64.json</code>, <code>block6_data_pressure.json</code>, <code>block6_live_preflight_review.md</code>.</p>
+<p>The independent timing/ancestry audit confirms all failed updates stay in the total denominator and exact 2200 rollback excludes them from retained lineage. At the prior 8,215.987 seconds, the 25% guard triggers at 2,738.662 plain seconds, 782.475 seconds below the corresponding 30% boundary. Root hardened the guard to ignore incomplete trailing ledger writes, retry reads, and reread current control before pausing; restarted only that CPU watcher. All six groups remain available in the first updates; main GPU utilization reached 100%.</p>
+<h6>Block 6 first 100-update audit</h6>
+<p>All 100 joins passed for 3,200 sampled exposures / 2,979 distinct source IDs. No held-out or failed-branch source was sampled. Actual mix: hazard 987 (30.84%), mining 948 (29.63%), workshop 496 (15.50%), resume 456 (14.25%), rest 172 (5.38%), contact 141 (4.41%). Hazard targets: 781 moves, 184 Do, 15 tools, seven Noop; no Sleep or placements. All six groups remain present. Summed update time 313.787 seconds; conservative plain share 3.6787%.</p>
+<p>Old fixed probe at 2300: mean target probability .50755, NLL 1.04925 versus 2200 .52789 / 1.02631. Mining .55972 / .96997 versus .62896 / .77977 warns of retention pressure, although the first new completion window still has stone and coal 11/11, stonepick 10/11. The first hazard window is only 1/5 strict success with mixed prefixes; no conclusion or mid-block change from it. Sources: <code>block6_actual_sampling_2300.json</code>, <code>block6_first100_review.md</code>.</p>
+<h6>Block 6 freshness measurement clarification</h6>
+<p>The lag-300 eligibility filter is refreshed every 20 seconds rather than before every batch. The actual ledger therefore reaches lag 307 briefly between refreshes; eligibility at the last refresh is correct. No failed-branch or held-out row is involved. This is ordinary positive-example rehearsal across seven additional updates, not a policy-gradient importance-weight claim. The source-age report records actual lags rather than treating the configured cutoff as an exact per-batch maximum. No sampling change was made.</p>
+<h6>Block 6 endpoint — 14:45 UTC</h6>
+<p>Completed 500 sequential updates, 16,000 exposures / 13,050 distinct IDs; all joins pass with no held-out or rejected-branch source. Actual mix: hazard 4,934, mining 4,731, workshop 2,461, resume 2,333, contact 776, rest 765. Summed synchronized update elapsed <strong>1,495.211 seconds = 24.920 minutes</strong>; optimizer wall interval 25.415 minutes, no between-update gap above ten seconds. LR remained 3e-7. All six groups remain present. Exact fp32/Adam checkpoint and policy 2700 are saved, training is boundary-paused, and candidate passes CPU submission validation.</p>
+<p>Conservatively charging this entire mixed block gives plain training fraction <strong>15.3968%</strong> of all executed update time, including the discarded upgrade block. The automatic timing guard closed within its 25% margin. Official <code>hazard2700</code> is starting; protected submission remains 2200 until full-game acceptance. Total executed updates 3,400; currently retained submission lineage 2,200 (64.7059%). No auxiliary edits.</p>
+<p>The final old probe is P=.53774 / NLL=1.02642 versus starting .52789 / 1.02631. Mining .60404 / .90499 remains below its starting .62896 / .77977, while workshop .48862 / 1.21298 improves from .42535 / 1.47435. Hazard endpoint-version windows are noisy: 2500 has 37/68 strict successes, 2600 has 30/81. Neither is a clean full fixed-policy cohort or grounds for promotion. Final source-age audit: 219/16,000 exposures aged 301–307 between refreshes, all eligible when their pool was built.</p>
+<p>Numerical gate clarification before the full result: printed progression thresholds are rounded to two decimals. The intended ≥3.00-point improvement over the exact baseline 48.0454545 means ≥51.0454545 (displayed 51.05), with the unchanged core-retention gates.</p>
+<h6>Block 6 final paused practice measurement</h6>
+<p>Final 2700 endpoint-window telemetry: <strong>32/68 = 47.0588%</strong> strict safe/useful completion versus frozen 36.2364% and target 46.2364%; 12 deaths, 56 completed horizons, no nondeath censoring. It is a small mixed-prefix point estimate, so stable improvement is not established from practice alone. Per-stratum health preservation: lava 22/41, arrow 10/27. Published positive-terminal rows with episode start and every new choice at 2700 give 16/29 strict successes (five deaths), but this subset omits non-targetable terminal states. Full-game evaluation remains the acceptance test. Sources: <code>block6_practice_summary.json</code>, <code>block6_version_pressure_2700.json</code>.</p>
+<h6>Block 6 official result and DROP — 14:54 UTC</h6>
+<p>Official <code>hazard2700</code>: <strong>35.5000% progression</strong> (CI 32.7727–38.1818), paper <strong>15.5115%</strong>, invalid .2047%, mean 229.57 decisions. This is −12.5455 points versus protected 2200; wake 96→64 also fails the core-retention gate. <strong>DROP all 500 updates; restore exact 2200 again.</strong> The protected, validated submission is unchanged.</p>
+<p>The hazard mechanism partly worked but damaged the policy elsewhere. Actual lava deaths 14→4 pass that target. Awake visible-arrow hit rate 118/1408=8.38%→124/2907=4.27% narrowly misses 4%; absolute arrow hits rise 146→172 and actual arrow fatalities 15→17 as exposure doubles. Zombie fatalities rise 57→74, depletion fatalities fall 14→5. Movement increases 70.25→83.74%, Do falls 21.10→12.88%, Sleep 4.81→1.29%. Full-game stonepick 32→11, coal 45→27, sapling 56→16, plant 45→11, furnace 51→26, cow 73→52. All 22 comparisons are preserved in <code>hazard2700_independent_comparison.md</code>.</p>
+<p>Exact conditional replay confirms global behavior drift despite healthy synthetic practice and nearly unchanged old-probe NLL: first feasible stonepick choice 32/55→11/113; stone-adjacent useful 62.9→36.0%; coal 58.7→31.7%; low-front-water Do 67.2→39.3%; grass-front pre-sapling Do 9.07→2.04%. Sleep starts 356→186 and completed bouts 274→91; energy-9 Sleep remains rare. Positive hazard targets were about 80% movement, and that pressure transferred too broadly. The next experiment will use a smaller new-lesson share and lower learning rate, retaining a strong base curriculum rather than continuing these failed gradients.</p>
+<p>All 3,400 executed updates and all 1,495.211 plain seconds remain in accounting; only 2,200 currently reach the submission. No auxiliary weight edits.</p>
+<h5>Block 7 — Replenish before leaving (predeclared before training)</h5>
+<p>Restore exact 2200 fp32/Adam again. Both rejected blocks show that a strong new action preference can transfer beyond its intended states while synthetic retention looks healthy. Reduce the new lesson to 20% and learning rate to <strong>1e-7</strong>, one third of the previous rate. Keep 80% in the exact proportions of the successful block-4 curriculum. This changes lesson and update strength together; it does not isolate their separate effects.</p>
+<p>Specific remaining weakness at accepted 2200: when still thirsty after drinking, only <strong>27/54 = 50%</strong> of immediately available next drinks are taken; at drink≤3 facing water, Do is 39/58=67.24%. All 19 missed front-water alternatives actually increase drink and survive. Seven games collect drink and later die with drink depleted; coarse drink-only plus food+drink endings are 13/100. Root read episode 14 decision 447: the previous own Do raises drink 0→1; text still faces north water, health4/food8/drink1/energy8 with no visible threat, but the learner chooses MoveWest. Exact Do raises drink1→2 preserving health4; six tested Do steps reach drink7 and survive with health4. These diagnostic traces never become training targets.</p>
+<p>Use the independently audited <strong>water-only</strong> stages from <code>practice_needs_v1.py</code>: matched low drink0–3 and healthy drink7–9 starts, identical geometry and competing productive work. <code>collect_drink</code> is preowned. Actual capped net drink gain, survival and shortest equal-gain proof select the original first action; no branch-state prompts. Rescue may lose health while surviving. Reaching drink7 does not reset history: continue twelve own work decisions, with eight-decision non-vital productivity measured separately. Healthy controls get no nutrition credit and use proved productive work, preventing a drink-at-cap loop. Food stages remain inactive.</p>
+<p>Pilot at fixed 2200 for about ten minutes, balanced low/high starts, at least 100 ended episodes each. Train stays paused until a representative independent live history/source/proof audit passes. Main mix: <strong>14% needs_water_low, 6% needs_water_high, 24% mining_basic, 28% rest_resume, 12% workshop, 8% contact, 8% rest_basic</strong>. Plan <strong>600 updates 2200→2800 in run_v4</strong>, lr1e-7, batch32, lag300. Rehearsal bootstrap is the same original 1900–2200 pool, excluding both failed branches entirely. New play uses the current learner normally.</p>
+<p>Two intended rates: low-water practice joint success ≥80% (reach drink7 within16 decisions, then real non-vital work within8), and full repeated drinking while still at drink≤5 ≥75% from50%. Also target drink-depletion endings≤7/100 from13, report contact/turning and healthy drink9 overuse. Keep only with exact full progression ≥baseline+3 points (51.0454545%, displayed51.05), wood/table/wake no&gt;10-point loss, and inspect stone/coal/crafting retention plus all22 achievements. The full-game score is decisive.</p>
+<p>Add a separate diagnostic-only probe of 192 real own full-game prompts/choices (Do32/Move64/Sleep32/Craft32/Place32), alongside the unchanged128 synthetic probe. It never enters training data and uses exact original histories, not hand-written targets. Score it at the restored baseline before updates, then every checkpoint, grouped by original action class. A &gt;.10 absolute mean-probability loss in any full-game group on two consecutive checkpoints is an explicit drift warning requiring review; it is not a substitute for full-game evaluation.</p>
+<p>This block uses only modified short subgames, so it adds <strong>zero plain full-game training time</strong>. The diagnostic-only full-game probe is not optimized. The failed hazard block's 1,495.211 seconds stay charged plain; accounting includes all executed updates and dropped branches. No auxiliary edits.</p>
+<h6>Block 7 rollback and diagnostic-probe validation — 15:03 UTC</h6>
+<p>The newly exported initial policy <code>/app/run_v4/step-002200</code> is byte-identical to protected 2200 (SHA256 afca9e078d22cc3b5b6d38ef3f84a38ecdbb6caa91ca112b8d766e3c098529b8). Exact restored fp32/Adam/RNG are logged. The unchanged128 synthetic probe reproduces every original score exactly. The added own192 probe passes an independent12-source audit and all192 nontraining/schema-exclusion checks. Initial live mean probabilities: own Do .75243, Move .48366, Sleep .72499, Craft .66580, Place .38616. These per-group baselines, not the combined320 average, will diagnose drift.</p>
+<p>Read-only retrospective GPU scoring validates the new probe against already failed checkpoints. Using published-policy weights consistently: baseline→hazard own Sleep .72418→.00601, Do .75385→.59932, Place .39291→.20849; baseline→upgrade Sleep .72418→.38113 and Craft .67129→.46207. These are retention of actual own choices, not a claim every old choice was correct. Published bf16 scores differ slightly from fp32-master probe values; future within-run comparisons use the exact run_v4 initial baseline. No optimizer exists in the retrospective scorer, no training rows are emitted, and its GPU inference time is not training time. Evidence: <code>retrospective_full_probe.json</code>.</p>
+<p>Water adapter CPU self-test again passed with zero training rows; independent live12 and live64 source/history/prompt/proof audits pass. Low targets require actual capped net drink gain and matching Noop controls; healthy work has no drink/energy/Sleep credit and preserves per-step health. Training remains paused for the full fixed-weight pilot. The evaluator watcher initially started before the trainer status file existed, exited cleanly with FileNotFoundError, and was restarted behind an existence wait; no duplicate evaluator or trainer was launched.</p>
+<h6>Block 7 pre-release pressure and interpretation</h6>
+<p>Prospective sampling under the declared seven-stage mix contains all groups. Expected positive target shares are 61.15% movement, 24.72% Do and 5.82% Sleep, with remaining tools/placements. This is a target-distribution check, not a behavior prediction. No food stage is present. As the pilot develops, low-water joint completion is about15%, but low-front-water Do is about79% and repeats about69%; therefore contact latency and competing activities also contribute to the joint deficit. The lesson measures both reaching/replenishing water and returning to work, while its full-game repetition/contact diagnostics distinguish the mechanism. Keep the existing distance1–4 variation and predeclared mix; do not retroactively call the joint rate a pure repeated-Do rate.</p>
+<h6>Block 7 fixed-weight baseline and release — 15:09 UTC</h6>
+<p>Frozen first 10.152 minutes: 22,272 decisions, 14,332 positive examples. Low-water joint within16→work8 <strong>85/575 = 14.7826%</strong>; healthy within16 99/575, within24 200/575; low deaths 1. Healthy controls productive within8 <strong>282/569 = 49.5606%</strong>, deaths 1. The initial publication changed only the policy path; byte-identical weights were verified, so both path labels form one fixed-weight pilot.</p>
+<p>Independent live64 audit and frozen source hashes pass. Release 600 updates 2200→2800 with lr1e-7 and the exact predeclared 14low/6high/24mining/28resume/12workshop/8contact/8rest mix. No food stage or failed-branch replay. Initial own192 group probabilities and the unchanged old128 probe establish the retention reference. Lesson target80%, full repetition≥75%, depletion≤7/100, exact progression≥baseline+3 and core gates remain unchanged. Zero additional plain training in this block.</p>
+<h6>Block 7 first 100 updates — 15:18 UTC</h6>
+<p>Independent actual-sampling audit passes: 3,200 exposures, 2,973 distinct IDs, exact joins, no holdout/probe/failed-branch leakage, lr1e-7 throughout. Actual counts: low463/high220/mining757/resume861/workshop400/contact266/rest233. Update elapsed280.902 seconds. Nine exposures aged302–308 were eligible at their 20-second replay refresh, rather than evidence of an absent filter. All seven groups remain available. Full file: <code>block7_actual_sampling_2300.json</code>.</p>
+<p>The first live2300 probe has a Craft warning (.66580→.53244), while Sleep .72499→.71528 is retained; Do .75243→.70289, Move .48366→.44266, Place .38616→.50085. This is one checkpoint, below the predeclared two-checkpoint persistence requirement. Review the original crafting states to distinguish useful actions from old mistakes; no acceptance or control change follows from this probe alone. Old synthetic groups remain stable or improved.</p>
+<h6>Block 7 independent Craft context and 2400 retention review</h6>
+<p>The first own-action Craft probe drop at 2300 is .665797→.532436 (−.133361). At 2400 it recovers to .568529 (−.097267), so the predeclared requirement of a greater-than-.10 loss at two consecutive checkpoints is <strong>not triggered</strong>. Controls remain unchanged. The old 128-example aggregate improves to probability .562673 / NLL .914461, while the separate own-192 aggregate is .571105 / .847587; aggregate improvement does not remove a class-specific concern.</p>
+<p>Independent CPU replay of all 32 original full-game Craft probe moments finds 31 first-tool successes and one duplicate StoneSword, with no failed craft. All survive; one loses health. All have energy 7–9 and food 4–9. Drink is 0–3 in five, 4–6 in fifteen, and 7–9 in twelve. None faces water, and eleven of the twenty states below drink 7 have no currently visible water. These are mostly productive original choices, although that does not prove crafting was always the best longer-term decision.</p>
+<p>Actual first-100 positive Craft pressure is WoodSword 89, StoneSword 38, StonePick 37, WoodPick 8. A further exact replay of all 34 sampled water moments whose original model action was Craft shows the intended conditional conflict: below drink 7, fourteen original choices make a first tool and three fail, but all seventeen receive a noncraft replenishment target. At drink 7 or above, thirteen productive crafts retain the same target; the other four original crafts fail and are redirected. All replacement targets remain game-proved. This is a possible transfer limitation of prioritizing replenishment in near-water states, not a target-provenance bug: natural crafting contexts without visible water are absent from that contrast. Full-game results remain decisive, and no sampling, objective, or learning-rate revision is made from this audit.</p>
+<p>Sources: <code>/app/block7_craft_context_audit.json</code>, <code>/app/block7_water_craft_pressure_replay.json</code>, <code>/app/block7_actual_sampling_2300.json</code>, and <code>/app/block7_actual_sampling_2400.json</code>. CPU diagnostics only; no probe, training-data, control, GPU, or submission change.</p>
+<h6>Block 7 prospective drift review boundary — 15:26 UTC</h6>
+<p>At2500 the full-game own Craft probability is .47456 versus .66580 (−.19124), and Do .62662 versus .75243 (−.12582). Exact replay has established that31/32 Craft probe actions make useful first tools. Synthetic retention again remains stable. Set a temporary review pause at2600 and request an exact master/optimizer checkpoint. This is a safety review under the predeclared two-consecutive-checkpoint &gt;.10 warning, not a keep decision or a new lesson. If the same class remains &gt;.10 below baseline at2600, review the actual target competition and end the block at400 updates for an earlier official full-game test. If no class meets the persistent warning, resume the original2800 boundary. Do not change the lesson mixture or learning rate. The existing2800 watcher cannot run while paused2600; no duplicate evaluator is started.</p>
+<h6>Block 7 review at2600 — continue original plan</h6>
+<p>The predeclared persistent-loss condition is absent: Craft recovers to .617488 (−.048309 from baseline), Do .664969 (−.087464), Move −.057581. Sleep rises+.114251 and Place+.128654; these increases still warrant full-game inspection. The exact checkpoint is retained, but no early official evaluation is launched. Restore the original2800 boundary and continue the remaining200 updates with identical lesson mix/lr1e-7. Independent sample audit passes all400 updates; no failed or diagnostic sources. This recovery illustrates why one probe dip was not an automatic rejection.</p>
+<h6>Block 7 fixed endpoint measurement plan — before2800</h6>
+<p>After exact2800 boundary pause, use the same water producer with balanced low/high resets for endpoint measurement, without optimizer updates. Count only windows whose ended episodes all began on2800 and whose active policy is2800; exclude older in-flight prefixes. Target at least100 completed episodes in each stage, with an eight-minute cap and explicit actual denominators. The root-owned measurement helper may resume practice after the official evaluator's startup pause, then pauses it and restores the training mix on completion. This changes measurement allocation only after all600 training updates; it adds no training time. Full-game acceptance criteria remain unchanged.</p>
+<h6>Block 7 endpoint and conditional dose check — before full-game score</h6>
+<p>All600 updates complete:19,200 exposures,15,814 distinct IDs,1,702.974 summed update seconds=28.383 minutes. Independent sample/provenance audits pass, lr1e-7 throughout. The only long update gap is the intentional59.99-second2600 review. Total executed4000 updates; protected2200 retains55%. Plain training remains1,495.211/11,414.172 seconds=13.0996%.</p>
+<p>At2800 ownDo loss exceeds.10 for the second consecutive publication (2700−.102865;2800−.101502). Craft loss is−.162606, but not consecutive because2700 was−.092902. Sleep is essentially retained. No additional training follows; official full-game review is already scheduled.</p>
+<p>Prospective optional dose check, declared before the2800 full score: if2800 fails its acceptance gate but lies within3 progression points of protected2200 (at least45.04545%) AND full repeated-drinking success reaches75%, evaluate the already retained unedited2600 checkpoint once as a shorter400-update dose of this same lesson. Its preselected probe retained more first-tool behavior (.61749 versus.50319 at2800). Apply the same original full-game acceptance/core gates; do not search other checkpoints. A larger full-game regression or failure of the water mechanism goes directly to rollback. This spends evaluation time only and does not erase the200 executed updates from accounting.</p>
+<h6>Block 7 fixed2800 practice endpoint — 15:44 UTC</h6>
+<p>Balanced fixed-weight measurement completed in3.609 minutes after training paused. Three clean windows contain122 low-water episodes and113 healthy controls, with every ended episode starting on2800; zero optimizer updates occurred. Low-water strict joint16→work8 success is80/122=65.5738%, versus85/575=14.7826% in the frozen initial pilot. Healthy-control productive8 is105/113=92.9204%, versus282/569=49.5606%. Low deaths1, high0. The supporting80% low-water target is missed despite the large practice gain. Source/version controls and actual denominators are in <code>block7_endpoint_fixed2800.json</code>. Producer is paused and original training mix restored; official full-game result is still pending. Candidate2800 passes check_submission (320 tensors,752.4M parameters).</p>
+<h6>Block 7 official result and DROP — 15:48 UTC</h6>
+<p>Official100 <code>water2800</code>: progression44.5909% versus48.0455% (−3.4545 points), paper20.8972%. Coarse drink-depletion endings improve13→7 and stone56→64, but sapling56→37, zombie85→67, stonepick32→18 andstonesword26→16. Corewood/table/wake99/97/94 do not show the lost intermediate skills. <strong>DROP all600 updates and restore exact2200.</strong> The conditional shorter-dose check is not triggered because44.5909 is below its predeclared45.04545 lower bound. Do not evaluate additional water checkpoints. Full mechanism/harm replay remains diagnostic; it cannot overturn this full-score failure. Protected submission2200 stays valid.</p>
+<h5>Block 8 — Rest where a complete rest succeeds (predeclared before training)</h5>
+<p>The water branch is dropped after full-game44.5909%; its intended repeated-drinking mechanism improved50→78.26%, but first-feasible stonepick conversion fell58.18→23.38% and productive interactions weakened. Restore exact accepted2200 masters/Adam and exclude all three rejected branches. Its full100 progression is48.04545%, with96%wake and21 actual zombie endings during forced sleep. Across356 own Sleep starts,24 bouts are fatal; current danger91starts/6fatal, recent-but-currently-absent115/15fatal, no-recent-danger150/3fatal. Recent danger is informative but is not a blanket prohibition:81/115 recent-only starts wake without damage.</p>
+<p>Root read accepted2200 episode83 decisions251–265. At decision258 the model chooses Sleep with health6,food5,drink5,energy8 and no currently visible enemy; its original16-observation history contains recent danger. A zombie reappears at260 and kills the sleeping player at265. Exact tested MoveWest orMoveNorth followed by natural Sleep completes an injury-free wake in14 decisions, whereas immediate Sleep terminates after8; equal-length Noop-delay controls fail. Independent focused checks now find the unchanged relocation proof repairs37/43 actual unsafe fed/health≤7 ownSleep starts, including9/14 fatal bouts. My initial exploratory query incorrectly checked the outer pressure dictionary instead of pressure.actions; correcting this read-only query exposed the existing positive actual-Sleep cases. No learning code or target changed.</p>
+<p>Use the already independently audited filtered adapter <code>practice_rest_history_v3.py</code>, runtime_v3 and complete-rest relocation helper. Recovery targets require either an actual valid ownSleep choice proved safe through full natural wake, or a one/two-move prefix proved to lead to complete injury-free wake; only its original first action is labelled. Safe Sleep that the learner did not choose is excluded, avoiding the previous broad Sleep preference. No generic displacement-only reward, forced-step label or altered real execution. After actual own wake, preserve history and continue24 work decisions, with strict productive work within8 and no recycling/passive-energy/combat-only credit. Total episode cap96:72 recovery+24 work, always inside original source cap.</p>
+<p>Sources come from accepted2200's300 public games, excluding all89 diagnostic-own192 worlds BEFORE eligibility/strata sampling/matching. Frozen selector yields151 source moments in98 worlds:48current-danger,48recent-only,55observed-bin-matched controls;146training-eligible/fiveworld-heldout sources. Every original state, RNG, raw-action history and source2200 identity is preserved. These are source snapshots, not prewritten action answers. The same320 diagnostic-only probe stays unchanged and excluded from training.</p>
+<p>Fixed2200 pilot: new stage only, about10 minutes; require at least100 resolved episodes, allthree strata, at least30 wake-to-eight-work observations, and an independent representative live full-proof/source audit. Before training, freeze the primary lesson baseline and exact target at baseline+10 percentage points: completed safe wake plus productive work. Report deaths, recovery cap, censoring, initiated Sleep and its injuries separately. The intended full-game rate is forced-sleep zombie deaths≤14/100 from21, with allfatalSleep bouts≤16 from24 as supporting diagnostic.</p>
+<p>Then train300updates2200→2500 inrun_v5, lr1e-7,batch32,lag300:15%rest_history_snapshot,29.75%rest_resume,25.5%mining_basic,12.75%workshop,8.5%contact,8.5%rest_basic. This is15%new plus85%successfulblock4 mix. Planned retention bootstrap contains original1900–2200 rows only. Keep only if official100 progression≥51.04545%, wood/table/wake fall≤10 points, and inspect all22 plus explicit stone/coal/first-tool conversion. A stopped-rest policy fails through wake retention even if sleep deaths fall. Do not change mixture or increase training dose to rescue a poor result. Retain the two-publication own-action probability warning; full games decide.</p>
+<p>Conservatively charge the ENTIRE mixed block as plain full-game training. Before this block, total update time11,414.172 seconds and plain1,495.211; a25%guard leaves30.185 update minutes, comfortably above the expected~15-minute300-update block and below the30%hard cap. Add rest_location_v9 to accounting before any update; use the explicit baseline guard. No auxiliary weight editing. Aim to finish training by16:20–16:25 and leave the remainder for official/300 confirmation and validation.</p>
+<p>Before the new producer starts, reset latest.json explicitly to accepted2200 so its first swap cannot load the rejected2800 policy while the restored trainer initializes. Old trainer, producer and evaluator processes are confirmed exited; GPU memory75MiB. Additional exact43-state audit confirms37 relocation successes versus0 paired one/two-Noop successes.</p>
+<h6>Block 8 metric definition clarification — before pilot results or training</h6>
+<p>The primary success numerator is the exact logged <code>completed_safe_wake_and_productive_work</code>: natural own wake, the full24-decision work phase completed alive with no health loss across the episode, and at least one strict productive work outcome during those24 decisions. Denominator is <code>resolved_episode</code>; censored/in-flight slots are separate. Productive work within8 is a separately reported retention metric, with at least30 observed eight-work continuations required before release. It is not conjunctively present in the aggregate primary field; do not claim the primary measures within8. No metric implementation or frozen learning code is changed.</p>
+<h6>Block 8 pretraining sampling amendment — 16:00 UTC</h6>
+<p>Live data audit finds only36/1040 positive rows directly correct an actual own unsafeSleep choice. With uniform sampling inside the15% new stage, that is only0.52% of total targets (~50 of9600 exposures), while post-wake work supplies61% of new-stage positives. This underweights the diagnosed error. Before ANY update, amend only sampling inside the new stage:25% of its draws come from actual valid ownSleep choices with an independently proved complete-safe-wake relocation target;75% from other new-stage examples. Overall lesson share stays15%, so intended direct-error exposure becomes3.75% (~360 examples). All targets, original prompts, world holds, outcome proofs, lr1e-7, six-stage mixture and300-update endpoint remain unchanged. The old trainer is stopped while paused2200; a separate backward-compatible sampler version will restore the exact2200 optimizer/RNG again. Require independent CPU sampling tests, live pool eligibility and recalculated action pressure before release. Keep the ten-minute fixed-weight pilot, merging any further2200 path only after byte identity. This is deliberate focus on observed own mistakes, not a new reward or action answer.</p>
+<h6>Block 8 frozen pilot and release — 16:06 UTC</h6>
+<p>Frozen first600-second window contains19 complete log windows spanning581.105 observed seconds,762 resolved episodes,184 primary successes: <strong>24.1469816%</strong>. Exact predeclared+10pp target is <strong>34.1469816%</strong>. Deaths304, recovery caps8, censoring0,502 eight-work continuations observed. Allthree source strata represented. Only three byte-identical accepted2200 path aliases occur; no failed-branch version entered the new data. The crossing log window is excluded. Full frozen evidence/line hashes: <code>block8_preflight_frozen.json</code>.</p>
+<p>Independent64-source/full-proof audit and separate200,000-draw sampler audit PASS at frozen source hashes. New-stage correction/complement pools are nonempty; expected global target shares61.44%movement,23.29%Do,7.02%Sleep, with3.75%direct unsafe-ownSleep corrections. Empty-bucket fallback and actual quota are explicitly logged. Zero optimizer updates occurred before these checks. Release the fixed300-update block atlr1e-7 with declared six-stage mix and25% within-lesson correction sampling. Entire block conservatively plain;25%guard and official2500 watcher are active. Protected2200 remains submitted.</p>
+<h6>Block 8 endpoint measurement allocation — declared during training</h6>
+<p>After exact2500 pause and with zero further updates, allocate the producer solely to rest_history_snapshot for fixed-policy measurement. The independent read-only observer excludes the first96 decisions per each of96 slots after the first2500 log window (9,216 decisions), then freezes the earliest whole-window prefix with≥100 resolved episodes, allthree strata and≥30 eight-work observations. This conservative flush is necessary because this producer does not log each ended episode's initial weight version. Root may resume practice after evaluator initialization, with a ten-minute cap, then pauses it and restores the training mix. Primary remains full24-work safe completion; within8 remains separate. No training mixture is changed before all300 updates finish.</p>
+<h6>Block 8 first100 update audit and conditional Sleep review</h6>
+<p>First100 updates pass:3,200 exposures/2,904 distinct IDs,113 corrections among493 new-lesson draws=22.92% (25%expected), no fallback/provenance/freshness errors. Updateelapsed297.174 seconds. The2300 ownSleep probe drops.724987→.617240, a firstclasswarning; otherlosses areCraft−.04272,Do−.06471,Move−.07477,Place+.15382.</p>
+<p>Independent exact classification of32 originalSleep diagnostic prompts finds22damage-free completed wakes,7nonfatal injured bouts,2immediate interruptions without new damage,and1full-energy idleSleep;nofatalbouts. A root-run read-only GPU probe compares published-policy weights consistently: safe22 probability.71038→.60949 (−.10089), injured7 .86644→.71827 (−.14817), interruptions.73870→.69674. Eighteen of22 safe prompts lose probability,11by&gt;.10. Thus attenuation is not confined to old mistakes, although an injury-free rest need not be the best immediate long-term action. The scorer has no optimizer, emits no training rows, and uses the same frozen held-out IDs. Its small inference workload adds no training steps; elapsed optimizer timing includes any GPU contention. Evidence:<code>block8_sleep_subsets_2300.json</code>. Keep the bounded300-update plan and inspect the nextpublication plus full-game wake/survival; no unmeasured claim of selective correction.</p>
+<h6>Block 8 persistent-warning stop — at2400 publication</h6>
+<p>The2400 probe shows Sleep probability.270375 versus.724987 baseline, after.617240 at2300. This is a strong persistent warning. Craft.65756 is nearly retained; Do.68375,Move.42607,Place.46312. Since only10of32 Sleep probe cases are non-safe/idle, the aggregate loss itself requires at least.2067 mean loss across the22 successful safe-rest cases, even if every other case lost its maximum possible probability. Combined with the2300 subset audit, this is substantive collateral change.</p>
+<p>Stop additional optimizer updates immediately and select the already published <strong>2400 checkpoint (200-update prefix)</strong> for the full-game lesson test, before seeing any full-game score. Any in-flight/later updates already executed remain counted as discarded training and plain time. This early safety stop changes no target, reward, mixture or learning rate; it responds to the predeclared persistent-warning review. The300-update maximum is not spent blindly. No claim of full-game regression follows from the probe alone: official <code>restlocation2400</code> will decide. Protected2200 remains the submitted model.</p>
+<h6>Block 8 final training and fixed-practice accounting — 16:29 UTC</h6>
+<p>All training is finished. The stop took effect after252 updates, including52 updates beyond the selected200-update/2400 publication; all252 remain counted. This block used752.871 optimizer-update seconds (12.548 minutes), entirely charged plain. Selectedprefix used598.057 seconds; discardedtail154.814. Total experiment4252updates/12167.043 elapsed update seconds; plain2248.082 seconds=18.4768%, below30%.</p>
+<p>Independently reconciled fixed2400 endpoint is24/100=24.0% primary versus24.147% baseline and34.147% target. Three strata are represented;48deaths,2recoverycaps,0censoring,57eight-work observations. Its completed24-work successes are current2/32, recent-only5/28, controls17/40. Every endpoint window follows the9216-decision flush, and the producer never swapped to2452. Lesson target missed. No further training is authorized or planned. Official100 evaluation is still pending; protected2200 unchanged. Producer requested to exit after its completed fixed measurement.</p>
+<h6>Block 8 full-game decision — DROP</h6>
+<p>Official <code>restlocation2400</code> is42.5000% progression,20.2561%paper, versus48.0455%/23.9399% at the parent. Wake90% retains the coarse threshold, but coal45→32%, stonepick32→22%, furnace51→38%, zombie85→68%, skeleton32→14%, cow73→50%. Sleep share4.81→1.91% and mean life234.34→207.20. The lesson and full-game targets both fail. Drop all252 executedupdates;2200 remains submitted.</p>
+<h6>LAST AUXILIARY STEP predeclaration — 16:28:56 UTC</h6>
+<p>All optimizer training has ended. Try exactly ONE auxiliary interpolation, with no coefficient search: theta_aux=0.5<em>theta_accepted2200+0.5</em>theta_water2800. This shrinks the final water lesson delta while preserving its potentially useful repeated-drinking change. The water endpoint improved repeated-drinking50→78.26% but weakened first-feasible stonepick58.18→23.38% and total progression48.0455→44.5909%. This is an auxiliary weight operation, not another curriculum lesson or training block. The unedited, scored and300-confirmed2200 checkpoint remains protected. The failed rest delta is excluded because its primary lesson success did not improve.</p>
+<p>Compute floating tensor means inCPUfloat32 and save originaldtypes; require matchingkeys/shapes/dtypes, finiteness, and check_submission. Evaluate aux official100 atdefaultseed. Advance to300-world confirmation only if official100 progression≥48.04545455% and wood/table/wake≥88/84/86%. Promote ONLY if this gate passes and300-world progression≥48.96969697% (at least+3pp over parent30045.96969697%). Report water mechanism and first-tool conversion, but do not select a blend from those diagnostics alone. A difference under3pp on the larger comparison is no demonstrated gain. No further training or second weight edit follows this final auxiliary candidate.</p>
+<p>Averaging introduces zero optimizerupdates. If selected, its contributing ancestry is2800 of4252updates (65.8514%); if rejected,2200 of4252=51.7404% remains. Total plaintraining elapsed share remains18.4768%.</p>
+<p>Block8 exact replay confirms the rest mechanism also failed: forced-sleep Zombie deaths21→26(target≤14), fatalSleepbouts24→33(target≤16), starts356→281. Current-danger fatal15/74 versus6/91; recent-only16/69 versus15/115; controls2/138 versus3/150. First-feasible stonepick conversion is retained32/55→22/38, so its achievement loss mainly reflects fewer opportunities, unlike the water branch. Adjacent-stone usefulaction62.85→51.31%, frontcowlowfoodDo11/11→14/29. Full diagnosis separates failure to reach an opportunity from failure to act on it.</p>
+<p>Independent auxiliary CPU verification passed all320tensors/752393024parameters against separately recomputedfloat32halfmeans; keys,shapes,dtypes,finiteness andsource/candidatehashes match. Nooptimizerwork occurred. CandidateSHA57124904ca4a1a3ee1750f8d1203a6ccb20579e79a12e09db6866a7fe8891fdc. Protectedsubmission revalidated andbyte-identicaltoaccepted2200.</p>
+<p>Final rest exposure audit adds a descriptive limitation: selected200updates contain216natural-history unsafe-ownSleep corrections versus45natural-history positiveSleep targets. Of443Sleep targets,334rest_basic+64rest_resume=398(89.84%) are synthetic rehearsal. This may contribute to transfer failure; it is not asserted as the solecause.</p>
+<h6>Final auxiliary decision and submission — 16:37 UTC</h6>
+<p>Auxiliary official100 <code>aux_water_half</code> scores45.72727273% progression (CI42.7716–48.6818),21.07377372%paper,1006unlocks. This is below the predeclared48.04545%screen. Wood98/table95/wake97 pass the core gates; stonepick33vsparent32, but coal36vs45,furnace42vs51,iron0vs4,cow66vs73. Reject: the−2.3182pp difference is within the experiment's stated noise band, so this is no demonstrated gain, not proof of a true performance decline. Per the frozen plan, no300confirmation is started. No further training, blend coefficient, or numeric weight edit is attempted.</p>
+<p>FINAL weights remain the unedited curriculum checkpoint <code>/app/run_v2/step-002200/model.safetensors</code>, byte-identical to <code>/submission/model.safetensors</code>, SHA256afca9e078d22cc3b5b6d38ef3f84a38ecdbb6caa91ca112b8d766e3c098529b8. Official10048.04545455% progression/23.93986870%paper;300-worldconfirmation45.96969697%/22.76005487%. Final retained2200/4252updates=51.74035748%; plain2248.082399/12167.043305update seconds=18.47681760%. Auxiliary CPU averaging adds zero updates and did not reach the submitted weights. The latest officialdevelopment experiment is auxiliary45.7273%, rejected; the submitted model's official score remains48.0455%.</p>
+<p>Final auxiliary replay: repeated drinking31/56=55.36% versusparent27/54=50% andwaterendpoint36/46=78.26%; low-drink/frontwaterDo33/85=38.82% versusparent39/58=67.24%. Fullenergywateroveruse remains: drink9Do31/173=17.92% versus8/81=9.88%; drink7–8Do85/688=12.35% versus39/837=4.66%. First-feasible stonepick33/69=47.83%, betweenwater18/77=23.38% andparent32/55=58.18%. These are marginal opportunity rates on different own-policy trajectories, not paired-state causal comparisons. The auxiliary did not preserve the water gain cleanly. Evidence: mechanisms_aux_water_half.json/.md.</p>
+<p>Final documentation timestamp: 2026-11-19T16:38:11.388840+00:00</p>
+<p>Final CPU check_submission PASS at 2026-11-19T16:38:44.226135+00:00. All320texttensors/752.4Mparameters valid; submissionSHAmatchesaccepted2200. Training/producer controls stopped; GPUidle75MiB. FinalfullreportRESULTS.md and selectionmanifestFINAL_SELECTION.json are complete.</p>
+</div></details></section></div></main><script>
+(function(){
+ function open(){var h=decodeURIComponent(location.hash.slice(1)),el=h&&document.getElementById(h);
+  if(el&&el.tagName==='DETAILS')el.open=true}
+ addEventListener('hashchange',open);open();
+ document.querySelectorAll('.chart,.spark').forEach(function(f){var tip=f.querySelector('.tip');
+  function on(e){var t=e.target.getAttribute&&e.target.getAttribute('data-tip');if(!t)return;tip.textContent=t;tip.hidden=false;
+   var b=f.getBoundingClientRect(),r=e.target.getBoundingClientRect();
+   tip.style.left=Math.max(0,Math.min(r.left-b.left+12,b.width-tip.offsetWidth))+'px';tip.style.top=(r.top-b.top-34)+'px';}
+  function off(){tip.hidden=true}
+  f.addEventListener('mouseover',on);f.addEventListener('focusin',on);f.addEventListener('mouseout',off);f.addEventListener('focusout',off);});
+})();
+</script></body></html>
