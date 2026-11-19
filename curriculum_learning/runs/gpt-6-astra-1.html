@@ -1,0 +1,1336 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>GPT-6 Astra xhigh (Teacher) #1 | Teaching by Curriculum</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"><style>:root{--bg:#ffffff;--fg:#111114;--fg2:#3f3f46;--mut:#686871;--line:#e5e5e8;--axis:#cdcdd4;--card:#f7f7f8;--acc:#c43c19;--ring:rgba(17,17,20,.08);--chip:#efeff2;--hover:rgba(17,17,20,.03);--shadow:none;--track:#e9e9ed;--base:#a1a1aa;--raised:#ffffff;--s1:#0072b2;--s2:#e69f00;--s3:#009e73;--s4:#d55e00;--s5:#cc79a7;--s6:#56b4e9;--s7:#a63d8f;--s8:#f0e442;--h0:#f7f7f8;--ht0:#111114;--h1:#d8e6ef;--ht1:#111114;--h2:#b9d6e6;--ht2:#111114;--h3:#9ac5de;--ht3:#111114;--h4:#7cb4d5;--ht4:#111114;--h5:#5da4cc;--ht5:#ffffff;--h6:#3e93c4;--ht6:#ffffff;--h7:#1f83bb;--ht7:#ffffff;--h8:#0072b2;--ht8:#ffffff;color-scheme:light}
+/* Prose is capped at 100 characters a line; tables, charts and verbatim documents run the full
+   width of main (960px). */
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+::selection{background:color-mix(in srgb,var(--acc) 22%,transparent)}
+main{max-width:960px;margin:0 auto;padding:20px max(16px,env(safe-area-inset-right,0px)) 72px max(16px,env(safe-area-inset-left,0px))}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--axis);text-underline-offset:3px}a:hover{text-decoration-color:var(--acc)}
+h1{font-size:40px;line-height:1.12;margin:0 0 10px;font-weight:600;letter-spacing:-.02em;text-wrap:balance}
+h2{font-size:22px;line-height:1.25;margin:52px 0 12px;font-weight:600;letter-spacing:-.01em;text-wrap:balance}
+h2.sec{font-size:28px;margin:0 0 20px;letter-spacing:-.02em}
+h2.sec{border-left:3px solid #000;padding-left:12px}
+header.site{position:sticky;top:0;z-index:4;background:var(--bg);border-bottom:1px solid var(--line)}
+nav.report-nav{max-width:960px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;gap:20px;font-size:14px}
+.report-nav a{display:block;padding:14px 0;text-decoration:none;white-space:nowrap;color:var(--fg2)}
+.report-nav a:hover,.report-nav a:focus-visible{color:var(--fg);text-decoration:underline}
+.report-nav .back{color:var(--fg);font-weight:600}
+.report-nav .back{border-right:1px solid var(--line);padding-right:20px}
+.report-nav .sections{display:flex;gap:20px;margin:0;padding:0;list-style:none}
+.report-nav .sections li{margin:0}
+header.site + main{padding-top:36px}
+@media (max-width:680px){
+  nav.report-nav{flex-wrap:wrap;gap:0 16px}
+  .report-nav a{padding:9px 0}
+  .report-nav .back{border:0;padding-right:0}
+  .report-nav .sections{order:1;flex-basis:100%;overflow-x:auto;gap:clamp(8px,2.5vw,16px);border-top:1px solid var(--line)}
+  .report-nav .sections a{padding-inline:2px}
+}
+@media (max-width:360px){
+  .report-nav .sections{gap:7px}
+  .report-nav .sections a{padding-inline:0}
+}
+main:has(> .samples){min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;
+                     gap:clamp(18px,3vh,36px);padding-block:clamp(36px,5vh,44px) clamp(28px,4vh,40px)}
+.landing-title{align-self:flex-start;display:flex;align-items:center;gap:.23em;color:#000;
+               font-family:Optima,"URW Classico","IBM Plex Sans",sans-serif;
+               font-size:clamp(38px,5vw,54px);margin:0}
+.landing-title img{width:1.06em;height:.96em;object-fit:contain;flex:none}
+@media (min-width:1000px){.landing-title{margin-inline-start:-18px}}
+.intro{font-size:18px;line-height:1.62;color:var(--fg2)}
+.intro p,.intro ul{margin:0}
+.intro p,.intro li{text-wrap:pretty}
+.intro ul{margin-top:12px}
+.intro li+li{margin-top:9px}
+.samples h2{font-size:28px;margin:0 0 16px}
+.team{font-size:15px;line-height:1.55;color:var(--fg2)}
+.team p{margin:0;text-wrap:pretty}
+.affiliation{white-space:nowrap}
+.affiliation img{width:1em;height:1em;object-fit:contain;vertical-align:-.16em;margin-inline-end:.28em}
+.landing-contact{text-align:center;font-size:14px;color:var(--fg2)}
+.landing-contact a{white-space:nowrap}
+@media (max-width:600px){
+  main:has(> .samples){gap:28px;padding-block:28px 36px}
+}
+h3{font-size:17px;margin:30px 0 8px;font-weight:600}h4,h5,h6{font-size:15px;margin:18px 0 6px;font-weight:600}
+p,ul,ol{margin:8px 0}li{margin:3px 0}ul,ol{padding-left:22px}
+.sub{color:var(--fg2);margin:0;font-size:16px}
+.lede p{margin:0 0 8px}.lede p:last-child{margin-bottom:0}
+.lede-l{font-size:15px;font-weight:600;color:var(--fg);margin:0 0 6px}
+.blk{margin:24px 0}.blk>:last-child{margin-bottom:0}
+details.fold{border:0;padding:0;margin:14px 0 4px}details.fold>summary{color:var(--fg2);font-weight:500}
+details.fold>summary:hover{color:var(--fg)}details.fold figure.fig{margin:14px 0 8px}
+.blk .lede-l{margin-bottom:6px}.formula-line{font-size:15px}.formula-line b{font-weight:600}
+.mut{color:var(--fg2)}.na{color:var(--mut)}.small{font-size:13px}
+h3 .fname{font-size:13px;font-weight:400;color:var(--mut);margin-left:8px;font-family:"IBM Plex Mono",ui-monospace,monospace}
+code{font:12.5px/1.4 "IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--chip);border-radius:2px;padding:1px 4px}
+pre{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:12px 14px;overflow:auto}pre code{background:none;padding:0}
+.tw{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums;width:100%;border-top:1.5px solid var(--fg);border-bottom:1.5px solid var(--fg)}
+th,td{text-align:left;padding:9px 12px 9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child>td{border-bottom:0}td:last-child,th:last-child{padding-right:0}
+th{font-weight:600;font-size:12.5px;line-height:1.3;color:var(--fg2);vertical-align:bottom;padding-top:10px;border-bottom:1px solid var(--fg2)}
+td.nw{white-space:nowrap}td.n,th.n,.right{text-align:right}.center{text-align:center}
+tbody tr:hover>td{background:var(--hover)}
+tr.best td{font-weight:600}
+td.run{min-width:150px}.rn{display:inline-flex;align-items:center;gap:8px}
+.key{flex:none;width:9px;height:9px;border-radius:50%;display:inline-block}
+.rnote{font-size:12.5px;color:var(--fg2);font-weight:400;margin-top:2px;line-height:1.4}td.run.k .rnote{padding-left:17px}
+.chip,.badge{display:inline-block;font-size:12px;line-height:20px;padding:0 8px;border-radius:10px;background:var(--chip);
+color:var(--fg2);white-space:nowrap;font-weight:500}.badge{margin-left:6px}
+tr.sep td{border-bottom:1px solid var(--line);padding-top:22px;font-size:12px;font-weight:500;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+tr.sep:hover>td{background:none!important}
+.bar{display:inline-flex;align-items:center;gap:8px}
+.bar .track,.meter{position:relative;height:6px;background:var(--track)}
+.bar .track{width:clamp(56px,14vw,170px)}
+table.lb td.n{white-space:nowrap}table.lb th:first-child,table.lb td:first-child{width:34px}
+table.lb td.sc .bar{justify-content:flex-end;width:100%}table.lb .bar .track{width:clamp(56px,10vw,120px)}
+.fill{position:absolute;left:0;top:0;bottom:0;background:var(--fg)}.fill.b{background:var(--base)}
+.ref{position:absolute;top:-4px;bottom:-4px;width:2px;margin-left:-1px;background:var(--fg);border-radius:1px;opacity:.55}
+.bv{min-width:3.1em;text-align:right}
+.bar.hd{display:flex;justify-content:flex-end;align-items:flex-end}.track.lbl{background:none;height:22px}
+.reflbl{position:absolute;bottom:8px;white-space:nowrap;font-style:normal;font-size:11.5px;font-weight:500;color:var(--fg2)}
+.refmark{position:absolute;bottom:-2px;height:7px;width:2px;margin-left:-1px;background:var(--fg);opacity:.55;border-radius:1px}
+.pill{display:inline-block;min-width:4.2em;text-align:center;padding:1px 8px;border-radius:2px}
+td.hc{padding-top:5px;padding-bottom:5px}
+.heatkey{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--fg2);margin:6px 0 4px}
+.heatkey .ramp{display:flex;gap:2px}.heatkey .ramp i{width:14px;height:10px;border-radius:2px;display:block}
+nav.crumb{font-size:14px;margin-bottom:20px}nav.crumb a{color:var(--fg2);text-decoration:none}nav.crumb a:hover{text-decoration:underline}
+nav.tabs{display:flex;width:fit-content;max-width:100%;overflow-x:auto;gap:6px;margin-left:-12px}
+nav.tabs a{padding:6px 12px;color:var(--mut);white-space:nowrap;font-weight:500;font-size:15px;text-decoration:none;border-radius:6px}
+nav.tabs a:hover{color:var(--fg)}
+nav.tabs a[aria-current=page]{color:var(--fg);font-weight:600;box-shadow:inset 0 -2.5px 0 var(--acc);border-radius:0}
+[id]{scroll-margin-top:72px}
+@media (max-width:680px){header.site + main [id]{scroll-margin-top:108px}}
+
+section.tab{margin-top:64px;font-size:17px;line-height:1.6}
+section.tab :is(p,ul,ol,blockquote){max-width:70ch;overflow-wrap:anywhere}
+main > h1 + section.tab{margin-top:32px}
+thead:not(:has(th:not(:empty))){display:none}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.tile,.chart,details.about{background:var(--card);border:1px solid var(--line);border-radius:3px}
+.tile{padding:14px 16px 10px}
+.tile .l{font-size:13px;color:var(--fg2);font-weight:500}
+.tile .v{font-size:34px;font-weight:600;line-height:1.15;margin:4px 0 2px;letter-spacing:-.02em}.tile.hero .v{font-size:54px}
+.tile .s{font-size:13px;color:var(--fg2);min-height:1.6em}
+.scoredef{display:grid;grid-template-columns:minmax(200px,auto) 1fr;gap:12px 40px;align-items:center;margin:12px 0 24px}
+.scoredef.bare{display:block;margin:20px 0 28px;padding:14px 18px;border-left:3px solid var(--line)}
+.doc :not(pre)>code{overflow-wrap:anywhere}
+section.tab p{margin:0 0 10px}section.tab p>strong:first-child{font-weight:600}
+section.tab ul,section.tab ol{margin:0 0 14px}section.tab li{margin:2px 0;line-height:1.5}section.tab li>p{margin:0}
+section.tab ul{list-style:none;padding-left:1.4em}section.tab ul>li{position:relative}
+section.tab ul>li::before{content:"";position:absolute;left:-1.1em;top:.62em;width:5px;height:5px;background:#000;transform:rotate(45deg)}
+section.tab ol{padding-left:1.6em}.doc ul{list-style:disc;padding-left:22px}.doc ul>li::before{content:none}
+section.tab h3{font-size:19px;margin:26px 0 8px}
+#analysis h3{font-size:21px}
+#analysis h4{font-size:16px}
+.bestline{margin:10px 0 0;font-size:14.5px;color:var(--fg2)}.bestline b{color:var(--acc);font-weight:600;font-variant-numeric:tabular-nums}
+.bestline a{color:var(--fg);text-decoration:none}.bestline .logo{width:15px;height:15px;vertical-align:-2px;margin-right:5px}.bestline a:hover{text-decoration:underline}
+.logo{width:16px;height:16px;flex:none;display:inline-block}.eff{color:var(--mut);font-weight:400;margin-left:2px}tr.best .eff{font-weight:400}
+.hero{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:10px 32px;margin:26px 0 6px}
+.hero .n b{font-size:72px;font-weight:500;letter-spacing:-.045em;line-height:1;display:block;font-variant-numeric:tabular-nums}.hero .n span{font-size:14px;color:var(--fg2)}
+.hero .facts{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:14px;color:var(--fg2);margin:0 0 8px}
+.scoredef .l{font-size:13px;color:var(--fg2);font-weight:500}
+.scoredef .formula{font-size:27px;font-weight:600;line-height:1.2;margin-top:2px;white-space:nowrap}
+.scoredef .defs{font-size:13.5px;color:var(--fg2);line-height:1.5;columns:2;column-gap:28px}
+.scoredef .defs p{margin:0;break-inside:avoid;max-width:none}
+@media (max-width:640px){.scoredef{grid-template-columns:1fr}.scoredef .defs{columns:1}.scoredef .defs p+p{margin-top:6px}.scoredef .formula{white-space:normal;font-size:23px}}
+.tile .meter{margin:12px 0 4px}.meter.neutral{background:var(--line)}.meter.neutral .fill{background:var(--mut)}
+.meter .pt{position:absolute;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;box-shadow:0 0 0 2px var(--card)}
+.scale{display:flex;justify-content:space-between;font-size:11px;color:var(--mut);font-variant-numeric:tabular-nums}
+.callout{border-left:3px solid var(--acc);background:var(--card);padding:9px 14px;border-radius:0 8px 8px 0;font-size:13.5px;color:var(--fg2);margin:12px 0}
+details.about{padding:0 18px;margin:16px 0}
+details.about>summary{padding:13px 0;font-weight:600;cursor:pointer}details.about>summary .mut{font-weight:400}
+details.about[open]>summary{border-bottom:1px solid var(--line);margin-bottom:12px}
+details.about dl.fields{margin:0 0 16px}
+dl.fields{display:grid;grid-template-columns:200px 1fr;gap:10px 18px;margin:10px 0}
+dl.fields dt{color:var(--fg2);font-size:14px;font-weight:500}dl.fields dd{margin:0}dl.fields dd>p:first-child{margin-top:0}
+@media (max-width:640px){dl.fields{grid-template-columns:1fr}dl.fields dd{margin-bottom:8px}}
+figure{margin:20px 0}figure.fig{margin:28px 0 36px}figure.fig svg{width:100%;max-width:760px;height:auto;display:block;margin:0 auto}figure>img{display:block;margin:0 auto}
+figure.fig-passk svg{max-width:480px}figure.fig-components svg{max-width:620px}figure.fig svg text{font-family:"IBM Plex Sans",system-ui,sans-serif}figure img{max-width:100%;border:1px solid var(--line);border-radius:3px;background:#fff}
+figcaption{font-size:15px;line-height:1.55;color:var(--fg2);margin:0 0 12px}figcaption .lead{color:var(--acc);font-weight:600}
+.chart{position:relative;padding:18px 18px 8px}
+.chart svg{width:100%;height:auto;display:block}
+.legend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--fg2);margin-bottom:4px}
+.legend span{display:inline-flex;align-items:center;gap:6px}.sw{width:14px;height:3px;border-radius:2px;display:inline-block}
+.sw.dk{width:8px;height:8px;transform:rotate(45deg);border-radius:1px;background:var(--fg2)}
+.panel{fill:none}.lbl-end{font-size:12px;fill:var(--fg);font-weight:550}.lbl-end.mut{fill:var(--mut);font-weight:400}.bar.base{fill:var(--base)}figcaption.mut{margin:-6px 0 0}.grid{stroke:var(--line);stroke-width:1}.vgrid{display:none}.axis{stroke:none}.ref{stroke:var(--mut);stroke-width:1;stroke-dasharray:4 3}
+.tick{fill:var(--mut);font-size:11px;font-variant-numeric:tabular-nums}.tick.grp{font-size:11px;letter-spacing:.06em;text-transform:uppercase}.single{fill:var(--base);stroke:var(--card);stroke-width:1.5}.sw.single{background:var(--base)}
+
+.line{fill:none;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round;opacity:.8}
+.dot{stroke:var(--card);stroke-width:1.5;cursor:default}.bar{cursor:default}.bar:hover,.bar:focus{stroke:var(--fg);outline:none}.dia{stroke:var(--card);stroke-width:1.5}
+.dot:hover,.dot:focus,.dia:hover,.dia:focus{stroke:var(--fg);outline:none}
+.runpt{fill:var(--fg);stroke:var(--card);stroke-width:1.5;outline:none}.runpt:hover,.runpt:focus{stroke:var(--fg)}
+.runpick{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px}
+.rp{font:inherit;font-size:12.5px;line-height:20px;padding:2px 10px;border-radius:2px;border:1px solid var(--line);background:var(--raised);color:var(--fg);cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.rp:hover{border-color:var(--axis)}.rp.off{opacity:.42;background:transparent}.rp-all,.rp-none{color:var(--fg2);background:transparent}
+.s1.line,.st-sd.s1,.st-mean.s1{stroke:var(--s1)}.s1.dot,.s1.dia,.s1.bar,.sw.s1,.key.s1,.pt.s1,.fill.s1,.st-dot.s1{fill:var(--s1);background:var(--s1)}.s2.line,.st-sd.s2,.st-mean.s2{stroke:var(--s2)}.s2.dot,.s2.dia,.s2.bar,.sw.s2,.key.s2,.pt.s2,.fill.s2,.st-dot.s2{fill:var(--s2);background:var(--s2)}.s3.line,.st-sd.s3,.st-mean.s3{stroke:var(--s3)}.s3.dot,.s3.dia,.s3.bar,.sw.s3,.key.s3,.pt.s3,.fill.s3,.st-dot.s3{fill:var(--s3);background:var(--s3)}.s4.line,.st-sd.s4,.st-mean.s4{stroke:var(--s4)}.s4.dot,.s4.dia,.s4.bar,.sw.s4,.key.s4,.pt.s4,.fill.s4,.st-dot.s4{fill:var(--s4);background:var(--s4)}.s5.line,.st-sd.s5,.st-mean.s5{stroke:var(--s5)}.s5.dot,.s5.dia,.s5.bar,.sw.s5,.key.s5,.pt.s5,.fill.s5,.st-dot.s5{fill:var(--s5);background:var(--s5)}.s6.line,.st-sd.s6,.st-mean.s6{stroke:var(--s6)}.s6.dot,.s6.dia,.s6.bar,.sw.s6,.key.s6,.pt.s6,.fill.s6,.st-dot.s6{fill:var(--s6);background:var(--s6)}.s7.line,.st-sd.s7,.st-mean.s7{stroke:var(--s7)}.s7.dot,.s7.dia,.s7.bar,.sw.s7,.key.s7,.pt.s7,.fill.s7,.st-dot.s7{fill:var(--s7);background:var(--s7)}.s8.line,.st-sd.s8,.st-mean.s8{stroke:var(--s8)}.s8.dot,.s8.dia,.s8.bar,.sw.s8,.key.s8,.pt.s8,.fill.s8,.st-dot.s8{fill:var(--s8);background:var(--s8)}.h0{background:var(--h0);color:var(--ht0)}.h1{background:var(--h1);color:var(--ht1)}.h2{background:var(--h2);color:var(--ht2)}.h3{background:var(--h3);color:var(--ht3)}.h4{background:var(--h4);color:var(--ht4)}.h5{background:var(--h5);color:var(--ht5)}.h6{background:var(--h6);color:var(--ht6)}.h7{background:var(--h7);color:var(--ht7)}.h8{background:var(--h8);color:var(--ht8)}
+.tip{position:absolute;pointer-events:none;background:var(--fg);color:var(--bg);font-size:12.5px;padding:5px 8px;border-radius:5px;max-width:320px}
+details{border-top:1px solid var(--line);padding:6px 0}details>summary{cursor:pointer;padding:4px 0}
+details[open]>summary{margin-bottom:6px}
+.doc{max-width:calc(70ch + 56px);background:var(--card);border:1px solid var(--line);border-radius:3px;padding:22px 28px 18px}
+.doc>:first-child{margin-top:0}@media (max-width:640px){.doc{padding:16px}}
+.badge{display:inline-block;font-size:12px;color:var(--fg2);border:1px solid var(--line);border-radius:10px;padding:0 8px;margin-left:6px}
+blockquote{margin:8px 0;padding-left:12px;border-left:2px solid var(--line);color:var(--fg2)}
+.pk{display:flex;flex-wrap:wrap;gap:12px 24px}.spark{position:relative;flex:none;width:400px}.spark>svg{display:block;width:100%;height:auto;overflow:visible}
+.pk-h{font-size:13px;color:var(--fg2);margin:0 0 4px}.pk-h b{color:var(--fg);font-weight:600}.spark .tip{white-space:nowrap}
+.st-l{font-size:12.5px;fill:var(--fg)}.st-l.st-b{fill:var(--mut)}.st-v{font-size:12px;font-weight:600;fill:var(--fg);font-variant-numeric:tabular-nums}
+.st-dot{stroke:var(--bg);stroke-width:1.5;outline:none}.st-dot.st-base{fill:var(--base)}.st-sd{stroke-width:1.5;opacity:.6}.st-mean{stroke-width:2.5}
+.spark .grid{stroke:var(--line)}
+td.best{font-size:24px;font-weight:600;line-height:1.2;white-space:nowrap}
+.task{display:grid;grid-template-columns:minmax(200px,1fr) minmax(0,2.6fr);gap:16px 26px;padding:26px 0;border-top:1px solid var(--line);align-items:center}
+.task:first-child{border-top:0;padding-top:8px}
+.task:last-child{padding-bottom:0}
+.t-title{font-size:24px;font-weight:600;line-height:1.25;color:var(--fg)}
+a.t-title{text-decoration-color:currentColor}
+.t-sub{margin:6px 0 10px;color:var(--fg2)}.t-meta{margin:2px 0;font-size:13.5px;color:var(--mut)}
+.t-plots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.t-plots .spark{width:100%;margin:0}
+.t-plots figcaption{margin:0 0 4px;font-size:13px;font-weight:600;color:var(--fg2)}
+.t-plots .logo{width:14px;height:14px}
+.t-plots .line{stroke-width:2.2;opacity:1}
+@media (max-width:860px){
+  .task{grid-template-columns:1fr;gap:14px;padding:20px 0}
+  .t-title{font-size:22px}
+}
+@media (max-width:560px){.t-plots{grid-template-columns:minmax(0,400px);gap:14px}}
+@media (max-width:360px){.landing-title{font-size:34px}.t-title{font-size:20px}}
+@media (max-width:600px) and (max-height:680px){
+  main:has(> .samples){gap:20px;padding-top:20px}
+  .samples h2{margin-bottom:10px}
+  .task{gap:10px;padding-block:14px}
+}
+@media (min-width:861px) and (max-height:980px){
+  main:has(> .samples){gap:clamp(10px,2vh,18px);padding-block:22px 18px}
+  .landing-title{font-size:clamp(42px,6vh,50px)}
+  .intro{font-size:16px;line-height:1.5}
+  .intro ul{margin-top:8px}.intro li+li{margin-top:6px}
+  .samples h2{font-size:24px;margin-bottom:8px}
+  .task{padding-block:12px}
+  .t-plots .spark>svg{max-height:clamp(90px,14vh,112px)}
+}
+td.best .small{font-size:13px;letter-spacing:0;font-weight:400}
+
+.traj [id]{scroll-margin-top:190px}
+nav.runtabs{margin:16px 0 4px}nav.runtabs a{display:inline-flex;align-items:center;gap:7px}
+nav.runtabs .ts{color:var(--mut);font-variant-numeric:tabular-nums;font-weight:400}nav.runtabs a[aria-current=page] .ts{color:var(--fg2)}
+.traj h1 .eff{font-size:.5em;letter-spacing:0;font-weight:400;margin-left:6px}
+.traj .facts{display:flex;flex-wrap:wrap;gap:6px 28px;margin:14px 0 6px;font-size:14px;color:var(--fg2)}
+.facts b{color:var(--fg);font-weight:600;font-variant-numeric:tabular-nums}
+.spine{position:sticky;top:0;z-index:3;background:var(--bg);padding:8px 0 6px;border-bottom:1px solid var(--line);margin-top:16px}
+.spine svg{width:100%;height:auto;display:block;cursor:default}
+.spine a{cursor:pointer}.spine .stripz{cursor:pointer;fill:transparent}
+.ckl{stroke-width:1;opacity:.45}.cursor{stroke:var(--fg);stroke-width:1.5}
+.tk-c{fill:var(--axis)}.tk-m{fill:var(--fg)}.tk-u{fill:var(--base)}.tk-n{fill:var(--acc)}
+.tip{position:absolute;pointer-events:none;background:var(--fg);color:var(--bg);font-size:12.5px;padding:5px 8px;border-radius:5px;max-width:420px;z-index:5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:12px 0 4px;font-size:13px;color:var(--fg2)}
+.tools input{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:5px 10px;width:240px}
+.tools button{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:5px 10px;cursor:pointer}
+.keys{display:flex;gap:12px;margin-left:auto}.keys i{display:inline-block;width:3px;height:11px;margin-right:5px;vertical-align:-1px}
+.ch{margin-top:30px}
+.chh{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 18px;border-bottom:1px solid var(--axis);padding-bottom:6px;margin-bottom:12px}
+.chh .k{font-weight:650;font-size:16px}.chh b{font-size:18px;font-weight:650;font-variant-numeric:tabular-nums}
+.up{color:#006300}.down{color:#d03b3b}
+.st{display:grid;grid-template-columns:62px minmax(0,1fr);gap:0 12px;margin:8px 0}
+.g{font:11.5px/1.5 "IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--mut);padding-top:3px;text-decoration:none}.g:hover{color:var(--acc);text-decoration:none}
+.b>p:first-child{margin-top:0}.b>p:last-child{margin-bottom:0}
+.prompt{background:var(--card);border:1px solid var(--ring);border-radius:8px;padding:12px 16px}
+.lbl{font-size:12.5px;color:var(--fg2);font-weight:600;margin-bottom:4px}
+.note{background:var(--card);border-left:3px solid var(--acc);border-radius:0 6px 6px 0;padding:8px 12px}
+details.grp,details.sub,details.rsn,details.call{border:0;padding:0}
+details.grp>summary,details.sub>summary,details.rsn>summary{cursor:pointer;color:var(--fg2);font-size:14px;padding:2px 0}
+details.grp[open]>summary,details.sub[open]>summary,details.rsn[open]>summary{margin-bottom:4px}
+.meta{color:var(--mut);font-size:12.5px;margin-left:6px}
+.calls{border-left:2px solid var(--line);padding-left:12px;margin:2px 0 8px}.subb{border-left:2px solid var(--axis);padding-left:12px;margin:2px 0 8px}
+details.call>summary{cursor:pointer;display:flex;gap:8px;align-items:baseline;padding:2px 0;font-size:13px;list-style:none}
+details.call>summary::-webkit-details-marker{display:none}
+.cn{font:11.5px "IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--mut);white-space:nowrap}
+.l{font:12.5px/1.5 "IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1;color:var(--fg);background:none;border:0;padding:0}
+.bad{font-size:11.5px;color:#d03b3b;white-space:nowrap}
+.w{font-size:12.5px;color:var(--mut);padding:2px 0}
+.call pre{margin:4px 0;max-height:440px;font-size:12.5px;white-space:pre-wrap;overflow-wrap:anywhere}
+.call pre.out{background:none}
+.rsn .rb{font-size:14px;color:var(--fg2);border-left:2px solid var(--line);padding-left:12px}
+::highlight(hit){background:#eda10066;color:inherit}
+@media (max-width:640px){.spine{position:static}.traj [id]{scroll-margin-top:12px}.st{grid-template-columns:44px minmax(0,1fr);gap:0 8px}.keys{margin-left:0}.tools input{width:100%}}
+
+.submission-summary{margin:14px 0}
+.submission-files{overflow-wrap:anywhere}
+.spine-label{font-size:12px;color:var(--fg2);margin:0 0 4px}
+
+/* Crafter page additions */
+
+table.lb .bv{min-width:3.9em}
+
+table.lb td.refrun .rn{color:var(--fg2)}
+.doc h4{font-size:15px;margin:18px 0 6px}.doc h5{font-size:14.5px;margin:16px 0 6px}
+.doc table{font-size:13px}
+details.fold.doc-fold>summary{font-weight:600;color:var(--fg)}
+.hourly td,.hourly th{text-align:right}.hourly td:first-child,.hourly th:first-child{text-align:left}
+p.cap-note{font-size:13.5px;color:var(--fg2);margin:4px 0 0}
+
+section.tab .lede{margin-bottom:12px}
+table.lb td.run .rn{white-space:nowrap}
+table.lb.t1 .bar .track{width:clamp(48px,8vw,84px)}
+
+/* Teaching by Curriculum additions */
+.doc{overflow-wrap:break-word}
+p.tabs-lab{margin:16px 0 0;font-size:13px;color:var(--mut)}
+p.tabs-lab + nav.runtabs{margin-top:2px}
+details.fold.doc-fold>summary{font-weight:600;color:var(--fg)}
+.submission-summary ul,.submission-summary ol{margin:0 0 12px}
+section.ch h3{margin:28px 0 8px}
+
+table.curr td{font-size:13.5px;line-height:1.45}
+table.curr td.bn{width:15%}
+table.curr td.bn b{display:inline-block;min-width:1.1em;margin-right:2px}
+table.curr td.wk{width:25%}
+table.curr td.pr{width:37%}
+table.curr td.ba{width:23%}
+table.curr.brief td.bn{width:23%}
+table.curr.brief td.wk{width:35%}
+table.curr.brief td.ba{width:42%}
+table.curr .kept{display:block;margin-top:4px;color:var(--fg2);font-weight:500}
+table.curr .chg{display:block;margin-top:4px;font-size:12.5px;color:var(--fg2)}
+span.nw{white-space:nowrap}
+.fig-m{display:none}
+figure.fig .fig-m svg{max-width:420px}
+@media (max-width:640px){.fig-d{display:none}.fig-m{display:block}
+
+  table.curr,table.curr tbody,table.curr tr,table.curr td{display:block;width:auto}
+  table.curr thead{display:none}
+  table.curr tr{padding:12px 0;border-bottom:1px solid var(--line)}
+  table.curr td{border:0;padding:3px 0}
+  table.curr td.bn,table.curr td.wk,table.curr td.pr,table.curr td.ba,
+  table.curr.brief td.bn,table.curr.brief td.wk,table.curr.brief td.ba{width:auto}
+  table.curr td.bn{font-weight:600}
+  table.curr td[data-l]::before{content:attr(data-l);display:block;font-size:12px;font-weight:600;color:var(--mut);
+    text-transform:uppercase;letter-spacing:.04em;margin-top:6px}
+}
+</style></head><body><main><nav class="crumb" aria-label="Report navigation"><a href="../index.html#results">← Back</a></nav><div class="traj"><h1><span class="nw">GPT-6 Astra</span> xhigh (Teacher) #1</h1><p class="sub">Codex 0.166.0 running gpt-6-astra at xhigh effort · from untrained <span class="nw">Qwen3.5-0.8B</span> (Student)</p><p class="tabs-lab"><span class="nw">Qwen3.5-0.8B</span> (Student)'s held-out progression after 8 hours, by run</p><nav class="tabs runtabs" aria-label="Runs of GPT-6 Astra xhigh (Teacher)"><a href="gpt-6-astra-1.html" aria-current=page><i class="key s1"></i>#1 <span class="ts">40.43</span></a></nav><div class="facts"><span>Held-out progression of <span class="nw">Qwen3.5-0.8B</span> (Student) after 8 hours <b>40.43%</b></span><span>Crafter score <b>17.23</b></span><span>Agent time <b>7h 41m</b></span></div><section class="ch" id="final"><header class="chh"><div><span class="k">Trace summary</span></div><div><b>40.43%</b> <span class="mut small">held-out progression of <span class="nw">Qwen3.5-0.8B</span> (Student) after 8 hours</span></div></header><p class="mut">Started from untrained <span class="nw">Qwen3.5-0.8B</span> (Student), with the prompt and the sandbox's lab package; no other code.</p><h3 id="final-summary">Final summary, in <span class="nw">GPT-6 Astra</span> xhigh (Teacher)'s words</h3><div class="submission-summary"><p>Submitted and validated model.safetensors.</p>
+<p>Used targeted movement, crafting, forage and rest lessons, discarded regressions, then applied final auxiliary norm sharpening.</p>
+<ul>
+<li><strong>Official 100 worlds:</strong> 40.64% progression.</li>
+<li><strong>600 games on 300 worlds:</strong> 43.05% progression, 18.58% paper score.</li>
+<li><strong>Training updates retained:</strong> 54.29%.</li>
+<li><strong>Plain full-game training time:</strong> 12.24%.</li>
+</ul>
+<p>Notes and curriculum evidence (<code>/app/NOTES.md</code>) · Final results (<code>/app/FINAL_RESULTS.json</code>)</p>
+</div><h3 id="development-evaluations">Development evaluations</h3><p>Every call of <code>evaluate</code> in the run: <span class="nw">Qwen3.5-0.8B</span> (Student)'s progression on the public development worlds. Only 100-world calls are official. Kind: auxiliary marks averaged or edited weights.</p><figure class="fig"><figcaption><span class="nw">Qwen3.5-0.8B</span> (Student)'s development progression at every evaluation of this run. ◆ marks its held-out progression after 8 hours.</figcaption><div class="fig-d"><svg role="img" aria-label="Development evaluations of GPT-6 Astra xhigh (Teacher) #1" xmlns:xlink="http://www.w3.org/1999/xlink" width="510.465703pt" height="205.831445pt" viewBox="0 0 510.465703 205.831445" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="fr1-figure_1">
+  <g id="fr1-patch_1">
+   <path d="M 0 205.831445 
+L 510.465703 205.831445 
+L 510.465703 -0 
+L 0 -0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="fr1-axes_1">
+   <g id="fr1-patch_2">
+    <path d="M 34.113281 174.170664 
+L 391.233281 174.170664 
+L 391.233281 21.710664 
+L 34.113281 21.710664 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="fr1-matplotlib.axis_1">
+    <g id="fr1-xtick_1">
+     <g id="fr1-line2d_1">
+      <defs>
+       <path id="fr1-mb67ae6d3f0" d="M 0 0 
+L 0 3 
+" style="stroke: #686871; stroke-width: 0.5"/>
+      </defs>
+      <g>
+       <use xlink:href="#fr1-mb67ae6d3f0" x="34.113281" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1-text_1">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="34.113281" y="187.508555" transform="rotate(-0 34.113281 187.508555)">0</text>
+     </g>
+    </g>
+    <g id="fr1-xtick_2">
+     <g id="fr1-line2d_2">
+      <g>
+       <use xlink:href="#fr1-mb67ae6d3f0" x="74.239124" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1-text_2">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="74.239124" y="187.508555" transform="rotate(-0 74.239124 187.508555)">1</text>
+     </g>
+    </g>
+    <g id="fr1-xtick_3">
+     <g id="fr1-line2d_3">
+      <g>
+       <use xlink:href="#fr1-mb67ae6d3f0" x="114.364967" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1-text_3">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="114.364967" y="187.508555" transform="rotate(-0 114.364967 187.508555)">2</text>
+     </g>
+    </g>
+    <g id="fr1-xtick_4">
+     <g id="fr1-line2d_4">
+      <g>
+       <use xlink:href="#fr1-mb67ae6d3f0" x="154.490809" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1-text_4">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="154.490809" y="187.508555" transform="rotate(-0 154.490809 187.508555)">3</text>
+     </g>
+    </g>
+    <g id="fr1-xtick_5">
+     <g id="fr1-line2d_5">
+      <g>
+       <use xlink:href="#fr1-mb67ae6d3f0" x="194.616652" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1-text_5">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="194.616652" y="187.508555" transform="rotate(-0 194.616652 187.508555)">4</text>
+     </g>
+    </g>
+    <g id="fr1-xtick_6">
+     <g id="fr1-line2d_6">
+      <g>
+       <use xlink:href="#fr1-mb67ae6d3f0" x="234.742495" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1-text_6">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="234.742495" y="187.508555" transform="rotate(-0 234.742495 187.508555)">5</text>
+     </g>
+    </g>
+    <g id="fr1-xtick_7">
+     <g id="fr1-line2d_7">
+      <g>
+       <use xlink:href="#fr1-mb67ae6d3f0" x="274.868337" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1-text_7">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="274.868337" y="187.508555" transform="rotate(-0 274.868337 187.508555)">6</text>
+     </g>
+    </g>
+    <g id="fr1-xtick_8">
+     <g id="fr1-line2d_8">
+      <g>
+       <use xlink:href="#fr1-mb67ae6d3f0" x="314.99418" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1-text_8">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="314.99418" y="187.508555" transform="rotate(-0 314.99418 187.508555)">7</text>
+     </g>
+    </g>
+    <g id="fr1-xtick_9">
+     <g id="fr1-line2d_9">
+      <g>
+       <use xlink:href="#fr1-mb67ae6d3f0" x="355.120023" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1-text_9">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="355.120023" y="187.508555" transform="rotate(-0 355.120023 187.508555)">8</text>
+     </g>
+    </g>
+    <g id="fr1-text_10">
+     <text style="font-size: 10px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #111114" x="212.673281" y="201.269102" transform="rotate(-0 212.673281 201.269102)">Hours of the run</text>
+    </g>
+   </g>
+   <g id="fr1-matplotlib.axis_2">
+    <g id="fr1-ytick_1">
+     <g id="fr1-line2d_10">
+      <path d="M 34.113281 174.170664 
+L 391.233281 174.170664 
+" clip-path="url(#fr1-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr1-line2d_11">
+      <defs>
+       <path id="fr1-m70c286cfab" d="M 0 0 
+L -3 0 
+" style="stroke: #686871; stroke-width: 0.5"/>
+      </defs>
+      <g>
+       <use xlink:href="#fr1-m70c286cfab" x="34.113281" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1-text_11">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="177.589609" transform="rotate(-0 27.613281 177.589609)">0</text>
+     </g>
+    </g>
+    <g id="fr1-ytick_2">
+     <g id="fr1-line2d_12">
+      <path d="M 34.113281 143.678664 
+L 391.233281 143.678664 
+" clip-path="url(#fr1-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr1-line2d_13">
+      <g>
+       <use xlink:href="#fr1-m70c286cfab" x="34.113281" y="143.678664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1-text_12">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="147.097609" transform="rotate(-0 27.613281 147.097609)">10</text>
+     </g>
+    </g>
+    <g id="fr1-ytick_3">
+     <g id="fr1-line2d_14">
+      <path d="M 34.113281 113.186664 
+L 391.233281 113.186664 
+" clip-path="url(#fr1-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr1-line2d_15">
+      <g>
+       <use xlink:href="#fr1-m70c286cfab" x="34.113281" y="113.186664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1-text_13">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="116.605609" transform="rotate(-0 27.613281 116.605609)">20</text>
+     </g>
+    </g>
+    <g id="fr1-ytick_4">
+     <g id="fr1-line2d_16">
+      <path d="M 34.113281 82.694664 
+L 391.233281 82.694664 
+" clip-path="url(#fr1-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr1-line2d_17">
+      <g>
+       <use xlink:href="#fr1-m70c286cfab" x="34.113281" y="82.694664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1-text_14">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="86.113609" transform="rotate(-0 27.613281 86.113609)">30</text>
+     </g>
+    </g>
+    <g id="fr1-ytick_5">
+     <g id="fr1-line2d_18">
+      <path d="M 34.113281 52.202664 
+L 391.233281 52.202664 
+" clip-path="url(#fr1-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr1-line2d_19">
+      <g>
+       <use xlink:href="#fr1-m70c286cfab" x="34.113281" y="52.202664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1-text_15">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="55.621609" transform="rotate(-0 27.613281 55.621609)">40</text>
+     </g>
+    </g>
+    <g id="fr1-ytick_6">
+     <g id="fr1-line2d_20">
+      <path d="M 34.113281 21.710664 
+L 391.233281 21.710664 
+" clip-path="url(#fr1-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr1-line2d_21">
+      <g>
+       <use xlink:href="#fr1-m70c286cfab" x="34.113281" y="21.710664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1-text_16">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="25.129609" transform="rotate(-0 27.613281 25.129609)">50</text>
+     </g>
+    </g>
+    <g id="fr1-text_17">
+     <text style="font-size: 10px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #111114" x="9.758438" y="97.940664" transform="rotate(-90 9.758438 97.940664)">Development progression (%)</text>
+    </g>
+   </g>
+   <g id="fr1-line2d_22">
+    <path d="M 37.923712 159.756181 
+L 67.718717 90.456403 
+L 102.588861 105.286492 
+L 107.045499 107.781347 
+L 138.696652 107.365436 
+L 168.730636 72.022464 
+L 218.184661 69.804781 
+L 266.442195 50.262153 
+L 310.825472 60.102836 
+L 312.736482 48.183209 
+L 321.187152 50.262153 
+" clip-path="url(#fr1-p10722841bc)" style="fill: none; stroke: #0072b2; stroke-opacity: 0.55; stroke-linecap: square"/>
+   </g>
+   <g id="fr1-patch_3">
+    <path d="M 34.113281 174.170664 
+L 34.113281 21.710664 
+" style="fill: none; stroke: #686871; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="fr1-patch_4">
+    <path d="M 34.113281 174.170664 
+L 391.233281 174.170664 
+" style="fill: none; stroke: #686871; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="fr1-PathCollection_1">
+    <defs>
+     <path id="fr1-mea7dcc0b60" d="M 0 1.5 
+C 0.397805 1.5 0.77937 1.341951 1.06066 1.06066 
+C 1.341951 0.77937 1.5 0.397805 1.5 0 
+C 1.5 -0.397805 1.341951 -0.77937 1.06066 -1.06066 
+C 0.77937 -1.341951 0.397805 -1.5 0 -1.5 
+C -0.397805 -1.5 -0.77937 -1.341951 -1.06066 -1.06066 
+C -1.341951 -0.77937 -1.5 -0.397805 -1.5 0 
+C -1.5 0.397805 -1.341951 0.77937 -1.06066 1.06066 
+C -0.77937 1.341951 -0.397805 1.5 0 1.5 
+z
+" style="stroke: #a1a1aa"/>
+    </defs>
+    <g clip-path="url(#fr1-p10722841bc)">
+     <use xlink:href="#fr1-mea7dcc0b60" x="181.760414" y="72.207246" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     <use xlink:href="#fr1-mea7dcc0b60" x="274.54401" y="50.631716" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     <use xlink:href="#fr1-mea7dcc0b60" x="321.307172" y="48.414338" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     <use xlink:href="#fr1-mea7dcc0b60" x="328.530734" y="43.055064" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     <use xlink:href="#fr1-mea7dcc0b60" x="339.67049" y="42.777892" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     <use xlink:href="#fr1-mea7dcc0b60" x="340.467428" y="52.063925" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+    </g>
+   </g>
+   <g id="fr1-text_18">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #111114" x="359.208846" y="53.100801" transform="rotate(-0 359.208846 53.100801)">held-out 40.43</text>
+   </g>
+   <g id="fr1-PathCollection_2">
+    <defs>
+     <path id="fr1-m5b99a169e4" d="M -2 2 
+L 2 2 
+L 2 -2 
+L -2 -2 
+z
+" style="stroke: #686871"/>
+    </defs>
+    <g clip-path="url(#fr1-p10722841bc)">
+     <use xlink:href="#fr1-m5b99a169e4" x="37.923712" y="159.756181" style="fill: #686871; stroke: #686871"/>
+    </g>
+   </g>
+   <g id="fr1-PathCollection_3">
+    <defs>
+     <path id="fr1-m3a3c859172" d="M 0 1.732051 
+C 0.459345 1.732051 0.899939 1.549551 1.224745 1.224745 
+C 1.549551 0.899939 1.732051 0.459345 1.732051 0 
+C 1.732051 -0.459345 1.549551 -0.899939 1.224745 -1.224745 
+C 0.899939 -1.549551 0.459345 -1.732051 0 -1.732051 
+C -0.459345 -1.732051 -0.899939 -1.549551 -1.224745 -1.224745 
+C -1.549551 -0.899939 -1.732051 -0.459345 -1.732051 0 
+C -1.732051 0.459345 -1.549551 0.899939 -1.224745 1.224745 
+C -0.899939 1.549551 -0.459345 1.732051 0 1.732051 
+z
+" style="stroke: #0072b2"/>
+    </defs>
+    <g clip-path="url(#fr1-p10722841bc)">
+     <use xlink:href="#fr1-m3a3c859172" x="67.718717" y="90.456403" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr1-m3a3c859172" x="102.588861" y="105.286492" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr1-m3a3c859172" x="107.045499" y="107.781347" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr1-m3a3c859172" x="138.696652" y="107.365436" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr1-m3a3c859172" x="168.730636" y="72.022464" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr1-m3a3c859172" x="218.184661" y="69.804781" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr1-m3a3c859172" x="266.442195" y="50.262153" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr1-m3a3c859172" x="310.825472" y="60.102836" style="fill: #0072b2; stroke: #0072b2"/>
+    </g>
+   </g>
+   <g id="fr1-PathCollection_4">
+    <defs>
+     <path id="fr1-m2bae2241eb" d="M 0 2 
+C 0.530406 2 1.03916 1.789267 1.414214 1.414214 
+C 1.789267 1.03916 2 0.530406 2 0 
+C 2 -0.530406 1.789267 -1.03916 1.414214 -1.414214 
+C 1.03916 -1.789267 0.530406 -2 0 -2 
+C -0.530406 -2 -1.03916 -1.789267 -1.414214 -1.414214 
+C -1.789267 -1.03916 -2 -0.530406 -2 0 
+C -2 0.530406 -1.789267 1.03916 -1.414214 1.414214 
+C -1.03916 1.789267 -0.530406 2 0 2 
+z
+" style="stroke: #0072b2; stroke-width: 0.9"/>
+    </defs>
+    <g clip-path="url(#fr1-p10722841bc)">
+     <use xlink:href="#fr1-m2bae2241eb" x="312.736482" y="48.183209" style="fill: #ffffff; stroke: #0072b2; stroke-width: 0.9"/>
+     <use xlink:href="#fr1-m2bae2241eb" x="321.187152" y="50.262153" style="fill: #ffffff; stroke: #0072b2; stroke-width: 0.9"/>
+    </g>
+   </g>
+   <g id="fr1-PathCollection_5">
+    <defs>
+     <path id="fr1-m741e196f2c" d="M -0 3.605551 
+L 3.605551 0 
+L 0 -3.605551 
+L -3.605551 -0 
+z
+" style="stroke: #ffffff; stroke-width: 0.5"/>
+    </defs>
+    <g clip-path="url(#fr1-p10722841bc)">
+     <use xlink:href="#fr1-m741e196f2c" x="354.393745" y="50.892461" style="fill: #0072b2; stroke: #ffffff; stroke-width: 0.5"/>
+    </g>
+   </g>
+   <g id="fr1-legend_1">
+    <g id="fr1-PathCollection_6">
+     <g>
+      <use xlink:href="#fr1-m5b99a169e4" x="50.263281" y="9.787422" style="fill: #686871; stroke: #686871"/>
+     </g>
+    </g>
+    <g id="fr1-text_19">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="61.313281" y="12.018672" transform="rotate(-0 61.313281 12.018672)">untrained weights</text>
+    </g>
+    <g id="fr1-PathCollection_7">
+     <g>
+      <use xlink:href="#fr1-m3a3c859172" x="158.684766" y="9.787422" style="fill: #0072b2; stroke: #0072b2"/>
+     </g>
+    </g>
+    <g id="fr1-text_20">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="169.734766" y="12.018672" transform="rotate(-0 169.734766 12.018672)">trained weights</text>
+    </g>
+    <g id="fr1-PathCollection_8">
+     <g>
+      <use xlink:href="#fr1-m2bae2241eb" x="256.3325" y="9.787422" style="fill: #ffffff; stroke: #0072b2; stroke-width: 0.9"/>
+     </g>
+    </g>
+    <g id="fr1-text_21">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="267.3825" y="12.018672" transform="rotate(-0 267.3825 12.018672)">auxiliary weights</text>
+    </g>
+    <g id="fr1-PathCollection_9">
+     <g>
+      <use xlink:href="#fr1-mea7dcc0b60" x="360.015234" y="9.787422" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     </g>
+    </g>
+    <g id="fr1-text_22">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="371.065234" y="12.018672" transform="rotate(-0 371.065234 12.018672)">other world counts (not official)</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="fr1-p10722841bc">
+   <rect x="34.113281" y="21.710664" width="357.12" height="152.46"/>
+  </clipPath>
+ </defs>
+</svg></div><div class="fig-m"><svg role="img" aria-label="Development evaluations of GPT-6 Astra xhigh (Teacher) #1" xmlns:xlink="http://www.w3.org/1999/xlink" width="256.7592pt" height="247.880289pt" viewBox="0 0 256.7592 247.880289" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="fr1m-figure_1">
+  <g id="fr1m-patch_1">
+   <path d="M 0 247.880289 
+L 256.7592 247.880289 
+L 256.7592 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="fr1m-axes_1">
+   <g id="fr1m-patch_2">
+    <path d="M 36.9792 146.152969 
+L 254.5992 146.152969 
+L 254.5992 7.552969 
+L 36.9792 7.552969 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="fr1m-matplotlib.axis_1">
+    <g id="fr1m-xtick_1">
+     <g id="fr1m-line2d_1">
+      <defs>
+       <path id="fr1m-mb67ae6d3f0" d="M 0 0 
+L 0 3 
+" style="stroke: #686871; stroke-width: 0.5"/>
+      </defs>
+      <g>
+       <use xlink:href="#fr1m-mb67ae6d3f0" x="36.9792" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1m-text_1">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="36.9792" y="159.490859" transform="rotate(-0 36.9792 159.490859)">0</text>
+     </g>
+    </g>
+    <g id="fr1m-xtick_2">
+     <g id="fr1m-line2d_2">
+      <g>
+       <use xlink:href="#fr1m-mb67ae6d3f0" x="62.733046" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1m-text_2">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="62.733046" y="159.490859" transform="rotate(-0 62.733046 159.490859)">1</text>
+     </g>
+    </g>
+    <g id="fr1m-xtick_3">
+     <g id="fr1m-line2d_3">
+      <g>
+       <use xlink:href="#fr1m-mb67ae6d3f0" x="88.486892" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1m-text_3">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="88.486892" y="159.490859" transform="rotate(-0 88.486892 159.490859)">2</text>
+     </g>
+    </g>
+    <g id="fr1m-xtick_4">
+     <g id="fr1m-line2d_4">
+      <g>
+       <use xlink:href="#fr1m-mb67ae6d3f0" x="114.240738" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1m-text_4">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="114.240738" y="159.490859" transform="rotate(-0 114.240738 159.490859)">3</text>
+     </g>
+    </g>
+    <g id="fr1m-xtick_5">
+     <g id="fr1m-line2d_5">
+      <g>
+       <use xlink:href="#fr1m-mb67ae6d3f0" x="139.994585" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1m-text_5">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="139.994585" y="159.490859" transform="rotate(-0 139.994585 159.490859)">4</text>
+     </g>
+    </g>
+    <g id="fr1m-xtick_6">
+     <g id="fr1m-line2d_6">
+      <g>
+       <use xlink:href="#fr1m-mb67ae6d3f0" x="165.748431" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1m-text_6">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="165.748431" y="159.490859" transform="rotate(-0 165.748431 159.490859)">5</text>
+     </g>
+    </g>
+    <g id="fr1m-xtick_7">
+     <g id="fr1m-line2d_7">
+      <g>
+       <use xlink:href="#fr1m-mb67ae6d3f0" x="191.502277" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1m-text_7">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="191.502277" y="159.490859" transform="rotate(-0 191.502277 159.490859)">6</text>
+     </g>
+    </g>
+    <g id="fr1m-xtick_8">
+     <g id="fr1m-line2d_8">
+      <g>
+       <use xlink:href="#fr1m-mb67ae6d3f0" x="217.256123" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1m-text_8">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="217.256123" y="159.490859" transform="rotate(-0 217.256123 159.490859)">7</text>
+     </g>
+    </g>
+    <g id="fr1m-xtick_9">
+     <g id="fr1m-line2d_9">
+      <g>
+       <use xlink:href="#fr1m-mb67ae6d3f0" x="243.009969" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1m-text_9">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="243.009969" y="159.490859" transform="rotate(-0 243.009969 159.490859)">8</text>
+     </g>
+    </g>
+    <g id="fr1m-text_10">
+     <text style="font-size: 10px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #111114" x="145.7892" y="173.251406" transform="rotate(-0 145.7892 173.251406)">Hours of the run</text>
+    </g>
+   </g>
+   <g id="fr1m-matplotlib.axis_2">
+    <g id="fr1m-ytick_1">
+     <g id="fr1m-line2d_10">
+      <path d="M 36.9792 146.152969 
+L 254.5992 146.152969 
+" clip-path="url(#fr1m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr1m-line2d_11">
+      <defs>
+       <path id="fr1m-m70c286cfab" d="M 0 0 
+L -3 0 
+" style="stroke: #686871; stroke-width: 0.5"/>
+      </defs>
+      <g>
+       <use xlink:href="#fr1m-m70c286cfab" x="36.9792" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1m-text_11">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="149.571914" transform="rotate(-0 30.4792 149.571914)">0</text>
+     </g>
+    </g>
+    <g id="fr1m-ytick_2">
+     <g id="fr1m-line2d_12">
+      <path d="M 36.9792 118.432969 
+L 254.5992 118.432969 
+" clip-path="url(#fr1m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr1m-line2d_13">
+      <g>
+       <use xlink:href="#fr1m-m70c286cfab" x="36.9792" y="118.432969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1m-text_12">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="121.851914" transform="rotate(-0 30.4792 121.851914)">10</text>
+     </g>
+    </g>
+    <g id="fr1m-ytick_3">
+     <g id="fr1m-line2d_14">
+      <path d="M 36.9792 90.712969 
+L 254.5992 90.712969 
+" clip-path="url(#fr1m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr1m-line2d_15">
+      <g>
+       <use xlink:href="#fr1m-m70c286cfab" x="36.9792" y="90.712969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1m-text_13">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="94.131914" transform="rotate(-0 30.4792 94.131914)">20</text>
+     </g>
+    </g>
+    <g id="fr1m-ytick_4">
+     <g id="fr1m-line2d_16">
+      <path d="M 36.9792 62.992969 
+L 254.5992 62.992969 
+" clip-path="url(#fr1m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr1m-line2d_17">
+      <g>
+       <use xlink:href="#fr1m-m70c286cfab" x="36.9792" y="62.992969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1m-text_14">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="66.411914" transform="rotate(-0 30.4792 66.411914)">30</text>
+     </g>
+    </g>
+    <g id="fr1m-ytick_5">
+     <g id="fr1m-line2d_18">
+      <path d="M 36.9792 35.272969 
+L 254.5992 35.272969 
+" clip-path="url(#fr1m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr1m-line2d_19">
+      <g>
+       <use xlink:href="#fr1m-m70c286cfab" x="36.9792" y="35.272969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1m-text_15">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="38.691914" transform="rotate(-0 30.4792 38.691914)">40</text>
+     </g>
+    </g>
+    <g id="fr1m-ytick_6">
+     <g id="fr1m-line2d_20">
+      <path d="M 36.9792 7.552969 
+L 254.5992 7.552969 
+" clip-path="url(#fr1m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr1m-line2d_21">
+      <g>
+       <use xlink:href="#fr1m-m70c286cfab" x="36.9792" y="7.552969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr1m-text_16">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="10.971914" transform="rotate(-0 30.4792 10.971914)">50</text>
+     </g>
+    </g>
+    <g id="fr1m-text_17">
+     <text style="font-size: 10px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #111114" x="12.624356" y="76.852969" transform="rotate(-90 12.624356 76.852969)">Development progression (%)</text>
+    </g>
+   </g>
+   <g id="fr1m-line2d_22">
+    <path d="M 39.424837 133.048893 
+L 58.548074 70.049095 
+L 80.928671 83.530994 
+L 83.789061 85.799044 
+L 104.103623 85.420944 
+L 123.380243 53.290969 
+L 155.121167 51.274893 
+L 186.094152 33.508868 
+L 214.580534 42.454944 
+L 215.807071 31.618918 
+L 221.230939 33.508868 
+" clip-path="url(#fr1m-p94085b5d64)" style="fill: none; stroke: #0072b2; stroke-opacity: 0.55; stroke-linecap: square"/>
+   </g>
+   <g id="fr1m-patch_3">
+    <path d="M 36.9792 146.152969 
+L 36.9792 7.552969 
+" style="fill: none; stroke: #686871; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="fr1m-patch_4">
+    <path d="M 36.9792 146.152969 
+L 254.5992 146.152969 
+" style="fill: none; stroke: #686871; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="fr1m-PathCollection_1">
+    <defs>
+     <path id="fr1m-mea7dcc0b60" d="M 0 1.5 
+C 0.397805 1.5 0.77937 1.341951 1.06066 1.06066 
+C 1.341951 0.77937 1.5 0.397805 1.5 0 
+C 1.5 -0.397805 1.341951 -0.77937 1.06066 -1.06066 
+C 0.77937 -1.341951 0.397805 -1.5 0 -1.5 
+C -0.397805 -1.5 -0.77937 -1.341951 -1.06066 -1.06066 
+C -1.341951 -0.77937 -1.5 -0.397805 -1.5 0 
+C -1.5 0.397805 -1.341951 0.77937 -1.06066 1.06066 
+C -0.77937 1.341951 -0.397805 1.5 0 1.5 
+z
+" style="stroke: #a1a1aa"/>
+    </defs>
+    <g clip-path="url(#fr1m-p94085b5d64)">
+     <use xlink:href="#fr1m-mea7dcc0b60" x="131.743105" y="53.458952" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     <use xlink:href="#fr1m-mea7dcc0b60" x="191.294115" y="33.844834" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     <use xlink:href="#fr1m-mea7dcc0b60" x="221.307971" y="31.829036" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     <use xlink:href="#fr1m-mea7dcc0b60" x="225.944248" y="26.956969" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     <use xlink:href="#fr1m-mea7dcc0b60" x="233.094043" y="26.704994" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     <use xlink:href="#fr1m-mea7dcc0b60" x="233.605539" y="35.146843" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+    </g>
+   </g>
+   <g id="fr1m-PathCollection_2">
+    <defs>
+     <path id="fr1m-m5b99a169e4" d="M -2 2 
+L 2 2 
+L 2 -2 
+L -2 -2 
+z
+" style="stroke: #686871"/>
+    </defs>
+    <g clip-path="url(#fr1m-p94085b5d64)">
+     <use xlink:href="#fr1m-m5b99a169e4" x="39.424837" y="133.048893" style="fill: #686871; stroke: #686871"/>
+    </g>
+   </g>
+   <g id="fr1m-PathCollection_3">
+    <defs>
+     <path id="fr1m-m3a3c859172" d="M 0 1.732051 
+C 0.459345 1.732051 0.899939 1.549551 1.224745 1.224745 
+C 1.549551 0.899939 1.732051 0.459345 1.732051 0 
+C 1.732051 -0.459345 1.549551 -0.899939 1.224745 -1.224745 
+C 0.899939 -1.549551 0.459345 -1.732051 0 -1.732051 
+C -0.459345 -1.732051 -0.899939 -1.549551 -1.224745 -1.224745 
+C -1.549551 -0.899939 -1.732051 -0.459345 -1.732051 0 
+C -1.732051 0.459345 -1.549551 0.899939 -1.224745 1.224745 
+C -0.899939 1.549551 -0.459345 1.732051 0 1.732051 
+z
+" style="stroke: #0072b2"/>
+    </defs>
+    <g clip-path="url(#fr1m-p94085b5d64)">
+     <use xlink:href="#fr1m-m3a3c859172" x="58.548074" y="70.049095" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr1m-m3a3c859172" x="80.928671" y="83.530994" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr1m-m3a3c859172" x="83.789061" y="85.799044" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr1m-m3a3c859172" x="104.103623" y="85.420944" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr1m-m3a3c859172" x="123.380243" y="53.290969" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr1m-m3a3c859172" x="155.121167" y="51.274893" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr1m-m3a3c859172" x="186.094152" y="33.508868" style="fill: #0072b2; stroke: #0072b2"/>
+     <use xlink:href="#fr1m-m3a3c859172" x="214.580534" y="42.454944" style="fill: #0072b2; stroke: #0072b2"/>
+    </g>
+   </g>
+   <g id="fr1m-PathCollection_4">
+    <defs>
+     <path id="fr1m-m2bae2241eb" d="M 0 2 
+C 0.530406 2 1.03916 1.789267 1.414214 1.414214 
+C 1.789267 1.03916 2 0.530406 2 0 
+C 2 -0.530406 1.789267 -1.03916 1.414214 -1.414214 
+C 1.03916 -1.789267 0.530406 -2 0 -2 
+C -0.530406 -2 -1.03916 -1.789267 -1.414214 -1.414214 
+C -1.789267 -1.03916 -2 -0.530406 -2 0 
+C -2 0.530406 -1.789267 1.03916 -1.414214 1.414214 
+C -1.03916 1.789267 -0.530406 2 0 2 
+z
+" style="stroke: #0072b2; stroke-width: 0.9"/>
+    </defs>
+    <g clip-path="url(#fr1m-p94085b5d64)">
+     <use xlink:href="#fr1m-m2bae2241eb" x="215.807071" y="31.618918" style="fill: #ffffff; stroke: #0072b2; stroke-width: 0.9"/>
+     <use xlink:href="#fr1m-m2bae2241eb" x="221.230939" y="33.508868" style="fill: #ffffff; stroke: #0072b2; stroke-width: 0.9"/>
+    </g>
+   </g>
+   <g id="fr1m-PathCollection_5">
+    <defs>
+     <path id="fr1m-m741e196f2c" d="M -0 3.605551 
+L 3.605551 0 
+L 0 -3.605551 
+L -3.605551 -0 
+z
+" style="stroke: #ffffff; stroke-width: 0.5"/>
+    </defs>
+    <g clip-path="url(#fr1m-p94085b5d64)">
+     <use xlink:href="#fr1m-m741e196f2c" x="242.543825" y="34.081875" style="fill: #0072b2; stroke: #ffffff; stroke-width: 0.5"/>
+    </g>
+   </g>
+   <g id="fr1m-legend_1">
+    <g id="fr1m-PathCollection_6">
+     <g>
+      <use xlink:href="#fr1m-m5b99a169e4" x="14.06" y="187.044391" style="fill: #686871; stroke: #686871"/>
+     </g>
+    </g>
+    <g id="fr1m-text_18">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="25.11" y="189.275641" transform="rotate(-0 25.11 189.275641)">untrained weights</text>
+    </g>
+    <g id="fr1m-PathCollection_7">
+     <g>
+      <use xlink:href="#fr1m-m3a3c859172" x="14.06" y="199.795055" style="fill: #0072b2; stroke: #0072b2"/>
+     </g>
+    </g>
+    <g id="fr1m-text_19">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="25.11" y="202.026305" transform="rotate(-0 25.11 202.026305)">trained weights</text>
+    </g>
+    <g id="fr1m-PathCollection_8">
+     <g>
+      <use xlink:href="#fr1m-m2bae2241eb" x="14.06" y="212.545719" style="fill: #ffffff; stroke: #0072b2; stroke-width: 0.9"/>
+     </g>
+    </g>
+    <g id="fr1m-text_20">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="25.11" y="214.776969" transform="rotate(-0 25.11 214.776969)">auxiliary weights</text>
+    </g>
+    <g id="fr1m-PathCollection_9">
+     <g>
+      <use xlink:href="#fr1m-mea7dcc0b60" x="14.06" y="225.296383" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     </g>
+    </g>
+    <g id="fr1m-text_21">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="25.11" y="227.527633" transform="rotate(-0 25.11 227.527633)">other world counts (not official)</text>
+    </g>
+    <g id="fr1m-PathCollection_10">
+     <g>
+      <use xlink:href="#fr1m-m741e196f2c" x="14.06" y="238.047047" style="fill: #0072b2; stroke: #ffffff; stroke-width: 0.5"/>
+     </g>
+    </g>
+    <g id="fr1m-text_22">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="25.11" y="240.278297" transform="rotate(-0 25.11 240.278297)">held-out 40.43</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="fr1m-p94085b5d64">
+   <rect x="36.9792" y="7.552969" width="217.62" height="138.6"/>
+  </clipPath>
+ </defs>
+</svg></div></figure><div class="tw"><table><thead><tr><th class="n">Hours</th><th>Weights</th><th class="n">Worlds</th><th class="n">Progression</th><th class="n">Crafter score</th><th class="n">Steps per game</th><th>Kind</th><th class="center">Official</th></tr></thead><tbody><tr><td class="n">0.09</td><td><code>baseline</code></td><td class="n">100</td><td class="n">4.73</td><td class="n">1.04</td><td class="n">167</td><td>untrained</td><td class="center">✓</td></tr><tr><td class="n">0.84</td><td><code>block1</code></td><td class="n">100</td><td class="n">27.45</td><td class="n">6.40</td><td class="n">217</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">1.71</td><td><code>block2</code></td><td class="n">100</td><td class="n">22.59</td><td class="n">8.14</td><td class="n">179</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">1.82</td><td><code>block2_early</code></td><td class="n">100</td><td class="n">21.77</td><td class="n">5.71</td><td class="n">184</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">2.61</td><td><code>block3</code></td><td class="n">100</td><td class="n">21.91</td><td class="n">5.45</td><td class="n">178</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">3.35</td><td><code>block4</code></td><td class="n">100</td><td class="n">33.50</td><td class="n">9.59</td><td class="n">191</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">3.68</td><td><code>block4_300</code></td><td class="n">300</td><td class="n">33.44</td><td class="n">9.19</td><td class="n">201</td><td>trained</td><td class="center"></td></tr><tr><td class="n">4.59</td><td><code>block5</code></td><td class="n">100</td><td class="n">34.23</td><td class="n">13.49</td><td class="n">214</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">5.79</td><td><code>block6</code></td><td class="n">100</td><td class="n">40.64</td><td class="n">16.10</td><td class="n">209</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">5.99</td><td><code>block6_300</code></td><td class="n">300</td><td class="n">40.52</td><td class="n">16.49</td><td class="n">202</td><td>trained</td><td class="center"></td></tr><tr><td class="n">6.90</td><td><code>block7</code></td><td class="n">100</td><td class="n">37.41</td><td class="n">14.59</td><td class="n">195</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">6.94</td><td><code>aux6_beta13</code></td><td class="n">100</td><td class="n">41.32</td><td class="n">17.77</td><td class="n">212</td><td>auxiliary</td><td class="center">✓</td></tr><tr><td class="n">7.15</td><td><code>aux6_beta16</code></td><td class="n">100</td><td class="n">40.64</td><td class="n">16.56</td><td class="n">199</td><td>auxiliary</td><td class="center">✓</td></tr><tr><td class="n">7.16</td><td><code>aux6_beta13_300</code></td><td class="n">300</td><td class="n">41.24</td><td class="n">17.50</td><td class="n">207</td><td>auxiliary</td><td class="center"></td></tr><tr><td class="n">7.34</td><td><code>aux6_beta16_300</code></td><td class="n">300</td><td class="n">43.00</td><td class="n">18.30</td><td class="n">220</td><td>auxiliary</td><td class="center"></td></tr><tr><td class="n">7.61</td><td><code>aux6_beta16_300_seed1</code></td><td class="n">300</td><td class="n">43.09</td><td class="n">18.81</td><td class="n">213</td><td>auxiliary</td><td class="center"></td></tr><tr><td class="n">7.63</td><td><code>block6_300_seed1</code></td><td class="n">300</td><td class="n">40.05</td><td class="n">16.48</td><td class="n">204</td><td>trained</td><td class="center"></td></tr></tbody></table></div><h3 id="notes">NOTES.md</h3><p><span class="nw">GPT-6 Astra</span> xhigh (Teacher)'s notes as it left them at the end of the run.</p><details class="fold doc-fold" id="notes-md"><summary>NOTES.md</summary><div class="doc"><h4>Crafter curriculum run</h4>
+<h5>Current results and accounting</h5>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Named lesson</th>
+<th style="text-align:right">Official progression</th>
+<th style="text-align:right">Trainer minutes</th>
+<th>Decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>block1</td>
+<td>Face, move, and act for an observed outcome</td>
+<td style="text-align:right">27.45%</td>
+<td style="text-align:right">30.95</td>
+<td>kept</td>
+</tr>
+<tr>
+<td>block2</td>
+<td>Use an acquired tool and convert the yield</td>
+<td style="text-align:right">22.59%</td>
+<td style="text-align:right">29.65</td>
+<td>dropped</td>
+</tr>
+<tr>
+<td>block3</td>
+<td>Read prerequisites before acting</td>
+<td style="text-align:right">21.91%</td>
+<td style="text-align:right">25.93</td>
+<td>dropped</td>
+</tr>
+<tr>
+<td>block4</td>
+<td>Finish the affordable basic tool before leaving the workstation</td>
+<td style="text-align:right">33.50%</td>
+<td style="text-align:right">24.43</td>
+<td>kept</td>
+</tr>
+<tr>
+<td>block5</td>
+<td>Turn stone access into stone tools in the current location</td>
+<td style="text-align:right">34.23%</td>
+<td style="text-align:right">31.17</td>
+<td>retained ancestor after successful recovery</td>
+</tr>
+<tr>
+<td>block6</td>
+<td>Restore forage and safe rest while retaining technology</td>
+<td style="text-align:right">40.64%</td>
+<td style="text-align:right">28.71</td>
+<td>kept</td>
+</tr>
+<tr>
+<td>block7</td>
+<td>Navigate to resource opportunities and return with needed materials</td>
+<td style="text-align:right">37.41%</td>
+<td style="text-align:right">28.77</td>
+<td>dropped; prerequisite regression outweighs new placement</td>
+</tr>
+</tbody>
+</table></div>
+<p>Best ordinary trained checkpoint: <strong>block6</strong>. Retained lineage: block1 → block4 → block5 → block6. Completed training steps reaching that checkpoint: <strong>1900/3500 (54.29%)</strong>.</p>
+<p>Completed trainer runtime: <strong>199.61 minutes</strong>. Conservatively charged plain full-game training: <strong>24.43 minutes (12.24%)</strong>. The entire mixed Block 4 is charged as plain; other completed blocks use bounded practice. Runtime accounting includes brief in-block data ingestion, saving, and the Block 4 review pause.</p>
+<p>Official evaluations use 100 public worlds with the default sampling seed. Additional 300-world confirmations and checkpoint practice metrics are recorded below. Historical plans, evidence, audits, and rejected experiments remain intact.</p>
+<p>Start: 2026-11-18 12:29 UTC. Objective: maximize unseen-world progression using Qwen3.5-0.8B alone at scoring. All work under /app; only primary agent publishes /submission or schedules GPU work.</p>
+<h5>Method and provenance</h5>
+<p>All supervision will use unchanged BALROG prompts at states visited by the current small model in short, named practice levels. Candidate actions and short sequences are actually executed in cloned game states. A label is the FIRST action of a tested successful branch; branch continuation states never become label roots unless the learner itself visits them. Evidence records include path and measured changes. No rule policy or other model supplies labels. CPU scripted tests are separate from training shards. MPS enabled for concurrent GPU jobs.</p>
+<p>A streaming actor writes raw own-play histories and level definitions; a CPU miner replays histories and tries alternatives; a trainer consumes auditable successful alternatives. Weight versions are published and loaded between practice batches. Training is entirely lesson practice unless explicitly recorded otherwise. Full-game evaluations are diagnostic only.</p>
+<h5>Round 0: baseline diagnosis (in progress)</h5>
+<p>Official <code>evaluate --name baseline</code> launched first minute with default 100 worlds and seed 0. Initial reported benchmark evidence: 38–39% invalid output, dominant Do/Noop, almost no movement, 5.2% progression. We will replace this with observed local baseline before training.</p>
+<p>Planned lesson: <strong>Face, move, and act for an observed outcome</strong>. Hypothesis: the model neither reliably emits exact action names nor translates nearby objects into a useful move/turn. Actual game rule: blocked moves change facing; movement alone is an inadequate test of usefulness. Practice will contrast tested branches ending in resource collection/crafting/recovery with inert actions, using no geometry-derived labels.</p>
+<p>Predeclared metrics: (1) successful selected action fraction among opportunities where a counterfactual branch succeeds, target &gt;50% from measured baseline; (2) full-game collect_wood rate target +20 percentage points and progression target +3 points. Keep only if full-game progression improves &gt;=3 points without severe loss of basic skills; otherwise inspect and rollback. Initial mixed level plan 60% interaction/navigation, 25% crafting, 15% survival. First block ~30–40 minutes, conservative all-layer SFT LR 3e-7, snapshots every few minutes. GPU minutes and before/after metrics added after block.</p>
+<h6>Round 0 observed evidence and Block 1 authorization (12:35 UTC)</h6>
+<p>Official baseline: <strong>4.7273% progression</strong>, <strong>1.0374% Crafter score</strong>, <strong>40.974% invalid</strong>, mean 166.74 decisions. Achievement rates: wood 10%, drink 4%, sapling 63%, table/wood tools 0%, wake 15%. Deaths: zombie61, arrow12, drink6, combined needs4, other17. Noop64.3%, Do29.4%, all movement2.52%; only236 displacement steps/16674, 3.32 distinct cells per episode.</p>
+<p>Specific checked weakness: <strong>conditional contact and use</strong>, not merely low global Do frequency. With tree in front, Do only11/417 (2.64%); low drink while facing water Do19/650 (2.92%); table affordable in102 states, Place Table0. Concrete missed tree sequence: baseline episode0 t54–59 repeatedly Noop/movement while tree is faced. Conditional CPU analysis is <code>/app/baseline_behavior.json</code>.</p>
+<p>Before Block1, goal filters were added so incidental saplings cannot terminate wood search. Exact replay assertions check every observation and inventory. Reviewer caught and corrected RNG-seed manifest and truncated-output history handling. All scripted tests outside <code>/app/play</code> and <code>/app/data</code>. Rest probes enumerate all candidate roots with equal Noop continuation against a same-length Noop control, avoiding passive regeneration labels. First data census will be recorded before optimizer updates. Full-game goals: wood10% -&gt; &gt;=30%, progression4.73% -&gt; &gt;=7.73%; lesson opportunity action success -&gt; &gt;=50%, plus facing-tree Do2.64% -&gt; &gt;=30%. Keep checkpoint only after full-game check.</p>
+<p>Block1 trains 400 steps x48 samples (19,200), all transformer layers except embeddings, AdamW LR3e-7 with15-step warmup. Action category sampling45% navigation,30% interaction,20% craft,5% rest (when available), explicitly different from level-generation proportions because the learner's movement prior is nearly absent. Checkpoints every60 steps. All samples are tested alternatives at own-play states in bounded lessons; plain full-game training0.</p>
+<p>Additional baseline output diagnosis: common invalid raw outputs are <code>noop</code>1189, <code>Eat</code>887, <code>Eat Plant</code>479, <code>NOOP</code>401, <code>Eat Cow</code>324, <code>DO</code>299, <code>do</code>290, <code>Action: Do</code>172, <code>Drink</code>167, <code>MOVE WEST</code>143. Movement prior heavily favors West401 vs East7/South4/North2. Data audit must check direction coverage. Initial actor initialization failed when baseline released GPU memory during profiling; restarted with stable allocation, no training/data lost. Base text weights were atomically installed in <code>/submission</code> and passed CPU validity (320 tensors,752.4M parameters).</p>
+<p>Block1 initial data census (first shard, pre-update source weights=base):989 successful counterfactual labels from1484 probes/6043 own decisions; chosen-best18/989=1.82%. Targets: Do123; movement South104,West124,North117,East120; PlacePlant57,PlaceTable143,MakeWoodPickaxe97,MakeWoodSword30,Sleep74. Source action counts heavily West366 vsEast16/North2/South2, confirming balance repairs a specific prior. No negative labels; CE raises selected successful action and indirectly lowers competing completions. Level outcomes on first128 episodes: wood19/44,drink6/21,table1/13,pickaxe1/13,sword0/6,wake2/8. Source weights fixed across first batches; miner44.6s/batch versus actor46.2s/batch, so producer can keep pace. Trainer began within11 minutes of session start.</p>
+<p>Block1 few-minutes audit: at step40/1920 samples the realized targets were North216,South212,East238,West201,Do575,WoodPickaxe109,Plant90,Table133,Sleep89,WoodSword57. Thus the planned category balance was realized, all four directions represented, no negative counterfactual reward labels. Reviewer independently replayed40 roots with exact digest,prompt,branch,control matches; all989 first-shard targets passed goal/provenance audit. Kernel warmup made first10 steps slow (191s); steady throughput8–13 decisions/s. At step60 (439s GPU trainer elapsed), CE loss1.48 and mean sampled target probability0.334; first checkpoint published for actor, not yet scored. Full-game acceptance remains required.</p>
+<p>Midblock observed behavior (step120,384 practice episodes, distinct seeds):invalid0.34%, simulator-best42.47% vsbase1.71%; wood100% vs32.1,drink88.9% vs37.5,table100% vs3.8,plant100% vs10.4,wake95.8% vs9.4,cow72.2% vs4.2,zombie93.3% vs10. Woodpickaxe61.5% is down fromstep60 76.9%, and sapling0% vsbase35.4% is clear practice forgetting (few initial sapling labels). Practice hidden goal conflicts between sword/pickaxe at similar available inventories may also affect per-goal rates; full-game achievement vector decides acceptance. Actor is loading successive weight versions correctly; miner processes latest own states with ~1-minute lag. Training still retains old successful examples, causing earlier-data dominance but not a stalled producer.</p>
+<p>Submission published {&quot;source&quot;: &quot;/app/runs/block1/step_00400/model.safetensors&quot;, &quot;label&quot;: &quot;block1&quot;, &quot;time&quot;: 1795007995.3731449, &quot;sha256&quot;: &quot;4fa7a0c3c6992f112bf30c774ccb9fb5c88d5505935f7991700308f3bd741b70&quot;, &quot;validation&quot;: &quot;valid: /submission/model.safetensors, 320 text tensors, 752.4 million parameters, 1.50 gigabytes&quot;}</p>
+<h5>Block1 result: KEEP</h5>
+<p>Training400 steps/19,200 samples,1852.7s=30.88 GPU-trainer minutes (plus first-load/kernel startup). Plain full-game training0 minutes/0 steps. Official default100-world progression <strong>4.7273→27.4545%</strong> (+22.73 points); Crafter paper score1.0374→6.4014%; invalid40.97→0.175%; mean length166.74→216.77. Wood10→96%,drink4→59%,table0→69%,woodpickaxe0→48%,woodsword0→49%,cow3→75%,zombie6→72%,skeleton0→20%,wake15→90%. Regression: sapling63→14%,plant3→5%; higher technology remains nearly absent (stone6%,coal1%,all advanced crafts0). Movement71.45%,Do17.30%,Sleep8.25%; stuck fraction71.32→3.30%. Deaths zombie44,arrow9,lava6,drink10,food5,other26. Full-game gains satisfy predeclared keep criterion by a wide margin. Weights are ordinary trained weights, no auxiliary edit.</p>
+<p>Next round begins by inspecting block1 full-game text and state-conditioned mining/crafting opportunities. Candidate weakness is conversion of wooden tools into stone/coal and upgrades; full-game evidence pending stricter diagnosis. No new training block started yet.</p>
+<h5>Round2 / Block2 plan (before training)</h5>
+<p>Named lesson: <strong>Use the tool already owned, then convert the yield into the next tool</strong>. Specific weakness verified in full games: among states facing stone with the wooden pickaxe already owned, the model used Do only10/307=3.26% (24 games); coal2/66=3.03% (9 games). By contrast it used Do923/1016=90.85% facing collectible trees. This is a failure to generalize the interaction to tool-dependent terrain, not a lack of valid output or movement. Full-game stone6%,coal1%,stone tools0%, versuswoodpickaxe48%.</p>
+<p>Curriculum: switch actor to varied technology levels at fixed block1 weights for an initial probe, then train with65% technology-prefix examples and35% retained earlier lessons. Technology stages provide equipped ore contact, stone upgrades, coal/iron/furnace, iron upgrades, and diamond contact; labels still require actual simulated resource/tool gains. Existing fundamentals stay in the new level mix and replay. Increase branch reach from2 to3 movement prefixes to cover ore approach. Action-category sampling40% navigation,30% interaction,25% craft,5% recovery. Combat scoring remains unchanged because full-game zombie/cow performance improved strongly; the practice crafting-spam observation did not dominate full-game action shares (~2.7% all crafting).</p>
+<p>Predeclared metrics: equipped stone/coal interaction success3.2% -&gt;&gt;=60% on diagnostic opportunities; full-game collect_stone6% -&gt;&gt;=35%, make_stone_pickaxe0% -&gt;&gt;=20%, overall progression27.45% -&gt;&gt;=30.45%. Keep if full-game progression improves &gt;=3 points; differences below3 need broader confirmation. Track wood,drink,sapling,woodtools to detect forgetting. Method: continue same main weights/Adam state,600 optimizer steps x32 examples (19,200),LR3e-7, checkpoints every100. Batch reduced48→32 because peak concurrent memory reached127GB; this creates headroom while retaining all-layer training. Expected~30–40 trainer minutes. Plain full-game training0. Training waits for6,000 goal-audited technology examples so fixed-weight lesson baseline is observed first.</p>
+<p>Round2 diagnosis independently confirmed:12 exact missed-mining replays from12 full games; replacing the learner action with Do produced +1 stone/coal and first unlock in12/12, with no extra damage. These diagnostic probes are not training data. Sapling regression costs2.23 progression points, and low-drink facing-water Do remains17.2% despite high isolated practice success; both are recorded for contextual survival/retention diagnosis after mining block.</p>
+<p>Block2 operational adjustment before any optimizer step: depth3 mining took173s for634 examples, so the6,000-example gate would spend~30min probing instead of the intended~10min. Lowered gate to2,000 checked technology examples; no weights had been loaded/trained by the waiting process. This changes preparation duration, not targets or lesson scoring. CPU reviewer is adding a conservative no-result pruning rule for already completed/capped goals, validated against unpruned search.</p>
+<p>Block2 pre-update data audit: first technology shard634 examples,166/634=26.18% model-best-action agreement,65 own goal unlocks. All labels goal-aligned; mining actions have actual positive resource deltas and required pickaxes. Mining targets: stone134 (14 immediateDo),coal45 (7Do),iron81 (13Do),diamond7 (2Do). Every directDo faced the matching visible ore. Independent replay of40 roots including20 miningDo verified digest,prompt,branch andNoop control exactly. Raw action mix65.6%movement,10.3%Do,24.0%craft,0.16%Sleep; planned sampler intentionally increases Do30%. Frequent replaced choices include111WoodSword and78WoodPickaxe. Semantic-preserving saturated-goal pruning passed15 CPU equivalence cases, then miner restarted with8 workers; old process andworkers all gone. No altered scoring or untested targets.</p>
+<p>Block2 sampler CPU audit:200,000 draws from real pools gave65.237%technology and40/30/25/5%categories as planned. It also found only1 fresh technology Sleep example, which would receive~3.25% of all draws. Before any optimizer updates, added a minimum32-example focus-category guard; sparse focus categories draw retained examples instead. This slightly lowers the initial realized focus share for recovery while preventing a single prompt dominating that category. All targets/provenance unchanged. Miner throughput improved173→85.8s/batch after safe pruning and8 workers.</p>
+<p>Block2 runtime adjustment: actor~95–125decisions/s generated batches faster than CPU depth3 search (~90s/batch), creating7 pending batches. Added inference backpressure: pause actor when&gt;3 unmined batches and resume at&lt;=2; keep its engine allocated. This allocates more compute to the main trainer and limits data lag, without changing targets or lesson mix. Controller tracks latest published weights and exits/unpauses when Block2 finishes, avoiding stale weight override in later rounds.</p>
+<p>Block2 fixed-weight probe rates (at first checkpoint): {&quot;collect_wood&quot;: {&quot;wins&quot;: 223, &quot;episodes&quot;: 225, &quot;rate&quot;: 0.9911}, &quot;collect_iron&quot;: {&quot;wins&quot;: 22, &quot;episodes&quot;: 150, &quot;rate&quot;: 0.1467}, &quot;place_stone&quot;: {&quot;wins&quot;: 8, &quot;episodes&quot;: 60, &quot;rate&quot;: 0.1333}, &quot;collect_stone&quot;: {&quot;wins&quot;: 46, &quot;episodes&quot;: 195, &quot;rate&quot;: 0.2359}, &quot;make_wood_pickaxe&quot;: {&quot;wins&quot;: 142, &quot;episodes&quot;: 150, &quot;rate&quot;: 0.9467}, &quot;wake_up&quot;: {&quot;wins&quot;: 44, &quot;episodes&quot;: 45, &quot;rate&quot;: 0.9778}, &quot;make_stone_sword&quot;: {&quot;wins&quot;: 0, &quot;episodes&quot;: 90, &quot;rate&quot;: 0.0}, &quot;place_furnace&quot;: {&quot;wins&quot;: 0, &quot;episodes&quot;: 135, &quot;rate&quot;: 0.0}, &quot;collect_coal&quot;: {&quot;wins&quot;: 31, &quot;episodes&quot;: 120, &quot;rate&quot;: 0.2583}, &quot;eat_cow&quot;: {&quot;wins&quot;: 42, &quot;episodes&quot;: 45, &quot;rate&quot;: 0.9333}, &quot;make_iron_sword&quot;: {&quot;wins&quot;: 11, &quot;episodes&quot;: 75, &quot;rate&quot;: 0.1467}, &quot;collect_drink&quot;: {&quot;wins&quot;: 120, &quot;episodes&quot;: 120, &quot;rate&quot;: 1.0}, &quot;place_table&quot;: {&quot;wins&quot;: 120, &quot;episodes&quot;: 120, &quot;rate&quot;: 1.0}, &quot;make_iron_pickaxe&quot;: {&quot;wins&quot;: 18, &quot;episodes&quot;: 90, &quot;rate&quot;: 0.2}, &quot;make_stone_pickaxe&quot;: {&quot;wins&quot;: 2, &quot;episodes&quot;: 150, &quot;rate&quot;: 0.0133}, &quot;defeat_zombie&quot;: {&quot;wins&quot;: 30, &quot;episodes&quot;: 30, &quot;rate&quot;: 1.0}, &quot;collect_diamond&quot;: {&quot;wins&quot;: 49, &quot;episodes&quot;: 60, &quot;rate&quot;: 0.8167}, &quot;make_wood_sword&quot;: {&quot;wins&quot;: 53, &quot;episodes&quot;: 60, &quot;rate&quot;: 0.8833}}</p>
+<p>Block2 early target census step130: {&quot;Do&quot;: 1249, &quot;Place Stone&quot;: 180, &quot;Move East&quot;: 430, &quot;Sleep&quot;: 229, &quot;Move West&quot;: 440, &quot;Move South&quot;: 416, &quot;Move North&quot;: 401, &quot;Place Table&quot;: 129, &quot;Place Furnace&quot;: 360, &quot;Make Wood Pickaxe&quot;: 121, &quot;Make Stone Pickaxe&quot;: 56, &quot;Make Stone Sword&quot;: 28, &quot;Place Plant&quot;: 50, &quot;Make Wood Sword&quot;: 47, &quot;Make Iron Sword&quot;: 10, &quot;Make Iron Pickaxe&quot;: 14}; lesson census {&quot;bootstrap_wood_contact&quot;: 723, &quot;technology_place_stone&quot;: 202, &quot;technology_stone_contact&quot;: 524, &quot;technology_place_furnace&quot;: 518, &quot;bootstrap_rest&quot;: 229, &quot;technology_wood_contact&quot;: 445, &quot;bootstrap_drink_contact&quot;: 208, &quot;technology_stone_sword&quot;: 54, &quot;technology_iron_contact&quot;: 323, &quot;bootstrap_place_table&quot;: 127, &quot;technology_coal_contact&quot;: 218, &quot;bootstrap_wood_pickaxe&quot;: 123, &quot;technology_stone_pickaxe&quot;: 89, &quot;technology_wood_sword&quot;: 10, &quot;technology_iron_sword&quot;: 13, &quot;technology_drink_contact&quot;: 147, &quot;bootstrap_place_plant&quot;: 50, &quot;bootstrap_sapling_contact&quot;: 17, &quot;bootstrap_wood_sword&quot;: 45, &quot;bootstrap_cow&quot;: 16, &quot;technology_iron_pickaxe&quot;: 21, &quot;technology_zombie&quot;: 1, &quot;technology_diamond_contact&quot;: 18, &quot;technology_cow&quot;: 17, &quot;technology_wood_pickaxe&quot;: 16, &quot;technology_place_table&quot;: 4, &quot;bootstrap_zombie&quot;: 2}. Trainer loss0.736, GPU elapsed8.06min.</p>
+<h5>Block2 final result: DROP final600; earlier checkpoint probe pending</h5>
+<p>Training600 steps/19,200 samples,1774.3s=29.57 trainer GPU-minutes; no plain full-game training. Official default100-world progression <strong>27.4545→22.5909%</strong> (-4.86points), Crafter paper score6.4014→8.1370%, invalid0.351%, mean length216.77→179.25. Mining lesson transferred (eligible stoneDo3.26→66.90%; stone6→15%,coal1→7%,furnace0→9%) but prerequisite and survival skills regressed: table69→47%,woodpick48→29%,woodsword49→15%,zombie72→41%,skeleton20→6%. Sleep8.25→13.74%;514/936 awake Sleep attempts were at full energy vs107/484 in Block1. Thus lesson success did NOT imply full-game benefit. Keep submission at ordinary Block1step400. Check Block2step200 once to determine whether the long update overshot, while diagnosing failures. Retention accounting pending that score; all600 attempted training steps still count in totals.</p>
+<p>Block2 early200 official check also regressed:21.7727% progression,5.7068%paper,woodpick24%,woodsword13%,table43%,stone7%. Therefore reject the entire600-step block and restart from Block1step400; no averaging/auxiliary edit. Current retained lineage400/1000 attempted steps=40% (will update at final). The problem was not simply too many updates. Exact diagnosis: missing-tool mining Do48→991 decisions; stone withoutpickDo5.0→43.7%,coal6.7→59.9%. Twelve probes were exactly state-equivalent toNoop. Twelve fullenergySleep probes were also Noop-equivalent. Counterexample episode45:t140 sleeping in front of nearly-defeated zombie caused death; replacing onlythat decision withDo killed it andsurvived. Stone recycling occurred only24pairs (0.27% fullgame decisions), so it is secondary.</p>
+<h5>Round3 / Block3 plan (before training)</h5>
+<p>Named lesson: <strong>Read prerequisites before acting</strong>. We restart from scored Block1step400. Block2's failure was diagnosed with full games and exact interventions: mining without requiredtools and sleeping atfullenergy did literally nothing, while a sleep choice in front of a wounded zombie caused an avoidable death. The new curriculum pairs matched scenes that differ only by requiredpickaxe presence or energy. Overall levels60% toolcontrasts,20% rest/threat contrasts,20% foundation. Within toolcontrasts:40%stone,30%coal,20%iron,10%diamond, reflecting observed missing-tool errors. Missing-tool states offer a measured path to gather ingredients, place workstation, or craft the missing tool. Low-energy safe states practice real recovery; fullenergy counterparts have other productive opportunities; threats permit a tested immediate fight.</p>
+<p>All prompts remain fixed and goal-free. State/goal generators never supply action labels. Same paired RNG/maps preserved through EpisodeSpec. Reviewed helper tests short progress before long rest; fullenergy rest continuations skipped; explicit combat goals can credit actual matched creature damage only ifalive and no worse health thanNoop. Every new target still comes from simulator response at an own-play root. Always probe initialdecision as well as staggered laterstates, preserving the initial matched contrast before the learner changes itsinventory. Detailed reviews/tests in REVIEW.md and CONTRAST_LEVELS.md.</p>
+<p>Predeclared lesson metrics: equipped stone/coal Do&gt;=60% while missing-tool Do&lt;=10% (balanced prerequisite discrimination target&gt;=80%); fullgame progression27.45→&gt;=30.45%, with collectstone&gt;=30% and woodpickaxe/table/zombie rates protected against&gt;10-point loss. Fullenergy/adjacent-threat Sleep is separately monitored. Keep only a &gt;=3-point fullgame gain; below3 is inconclusive.</p>
+<p>Method:500steps x32=16,000 samples, all-layer SFT LR2e-7 (reduced because narrow lessons caused rapid prior drift at3e-7), continue Block1Adam state.45% contrast-prefix plus55% bootstrap-only replay; discard oldtechnology-prefix data from this block so the one-sided equipped-ore distribution does not dominate. Same40/30/25/5 actioncategory mix and32-example sparsefocus guard. Checkpoints every100steps. Training waits for2,000 checked contrast examples. Expected~25–35 trainer minutes. All bounded lesson practice; plain fullgame training remains0. Actor supports dynamic lesson modules and bounded CPUbacklog without a separate weight-writing controller; stable base-engine startup then in-place weight load avoids redundant cold compiles.</p>
+<p>Contrast launch checks passed:384 validated starts; exact paired maps/RNG/noninventory state; safe lowenergy wakeups,fullenergy Sleep=Noop,onehit threat outcomes; independent128level/51pair audit throughEpisodeSpec and19branch/control replays. Updated runner→miner CPU fixture also passed (2fixture labels discarded, never training). First contrastbatch63 uses Block1step400. Oldtechnology rows are explicitly skipped by Block3replay filter. All firstdecision probes now included; this captures the matched starting contrast before the learner consumes materials or starts sleeping.</p>
+<p>Block3 pre-update realdata audit:1,037 firstshard examples,40 exact root/prompt/branch/control replays passed.52 ore-facing missing-tool roots havezero miningDo targets;133 equipped ore-front roots include113 verifiedDo targets.651 fullenergy roots havezeroSleep labels;7Sleep labels onlyatenergy3–5 withmeasured recovery;13zombie-front labels areactualDo attacks. Exact initialpairs:38present starts(22Do/16move),38absent(13pickaxecraft,2table,18move,5Do toactual prerequisite resources),7safe-low→Sleep vs7safe-full→woodtoolcraft,12threatstarts→Do. This directly checks the intended contrast instead of relying onglobal actionshares.</p>
+<h6>Block3 second sampling phase: emphasize the actual contrast (pre-publication)</h6>
+<p>Step100 own-play measured initialore-front Do16/37 withtool and17/37 withouttool: prerequisite gating not learned, although useful-action agreement32.2% improved over25.7%baseline. Gold audit remainscorrect;272 missing-tool ore-front corrections were outweighed by~900 equipped ore-front targets, and categorysampling favorsDo. Therefore, before continuing this same namedlesson, upweight matched initialpairs drawn from existingvalidated ownplay. Selectbothvariants fromsame sourcebatch+pairID; presentmust have requiredtool, directDo, actualmatchingoregain; absentmustlacktool andhave a successfulnon-Do target. Duplicateboth24times withsamplingmetadataonly, unchangedprompt/target/path/evidence/provenance. This is explicit resampling, not newexperience or newtargets. Independentreview required beforestagingfile enters/app/data.</p>
+<p>Globalcontrast/replay45/55 andoptimizer/LR stayfixed. Expectedeffect: morebalanced ore-front prerequisite gradients, reducing the actioncue shortcut. Successcriteria remain equippedDo&gt;=60%, missingDo&lt;=10%, balanced&gt;=80%, andfullgame progression&gt;=30.45% fromretained27.45. Fullgame acceptanceunchanged. The isolatedlesson metric isused toadjustpractice, nottoclaimdevelopment improvement.</p>
+<p>Paired sampling artifact independently PASSED:165 matched pairs/330 unique original records,24 copies each=7,920 rows,3,960 per side. All330 exact simulator/prompt/control replays and all original-field hashes matched; SHA2565a28aab911af1815bdd30c7548317cffe03b041ac6567fc531f2e6f56d745db2. Published at Block3 step380. Source samples are explicitly resampled old own-play, not fresh experience. Independent step200 diagnosis still shows stone Do74.0% withoutpick vs61.2% withpick; paired correct8/31. Goal-chain progress improved to60.5%, and threat/fullenergy initialerrors disappeared, so targeted gating correction remains warranted.</p>
+<p>Block3 completed500steps/16,000 samples in1555.5s=25.93trainerGPU-minutes; official100 evaluation pending. Final paired emphasis estimate at actual45%focus:22.56% of all samples matchedpairs (10.16%present,12.40%absent), not the earlier designer estimate at65%. Initial-state gating improved bystep400 (stone+coal17/17withtoolDo,0/17withouttoolDo), while later missing-toolDo remained50%stone/68.5%coal. This discrepancy motivates testing transfer across native full histories, not declaring the lesson solved. Twofinalpracticebatches80–81 completed; actorpaused to give evaluation compute.</p>
+<h5>Block3 final result: DROP</h5>
+<p>Official100/defaultseed progression27.4545→21.9091%,paper6.4014→5.4492%,invalid0.270%,meanlength216.77→177.55. Stone6→12%,coal1→4%,table69→67%,butwoodpick48→23%,woodsword49→3%,zombie72→49%,skeleton20→15%,sapling14→6%. Zombie deaths44→55. Initialpairskillimproved43/48correctconditionalpattern and85/114missing-toolchainssucceeded, yetongoingmissing-toolDo persisted(0/31initialstone+coalvs84/144t1–15vs215/575t&gt;=16). This is transfer/forgetting, not solvedbyisolatedsuccess. Entire500-stepblock rejected; retainBlock1step400 andAdam; noauxiliaryedit. Attempted1500steps,retained400=26.67%. Trainingruntime total86.53minutes fromDONEfiles,plain0. Nextblockwilluse nativefullgamehistory andconservativelycountitsentiretimeasplain.</p>
+<h5>Round4 / Block4 plan (before training)</h5>
+<p>Named lesson: <strong>Finish the affordable basic tool before leaving the workstation</strong>. Start from retained Block1step400 and its Adam state, rejecting all Block2/3 updates. Fullgame diagnosis: Block1 crafts a first affordable sword49/460=10.65% (29/169=17.16% when a pickaxe is already owned). Rejected Block3 fell to3/695=0.43% and2/207=0.97% respectively; it moved in575/695 affordable-sword states despite table achievement staying67% versus69%. Twelve first-pickaxe and twelve first-sword exact interventions all unlocked the missing tool without extra health loss. Example Block3episode18 placedtable23,craftedpick24,walkedaway25withonewoodremaining,nevercrafted swordanddied197; replacing25withMakeWoodSword immediatelyunlocks it. Separate verified failures: no-toolmining12/12Noop-equivalent and a sleepinstead ofattackcaused avoidabledeath. No claim that token length alone causes the gap.</p>
+<p>Practice design: exact original fullgame roots, native16-observation histories, actual inventories/enemies/time/RNG. Immediate17-action experimental probes retain actual firstwoodtool unlocks, including the missing secondtool. Broad natural-context branches and old foundation lessons retain movement, wood, drinking and combat. The first20 broadgames produced675 verified targets but342 concerned saplings and only28 directwoodtool crafts; therefore do not train that unbalanced stream alone. Add targeted tool-opportunity roots rather than silently calling the broad stream a tool lesson. All targets remain first actions of simulator-tested successful branches; diagnostic interventions and scripted CPU tests are excluded from training.</p>
+<p>Metrics declared before training: affordable missing-sword actionrate10.65%→&gt;=25%, specifically afterpick17.16%→&gt;=35%; fullgame sword achievement49%→&gt;=65% and overall progression27.4545%→&gt;=30.4545%. Also monitor pickaxe48%,table69%,zombie72%,drinking59% against&gt;10-point regressions, and missing-tool miningDo. Keep only a &gt;=3point fullgame gain; otherwise retain priorbest. Lesson improvements alone do not justify acceptance.</p>
+<p>Method:450steps x32 (14,400 maximum examples), all-layer SFT LR2e-7 with15-step warmup;50% natural-prefix and50% bootstrap-only retention, existing40/30/25/5 navigation/interaction/craft/rest categoryweights. No contrast/technology replay. Checkpoint every100steps. Targeted naturalcraft rows populatecraftcategory while broadnatural roots provide competing actions. No extra pairduplication used. Fresh nativefullgames on disjoint trainingseeds refresh the data whiletraining; reset state verified equal to ordinarygame reset, no gifts or rewrittenprompts. Independent review beforedata publication andrestart.</p>
+<p>Conservatively count this ENTIRE block, including shortlessonreplay, as plainfullgame training. Cap trainer time at1800seconds (30minutes), saving actualfinalstep evenifcapends early; priorboundedtraining86.53minutes means projected plainshare&lt;=25.75%, below30%. Record exactactualsteps/time aftercompletion. This is the only planned plaintraining block so far.</p>
+<p>Block4 pre-update census: targeted100-game probe replayed21,677 original decisions, tested11,729 awake missing-tool roots, found618 roots with actual one-step gains, and retained909 positive labels (450woodpickaxe,459woodsword; both allowed when both worked).891/909 preserve full16-observation history,78 occur facing ore with a missing requiredtool;97/909 agree with the learner's actual choice. Broad20-game retention shard675labels includes598 fullhistory and10missing-toolore roots withzeroDo. No explicit negative targets are added. Targeted toolrows plus broad675 give1584 naturalexamples beforefreshdata; the categorysampler keeps50%bootstrap retention and preventscraft-onlyupdates. Native freshbatch83 fromBlock1completed25,612decisions on128 newtrainingworlds,6.289 achievements/game (~28.59%progression),0.238%invalid; this is practice telemetry, notofficialdevelopmentconfirmation. Native resets independentlymatched12worlds/1904steps including325nightsteps. Naturalminer publishes16-episode shards atomically; isolatedpublisher testsverifiedconservation,partialfinalchunks,andnoaggregate duplication.</p>
+<p>Block4 early census atstep100: {&quot;actions&quot;: {&quot;Sleep&quot;: 164, &quot;Move North&quot;: 339, &quot;Move South&quot;: 294, &quot;Move West&quot;: 356, &quot;Do&quot;: 948, &quot;Place Table&quot;: 235, &quot;Move East&quot;: 297, &quot;Place Plant&quot;: 89, &quot;Make Wood Pickaxe&quot;: 272, &quot;Make Wood Sword&quot;: 200, &quot;Place Stone&quot;: 6}, &quot;lessons&quot;: {&quot;bootstrap_rest&quot;: 164, &quot;bootstrap_wood_contact&quot;: 820, &quot;natural_achievement_make_wood_sword&quot;: 18, &quot;natural_achievement_collect_sapling&quot;: 470, &quot;natural_recovery_drink&quot;: 143, &quot;bootstrap_place_table&quot;: 176, &quot;natural_achievement_collect_drink&quot;: 68, &quot;bootstrap_place_plant&quot;: 76, &quot;bootstrap_wood_pickaxe&quot;: 129, &quot;natural_tool_opportunity&quot;: 294, &quot;bootstrap_drink_contact&quot;: 252, &quot;natural_combat_zombie&quot;: 72, &quot;bootstrap_wood_sword&quot;: 61, &quot;natural_resource_support&quot;: 42, &quot;natural_achievement_collect_wood&quot;: 34, &quot;natural_achievement_place_table&quot;: 116, &quot;natural_combat_cow&quot;: 39, &quot;bootstrap_sapling_contact&quot;: 18, &quot;natural_achievement_defeat_skeleton&quot;: 4, &quot;natural_combat_skeleton&quot;: 20, &quot;natural_achievement_collect_stone&quot;: 72, &quot;bootstrap_cow&quot;: 14, &quot;natural_achievement_eat_cow&quot;: 15, &quot;natural_achievement_make_wood_pickaxe&quot;: 14, &quot;natural_achievement_defeat_zombie&quot;: 14, &quot;natural_recovery_food&quot;: 3, &quot;natural_achievement_place_plant&quot;: 25, &quot;bootstrap_zombie&quot;: 5, &quot;natural_achievement_place_stone&quot;: 9, &quot;natural_achievement_collect_coal&quot;: 12, &quot;natural_achievement_make_stone_sword&quot;: 1}, &quot;loss&quot;: 1.1341516017913817, &quot;seconds&quot;: 275.45666790008545}. Fresh16-episode shard independentlypassedall644root/prompt/branch/controlreplays;576fullhistories,30directtools,46combat-effectexamples,59missing-toolorerootswithzeroDo. Noexplicitnegativepenalties.</p>
+<h6>Block4 retention correction (pre-publication, aroundstep300)</h6>
+<p>Completedfresh128fullgames atstep100 showsthedeclaredtoolskilltransferred: affordablesword9.89→29.24%,afterpick11.47→38.26%,pick12.33→30.07%,includingfull16-historycontexts. Practiceprogression28.59→31.75%(notofficial). Butzombie-frontDo93.15→63.0%,tree90.27→70.6%,cowachievement74.6→39.8%,zombie70.7→53.1%,skeleton15.2→0. Broadnew-achievement selectionundersamples repeatedcreatureinteractions; these cannotbeallowedtofadewhilecraftingimproves.</p>
+<p>Beforefurtherupdates, preparedirectinteractionretentionfromactualBlock1fullgamecreature-frontroots: all17immediateactions tested, retainonlyactualmatchingcreaturedamage ornewdefeat/eat unlock beyondNoopcontrol. Allnativepromptsunchanged, nohandwrittenanswers ornegativepenalties. Conservativeexistinghelpercanmissrepeatedkillingblows onceachievementisowned; leaveitunchanged inthisblock ratherthanexpandingdefinitionsmidstream. Independentreviewbeforepublication. Namedretentiontarget:zombie-frontDo&gt;=85%,fullgamezombierateprotectednear72%(within10points),whilemaintainingtoolmetrics andoverall&gt;=30.45%acceptance. Global50/50lesson/replayand40/30/25/5actioncategories,LR,and450stepbudget stayfixed; onlythecompositionofthe30%interactioncategorychanges. Entireblockstillcountsplain.</p>
+<p>InteractionretentionshardindependentlyPASSEDall1201root/prompt/branch/controlreplaysplus21339originaldecisionsacross97episodes:505cow,620zombie,76skeleton;990actualdamage,211newkills;1093full16-histories. SHA256b13f9d37c53d8d93594912131816f50fe2a1aa68330b76e96887ecd063b205f5. Publishedbeforetrainerresume;livehelperunchanged.</p>
+<p>Block4 trainerupdatesbrieflypausedat~step360forretentionaudit; elapsed82.0s includedintheconservativeplainblockruntime. Practiceinferencecontinued. Automatic180sresumeguardpreventedanunboundedpause.</p>
+<p>Block4completed450steps/14400samples in1465.728s=24.429trainerGPU-minutes, including81sauditpauseandwholemixedblockchargedplain. Completedtrainingtotals: {&quot;completed_steps&quot;: 1950, &quot;training_minutes&quot;: 110.95581126610438, &quot;plain_minutes&quot;: 24.42880400419235, &quot;plain_fraction&quot;: 0.22016696309492936}. Official100/defaultseedevaluationpending;bestsubmission remainsBlock1 untilscore. Noauxiliaryweightedits.</p>
+<p>Submission published {&quot;source&quot;: &quot;/app/runs/block4/step_00450/model.safetensors&quot;, &quot;label&quot;: &quot;block4&quot;, &quot;time&quot;: 1795017110.6420724, &quot;sha256&quot;: &quot;6edcc6f6fca7490527d5b63cc1a8a7e310b44fd2310b619dd3c5f9e9e8708820&quot;, &quot;validation&quot;: &quot;valid: /submission/model.safetensors, 320 text tensors, 752.4 million parameters, 1.50 gigabytes&quot;}</p>
+<h5>Block 4 result: KEEP ordinary trained weights</h5>
+<p>Official default-seed 100-world progression improved from 27.4545% to <strong>33.50%</strong> (+6.05 points), and paper score from 6.4014% to <strong>9.5876%</strong>. Invalid outputs: 0.309%; mean game length: 190.87. Achievement changes: wood 96→97%, table 69→93%, pickaxe 48→57%, sword 49→63%, sapling 14→61%, plant 5→58%, drink 59→64%, stone 6→13%, coal 1→6%, placed stone 0→10%, furnace 0→1%. Combat remained weaker: zombie 72→66%, cow 75→55%, skeleton 20→5%; zombie deaths 44→59. The main full-game gain passes the keep criterion. Cow/skeleton losses remain explicit priorities for retention, rather than being concealed by the total.</p>
+<p>Published Block4 step450 atomically and CPU submission validation passed (320 text tensors, 752.4M parameters). Retained lineage is Block1 400 + Block4 450 = 850 of 1950 attempted steps (43.59%). No auxiliary weight edits. Starting a 300-world confirmation while the next bounded curriculum is prepared; the official 100 has already run at the default seed.</p>
+<p>Next-round diagnosis from full games: legal stone/coal interaction 73/358 = 20.4%; only 13/57 pickaxe games collect stone. Stone-tool crafting is 0/17 affordable opportunities. Of 842 stone-holder decisions, 814 lack a nearby table, and 410 have no wood. Example episode15 t211 holds wood1/stone8/coal2 and both wooden tools at a table; a duplicate wooden sword consumes its last wood, while either experimentally tested stone tool unlocks a new achievement at the same resulting health. Episode36 t115 has wood3/stone1 and an old table six steps away: tested Place Table→Make Stone Pickaxe works at unchanged health9, while the observed two moves do not. This exposes a real two-action setup gap in the current movement-prefix search, though only two games have immediately feasible rebuilding opportunities. Future lesson balance must prioritize the more common mining and wood/upgrade problems.</p>
+<h5>Round 5 / Block 5 plan (before practice and training)</h5>
+<p>Named lesson: <strong>Turn stone access into stone tools in the current location</strong>. Start from the retained Block4 step450 and its optimizer. The full-game evidence is 73/358 legal stone/coal interactions (20.4%), stone collection in13/57 pickaxe games, and0/17 affordable stone-tool opportunities. Repeated wooden crafts consume33 wood; most stone holders are away from a table or short of wood. Exact original-state interventions verify missed upgrades and, less often, a needed table→craft setup. These diagnostic/test outputs are not training data.</p>
+<p>Practice uses800 exact native snapshots from340 learner episodes:350 stone-chain,150 workstation,100 basic-tool retention,150 combat and50 drinking states. Each rollout is capped at48 decisions, starts at original decision&gt;=16, and preserves world state, inventory, RNG, history and invalid-output feedback byte-for-byte. No gifts, edited map or hints. Maximum4 roots per source episode, separated by at least8 decisions. The bank contains no action targets. The current learner must play these short continuations; only its resulting roots receive simulator-tested branch targets. Two native histories contain17 observations within32 events because an empty model completion omitted an action; exact original prompt behavior is retained.</p>
+<p>A separate reviewed helper optionally tests an actually executed setup root whose non-vital inventory changed, followed by the existing bounded search. All17 root actions are tried; only the original first action becomes a target after an executed goal outcome succeeds. The shortest successful depth takes precedence. The optional health gate accepts only alive outcomes no worse than an equal-length Noop control, including useful crafts during unavoidable damage. Depth&lt;=3 and nodes&lt;=64. Original counterfactual helper remains unchanged. Full lesson_goals are scorer metadata, including already-achieved collection/drink goals; level.goal is only the validation-compatible unowned subset. Neither enters the prompt.</p>
+<p>Fixed training shares, sampled by lesson group before action category:35% stone chain,15% workstation approach/setup,10% basic-tool completion,15% combat,5% drinking,20% original bounded foundation replay. New-state actor shares normalize the first80%;64 games per batch for quicker feedback. Per-group category weights are declared in curricula/block5/training.json. If every configured category is present, the resulting global proportions are35% navigation,38.5% interaction,25.5% crafting and1% rest. Real first-shard census must check category availability before updates; no required group may silently disappear. No old natural full-game rows are admitted by source/class filters.</p>
+<p>Predeclared metrics: equipped ore interaction20.4%→&gt;=50%; first useful stone-tool selection0/17→&gt;=40%; at least one new stone tool in&gt;=50% of workstation practice episodes and&gt;=25% of stone-chain episodes (baseline measured at fixed weights before updates). Full-game collect_stone13%→&gt;=30%, stone-pickaxe0%→&gt;=15%, and overall progression33.50%→&gt;=36.50%. Basic tools, planting, drinking and combat are retained/monitored; regressions trigger diagnosis rather than being hidden by total score. Keep only a &gt;=3-point official full-game gain; otherwise retain the existing submission.</p>
+<p>Planned method:550 maximum steps x32, all-layer SFT at2e-7 with15-step warmup, saved every100 steps, time cap2400s. A short fixed-weight probe and independent first-data audit precede updates. This block uses only48-step learner continuations and earlier bounded foundation practice, so plain full-game training is0 for this block. The original full-game snapshot source supplies state/history only, not a training trajectory. Existing conservative cumulative plain share is22.02%; it will decline during this block. Smaller inference allocation(.12, max128 sequences for64 active games) will be tested before loading the trainer. No auxiliary weight edit.</p>
+<p>Block4 confirmation:300-world progression33.4394%, paper9.1938%, invalid0.393%, meanlength201.25. Worlds101–300 separately score33.2727% progression. Official100/defaultseed33.50% already recorded.</p>
+<p>Block5 fixed-weight probe before updates:320 own short episodes in five batches. New stone-tool success is0/59 workstation and0/141 stone-chain episodes. First useful stone-tool choice0/73; legal stoneDo117/593=19.73%. Stone inventory rises in11/59 workstation and46/141 mining episodes. Basic-tool completion25/40=62.5%; combat damage57/61=93.4%, kills45/61=73.8%; drinking recovery17/19=89.5%. Source deaths remain substantial (stone61/141, bench14/59), so measured progress and survival must both be checked after training.</p>
+<p>Five mined shards contain2015 positive targets. Workstation415:91 eventual stone upgrades,135 basic-tool outcomes,189 wood-only support. Mining1124:597 stone/coal outcomes,30 upgrades,340 wood support,152 combat,5 furnace. Thirty upgrade branches start with a tested placement action; no wood-only target preempted an already immediately affordable stone upgrade. Independent review replayed all757 targets from the first two shards, with5207 learner decisions, and checked source/protocol/sampling guards. The actual first-three-shard100000-draw audit matched group quotas and yielded3.92% direct stone crafts, plus the approach/setup targets. Support gathering is intentionally retained because missing wood is a diagnosed bottleneck; its share will be monitored rather than relabeled as upgrades.</p>
+<p>Enabled a separate byte-preserving publisher for completed audited snapshot stages. It checks original manifest hashes, source path, DONE/MINED markers and bounded training class, then uses the previously reviewed atomic publisher. The CPU miner stays staging-only and is not duplicated. Planned training begins only after the final current-data census confirms every required group is ready.</p>
+<p>Block5 pre-update final census accepted20197rows (17399boundedfoundation plus2798newbounded); 100000 draws matched fixedgroups andcontained3.375% directstonecrafts. All groups ready before GPUmodel loading. Earlystep70 sampled2240examples, group shares34.87/15.00/9.20/14.78/4.64/21.52%; directstonecraft2.68%,PlaceTable9.33%,PlaceFurnace2.05%. No plainfullgame source/class admitted. Trainer and actorhealthy, about9trainexamples/sec and44actor decisions/sec concurrently; GPU96–100%busy,83GBused. Official100 evaluation automaticallyscheduledafter550steps andtwofinalweightpracticebatches.</p>
+<p>Block5 baseline failure decomposition (ownplay, separate diagnostic code): of21 stone-upgrade workstation roots,7 reached affordability butnevercrafted and14 neverreached usabletablewithmaterials. Stone-chain141episodes:89neverobtainedstone,28heldstonebutneverwoodsimultaneously,15hadmaterialswithouttable,9reachedreadinessbutnevercrafted. This supports retaining gathering/setup aswellasdirectcrafttargets. Availability andchoice metrics arekeptseparate.</p>
+<p>Block5 firstcheckpoint100:64practiceepisodes yieldedstone-toolcrafts4/16benchand1/23stone-chain;5/12ready-stateactionsselectedamissingstonetoolandall5unlocked. These aresmallsamplepracticeindicators,notdevelopmentresults. Independentreview found52/56goal-relevantaffordablerootstargetstonecraft;the4exceptionswereNEWwoodenswordcrafts tied5.0withstonecrafts,notduplicates. All28stone-chainPlaceTablelabelsaretestedsetups,27endinginstonetools;bench124tablelabelsfinish51stone/73basictools;all22furnacelabelsunlockfirstfurnace. No correctnessdefectfound;keepcurrentmixuntilscheduledofficialeval.</p>
+<h6>Block 5 prerequisite warning during training</h6>
+<p>An exact comparison of awake stone/coal-front states with no wooden pickaxe shows ineffective mining rising from 23/141 (16.3%) in the fixed baseline to 125/191 (65.4%) at step 100. On shared initial snapshot roots, subsequent qualifying states give 1/31 versus 51/73; trajectories differ, so this is supporting evidence rather than a paired treatment estimate. One 15-action Do streak exactly matches a same-length Noop rollout, including state digest. Initial missing-tool exposure is scarce: the mining group requires a pickaxe, and only 7/2015 first-probe labels cover missing-pick ore fronts. The current published pool has 52 such rows, all with experimentally successful movement targets. This is a coverage problem plus conditional overgeneralization, not invalid targets.</p>
+<p>No curriculum or loss change is made mid-block. Later checkpoints and the scheduled full-game evaluation will test whether fresh corrective play resolves it. Meanwhile, a separate state-only bank is being prepared for a possible prerequisite lesson; it will not enter training without a new declared block. The retained submission remains Block 4.</p>
+<p>Block 5 completed 550 steps / 17,600 samples in 1870.204 seconds (31.170 trainer minutes). All training was bounded lesson practice. Cumulative completed training: 2,500 steps, 142.126 minutes, of which the conservatively charged full-game block is 24.429 minutes (17.188%). Final sampled groups: stone chain 6,225; bench 2,636; tools 1,699; combat 2,627; drink 903; foundation 3,510. Direct stone crafts: 513; table placements: 1,402; furnaces: 556. These counts describe targets, not gameplay actions.</p>
+<p>After the trainer finished, disabled actor backlog throttling briefly so two final-weight diagnostic batches can finish before its scheduled evaluation pause. No additional optimizer updates or curriculum changes. Best submitted weights remain Block 4 pending the official test.</p>
+<h6>Isolated follow-up preparation during Block 5 evaluation</h6>
+<p>Prepared, reviewed, but not used for optimizer updates: (1) a 400-root exact native missing-pickaxe bank, including 10 immediately craftable roots and 390 support contexts; (2) optional species-counter evidence for repeat kills; (3) an experimental safe-displacement escape after an actual valid learner Do exactly matches Noop and a bounded goal search finds no success. The escape helper proves only one-step safe displacement. Its source-bank audit finds substantial wandering risk, so no curriculum benefit is claimed. Candidate and scripted diagnostic outputs remain outside training data.</p>
+<p>The actor can now load a separately validated bank at a batch boundary while preserving its engine. CPU review covered startup overrides, successful swaps, corrupted histories, missing groups, exact manifests and single-engine reuse. Existing Block 5 actor/scorer instances were unaffected. A fixed-weight prerequisite probe is prepared for Block5 step550, with no trainer and no target publisher. It will run beside the official evaluation after engine profiling finishes, then pause after five 64-game batches. This preparation does not select the next training focus; full-game exposure and achievement results remain the decision gate.</p>
+<h5>Block 5 result: NOT PROMOTED; retain as a recovery candidate</h5>
+<p>Official100/default-seed progression is34.2273% versus retained Block4 33.50% (+0.73), below the declared3-point threshold. Paper score improves9.5876→13.4906%; invalid outputs0.126%; mean length213.52. Technology transferred: stone13→52%,coal6→26%,woodpick57→78%,woodsword63→79%,furnace1→44%,stonepick0→10%,stonesword0→11%. But sapling61→10%,plant58→2%,wake88→40%. Those three skills lose155 unlocks/100games (7.05 progression points); all other achievements gain171 (+7.77), explaining the net+0.73. No300 confirmation or submission promotion for this candidate. Block4 remains the validated best.</p>
+<p>Diagnosis distinguishes availability from choice: first-sapling grass Do528/5612→82/7217; affordable firstplant58/366→2/529; safe low-energy rest Sleep19/264→41/3993. Exact native interventions verify firstsapling, firstplant and safe wake opportunities at unchanged health. Firstpick acquisition is earlier (median76→32), but illegal mining loops remain: 733/1119 unarmed ore decisions are ineffective Do (3.43% of all actions), longest39. All16 fullgames that reach actual first-stone-tool readiness eventually upgrade; remaining stone holders mainly lack wood or table access. These are distinct residual weaknesses, not a refusal to craft a ready stone tool.</p>
+<h5>Round 6 / Block 6 plan (before new practice and optimizer updates)</h5>
+<p>Named main lesson: <strong>Restore forage in native game histories while retaining technology</strong>. The specific weakness is the loss of conditional grass interaction and planting after technology practice, despite more available opportunities. A separate named retention lesson restores <strong>safe rest before exhaustion</strong>. We continue experimentally from unpromoted Block5 step550 and its Adam state because its verified technology gains are useful; this does not accept its progression result. Keep the validated Block4 submission until a later official win. This deliberate recovery experiment differs from previous rollbacks, which lost technology transfer entirely.</p>
+<p>New practice comprises exact native snapshots from actual Block5 and Block4_300 play: grass before the first sapling; sapling held before first planting; awake healthy rest with food/drink positive, no hostile within3, energy5–8, mostly before first wake. No gifts, map edits, hints or targets in the bank. Preserve full original histories, RNG and inventories. Each continuation is48 decisions; cap source roots and spacing. Energy5–8 permits an uninterrupted wake within48; lower energy is excluded from this particular completion metric. Goals remain scorer metadata and never enter prompts. New targets require actual successful simulator branches at the learner's own continuation roots. No escape fallback or new repeat-kill scoring is activated in this block.</p>
+<p>Fixed SFT shares: forage15%, safe_rest5%, stone_chain20%, bench20%, basic tools10%, combat15%, drinking5%, original bounded foundation10%. Forage category mix is20% movement,40% interaction,40% craft; rest samples demonstrated Sleep outcomes. Other per-group category mixes stay as in Block5. This explicitly reserves rare foundation actions instead of allowing wood examples to dominate a broad foundation pool. Old missing-pick probe rows are excluded by configured group filters. Every source remains bounded practice; plain full-game training for this block is0.</p>
+<p>Before updates, measure fixed Block5 weights on the new lessons and audit real target counts. Forage success targets: &gt;=60% sapling acquisition among missing-sapling practice starts, &gt;=70% first planting among sapling-held starts; conditional full-game grass Do1.14%→&gt;=10% and affordable firstplant0.38%→&gt;=25%. Full-game sapling10%→&gt;=60% and plant2%→&gt;=50%. Safe-rest success target: &gt;=70% actual wake among eligible practice starts; also measure actual energy recovery separately. Full-game safe low-energy Sleep1.03%→&gt;=5% and wake40%→&gt;=75%.</p>
+<p>Keep only if official progression reaches&gt;=37.2273% (+3 points versus this parent, +3.73 versus retained Block4), while diagnosing any technology regressions larger than10 percentage points. Retention reference: stone52,coal26,woodpick78,woodsword79,furnace44,stonepick10,stonesword11. Main score remains the decision gate; practice success alone cannot promote.</p>
+<p>Method:500 steps x32, all transformer layers except embeddings, LR1.5e-7 with15-step warmup, checkpoint every100, max2100seconds, resume Block5 Adam. The smaller LR is intended to reduce drift during recovery. Keep all checkpoints. A fixed-weight probe and independent bank/first-data audit precede the first update.</p>
+<p>Block6 fixed-weight probe initially samples60% forage and40% safe rest for strong new-lesson denominators; planned training shares remain unchanged. Actor will switch to the normalized non-foundation training mix when updates begin. Combined immutable bank has1350 exact states (800 retained plus550 new); no action targets. Actor and data remain on Block5 weights before the first update.</p>
+<h6>Block6 pre-update rest-scoring correction</h6>
+<p>CPU feasibility testing found that partial energy recovery can precede a failed nap. Across200 exact rest roots, completed-first-wake testing accepts141:11/46 atenergy5,56/74 at6,24/26 at7,50/54 at8. These are scripted diagnostic outcomes, not learner success or training examples, and not an upper bound for an adaptive policy. The fixed learner baseline remains12/134 actual wakes.</p>
+<p>Before any optimizer update, replace only the safe_rest target scorer with direct experimental completion checks: test all17 root actions followed by Noop for at most48 decisions, stop at first new wake or death, and accept only a real first wake alive with health no worse than equal-length Noop. Targets remain the original root action, and no partial energy-only outcome is accepted. All source state, history and RNG are preserved. Independent replay and all200-root CPU checks passed; diagnostic outputs are excluded from data. No escape or repeat-kill scorer is enabled.</p>
+<p>Unpublished old partial-rest shards5/6 and an incomplete7 were quarantined at staging/block6_partial_rest_untrained; they never reached a trainer. Their original raw learner play is unchanged and is being re-mined with the completion-only scorer. The trainer now requires bounded_rest_completion=True for safe_rest, so old partial-only rows cannot be admitted. Updated method and guard were specified before first training.</p>
+<p>Frozen pre-update learner baseline:320 new-lesson episodes, all Block5step550, batches5–9. Harvest2/111 saplings and1/111 plants; sapling-held16/75 plants. Rest12/134 actual wakes and23/134 energy recoveries. Initial choices:grassDo0/111,plant1/75,Sleep3/134. Conditional trajectory choices:grassDo25/1829,plant17/1326,restSleep28/3825. Raw parsing, observations, status, inventory and unlocks replay exactly.</p>
+<h6>Block6 pre-update forage credit correction</h6>
+<p>Independent replay of the first completed-rest shard found six forage targets that consumed wood before a later sapling collection (three tables, two wooden swords, one wooden pickaxe). Replacing only that first action with Noop still obtained the same sapling at the same health, while saving wood. These were unnecessary setup prefixes. No examples had been published or trained.</p>
+<p>Disable nonmovement setup expansion only for forage; keep all17 immediate experimental actions and the existing movement-prefix search. First sapling collection and first planting need no separate material-consuming setup action. All other lesson searches remain unchanged. Quarantine the unpublished prior mixed shards5–9 and incomplete10, then re-mine the same unchanged raw play. The forage ingestion guard now requires bounded_forage_no_setup=True. A source-level CPU replay passed, and independent first-shard re-audit precedes publication. Pre-training census additionally requires at least32 distinct forage Do rows so the40% interaction slice cannot initially concentrate on only15 examples.</p>
+<p>Block6 final preflight PASSED before updates: corrected pool has50 forage Do rows from49 distinct prompts; all new groups ready. Independent first-shard replay passed426 targets (300forage,126completedrest); every forage craft is Plant.100000-draw audit matches fixed shares, with6.517%Plant,5.395%Sleep,3.162%direct stone crafts. All accepted samples are bounded snapshots or original bounded foundation; no plain or prerequisite-probe source is admitted. Begin500x32 at1.5e-7 fromBlock5+Adam; actor returns to the declared normalized non-foundation mix.</p>
+<p>Block6 step100 interim practice (four mixed batches,256 episodes): harvest3/23 saplings and3/23 plants; sapling-held17/20 plants; rest7/15 actual wakes and12/15 energy recoveries. These small denominators improve on the frozen baseline but do not replace full-game evaluation. Retention: all21 basic-tool practice episodes complete missing basic goals; new stone tools19/60 bench and4/69 stone-chain. Monitor sleep generalization: in retention-group awake states, full-energy Sleep2/2460→48/2424 and Sleep with a hostile within2 steps4/1947→30/780. These conditional counts are descriptive and do not establish a death effect. No mid-block objective or mixture change.</p>
+<p>Block6 fresh-data independent review passed at step270: all279 batch24 targets and2477 source decisions replay exactly. Forage94 includes10 Plant and4 Do; all forage setup guards hold. Seven rest labels complete real first wakes with exact controls. Actual8640 training draws match declared group shares; all28 published shards match corrected staging, quarantined hashes are absent, prerequisite rows rejected, and no plain full-game data sampled. Separately prepared a final-only auxiliary norm utility; only synthetic CPU algebra was tested, no model weights loaded or edited. Read-only review requested stronger ordinary-source/protocol guards and actual changed-element accounting; these were added. Any use remains deferred until all training ends.</p>
+<p>A proposed post-rest exit weakness was checked and rejected as the main explanation. At checkpoints100/200/300, full-energy Sleep rates within16 decisions of a completed wake were1.92/1.34/2.46%, versus2.02/1.69/2.54% elsewhere. First postwake choices were Sleep in2/161,1/127,5/175 cases. Truncated episodes without a following decision were excluded. Most such errors had no Sleep action text in the current history. No exit lesson or data change is justified by these observations.</p>
+<p>Block6 completed 500 steps / 16000 samples in 1722.787 seconds (28.713 trainer minutes), all bounded lessons. Final direct stone crafts496, Plant1079, Sleep856; group counts are retained in runs/block6/DONE.json. Scheduled fixed-weight final practice and official100/default-seed evaluation now follow. Best submission remains Block4 pending full-game evidence.</p>
+<p>Block6 final fixed-weight practice uses exactly batches42–46 (320 episodes; in-flight47 excluded), compared with frozen baseline5–9. Harvest sapling41/118=34.7% vs2/111=1.8%; harvest-to-plant38/118 vs1/111. Sapling-held first planting78/83=94.0% vs16/75=21.3%. Actual wake80/119=67.2% vs12/134=9.0%; energy recovery107/119 is reported separately. Energy5/6 wakes45/79; energy7/8 wakes35/40. Conditional grassDo24.9% vs1.37%, affordableplant49.2% vs1.28%, safeSleep18.2% vs0.73%. Thus planting exceeds the predeclared70% target, harvesting remains below60%, and wake narrowly misses70%; the official full-game test still decides acceptance. Exact report: diagnosis_foundation_final_block6.json.</p>
+<h5>Block6 result: KEEP</h5>
+<p>Official100/default-seed progression40.6364%, paper16.0984%; +6.41 points versus parent5 and+7.14 versus protected4. Sapling76%,plant75%,wake97% restore foundations. Retention losses requiring diagnosis: stone52→39%,coal26→16%,furnace44→30%,cow66→55%,PlaceStone18→3%; woodpick78→82%,woodsword79→78%,stonepick10→12%,stonesword11→12%,zombie69→72%. The declared progression criterion is exceeded; technology losses are explicit, not concealed. Publish ordinary step500 and confirm300worlds.</p>
+<p>Submission published {&quot;source&quot;: &quot;/app/runs/block6/step_00500/model.safetensors&quot;, &quot;label&quot;: &quot;block6&quot;, &quot;time&quot;: 1795025926.8241386, &quot;sha256&quot;: &quot;c91c9644eaefae1723471e90f4b9423c64755f3f606f50426dda1abf2d1bb9a1&quot;, &quot;validation&quot;: &quot;valid: /submission/model.safetensors, 320 text tensors, 752.4 million parameters, 1.50 gigabytes&quot;}</p>
+<h5>Round7 / Block7 plan (before new practice or training)</h5>
+<p>Named main lesson: <strong>Navigate to the next resource opportunity, then return with the needed material</strong>. Fullgame6 improves foundations but loses resource encounters: with a wooden pickaxe, stone is visible within4 in56 games (previous65), actually faced in39 (previous52), and all39 eventually collect. First-stone Do37/43=86% is already fairly reliable. All18 games that reach a usable table with wood+stone upgrade; the remaining stone holders include11 games never combining wood+stone and10 with both materials but no usable table. Exact original-state experiments show a missed three-action first-stone route and safe six/seven-action wood→table→upgrade routes. These diagnostic sequences are never training targets.</p>
+<p>Practice lessons: (1) first-stone approach, with approximately200 native approach roots plus50 contact roots, pickaxe held and firststone missing; goal collect_stone only, labels cease after first acquisition; (2) stone-holder wood/table follow-through, refreshed311 native roots from actual6/5/4_300 play; (3) a small <strong>use surplus stone after the first furnace</strong> building lesson,112 native feasible roots from44 games, firstfurnace owned,firstPlaceStone missing,stone&gt;=3. The latter reserves two stone for tools and avoids competition with firstfurnace resources. Fullgame6 contains247 safe eligible building roots across16games,15 stillmissing this achievement; only1/247 chooses it. This lesson's isolated fullgame headroom is small (~0.68points), so it receives only5%, not the main allocation. All starts preserve exact native state, RNG and16-observation history; continuations are48decisions, no gifts/hints/answers.</p>
+<p>New search is scoped to named routes. First-stone uses the existing movement-prefix search up to6 moves/256nodes, no nonmovement setup, and requires a real firststone unlock alive with no root health loss and no worse than equal-lengthNoop. Wood/table routes first use unchanged setup3/64+Noop-relative search; only an empty result invokes original6/256 with both health checks. A24-native-root diagnostic found7extra successes among17 short-search failures; increasingnodes alone foundnone. Both route groups probe the initial root and every8decisions to control CPUcost. Building tests all17 immediate actions at everyeligible sampledroot, no setup/navigation, and rechecks the postfurnace/stone&gt;=3/firstplacement condition throughout the continuation. Newmethods have explicit ingestion flags; oldforage-no-setup andcompleted-rest guards remain. All targets are actual simulator-tested first actions at the learner's own roots.</p>
+<p>Fixed training shares: retainedstone_chain10%, first_stone_route15%, stone_followthrough_native10%, post_furnace_building5%, bench5%, basictools10%, combat15%, drink5%, originalboundedfoundation5%, forage15%, safe_rest5%. Firststone categories80%navigation/20%interaction; wood/table60%navigation/30%interaction/10%craft; building100%craft. Other conditional category weights stay asBlock6. Increasing navigation coverage replaces broad workstation repetition; it does not raise Do merely because overall mining achievements fell. Beforeupdates, run a fixedcurrent6 probe and audit real target/action/group counts, including contact-label availability.</p>
+<p>Predeclared metrics: first-stone practice completion&gt;=70%, fullgame collect_stone39%→&gt;=55%; wood/table practice newstone-tool completion&gt;=45%overall and&gt;=35%amonglowwoodstarts, fullgame stonepick12%→&gt;=25% andstonesword12%→&gt;=25%; buildingpractice firstPlaceStone&gt;=80%, fullgamePlaceStone3%→&gt;=15% andeligiblechoice1/247→&gt;=30%. Retainforage76/75%,wake97%,basictools82/78%; inspect any&gt;10point loss. Mainacceptance is fullgame progression: target&gt;=43.6364% (+3points). Differencesunder3on100areinconclusive. Because a300-worldBlock6confirmation is alreadyrunning, a smaller positive candidate may be retained only after a300-world paired comparison shows&gt;=1.5points gain and apositive95%bootstrap interval, with no&gt;3point official100 regression. This explicit refinement uses the larger test to resolve differences that100worlds cannot; it is declared beforetraining.</p>
+<p>Method: fromordinaryBlock6step500+Adam,500maximumSFTstepsx32,LR1.5e-7,warmup15,saveevery100,max2100seconds. Everynewexamplecomesfrombounded48-stepownplay orretainedboundedpractice; plainfullgametraining0. Existingbest40.6364% remainsprotected. Noauxiliaryweightediting has occurred.</p>
+<p>Block7 bank preflight:2023exactstate/historyentries, eachcomponentindependentlyreviewed;250firststone(200approach/50contact),311wood/table,112postfurnacebuilding,1350retained. StartfixedBlock6baselinewith60/25/15new-lessonmix. Nooptimizerupdates. Dataisnewstagingonly,minbatch48; prior6miner/publisherstoppedafterall47completed.</p>
+<p>Block6 confirmation on300publicworlds: progression40.5152%,paper16.4885%,invalid0.1686%,meanlength201.69. Official100/defaultseed40.6364% alreadyrecorded. OrdinaryBlock6 remainsbestvalidatedsubmission.</p>
+<p>Block7 pre-update real-data refinement (no optimizer updates yet): firstshard48 has136 game-verified labels, but9/43wood/table rows already own bothstone tools and onlygather extra wood. The other34include26wood-support and8tool-gain outcomes. It also has zero routeDo labels, so the proposed60/30/10category mix would silently become85.7/0/14.3. Fullgame6 already upgrades inall18readygames; the frozen newbaseline shows wood0 upgrades2/42 versus20/29atwood1–2. Therefore scope the newroute lesson to navigation while at least one stone tool is missing: a fail-closed sampler filter checks factual before-inventory, and category mix becomes100%navigation. Existingstone/bench/tool lessons retain interaction/crafting targets. Targets and prompts remain unchanged; no generated answer is added. This avoids oversampling three scarce ready-craft examples and matches the actual route weakness. The same10%group share is retained. Newexpectedglobal categories40%navigation,30.25%Do,24.5%craft,5.25%Sleep. First-stone keeps80/20 with a separate pre-update requirement of&gt;=32 Do examples from&gt;=32 distinct prompts.</p>
+<p>FrozenBlock7baseline48–52/current6/320episodes: firststone92/184=50.0%,deaths44/184; equipped-firststoneDo91/108=84.3%. Wood/table newtool35/85=41.2%; lowwood&lt;=2 22/71=31.0%; wood0 only2/42=4.8%,wood1–2 20/29=69.0%,wood&gt;=3 13/14=92.9%. Wood0 gainswood6/42. Route deaths36/85. Building firstPlaceStone4/51=7.8%,deaths25/51; zero repeated placements and zero last-stone spending in thatgroup. Allnewmethods remain staging-only untilfirst-data/config review passes.</p>
+<p>Block7 final preflightPASSED: reviewed108315records, all17907knownplainrowsrejected,37completed-toolrouteexamplesexcluded,49firststonecontactDo/33distinctpromptsgatepasses.100kdrawsmatchfixedgroups and40/30.25/24.5/5.25categories. Publisheractivatedonlyreviewedstaging; finalpublished-poolreadinesspassed. Begin500x32at1.5e-7fromBlock6+Adam,seed47,allbounded. Actorreturnsnonfoundationtrainingmix,maxbacklog2 tolimitdatalag.</p>
+<p>Block7 early own-play warning atstep100: the firstthree mixed batches show40 exact PlaceStone→Do refund cycles across14/21wood-route episodes (63actualplacements); longestthreeconsecutivecycles=sixdecisions. Definition requiresstone−1 then+1 atunchangedposition, so thisis verifiedre-mining, not repeatedinvalidtext. Building has7cycles across4/8episodes. Baselinewood-route0/85cycles andbuilding0/51repeats. In the firsttwo batches route upgrades remain5/12 versusbaseline35/85, so increasedrecyclingdoesnotyetestablish netprogressionloss. No last-stone spending observed. The first-building target guard stillrejects alreadyowned achievements, and fresh on-policy wood-route candidates will be audited for constructive alternatives after these actions. No mid-block objective/mix change; officialfullgame remains the acceptance gate.</p>
+<p>Freshstep100dataaudit confirms correctivecoveragewithoutmethodchanges: acrossbatches64–65,24wood-route labels are admittednavigation targets;15occurwithin16actualdecisions ofconfirmedPlaceStone,11afterarepeat. All15exactpromptsretainPlaceStonehistory;14testedbranchesgainwood,1gainsatool. ThelearneractuallychoseDo3timesandPlaceStone2timesattheseroots. Sevenofninecyclingepisodeshaveadmittedcorrections. Batch64all218labels/2550sourcedecisions replayexactly. Coverageisnotclaimedasalearnedfix; fullgameacceptanceremainsrequired.</p>
+<h6>Block 7 checkpoint 200 diagnostic (19:04 UTC)</h6>
+<p>Frozen first five checkpoint-200 mixed batches69–73: first stone29/40=72.5% versus frozen baseline50%; return upgrades6/34=17.6%, low-wood3/31=9.7%, zero-wood0/23 with2/23 gaining wood; building16/19=84.2%. The route draw contains more zero-wood roots than baseline, so raw route rates are not a matched comparison. Repeated PlaceStone→Do cycles persist (56 across23/34 route episodes;36 across15/19 building episodes), despite only first-placement gold targets. Retained practice: saplings12/32, held-sapling planting19/20, wake8/11. No mix or method changes; finish the declared block and let full games decide.</p>
+<h6>Final-phase plan declared 19:06 UTC (not yet an auxiliary edit)</h6>
+<p>Block7 is the last training block. Once its trainer has finished and all run DONE markers and process exits are checked, no further training will occur. Reserve the remaining time for official full games, 300-world confirmation, validation, and optional rule6 auxiliary edits. Ordinary scored6 remains protected.</p>
+<p>The first intended auxiliary candidate is ordinary6 with only its final zero-centered RMSNorm scaled by beta1.3 (<code>w_new=1.3*(1+w)-1</code>). This is a small final-only sampling-sharpness experiment, not a lesson or a learned-skill claim. All other tensors must remain exactly equal, source weights intact, and CPU validity must pass before evaluation. Compare official100 with6; a gain under3 points is inconclusive. Any such smaller improvement needs at least1.5 points on paired300 with positive95% paired-bootstrap interval and no&gt;3-point official100 regression before replacing the confirmed model. The paired interval conditions on one policy draw per world.</p>
+<p>A second auxiliary candidate is conditional: a beta-free50:50 average of ordinary6 and ordinary7 only if7 full games show complementary gains and regressions. Decide after7 official; do not precommit to averaging. Avoid new candidate starts after19:45 unless final confirmation is already safely complete. Keep all ordinary scores and immutable sources. No real auxiliary weights have yet been created.</p>
+<h6>Training ended; final auxiliary phase (19:14 UTC)</h6>
+<p>Block7 completed500 steps/16000 samples in1726.297705s (28.7716284min). The trainer exited and every training run has DONE metadata. All training is now definitively ended; no auxiliary weights will be trained. Official7 and the final focused practice check are pending. Ordinary6 remains the validated submission.</p>
+<p>Execute the predeclared auxiliary6 beta1.3 candidate now in a separate folder, changing only the final RMSNorm. This is explicitly auxiliary under rule6. Preserve ordinary6 and7 intact. Official100 evaluation follows engine readiness; final selection compares candidates against the best confirmed ordinary checkpoint, not only their own source.</p>
+<p>After all training ended, stopped CPU miner7 and publisher7 by exact process IDs to free CPU for final evaluations. The actor continues its frozen final practice sample; later raw practice is diagnostic only. Any unfinished staging file is not training data. Auxiliary6 beta1.3 passed CPU validity and exact all-other-tensor comparison (1024 norm elements changed).</p>
+<h6>Block7 final frozen practice, before full-game result (19:17 UTC)</h6>
+<p>Exactly batches84–88,320 episodes, final500 weights; extra89 excluded. First stone139/206=67.5% vs92/184=50.0%, below70% target but improved; ore-facing Do138/164=84.1% vs84.3% unchanged, identifying navigation rather than contact choice as the gain.74 shared exact-state/history roots improve47.1%→66.9%, paired-root empirical bootstrap difference95% CI[8.8,30.5]points. Tool return22/64=34.4% vs41.2%; lowwood16/53=30.2% vs31.0%; zero-wood0/25 upgrades with1/25 gaining wood. Thus the material-return lesson has not met either practice target. First building40/50=80.0% vs4/51=7.8%, meeting its80% practice target, but72 repeated placements occur across29/50 building episodes, and46 across19/64 route episodes. Last-stone spending4/50 building and1/64 route. Deaths52/206 firststone,32/64 return,21/50 building. Full games remain the acceptance gate. See diagnosis_block7_final_focused.json and diagnosis_block7_lessons.md.</p>
+<h6>Final independent accounting and data audit (19:19 UTC)</h6>
+<p>All seven runs total3500 optimizer updates and199.6106295 logged trainer minutes; conservative plain full-game charge24.4288040min=12.238228%. These are trainer elapsed windows including brief ingestion/save/pause, not inference/evaluation watchdog time or kernel-only profiling. Ordinary6 and its norm-only auxiliary retain1900/3500=54.2857% of updates by optimizer ancestry; ordinary7 or a nonzero6/7 average retain2400/3500=68.5714%. All34 published Block7 shards/7252 targets independently replayed, staging bytes match,65 completed-tool route rows rejected,152 zero-category-weight rows excluded;7035 sampleable rows. All17399 class=None foundation rows resolve to33 actual bounded bootstrap batches (max48 decisions). Aux6beta1.3 independently verified: exactly1024 finalnormelements differ, all319 other tensors bitwise equal, ordinary source hash unchanged. See REVIEW.md and review_tests/final_accounting_audit.json.</p>
+<h6>Block7 official result and rejection (19:24 UTC)</h6>
+<p>Official100 progression37.4090909%, paper14.5902406%, invalid0.112913%, mean194.84 decisions. Delta from6 is−3.22727 points; fails the predeclared retention gate. Drop ordinary7; no300 confirmation is warranted for this rejected checkpoint. Main first-stone fullgame target also failed: stone39→30 despite better bounded practice. Earlier prerequisites degraded: table88→79, wooden pick82→63, sword78→62; equipped-stone visibility56→40 games. Coal16→9 and furnace30→18. Stone pick12→6, sword12→14. Foundation retained/improved: saplings76→86, planting75→83, wake97→97. PlaceStone3→20 meets its fullgame target, but19/20 first placements occur before first furnace despite exclusively postfurnace training roots.124 actual placements include104 repeats across15 games and74 immediate placement/mining cycles. This costs0.76% of decisions; the basic-tool regression is larger than recycling alone explains. Ready conversions largely remain (stone tools14/15 eligible games; furnace18/19). The curriculum improved one conditional skill but forgot prerequisite acquisition; practice success did not justify keeping the block.</p>
+<p>The conditional6/7 interpolation is not yet selected: resource progression regressed broadly, with complementary gains confined mainly to forage/building. Wait for auxiliary6 beta1.3 before choosing any second final-only candidate. Ordinary6 remains protected and validated.</p>
+<p>Block7 exact-state follow-up: controlling for stronger stone swords, when a sword is affordable and no sword is held, any-sword choice falls38/40=95% in6 to31/56=55.4% in7;18/56 alternatives are moves. Affordable wood pick after sword falls39/43=90.7% to24/33=72.7%. This confirms tool-completion forgetting beyond the legitimate choice to skip an inferior wood sword. Paired100 progression delta−3.2273 points has empirical paired-world95% interval[−6.0,−0.5], conditional on one draw/world.</p>
+<h6>Auxiliary beta1.3 official result and second-candidate decision (19:28 UTC)</h6>
+<p>Aux6beta1.3 official100:41.3181818% progression,17.7667179% paper,0.009414% invalid,mean212.44 decisions. Gain+0.681818 points is inconclusive; not promoted. Started300-world confirmation as aux6_beta13_300 (defaultseed,session97830). Technology improves:stone39→45,coal16→25,stonepick12→23,stonesword12→19; foundation declines:sapling76→68,plant75→68,wake97→92. No new placement repetition (3 total placements,zero repeats). Ready stone-tool cases18→28 games,28/28 upgrade. Zombie deaths51→33, thirst2→14, arrows8→13; cause shares can change when combat survival improves.</p>
+<p>Select ONE further final-only auxiliary candidate, ordinary6 beta1.6, because beta1.3 gives a measurable technology/retention tradeoff and a scalar continuation can test it directly. This keeps the planned cap of two auxiliary candidates. Skip the conditional6/7 average:7 lacks full-game resource gains and its basic-tool and furnace regressions would be imported, potentially amplified. Beta1.6 changes the same1024 finalnormelements only and uses ordinary6 as source. No further training. Score official100; any finalreplacement still needs the declared300 comparison against ordinary6. Preserve both ordinary scored checkpoints and currentvalidsubmission.</p>
+<p>Auxiliary beta1.6 independent integrity audit passes: source ordinary6 hash unchanged; exactly1024 finalnormelements changed under correctzero-centered formula; all319other tensors bitwise identical; candidate SHA522d66a66c6482c815e621b2bcbc98eb71203616ad4aaea812d1e975ca362f0f. Official100 aux6_beta16 is queued/running only afterbeta13_300engine startup completes (session43082). If its100 result has no&gt;3-point regression fromordinary6, use300 to resolve its difference; otherwise reject. No thirdauxiliarycandidate is planned. Any retainedcandidate must pass the predeclared300comparison gate.</p>
+<h6>Auxiliary confirmation results and last pending evaluation (19:39 UTC)</h6>
+<p>Beta1.3/300 progression41.2424242%,paper17.5025900%,invalid0.0145063%,mean206.8067 decisions. Versusordinary6/30040.5151515%, paired gain+0.727273 points,95% empirical paired-world bootstrap interval[−0.878788,2.318182],125 worlds better/52 tied/123 worse. It fails both the&gt;=1.5-point gain and positive-lower-bound promotion criteria. Do not promote despite the numerically larger score. Ordinary6 stays the submission.</p>
+<p>Beta1.6 official100 progression40.6363636% (exactly ordinary6),paper16.5646842%,zero invalid outputs,mean198.68 decisions. Stonepick23%,stonesword24%,iron4%; sapling/plant64/64%,wake86%. As predeclared, no&gt;3-point regression permits a300-world resolution. Launched aux6_beta16_300 (session43110,log eval_aux6_beta16_300.log) afterbotholderenginesexited andGPUreturned75MiB. This is the final candidate evaluation; no more weight candidates or training planned. Final selection remains againstordinary6/300 under the existing gate.</p>
+<p>Larger-sample correction to the auxiliary crafting-loop diagnosis: the58-step loop in100 was real, but300 does not support a stable population increase. Against ordinary6/300, beta1.3 ineffective awake recipe fraction falls1.43%→1.27%, unusable-table pick attempts174→50, and longest ineffective recipe streak42→7. Beta1.6/100 also has fewer failedrecipes (1.00% vs1.42%), longest10. Therefore do not use the single100-world loop as evidence that sharpening generally increases recipe stalls. The supported tradeoff remains foundation versus technology, with unresolved total progression gain.</p>
+<p>Submission published {&quot;source&quot;: &quot;/app/auxiliary/block6_beta16/model.safetensors&quot;, &quot;label&quot;: &quot;aux6_beta16&quot;, &quot;time&quot;: 1795031444.1503005, &quot;sha256&quot;: &quot;522d66a66c6482c815e621b2bcbc98eb71203616ad4aaea812d1e975ca362f0f&quot;, &quot;validation&quot;: &quot;valid: /submission/model.safetensors, 320 text tensors, 752.4 million parameters, 1.50 gigabytes&quot;}</p>
+<h6>Auxiliary beta1.6 qualifies; additional sampling robustness planned (19:51 UTC)</h6>
+<p>Beta1.6/300 progression43.0000%, paper18.3028242%, zero invalid outputs,mean220.07 decisions. Versusordinary6/30040.5151515%, paired gain+2.484848 points,95% paired-world bootstrap interval[0.833333,4.181818],134 better/56 tied/110 worse. Official100 matchesordinary6 (40.63636%) and therefore has no regression. This meets the predeclared gain and positive-interval criteria. Beta1.6 is now atomicallypublished andCPUvalidated; ordinary6 preserved. A bookkeeping assertion initially used the comparison console schema instead of its nested JSON schema and failed; it did not alter any score or weight. The independentlyverified comparison qualifies and publication completed correctly.</p>
+<p>There are about38 minutes remaining. Use them for one additional sampling draw of the SAME300 public worlds for ordinary6 andbeta1.6 (samplingseed1, both300, not new candidates). Default-seed official100 and300 are alreadycomplete forboth. This robustness extension is chosen before either new draw: average each world's progression over seed0 andseed1 for each model, then apply the same&gt;=1.5point paired gain and positive95% paired-world bootstrap interval to these300 two-draw averages. This is600 games/model but only300 unique worlds, not600 independent worlds. If the full pair contradicts the criterion, return toordinary6. If not complete by20:20, use only complete prior evaluations and record the limitation; never use a partial prefix to decide. Finalvalidationby20:24 atlatest. No newweights ortraining.</p>
+<h6>Final two-draw robustness result and selection (20:08 UTC)</h6>
+<p>The complete extra seed1 runs score43.0909091% progression/18.8126309% paper forbeta1.6 and40.0454545%/16.4773056% forordinary6. The combined per-world average overseed0and1 is43.0454545% forbeta1.6 vs40.2803030% forordinary6. Paired gain+2.7651515 points,95% paired300-world bootstrap interval[1.5227273,4.0000000],10000resamplesseed0. This is600 games perpolicy across300 UNIQUE worlds, with two samplingdraws averaged WITHIN eachworld beforebootstrap. The complete additional evidence passes the samepredeclared&gt;=1.5point+positiveintervalgate, so KEEPthealreadyinstalledaux6beta1.6. Source/submissionSHA522d66a66c6482c815e621b2bcbc98eb71203616ad4aaea812d1e975ca362f0f. No reversionneeded.</p>
+<p>Independent reconstruction verifiesallfour publicworldsets/protocols/sourcepaths,inputhashes,samplingseed1commandlines,combinedmetricsandall10000bootstrapresamples. See diagnostics/paired_comparisons/block6_vs_aux6_beta16_two_draws.json and review_tests/two_draw_final_independent_audit.json. Main averaged technologygains:stonesword+13.67pp,stone+12,drink+10.5,stonepick+10,furnace+8.17; foundationlosses:sapling−15,plant−14.67,wake−4.17. The net improvement survivesanadditionalpolicysamplingdraw. Alltrainingendedbeforeauxedits;ordinary6 remainsintactandscored. Finalretainedoptimizerupdates1900/3500=54.2857%;plainfullgametrainerelapsedshare24.428804/199.6106295=12.238228%.</p>
+<h6>Final handoff complete (20:09 UTC)</h6>
+<p>FINAL_RESULTS.json is written and independently audited. Submitted model remains auxiliary6 beta1.6, SHA522d66a66c6482c815e621b2bcbc98eb71203616ad4aaea812d1e975ca362f0f; freshcheck_submission valid. Official100 progression40.63636%,paper16.56468%,zero invalid; default300 progression43.0000%,paper18.30282%; freshdraw30043.09091%,paper18.81263%. Combined600games on300unique worlds:43.04545%progression and18.57646%paper fromcombinedachievementrates. Retained1900/3500updates54.2857%;conservativeplainfullgametrainingtime12.2382%. Independentfinalaudit verifiesactualsubmission/sourcehashes,ordinarysourcepreservation,publicseedsets,source-matchedscores,combinedbootstrap,CPUvalidationrecord,andallaccounting. Allrequestedworkcomplete;noadditionaltrainingorweightedits.</p>
+</div></details></section></div></main><script>
+(function(){
+ function open(){var h=decodeURIComponent(location.hash.slice(1)),el=h&&document.getElementById(h);
+  if(el&&el.tagName==='DETAILS')el.open=true}
+ addEventListener('hashchange',open);open();
+ document.querySelectorAll('.chart,.spark').forEach(function(f){var tip=f.querySelector('.tip');
+  function on(e){var t=e.target.getAttribute&&e.target.getAttribute('data-tip');if(!t)return;tip.textContent=t;tip.hidden=false;
+   var b=f.getBoundingClientRect(),r=e.target.getBoundingClientRect();
+   tip.style.left=Math.max(0,Math.min(r.left-b.left+12,b.width-tip.offsetWidth))+'px';tip.style.top=(r.top-b.top-34)+'px';}
+  function off(){tip.hidden=true}
+  f.addEventListener('mouseover',on);f.addEventListener('focusin',on);f.addEventListener('mouseout',off);f.addEventListener('focusout',off);});
+})();
+</script></body></html>
