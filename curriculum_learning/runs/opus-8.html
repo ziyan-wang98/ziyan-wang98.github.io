@@ -1,0 +1,1476 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>Opus 5.5 max (Teacher) #8 | Teaching by Curriculum</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"><style>:root{--bg:#ffffff;--fg:#111114;--fg2:#3f3f46;--mut:#686871;--line:#e5e5e8;--axis:#cdcdd4;--card:#f7f7f8;--acc:#c43c19;--ring:rgba(17,17,20,.08);--chip:#efeff2;--hover:rgba(17,17,20,.03);--shadow:none;--track:#e9e9ed;--base:#a1a1aa;--raised:#ffffff;--s1:#0072b2;--s2:#e69f00;--s3:#009e73;--s4:#d55e00;--s5:#cc79a7;--s6:#56b4e9;--s7:#a63d8f;--s8:#f0e442;--h0:#f7f7f8;--ht0:#111114;--h1:#d8e6ef;--ht1:#111114;--h2:#b9d6e6;--ht2:#111114;--h3:#9ac5de;--ht3:#111114;--h4:#7cb4d5;--ht4:#111114;--h5:#5da4cc;--ht5:#ffffff;--h6:#3e93c4;--ht6:#ffffff;--h7:#1f83bb;--ht7:#ffffff;--h8:#0072b2;--ht8:#ffffff;color-scheme:light}
+/* Prose is capped at 100 characters a line; tables, charts and verbatim documents run the full
+   width of main (960px). */
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+::selection{background:color-mix(in srgb,var(--acc) 22%,transparent)}
+main{max-width:960px;margin:0 auto;padding:20px max(16px,env(safe-area-inset-right,0px)) 72px max(16px,env(safe-area-inset-left,0px))}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--axis);text-underline-offset:3px}a:hover{text-decoration-color:var(--acc)}
+h1{font-size:40px;line-height:1.12;margin:0 0 10px;font-weight:600;letter-spacing:-.02em;text-wrap:balance}
+h2{font-size:22px;line-height:1.25;margin:52px 0 12px;font-weight:600;letter-spacing:-.01em;text-wrap:balance}
+h2.sec{font-size:28px;margin:0 0 20px;letter-spacing:-.02em}
+h2.sec{border-left:3px solid #000;padding-left:12px}
+header.site{position:sticky;top:0;z-index:4;background:var(--bg);border-bottom:1px solid var(--line)}
+nav.report-nav{max-width:960px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;gap:20px;font-size:14px}
+.report-nav a{display:block;padding:14px 0;text-decoration:none;white-space:nowrap;color:var(--fg2)}
+.report-nav a:hover,.report-nav a:focus-visible{color:var(--fg);text-decoration:underline}
+.report-nav .back{color:var(--fg);font-weight:600}
+.report-nav .back{border-right:1px solid var(--line);padding-right:20px}
+.report-nav .sections{display:flex;gap:20px;margin:0;padding:0;list-style:none}
+.report-nav .sections li{margin:0}
+header.site + main{padding-top:36px}
+@media (max-width:680px){
+  nav.report-nav{flex-wrap:wrap;gap:0 16px}
+  .report-nav a{padding:9px 0}
+  .report-nav .back{border:0;padding-right:0}
+  .report-nav .sections{order:1;flex-basis:100%;overflow-x:auto;gap:clamp(8px,2.5vw,16px);border-top:1px solid var(--line)}
+  .report-nav .sections a{padding-inline:2px}
+}
+@media (max-width:360px){
+  .report-nav .sections{gap:7px}
+  .report-nav .sections a{padding-inline:0}
+}
+main:has(> .samples){min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;
+                     gap:clamp(18px,3vh,36px);padding-block:clamp(36px,5vh,44px) clamp(28px,4vh,40px)}
+.landing-title{align-self:flex-start;display:flex;align-items:center;gap:.23em;color:#000;
+               font-family:Optima,"URW Classico","IBM Plex Sans",sans-serif;
+               font-size:clamp(38px,5vw,54px);margin:0}
+.landing-title img{width:1.06em;height:.96em;object-fit:contain;flex:none}
+@media (min-width:1000px){.landing-title{margin-inline-start:-18px}}
+.intro{font-size:18px;line-height:1.62;color:var(--fg2)}
+.intro p,.intro ul{margin:0}
+.intro p,.intro li{text-wrap:pretty}
+.intro ul{margin-top:12px}
+.intro li+li{margin-top:9px}
+.samples h2{font-size:28px;margin:0 0 16px}
+.team{font-size:15px;line-height:1.55;color:var(--fg2)}
+.team p{margin:0;text-wrap:pretty}
+.affiliation{white-space:nowrap}
+.affiliation img{width:1em;height:1em;object-fit:contain;vertical-align:-.16em;margin-inline-end:.28em}
+.landing-contact{text-align:center;font-size:14px;color:var(--fg2)}
+.landing-contact a{white-space:nowrap}
+@media (max-width:600px){
+  main:has(> .samples){gap:28px;padding-block:28px 36px}
+}
+h3{font-size:17px;margin:30px 0 8px;font-weight:600}h4,h5,h6{font-size:15px;margin:18px 0 6px;font-weight:600}
+p,ul,ol{margin:8px 0}li{margin:3px 0}ul,ol{padding-left:22px}
+.sub{color:var(--fg2);margin:0;font-size:16px}
+.lede p{margin:0 0 8px}.lede p:last-child{margin-bottom:0}
+.lede-l{font-size:15px;font-weight:600;color:var(--fg);margin:0 0 6px}
+.blk{margin:24px 0}.blk>:last-child{margin-bottom:0}
+details.fold{border:0;padding:0;margin:14px 0 4px}details.fold>summary{color:var(--fg2);font-weight:500}
+details.fold>summary:hover{color:var(--fg)}details.fold figure.fig{margin:14px 0 8px}
+.blk .lede-l{margin-bottom:6px}.formula-line{font-size:15px}.formula-line b{font-weight:600}
+.mut{color:var(--fg2)}.na{color:var(--mut)}.small{font-size:13px}
+h3 .fname{font-size:13px;font-weight:400;color:var(--mut);margin-left:8px;font-family:"IBM Plex Mono",ui-monospace,monospace}
+code{font:12.5px/1.4 "IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--chip);border-radius:2px;padding:1px 4px}
+pre{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:12px 14px;overflow:auto}pre code{background:none;padding:0}
+.tw{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums;width:100%;border-top:1.5px solid var(--fg);border-bottom:1.5px solid var(--fg)}
+th,td{text-align:left;padding:9px 12px 9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child>td{border-bottom:0}td:last-child,th:last-child{padding-right:0}
+th{font-weight:600;font-size:12.5px;line-height:1.3;color:var(--fg2);vertical-align:bottom;padding-top:10px;border-bottom:1px solid var(--fg2)}
+td.nw{white-space:nowrap}td.n,th.n,.right{text-align:right}.center{text-align:center}
+tbody tr:hover>td{background:var(--hover)}
+tr.best td{font-weight:600}
+td.run{min-width:150px}.rn{display:inline-flex;align-items:center;gap:8px}
+.key{flex:none;width:9px;height:9px;border-radius:50%;display:inline-block}
+.rnote{font-size:12.5px;color:var(--fg2);font-weight:400;margin-top:2px;line-height:1.4}td.run.k .rnote{padding-left:17px}
+.chip,.badge{display:inline-block;font-size:12px;line-height:20px;padding:0 8px;border-radius:10px;background:var(--chip);
+color:var(--fg2);white-space:nowrap;font-weight:500}.badge{margin-left:6px}
+tr.sep td{border-bottom:1px solid var(--line);padding-top:22px;font-size:12px;font-weight:500;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+tr.sep:hover>td{background:none!important}
+.bar{display:inline-flex;align-items:center;gap:8px}
+.bar .track,.meter{position:relative;height:6px;background:var(--track)}
+.bar .track{width:clamp(56px,14vw,170px)}
+table.lb td.n{white-space:nowrap}table.lb th:first-child,table.lb td:first-child{width:34px}
+table.lb td.sc .bar{justify-content:flex-end;width:100%}table.lb .bar .track{width:clamp(56px,10vw,120px)}
+.fill{position:absolute;left:0;top:0;bottom:0;background:var(--fg)}.fill.b{background:var(--base)}
+.ref{position:absolute;top:-4px;bottom:-4px;width:2px;margin-left:-1px;background:var(--fg);border-radius:1px;opacity:.55}
+.bv{min-width:3.1em;text-align:right}
+.bar.hd{display:flex;justify-content:flex-end;align-items:flex-end}.track.lbl{background:none;height:22px}
+.reflbl{position:absolute;bottom:8px;white-space:nowrap;font-style:normal;font-size:11.5px;font-weight:500;color:var(--fg2)}
+.refmark{position:absolute;bottom:-2px;height:7px;width:2px;margin-left:-1px;background:var(--fg);opacity:.55;border-radius:1px}
+.pill{display:inline-block;min-width:4.2em;text-align:center;padding:1px 8px;border-radius:2px}
+td.hc{padding-top:5px;padding-bottom:5px}
+.heatkey{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--fg2);margin:6px 0 4px}
+.heatkey .ramp{display:flex;gap:2px}.heatkey .ramp i{width:14px;height:10px;border-radius:2px;display:block}
+nav.crumb{font-size:14px;margin-bottom:20px}nav.crumb a{color:var(--fg2);text-decoration:none}nav.crumb a:hover{text-decoration:underline}
+nav.tabs{display:flex;width:fit-content;max-width:100%;overflow-x:auto;gap:6px;margin-left:-12px}
+nav.tabs a{padding:6px 12px;color:var(--mut);white-space:nowrap;font-weight:500;font-size:15px;text-decoration:none;border-radius:6px}
+nav.tabs a:hover{color:var(--fg)}
+nav.tabs a[aria-current=page]{color:var(--fg);font-weight:600;box-shadow:inset 0 -2.5px 0 var(--acc);border-radius:0}
+[id]{scroll-margin-top:72px}
+@media (max-width:680px){header.site + main [id]{scroll-margin-top:108px}}
+
+section.tab{margin-top:64px;font-size:17px;line-height:1.6}
+section.tab :is(p,ul,ol,blockquote){max-width:70ch;overflow-wrap:anywhere}
+main > h1 + section.tab{margin-top:32px}
+thead:not(:has(th:not(:empty))){display:none}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.tile,.chart,details.about{background:var(--card);border:1px solid var(--line);border-radius:3px}
+.tile{padding:14px 16px 10px}
+.tile .l{font-size:13px;color:var(--fg2);font-weight:500}
+.tile .v{font-size:34px;font-weight:600;line-height:1.15;margin:4px 0 2px;letter-spacing:-.02em}.tile.hero .v{font-size:54px}
+.tile .s{font-size:13px;color:var(--fg2);min-height:1.6em}
+.scoredef{display:grid;grid-template-columns:minmax(200px,auto) 1fr;gap:12px 40px;align-items:center;margin:12px 0 24px}
+.scoredef.bare{display:block;margin:20px 0 28px;padding:14px 18px;border-left:3px solid var(--line)}
+.doc :not(pre)>code{overflow-wrap:anywhere}
+section.tab p{margin:0 0 10px}section.tab p>strong:first-child{font-weight:600}
+section.tab ul,section.tab ol{margin:0 0 14px}section.tab li{margin:2px 0;line-height:1.5}section.tab li>p{margin:0}
+section.tab ul{list-style:none;padding-left:1.4em}section.tab ul>li{position:relative}
+section.tab ul>li::before{content:"";position:absolute;left:-1.1em;top:.62em;width:5px;height:5px;background:#000;transform:rotate(45deg)}
+section.tab ol{padding-left:1.6em}.doc ul{list-style:disc;padding-left:22px}.doc ul>li::before{content:none}
+section.tab h3{font-size:19px;margin:26px 0 8px}
+#analysis h3{font-size:21px}
+#analysis h4{font-size:16px}
+.bestline{margin:10px 0 0;font-size:14.5px;color:var(--fg2)}.bestline b{color:var(--acc);font-weight:600;font-variant-numeric:tabular-nums}
+.bestline a{color:var(--fg);text-decoration:none}.bestline .logo{width:15px;height:15px;vertical-align:-2px;margin-right:5px}.bestline a:hover{text-decoration:underline}
+.logo{width:16px;height:16px;flex:none;display:inline-block}.eff{color:var(--mut);font-weight:400;margin-left:2px}tr.best .eff{font-weight:400}
+.hero{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:10px 32px;margin:26px 0 6px}
+.hero .n b{font-size:72px;font-weight:500;letter-spacing:-.045em;line-height:1;display:block;font-variant-numeric:tabular-nums}.hero .n span{font-size:14px;color:var(--fg2)}
+.hero .facts{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:14px;color:var(--fg2);margin:0 0 8px}
+.scoredef .l{font-size:13px;color:var(--fg2);font-weight:500}
+.scoredef .formula{font-size:27px;font-weight:600;line-height:1.2;margin-top:2px;white-space:nowrap}
+.scoredef .defs{font-size:13.5px;color:var(--fg2);line-height:1.5;columns:2;column-gap:28px}
+.scoredef .defs p{margin:0;break-inside:avoid;max-width:none}
+@media (max-width:640px){.scoredef{grid-template-columns:1fr}.scoredef .defs{columns:1}.scoredef .defs p+p{margin-top:6px}.scoredef .formula{white-space:normal;font-size:23px}}
+.tile .meter{margin:12px 0 4px}.meter.neutral{background:var(--line)}.meter.neutral .fill{background:var(--mut)}
+.meter .pt{position:absolute;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;box-shadow:0 0 0 2px var(--card)}
+.scale{display:flex;justify-content:space-between;font-size:11px;color:var(--mut);font-variant-numeric:tabular-nums}
+.callout{border-left:3px solid var(--acc);background:var(--card);padding:9px 14px;border-radius:0 8px 8px 0;font-size:13.5px;color:var(--fg2);margin:12px 0}
+details.about{padding:0 18px;margin:16px 0}
+details.about>summary{padding:13px 0;font-weight:600;cursor:pointer}details.about>summary .mut{font-weight:400}
+details.about[open]>summary{border-bottom:1px solid var(--line);margin-bottom:12px}
+details.about dl.fields{margin:0 0 16px}
+dl.fields{display:grid;grid-template-columns:200px 1fr;gap:10px 18px;margin:10px 0}
+dl.fields dt{color:var(--fg2);font-size:14px;font-weight:500}dl.fields dd{margin:0}dl.fields dd>p:first-child{margin-top:0}
+@media (max-width:640px){dl.fields{grid-template-columns:1fr}dl.fields dd{margin-bottom:8px}}
+figure{margin:20px 0}figure.fig{margin:28px 0 36px}figure.fig svg{width:100%;max-width:760px;height:auto;display:block;margin:0 auto}figure>img{display:block;margin:0 auto}
+figure.fig-passk svg{max-width:480px}figure.fig-components svg{max-width:620px}figure.fig svg text{font-family:"IBM Plex Sans",system-ui,sans-serif}figure img{max-width:100%;border:1px solid var(--line);border-radius:3px;background:#fff}
+figcaption{font-size:15px;line-height:1.55;color:var(--fg2);margin:0 0 12px}figcaption .lead{color:var(--acc);font-weight:600}
+.chart{position:relative;padding:18px 18px 8px}
+.chart svg{width:100%;height:auto;display:block}
+.legend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--fg2);margin-bottom:4px}
+.legend span{display:inline-flex;align-items:center;gap:6px}.sw{width:14px;height:3px;border-radius:2px;display:inline-block}
+.sw.dk{width:8px;height:8px;transform:rotate(45deg);border-radius:1px;background:var(--fg2)}
+.panel{fill:none}.lbl-end{font-size:12px;fill:var(--fg);font-weight:550}.lbl-end.mut{fill:var(--mut);font-weight:400}.bar.base{fill:var(--base)}figcaption.mut{margin:-6px 0 0}.grid{stroke:var(--line);stroke-width:1}.vgrid{display:none}.axis{stroke:none}.ref{stroke:var(--mut);stroke-width:1;stroke-dasharray:4 3}
+.tick{fill:var(--mut);font-size:11px;font-variant-numeric:tabular-nums}.tick.grp{font-size:11px;letter-spacing:.06em;text-transform:uppercase}.single{fill:var(--base);stroke:var(--card);stroke-width:1.5}.sw.single{background:var(--base)}
+
+.line{fill:none;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round;opacity:.8}
+.dot{stroke:var(--card);stroke-width:1.5;cursor:default}.bar{cursor:default}.bar:hover,.bar:focus{stroke:var(--fg);outline:none}.dia{stroke:var(--card);stroke-width:1.5}
+.dot:hover,.dot:focus,.dia:hover,.dia:focus{stroke:var(--fg);outline:none}
+.runpt{fill:var(--fg);stroke:var(--card);stroke-width:1.5;outline:none}.runpt:hover,.runpt:focus{stroke:var(--fg)}
+.runpick{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px}
+.rp{font:inherit;font-size:12.5px;line-height:20px;padding:2px 10px;border-radius:2px;border:1px solid var(--line);background:var(--raised);color:var(--fg);cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.rp:hover{border-color:var(--axis)}.rp.off{opacity:.42;background:transparent}.rp-all,.rp-none{color:var(--fg2);background:transparent}
+.s1.line,.st-sd.s1,.st-mean.s1{stroke:var(--s1)}.s1.dot,.s1.dia,.s1.bar,.sw.s1,.key.s1,.pt.s1,.fill.s1,.st-dot.s1{fill:var(--s1);background:var(--s1)}.s2.line,.st-sd.s2,.st-mean.s2{stroke:var(--s2)}.s2.dot,.s2.dia,.s2.bar,.sw.s2,.key.s2,.pt.s2,.fill.s2,.st-dot.s2{fill:var(--s2);background:var(--s2)}.s3.line,.st-sd.s3,.st-mean.s3{stroke:var(--s3)}.s3.dot,.s3.dia,.s3.bar,.sw.s3,.key.s3,.pt.s3,.fill.s3,.st-dot.s3{fill:var(--s3);background:var(--s3)}.s4.line,.st-sd.s4,.st-mean.s4{stroke:var(--s4)}.s4.dot,.s4.dia,.s4.bar,.sw.s4,.key.s4,.pt.s4,.fill.s4,.st-dot.s4{fill:var(--s4);background:var(--s4)}.s5.line,.st-sd.s5,.st-mean.s5{stroke:var(--s5)}.s5.dot,.s5.dia,.s5.bar,.sw.s5,.key.s5,.pt.s5,.fill.s5,.st-dot.s5{fill:var(--s5);background:var(--s5)}.s6.line,.st-sd.s6,.st-mean.s6{stroke:var(--s6)}.s6.dot,.s6.dia,.s6.bar,.sw.s6,.key.s6,.pt.s6,.fill.s6,.st-dot.s6{fill:var(--s6);background:var(--s6)}.s7.line,.st-sd.s7,.st-mean.s7{stroke:var(--s7)}.s7.dot,.s7.dia,.s7.bar,.sw.s7,.key.s7,.pt.s7,.fill.s7,.st-dot.s7{fill:var(--s7);background:var(--s7)}.s8.line,.st-sd.s8,.st-mean.s8{stroke:var(--s8)}.s8.dot,.s8.dia,.s8.bar,.sw.s8,.key.s8,.pt.s8,.fill.s8,.st-dot.s8{fill:var(--s8);background:var(--s8)}.h0{background:var(--h0);color:var(--ht0)}.h1{background:var(--h1);color:var(--ht1)}.h2{background:var(--h2);color:var(--ht2)}.h3{background:var(--h3);color:var(--ht3)}.h4{background:var(--h4);color:var(--ht4)}.h5{background:var(--h5);color:var(--ht5)}.h6{background:var(--h6);color:var(--ht6)}.h7{background:var(--h7);color:var(--ht7)}.h8{background:var(--h8);color:var(--ht8)}
+.tip{position:absolute;pointer-events:none;background:var(--fg);color:var(--bg);font-size:12.5px;padding:5px 8px;border-radius:5px;max-width:320px}
+details{border-top:1px solid var(--line);padding:6px 0}details>summary{cursor:pointer;padding:4px 0}
+details[open]>summary{margin-bottom:6px}
+.doc{max-width:calc(70ch + 56px);background:var(--card);border:1px solid var(--line);border-radius:3px;padding:22px 28px 18px}
+.doc>:first-child{margin-top:0}@media (max-width:640px){.doc{padding:16px}}
+.badge{display:inline-block;font-size:12px;color:var(--fg2);border:1px solid var(--line);border-radius:10px;padding:0 8px;margin-left:6px}
+blockquote{margin:8px 0;padding-left:12px;border-left:2px solid var(--line);color:var(--fg2)}
+.pk{display:flex;flex-wrap:wrap;gap:12px 24px}.spark{position:relative;flex:none;width:400px}.spark>svg{display:block;width:100%;height:auto;overflow:visible}
+.pk-h{font-size:13px;color:var(--fg2);margin:0 0 4px}.pk-h b{color:var(--fg);font-weight:600}.spark .tip{white-space:nowrap}
+.st-l{font-size:12.5px;fill:var(--fg)}.st-l.st-b{fill:var(--mut)}.st-v{font-size:12px;font-weight:600;fill:var(--fg);font-variant-numeric:tabular-nums}
+.st-dot{stroke:var(--bg);stroke-width:1.5;outline:none}.st-dot.st-base{fill:var(--base)}.st-sd{stroke-width:1.5;opacity:.6}.st-mean{stroke-width:2.5}
+.spark .grid{stroke:var(--line)}
+td.best{font-size:24px;font-weight:600;line-height:1.2;white-space:nowrap}
+.task{display:grid;grid-template-columns:minmax(200px,1fr) minmax(0,2.6fr);gap:16px 26px;padding:26px 0;border-top:1px solid var(--line);align-items:center}
+.task:first-child{border-top:0;padding-top:8px}
+.task:last-child{padding-bottom:0}
+.t-title{font-size:24px;font-weight:600;line-height:1.25;color:var(--fg)}
+a.t-title{text-decoration-color:currentColor}
+.t-sub{margin:6px 0 10px;color:var(--fg2)}.t-meta{margin:2px 0;font-size:13.5px;color:var(--mut)}
+.t-plots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.t-plots .spark{width:100%;margin:0}
+.t-plots figcaption{margin:0 0 4px;font-size:13px;font-weight:600;color:var(--fg2)}
+.t-plots .logo{width:14px;height:14px}
+.t-plots .line{stroke-width:2.2;opacity:1}
+@media (max-width:860px){
+  .task{grid-template-columns:1fr;gap:14px;padding:20px 0}
+  .t-title{font-size:22px}
+}
+@media (max-width:560px){.t-plots{grid-template-columns:minmax(0,400px);gap:14px}}
+@media (max-width:360px){.landing-title{font-size:34px}.t-title{font-size:20px}}
+@media (max-width:600px) and (max-height:680px){
+  main:has(> .samples){gap:20px;padding-top:20px}
+  .samples h2{margin-bottom:10px}
+  .task{gap:10px;padding-block:14px}
+}
+@media (min-width:861px) and (max-height:980px){
+  main:has(> .samples){gap:clamp(10px,2vh,18px);padding-block:22px 18px}
+  .landing-title{font-size:clamp(42px,6vh,50px)}
+  .intro{font-size:16px;line-height:1.5}
+  .intro ul{margin-top:8px}.intro li+li{margin-top:6px}
+  .samples h2{font-size:24px;margin-bottom:8px}
+  .task{padding-block:12px}
+  .t-plots .spark>svg{max-height:clamp(90px,14vh,112px)}
+}
+td.best .small{font-size:13px;letter-spacing:0;font-weight:400}
+
+.traj [id]{scroll-margin-top:190px}
+nav.runtabs{margin:16px 0 4px}nav.runtabs a{display:inline-flex;align-items:center;gap:7px}
+nav.runtabs .ts{color:var(--mut);font-variant-numeric:tabular-nums;font-weight:400}nav.runtabs a[aria-current=page] .ts{color:var(--fg2)}
+.traj h1 .eff{font-size:.5em;letter-spacing:0;font-weight:400;margin-left:6px}
+.traj .facts{display:flex;flex-wrap:wrap;gap:6px 28px;margin:14px 0 6px;font-size:14px;color:var(--fg2)}
+.facts b{color:var(--fg);font-weight:600;font-variant-numeric:tabular-nums}
+.spine{position:sticky;top:0;z-index:3;background:var(--bg);padding:8px 0 6px;border-bottom:1px solid var(--line);margin-top:16px}
+.spine svg{width:100%;height:auto;display:block;cursor:default}
+.spine a{cursor:pointer}.spine .stripz{cursor:pointer;fill:transparent}
+.ckl{stroke-width:1;opacity:.45}.cursor{stroke:var(--fg);stroke-width:1.5}
+.tk-c{fill:var(--axis)}.tk-m{fill:var(--fg)}.tk-u{fill:var(--base)}.tk-n{fill:var(--acc)}
+.tip{position:absolute;pointer-events:none;background:var(--fg);color:var(--bg);font-size:12.5px;padding:5px 8px;border-radius:5px;max-width:420px;z-index:5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:12px 0 4px;font-size:13px;color:var(--fg2)}
+.tools input{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:5px 10px;width:240px}
+.tools button{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:5px 10px;cursor:pointer}
+.keys{display:flex;gap:12px;margin-left:auto}.keys i{display:inline-block;width:3px;height:11px;margin-right:5px;vertical-align:-1px}
+.ch{margin-top:30px}
+.chh{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 18px;border-bottom:1px solid var(--axis);padding-bottom:6px;margin-bottom:12px}
+.chh .k{font-weight:650;font-size:16px}.chh b{font-size:18px;font-weight:650;font-variant-numeric:tabular-nums}
+.up{color:#006300}.down{color:#d03b3b}
+.st{display:grid;grid-template-columns:62px minmax(0,1fr);gap:0 12px;margin:8px 0}
+.g{font:11.5px/1.5 "IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--mut);padding-top:3px;text-decoration:none}.g:hover{color:var(--acc);text-decoration:none}
+.b>p:first-child{margin-top:0}.b>p:last-child{margin-bottom:0}
+.prompt{background:var(--card);border:1px solid var(--ring);border-radius:8px;padding:12px 16px}
+.lbl{font-size:12.5px;color:var(--fg2);font-weight:600;margin-bottom:4px}
+.note{background:var(--card);border-left:3px solid var(--acc);border-radius:0 6px 6px 0;padding:8px 12px}
+details.grp,details.sub,details.rsn,details.call{border:0;padding:0}
+details.grp>summary,details.sub>summary,details.rsn>summary{cursor:pointer;color:var(--fg2);font-size:14px;padding:2px 0}
+details.grp[open]>summary,details.sub[open]>summary,details.rsn[open]>summary{margin-bottom:4px}
+.meta{color:var(--mut);font-size:12.5px;margin-left:6px}
+.calls{border-left:2px solid var(--line);padding-left:12px;margin:2px 0 8px}.subb{border-left:2px solid var(--axis);padding-left:12px;margin:2px 0 8px}
+details.call>summary{cursor:pointer;display:flex;gap:8px;align-items:baseline;padding:2px 0;font-size:13px;list-style:none}
+details.call>summary::-webkit-details-marker{display:none}
+.cn{font:11.5px "IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--mut);white-space:nowrap}
+.l{font:12.5px/1.5 "IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1;color:var(--fg);background:none;border:0;padding:0}
+.bad{font-size:11.5px;color:#d03b3b;white-space:nowrap}
+.w{font-size:12.5px;color:var(--mut);padding:2px 0}
+.call pre{margin:4px 0;max-height:440px;font-size:12.5px;white-space:pre-wrap;overflow-wrap:anywhere}
+.call pre.out{background:none}
+.rsn .rb{font-size:14px;color:var(--fg2);border-left:2px solid var(--line);padding-left:12px}
+::highlight(hit){background:#eda10066;color:inherit}
+@media (max-width:640px){.spine{position:static}.traj [id]{scroll-margin-top:12px}.st{grid-template-columns:44px minmax(0,1fr);gap:0 8px}.keys{margin-left:0}.tools input{width:100%}}
+
+.submission-summary{margin:14px 0}
+.submission-files{overflow-wrap:anywhere}
+.spine-label{font-size:12px;color:var(--fg2);margin:0 0 4px}
+
+/* Crafter page additions */
+
+table.lb .bv{min-width:3.9em}
+
+table.lb td.refrun .rn{color:var(--fg2)}
+.doc h4{font-size:15px;margin:18px 0 6px}.doc h5{font-size:14.5px;margin:16px 0 6px}
+.doc table{font-size:13px}
+details.fold.doc-fold>summary{font-weight:600;color:var(--fg)}
+.hourly td,.hourly th{text-align:right}.hourly td:first-child,.hourly th:first-child{text-align:left}
+p.cap-note{font-size:13.5px;color:var(--fg2);margin:4px 0 0}
+
+section.tab .lede{margin-bottom:12px}
+table.lb td.run .rn{white-space:nowrap}
+table.lb.t1 .bar .track{width:clamp(48px,8vw,84px)}
+
+/* Teaching by Curriculum additions */
+.doc{overflow-wrap:break-word}
+p.tabs-lab{margin:16px 0 0;font-size:13px;color:var(--mut)}
+p.tabs-lab + nav.runtabs{margin-top:2px}
+details.fold.doc-fold>summary{font-weight:600;color:var(--fg)}
+.submission-summary ul,.submission-summary ol{margin:0 0 12px}
+section.ch h3{margin:28px 0 8px}
+
+table.curr td{font-size:13.5px;line-height:1.45}
+table.curr td.bn{width:15%}
+table.curr td.bn b{display:inline-block;min-width:1.1em;margin-right:2px}
+table.curr td.wk{width:25%}
+table.curr td.pr{width:37%}
+table.curr td.ba{width:23%}
+table.curr.brief td.bn{width:23%}
+table.curr.brief td.wk{width:35%}
+table.curr.brief td.ba{width:42%}
+table.curr .kept{display:block;margin-top:4px;color:var(--fg2);font-weight:500}
+table.curr .chg{display:block;margin-top:4px;font-size:12.5px;color:var(--fg2)}
+span.nw{white-space:nowrap}
+.fig-m{display:none}
+figure.fig .fig-m svg{max-width:420px}
+@media (max-width:640px){.fig-d{display:none}.fig-m{display:block}
+
+  table.curr,table.curr tbody,table.curr tr,table.curr td{display:block;width:auto}
+  table.curr thead{display:none}
+  table.curr tr{padding:12px 0;border-bottom:1px solid var(--line)}
+  table.curr td{border:0;padding:3px 0}
+  table.curr td.bn,table.curr td.wk,table.curr td.pr,table.curr td.ba,
+  table.curr.brief td.bn,table.curr.brief td.wk,table.curr.brief td.ba{width:auto}
+  table.curr td.bn{font-weight:600}
+  table.curr td[data-l]::before{content:attr(data-l);display:block;font-size:12px;font-weight:600;color:var(--mut);
+    text-transform:uppercase;letter-spacing:.04em;margin-top:6px}
+}
+</style></head><body><main><nav class="crumb" aria-label="Report navigation"><a href="../index.html#results">← Back</a></nav><div class="traj"><h1>Opus 5.5 max (Teacher) #8</h1><p class="sub">Claude Code 2.1.318 running claude-opus-5-5 at max effort, UltraCode off · from untrained <span class="nw">Qwen3.5-0.8B</span> (Student)</p><p class="tabs-lab"><span class="nw">Qwen3.5-0.8B</span> (Student)'s held-out progression after 8 hours, by run</p><nav class="tabs runtabs" aria-label="Runs of Opus 5.5 max (Teacher)"><a href="opus-1.html"><i class="key s2"></i>#1 <span class="ts">44.94</span></a><a href="opus-2.html"><i class="key s2"></i>#2 <span class="ts">40.38</span></a><a href="opus-3.html"><i class="key s2"></i>#3 <span class="ts">51.14</span></a><a href="opus-4.html"><i class="key s2"></i>#4 <span class="ts">39.77</span></a><a href="opus-5.html"><i class="key s2"></i>#5 <span class="ts">53.85</span></a><a href="opus-6.html"><i class="key s2"></i>#6 <span class="ts">47.07</span></a><a href="opus-7.html"><i class="key s2"></i>#7 <span class="ts">42.77</span></a><a href="opus-8.html" aria-current=page><i class="key s2"></i>#8 <span class="ts">50.25</span></a></nav><div class="facts"><span>Held-out progression of <span class="nw">Qwen3.5-0.8B</span> (Student) after 8 hours <b>50.25%</b></span><span>Crafter score <b>21.62</b></span><span>Agent time <b>7h 16m</b></span><span>Turns <b>245</b></span><span>Tool calls <b>249 (+47 by 1 sub-agent)</b></span><span>Output tokens <b>382,101</b></span><span>Cost <b>$28.67</b></span></div><section class="ch" id="final"><header class="chh"><div><span class="k">Trace summary</span></div><div><b>50.25%</b> <span class="mut small">held-out progression of <span class="nw">Qwen3.5-0.8B</span> (Student) after 8 hours</span></div></header><p class="mut">Started with only untrained <span class="nw">Qwen3.5-0.8B</span> (Student), the prompt and the sandbox's lab package.</p><h3 id="final-summary">Final summary, in Opus 5.5 max (Teacher)'s words</h3><div class="submission-summary"><p>The submission is the final line version (v115). On the 300 public worlds it scores <strong>52.59% progression</strong> (95% interval 51.4–53.8, Crafter score 22.98%). On the official 100 worlds it scored <strong>50.91%</strong>, against 4.95% for the untrained model. The file passes <code>check_submission</code> and its checksum matches the evaluated weights. Training is stopped and nothing else is running on the card.</p>
+<p><strong>Diagnosis.</strong> The untrained model gave invalid outputs 39% of the time and almost never moved: 62% Noop, 32% Do, about 2% moves. Even when facing a tree it used Do only 4% of the time, so it died standing still.</p>
+<p><strong>Method.</strong> Every lesson used the same machinery:</p>
+<ul>
+<li><strong>Practice games:</strong> short games restarted from moments of the model's own full games, with the exact 16-step history it had, so prompts match the real game token for token.</li>
+<li><strong>Labels:</strong> a search program restores each practice moment in the real game and tries actions there. A first action becomes a target only if the game shows it led to a new achievement or a resource gain. The label always goes on the model's own prompt at that moment.</li>
+<li><strong>Review:</strong> a separate sub-agent checked this code against the target rule. It found one real problem: zombies that vanish by daylight were being counted as kills. I fixed it, plus a few smaller risks it raised.</li>
+</ul>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Lesson</th>
+<th>100-world score after</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Take the verified next gain (gather, craft, explore)</td>
+<td>19.3</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Keep yourself alive: drink, eat, sleep</td>
+<td>29.9</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Turn and fight a nearby zombie</td>
+<td>30.9 (zombie kills 23→80%, but the crafting chain collapsed)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Gather toward a craft: after each unit gathered, try every placement and craft in the game</td>
+<td>40.0</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Stone age: place a table, then craft</td>
+<td>50.0</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Higher learning rate (2e-6)</td>
+<td>44.0 — <strong>dropped</strong>, line returned to the Block 5 weights</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Night: dig in before sleeping</td>
+<td>47.9 — sleeps labelled safe were often only lucky, so the model died asleep more</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Count a sleep as safe only if it is safe in 4 of 5 random futures</td>
+<td>49.5</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Shift practice toward crafting</td>
+<td>50.9</td>
+</tr>
+</tbody>
+</table></div>
+<p>On the same 300 worlds, the Block 5 weights scored 49.21% and the Block 8 weights 48.39%, so the final choice is clear.</p>
+<p><strong>What still limits it:</strong> most games end in the first night, mainly from zombies (mean length about 253 steps), and the model has not reached iron yet. Following the labels directly (as a diagnosis only, never as training data) reaches about 73%, so imitating them better is where the remaining room is.</p>
+<p><strong>Accounting:</strong></p>
+<ul>
+<li>About <strong>83%</strong> of optimizer steps reached the final weights (about 3,213 of 3,856). The rest is the dropped Block 6 and about 45 steps lost at restarts.</li>
+<li><strong>0%</strong> of training card time was plain full-game training: every target was a verified label from a practice game.</li>
+<li>No weight averaging or editing.</li>
+</ul>
+<p><strong>Incidents:</strong></p>
+<ul>
+<li>Limiting the inference engine's share of the card under the GPU sharing service made every output invalid, so I throttled the engine with pauses instead.</li>
+<li>Killing the trainer crashed the engine twice; a watchdog then restarted dead processes.</li>
+</ul>
+<p><code>/app/NOTES.md</code> has each block's weakness, evidence, method, card time and before/after scores; the code is in <code>/app/lab</code>.</p>
+</div><h3 id="development-evaluations">Development evaluations</h3><p>Every call of <code>evaluate</code> in the run: <span class="nw">Qwen3.5-0.8B</span> (Student)'s progression on the public development worlds. Only 100-world calls are official. In the Kind column, auxiliary means averaged or edited weights.</p><figure class="fig"><figcaption>◆ marks held-out progression after 8 hours.</figcaption><div class="fig-d"><svg role="img" aria-label="Development evaluations of Opus 5.5 max (Teacher) #8" xmlns:xlink="http://www.w3.org/1999/xlink" width="510.465703pt" height="205.831445pt" viewBox="0 0 510.465703 205.831445" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="fr8-figure_1">
+  <g id="fr8-patch_1">
+   <path d="M 0 205.831445 
+L 510.465703 205.831445 
+L 510.465703 -0 
+L 0 -0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="fr8-axes_1">
+   <g id="fr8-patch_2">
+    <path d="M 34.113281 174.170664 
+L 391.233281 174.170664 
+L 391.233281 21.710664 
+L 34.113281 21.710664 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="fr8-matplotlib.axis_1">
+    <g id="fr8-xtick_1">
+     <g id="fr8-line2d_1">
+      <defs>
+       <path id="fr8-mb67ae6d3f0" d="M 0 0 
+L 0 3 
+" style="stroke: #686871; stroke-width: 0.5"/>
+      </defs>
+      <g>
+       <use xlink:href="#fr8-mb67ae6d3f0" x="34.113281" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8-text_1">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="34.113281" y="187.508555" transform="rotate(-0 34.113281 187.508555)">0</text>
+     </g>
+    </g>
+    <g id="fr8-xtick_2">
+     <g id="fr8-line2d_2">
+      <g>
+       <use xlink:href="#fr8-mb67ae6d3f0" x="74.239124" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8-text_2">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="74.239124" y="187.508555" transform="rotate(-0 74.239124 187.508555)">1</text>
+     </g>
+    </g>
+    <g id="fr8-xtick_3">
+     <g id="fr8-line2d_3">
+      <g>
+       <use xlink:href="#fr8-mb67ae6d3f0" x="114.364967" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8-text_3">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="114.364967" y="187.508555" transform="rotate(-0 114.364967 187.508555)">2</text>
+     </g>
+    </g>
+    <g id="fr8-xtick_4">
+     <g id="fr8-line2d_4">
+      <g>
+       <use xlink:href="#fr8-mb67ae6d3f0" x="154.490809" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8-text_4">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="154.490809" y="187.508555" transform="rotate(-0 154.490809 187.508555)">3</text>
+     </g>
+    </g>
+    <g id="fr8-xtick_5">
+     <g id="fr8-line2d_5">
+      <g>
+       <use xlink:href="#fr8-mb67ae6d3f0" x="194.616652" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8-text_5">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="194.616652" y="187.508555" transform="rotate(-0 194.616652 187.508555)">4</text>
+     </g>
+    </g>
+    <g id="fr8-xtick_6">
+     <g id="fr8-line2d_6">
+      <g>
+       <use xlink:href="#fr8-mb67ae6d3f0" x="234.742495" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8-text_6">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="234.742495" y="187.508555" transform="rotate(-0 234.742495 187.508555)">5</text>
+     </g>
+    </g>
+    <g id="fr8-xtick_7">
+     <g id="fr8-line2d_7">
+      <g>
+       <use xlink:href="#fr8-mb67ae6d3f0" x="274.868337" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8-text_7">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="274.868337" y="187.508555" transform="rotate(-0 274.868337 187.508555)">6</text>
+     </g>
+    </g>
+    <g id="fr8-xtick_8">
+     <g id="fr8-line2d_8">
+      <g>
+       <use xlink:href="#fr8-mb67ae6d3f0" x="314.99418" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8-text_8">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="314.99418" y="187.508555" transform="rotate(-0 314.99418 187.508555)">7</text>
+     </g>
+    </g>
+    <g id="fr8-xtick_9">
+     <g id="fr8-line2d_9">
+      <g>
+       <use xlink:href="#fr8-mb67ae6d3f0" x="355.120023" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8-text_9">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="355.120023" y="187.508555" transform="rotate(-0 355.120023 187.508555)">8</text>
+     </g>
+    </g>
+    <g id="fr8-text_10">
+     <text style="font-size: 10px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #111114" x="212.673281" y="201.269102" transform="rotate(-0 212.673281 201.269102)">Hours of the run</text>
+    </g>
+   </g>
+   <g id="fr8-matplotlib.axis_2">
+    <g id="fr8-ytick_1">
+     <g id="fr8-line2d_10">
+      <path d="M 34.113281 174.170664 
+L 391.233281 174.170664 
+" clip-path="url(#fr8-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr8-line2d_11">
+      <defs>
+       <path id="fr8-m70c286cfab" d="M 0 0 
+L -3 0 
+" style="stroke: #686871; stroke-width: 0.5"/>
+      </defs>
+      <g>
+       <use xlink:href="#fr8-m70c286cfab" x="34.113281" y="174.170664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8-text_11">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="177.589609" transform="rotate(-0 27.613281 177.589609)">0</text>
+     </g>
+    </g>
+    <g id="fr8-ytick_2">
+     <g id="fr8-line2d_12">
+      <path d="M 34.113281 148.760664 
+L 391.233281 148.760664 
+" clip-path="url(#fr8-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr8-line2d_13">
+      <g>
+       <use xlink:href="#fr8-m70c286cfab" x="34.113281" y="148.760664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8-text_12">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="152.179609" transform="rotate(-0 27.613281 152.179609)">10</text>
+     </g>
+    </g>
+    <g id="fr8-ytick_3">
+     <g id="fr8-line2d_14">
+      <path d="M 34.113281 123.350664 
+L 391.233281 123.350664 
+" clip-path="url(#fr8-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr8-line2d_15">
+      <g>
+       <use xlink:href="#fr8-m70c286cfab" x="34.113281" y="123.350664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8-text_13">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="126.769609" transform="rotate(-0 27.613281 126.769609)">20</text>
+     </g>
+    </g>
+    <g id="fr8-ytick_4">
+     <g id="fr8-line2d_16">
+      <path d="M 34.113281 97.940664 
+L 391.233281 97.940664 
+" clip-path="url(#fr8-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr8-line2d_17">
+      <g>
+       <use xlink:href="#fr8-m70c286cfab" x="34.113281" y="97.940664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8-text_14">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="101.359609" transform="rotate(-0 27.613281 101.359609)">30</text>
+     </g>
+    </g>
+    <g id="fr8-ytick_5">
+     <g id="fr8-line2d_18">
+      <path d="M 34.113281 72.530664 
+L 391.233281 72.530664 
+" clip-path="url(#fr8-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr8-line2d_19">
+      <g>
+       <use xlink:href="#fr8-m70c286cfab" x="34.113281" y="72.530664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8-text_15">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="75.949609" transform="rotate(-0 27.613281 75.949609)">40</text>
+     </g>
+    </g>
+    <g id="fr8-ytick_6">
+     <g id="fr8-line2d_20">
+      <path d="M 34.113281 47.120664 
+L 391.233281 47.120664 
+" clip-path="url(#fr8-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr8-line2d_21">
+      <g>
+       <use xlink:href="#fr8-m70c286cfab" x="34.113281" y="47.120664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8-text_16">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="50.539609" transform="rotate(-0 27.613281 50.539609)">50</text>
+     </g>
+    </g>
+    <g id="fr8-ytick_7">
+     <g id="fr8-line2d_22">
+      <path d="M 34.113281 21.710664 
+L 391.233281 21.710664 
+" clip-path="url(#fr8-p10722841bc)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr8-line2d_23">
+      <g>
+       <use xlink:href="#fr8-m70c286cfab" x="34.113281" y="21.710664" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8-text_17">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="27.613281" y="25.129609" transform="rotate(-0 27.613281 25.129609)">60</text>
+     </g>
+    </g>
+    <g id="fr8-text_18">
+     <text style="font-size: 10px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #111114" x="9.758438" y="97.940664" transform="rotate(-90 9.758438 97.940664)">Development progression (%)</text>
+    </g>
+   </g>
+   <g id="fr8-line2d_24">
+    <path d="M 37.477032 161.58128 
+L 66.66188 125.083118 
+L 87.544515 98.287256 
+L 124.242072 95.630641 
+L 159.271055 72.415049 
+L 198.118121 47.120664 
+L 229.960389 62.48228 
+L 263.41249 52.433641 
+L 297.084415 48.50678 
+L 308.35339 44.810641 
+" clip-path="url(#fr8-p10722841bc)" style="fill: none; stroke: #e69f00; stroke-opacity: 0.55; stroke-linecap: square"/>
+   </g>
+   <g id="fr8-patch_3">
+    <path d="M 34.113281 174.170664 
+L 34.113281 21.710664 
+" style="fill: none; stroke: #686871; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="fr8-patch_4">
+    <path d="M 34.113281 174.170664 
+L 391.233281 174.170664 
+" style="fill: none; stroke: #686871; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="fr8-PathCollection_1">
+    <defs>
+     <path id="fr8-mea7dcc0b60" d="M 0 1.5 
+C 0.397805 1.5 0.77937 1.341951 1.06066 1.06066 
+C 1.341951 0.77937 1.5 0.397805 1.5 0 
+C 1.5 -0.397805 1.341951 -0.77937 1.06066 -1.06066 
+C 0.77937 -1.341951 0.397805 -1.5 0 -1.5 
+C -0.397805 -1.5 -0.77937 -1.341951 -1.06066 -1.06066 
+C -1.341951 -0.77937 -1.5 -0.397805 -1.5 0 
+C -1.5 0.397805 -1.341951 0.77937 -1.06066 1.06066 
+C -0.77937 1.341951 -0.397805 1.5 0 1.5 
+z
+" style="stroke: #a1a1aa"/>
+    </defs>
+    <g clip-path="url(#fr8-p10722841bc)">
+     <use xlink:href="#fr8-mea7dcc0b60" x="316.814014" y="49.122718" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     <use xlink:href="#fr8-mea7dcc0b60" x="317.211203" y="51.201764" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     <use xlink:href="#fr8-mea7dcc0b60" x="325.034917" y="40.537187" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+    </g>
+   </g>
+   <g id="fr8-text_19">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #8f6a00" x="342.424206" y="48.697363" transform="rotate(-0 342.424206 48.697363)">held-out 50.25</text>
+   </g>
+   <g id="fr8-PathCollection_2">
+    <defs>
+     <path id="fr8-m5b99a169e4" d="M -2 2 
+L 2 2 
+L 2 -2 
+L -2 -2 
+z
+" style="stroke: #686871"/>
+    </defs>
+    <g clip-path="url(#fr8-p10722841bc)">
+     <use xlink:href="#fr8-m5b99a169e4" x="37.477032" y="161.58128" style="fill: #686871; stroke: #686871"/>
+    </g>
+   </g>
+   <g id="fr8-PathCollection_3">
+    <defs>
+     <path id="fr8-mefb3ac1f74" d="M 0 1.732051 
+C 0.459345 1.732051 0.899939 1.549551 1.224745 1.224745 
+C 1.549551 0.899939 1.732051 0.459345 1.732051 0 
+C 1.732051 -0.459345 1.549551 -0.899939 1.224745 -1.224745 
+C 0.899939 -1.549551 0.459345 -1.732051 0 -1.732051 
+C -0.459345 -1.732051 -0.899939 -1.549551 -1.224745 -1.224745 
+C -1.549551 -0.899939 -1.732051 -0.459345 -1.732051 0 
+C -1.732051 0.459345 -1.549551 0.899939 -1.224745 1.224745 
+C -0.899939 1.549551 -0.459345 1.732051 0 1.732051 
+z
+" style="stroke: #8f6a00"/>
+    </defs>
+    <g clip-path="url(#fr8-p10722841bc)">
+     <use xlink:href="#fr8-mefb3ac1f74" x="66.66188" y="125.083118" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr8-mefb3ac1f74" x="87.544515" y="98.287256" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr8-mefb3ac1f74" x="124.242072" y="95.630641" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr8-mefb3ac1f74" x="159.271055" y="72.415049" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr8-mefb3ac1f74" x="198.118121" y="47.120664" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr8-mefb3ac1f74" x="229.960389" y="62.48228" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr8-mefb3ac1f74" x="263.41249" y="52.433641" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr8-mefb3ac1f74" x="297.084415" y="48.50678" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr8-mefb3ac1f74" x="308.35339" y="44.810641" style="fill: #8f6a00; stroke: #8f6a00"/>
+    </g>
+   </g>
+   <g id="fr8-PathCollection_4"/>
+   <g id="fr8-PathCollection_5">
+    <defs>
+     <path id="fr8-mdd71ef553d" d="M -0 3.605551 
+L 3.605551 0 
+L 0 -3.605551 
+L -3.605551 -0 
+z
+" style="stroke: #ffffff; stroke-width: 0.5"/>
+    </defs>
+    <g clip-path="url(#fr8-p10722841bc)">
+     <use xlink:href="#fr8-mdd71ef553d" x="337.609105" y="46.489023" style="fill: #8f6a00; stroke: #ffffff; stroke-width: 0.5"/>
+    </g>
+   </g>
+   <g id="fr8-legend_1">
+    <g id="fr8-PathCollection_6">
+     <g>
+      <use xlink:href="#fr8-m5b99a169e4" x="50.263281" y="9.787422" style="fill: #686871; stroke: #686871"/>
+     </g>
+    </g>
+    <g id="fr8-text_20">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="61.313281" y="12.018672" transform="rotate(-0 61.313281 12.018672)">untrained weights</text>
+    </g>
+    <g id="fr8-PathCollection_7">
+     <g>
+      <use xlink:href="#fr8-mefb3ac1f74" x="158.684766" y="9.787422" style="fill: #8f6a00; stroke: #8f6a00"/>
+     </g>
+    </g>
+    <g id="fr8-text_21">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="169.734766" y="12.018672" transform="rotate(-0 169.734766 12.018672)">trained weights</text>
+    </g>
+    <g id="fr8-PathCollection_8">
+     <defs>
+      <path id="fr8-m23c4993109" d="M 0 2 
+C 0.530406 2 1.03916 1.789267 1.414214 1.414214 
+C 1.789267 1.03916 2 0.530406 2 0 
+C 2 -0.530406 1.789267 -1.03916 1.414214 -1.414214 
+C 1.03916 -1.789267 0.530406 -2 0 -2 
+C -0.530406 -2 -1.03916 -1.789267 -1.414214 -1.414214 
+C -1.789267 -1.03916 -2 -0.530406 -2 0 
+C -2 0.530406 -1.789267 1.03916 -1.414214 1.414214 
+C -1.03916 1.789267 -0.530406 2 0 2 
+z
+" style="stroke: #8f6a00; stroke-width: 0.9"/>
+     </defs>
+     <g>
+      <use xlink:href="#fr8-m23c4993109" x="256.3325" y="9.787422" style="fill: #ffffff; stroke: #8f6a00; stroke-width: 0.9"/>
+     </g>
+    </g>
+    <g id="fr8-text_22">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="267.3825" y="12.018672" transform="rotate(-0 267.3825 12.018672)">auxiliary weights</text>
+    </g>
+    <g id="fr8-PathCollection_9">
+     <g>
+      <use xlink:href="#fr8-mea7dcc0b60" x="360.015234" y="9.787422" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     </g>
+    </g>
+    <g id="fr8-text_23">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="371.065234" y="12.018672" transform="rotate(-0 371.065234 12.018672)">other world counts (not official)</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="fr8-p10722841bc">
+   <rect x="34.113281" y="21.710664" width="357.12" height="152.46"/>
+  </clipPath>
+ </defs>
+</svg></div><div class="fig-m"><svg role="img" aria-label="Development evaluations of Opus 5.5 max (Teacher) #8" xmlns:xlink="http://www.w3.org/1999/xlink" width="256.7592pt" height="247.880289pt" viewBox="0 0 256.7592 247.880289" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="fr8m-figure_1">
+  <g id="fr8m-patch_1">
+   <path d="M 0 247.880289 
+L 256.7592 247.880289 
+L 256.7592 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="fr8m-axes_1">
+   <g id="fr8m-patch_2">
+    <path d="M 36.9792 146.152969 
+L 254.5992 146.152969 
+L 254.5992 7.552969 
+L 36.9792 7.552969 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="fr8m-matplotlib.axis_1">
+    <g id="fr8m-xtick_1">
+     <g id="fr8m-line2d_1">
+      <defs>
+       <path id="fr8m-mb67ae6d3f0" d="M 0 0 
+L 0 3 
+" style="stroke: #686871; stroke-width: 0.5"/>
+      </defs>
+      <g>
+       <use xlink:href="#fr8m-mb67ae6d3f0" x="36.9792" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8m-text_1">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="36.9792" y="159.490859" transform="rotate(-0 36.9792 159.490859)">0</text>
+     </g>
+    </g>
+    <g id="fr8m-xtick_2">
+     <g id="fr8m-line2d_2">
+      <g>
+       <use xlink:href="#fr8m-mb67ae6d3f0" x="62.733046" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8m-text_2">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="62.733046" y="159.490859" transform="rotate(-0 62.733046 159.490859)">1</text>
+     </g>
+    </g>
+    <g id="fr8m-xtick_3">
+     <g id="fr8m-line2d_3">
+      <g>
+       <use xlink:href="#fr8m-mb67ae6d3f0" x="88.486892" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8m-text_3">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="88.486892" y="159.490859" transform="rotate(-0 88.486892 159.490859)">2</text>
+     </g>
+    </g>
+    <g id="fr8m-xtick_4">
+     <g id="fr8m-line2d_4">
+      <g>
+       <use xlink:href="#fr8m-mb67ae6d3f0" x="114.240738" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8m-text_4">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="114.240738" y="159.490859" transform="rotate(-0 114.240738 159.490859)">3</text>
+     </g>
+    </g>
+    <g id="fr8m-xtick_5">
+     <g id="fr8m-line2d_5">
+      <g>
+       <use xlink:href="#fr8m-mb67ae6d3f0" x="139.994585" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8m-text_5">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="139.994585" y="159.490859" transform="rotate(-0 139.994585 159.490859)">4</text>
+     </g>
+    </g>
+    <g id="fr8m-xtick_6">
+     <g id="fr8m-line2d_6">
+      <g>
+       <use xlink:href="#fr8m-mb67ae6d3f0" x="165.748431" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8m-text_6">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="165.748431" y="159.490859" transform="rotate(-0 165.748431 159.490859)">5</text>
+     </g>
+    </g>
+    <g id="fr8m-xtick_7">
+     <g id="fr8m-line2d_7">
+      <g>
+       <use xlink:href="#fr8m-mb67ae6d3f0" x="191.502277" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8m-text_7">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="191.502277" y="159.490859" transform="rotate(-0 191.502277 159.490859)">6</text>
+     </g>
+    </g>
+    <g id="fr8m-xtick_8">
+     <g id="fr8m-line2d_8">
+      <g>
+       <use xlink:href="#fr8m-mb67ae6d3f0" x="217.256123" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8m-text_8">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="217.256123" y="159.490859" transform="rotate(-0 217.256123 159.490859)">7</text>
+     </g>
+    </g>
+    <g id="fr8m-xtick_9">
+     <g id="fr8m-line2d_9">
+      <g>
+       <use xlink:href="#fr8m-mb67ae6d3f0" x="243.009969" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8m-text_9">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #686871" x="243.009969" y="159.490859" transform="rotate(-0 243.009969 159.490859)">8</text>
+     </g>
+    </g>
+    <g id="fr8m-text_10">
+     <text style="font-size: 10px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #111114" x="145.7892" y="173.251406" transform="rotate(-0 145.7892 173.251406)">Hours of the run</text>
+    </g>
+   </g>
+   <g id="fr8m-matplotlib.axis_2">
+    <g id="fr8m-ytick_1">
+     <g id="fr8m-line2d_10">
+      <path d="M 36.9792 146.152969 
+L 254.5992 146.152969 
+" clip-path="url(#fr8m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr8m-line2d_11">
+      <defs>
+       <path id="fr8m-m70c286cfab" d="M 0 0 
+L -3 0 
+" style="stroke: #686871; stroke-width: 0.5"/>
+      </defs>
+      <g>
+       <use xlink:href="#fr8m-m70c286cfab" x="36.9792" y="146.152969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8m-text_11">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="149.571914" transform="rotate(-0 30.4792 149.571914)">0</text>
+     </g>
+    </g>
+    <g id="fr8m-ytick_2">
+     <g id="fr8m-line2d_12">
+      <path d="M 36.9792 123.052969 
+L 254.5992 123.052969 
+" clip-path="url(#fr8m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr8m-line2d_13">
+      <g>
+       <use xlink:href="#fr8m-m70c286cfab" x="36.9792" y="123.052969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8m-text_12">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="126.471914" transform="rotate(-0 30.4792 126.471914)">10</text>
+     </g>
+    </g>
+    <g id="fr8m-ytick_3">
+     <g id="fr8m-line2d_14">
+      <path d="M 36.9792 99.952969 
+L 254.5992 99.952969 
+" clip-path="url(#fr8m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr8m-line2d_15">
+      <g>
+       <use xlink:href="#fr8m-m70c286cfab" x="36.9792" y="99.952969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8m-text_13">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="103.371914" transform="rotate(-0 30.4792 103.371914)">20</text>
+     </g>
+    </g>
+    <g id="fr8m-ytick_4">
+     <g id="fr8m-line2d_16">
+      <path d="M 36.9792 76.852969 
+L 254.5992 76.852969 
+" clip-path="url(#fr8m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr8m-line2d_17">
+      <g>
+       <use xlink:href="#fr8m-m70c286cfab" x="36.9792" y="76.852969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8m-text_14">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="80.271914" transform="rotate(-0 30.4792 80.271914)">30</text>
+     </g>
+    </g>
+    <g id="fr8m-ytick_5">
+     <g id="fr8m-line2d_18">
+      <path d="M 36.9792 53.752969 
+L 254.5992 53.752969 
+" clip-path="url(#fr8m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr8m-line2d_19">
+      <g>
+       <use xlink:href="#fr8m-m70c286cfab" x="36.9792" y="53.752969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8m-text_15">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="57.171914" transform="rotate(-0 30.4792 57.171914)">40</text>
+     </g>
+    </g>
+    <g id="fr8m-ytick_6">
+     <g id="fr8m-line2d_20">
+      <path d="M 36.9792 30.652969 
+L 254.5992 30.652969 
+" clip-path="url(#fr8m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr8m-line2d_21">
+      <g>
+       <use xlink:href="#fr8m-m70c286cfab" x="36.9792" y="30.652969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8m-text_16">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="34.071914" transform="rotate(-0 30.4792 34.071914)">50</text>
+     </g>
+    </g>
+    <g id="fr8m-ytick_7">
+     <g id="fr8m-line2d_22">
+      <path d="M 36.9792 7.552969 
+L 254.5992 7.552969 
+" clip-path="url(#fr8m-p94085b5d64)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+     </g>
+     <g id="fr8m-line2d_23">
+      <g>
+       <use xlink:href="#fr8m-m70c286cfab" x="36.9792" y="7.552969" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+      </g>
+     </g>
+     <g id="fr8m-text_17">
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #686871" x="30.4792" y="10.971914" transform="rotate(-0 30.4792 10.971914)">60</text>
+     </g>
+    </g>
+    <g id="fr8m-text_18">
+     <text style="font-size: 10px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #111114" x="12.624356" y="76.852969" transform="rotate(-90 12.624356 76.852969)">Development progression (%)</text>
+    </g>
+   </g>
+   <g id="fr8m-line2d_24">
+    <path d="M 39.138146 134.708074 
+L 57.869767 101.527927 
+L 71.272805 77.168053 
+L 94.826284 74.752948 
+L 117.308829 53.647864 
+L 142.241922 30.652969 
+L 162.679146 44.618074 
+L 184.149606 35.482948 
+L 205.761154 31.913074 
+L 212.993885 28.552948 
+" clip-path="url(#fr8m-p94085b5d64)" style="fill: none; stroke: #e69f00; stroke-opacity: 0.55; stroke-linecap: square"/>
+   </g>
+   <g id="fr8m-patch_3">
+    <path d="M 36.9792 146.152969 
+L 36.9792 7.552969 
+" style="fill: none; stroke: #686871; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="fr8m-patch_4">
+    <path d="M 36.9792 146.152969 
+L 254.5992 146.152969 
+" style="fill: none; stroke: #686871; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="fr8m-PathCollection_1">
+    <defs>
+     <path id="fr8m-mea7dcc0b60" d="M 0 1.5 
+C 0.397805 1.5 0.77937 1.341951 1.06066 1.06066 
+C 1.341951 0.77937 1.5 0.397805 1.5 0 
+C 1.5 -0.397805 1.341951 -0.77937 1.06066 -1.06066 
+C 0.77937 -1.341951 0.397805 -1.5 0 -1.5 
+C -0.397805 -1.5 -0.77937 -1.341951 -1.06066 -1.06066 
+C -1.341951 -0.77937 -1.5 -0.397805 -1.5 0 
+C -1.5 0.397805 -1.341951 0.77937 -1.06066 1.06066 
+C -0.77937 1.341951 -0.397805 1.5 0 1.5 
+z
+" style="stroke: #a1a1aa"/>
+    </defs>
+    <g clip-path="url(#fr8m-p94085b5d64)">
+     <use xlink:href="#fr8m-mea7dcc0b60" x="218.424142" y="32.473018" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     <use xlink:href="#fr8m-mea7dcc0b60" x="218.679068" y="34.36306" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     <use xlink:href="#fr8m-mea7dcc0b60" x="223.700538" y="24.66799" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+    </g>
+   </g>
+   <g id="fr8m-PathCollection_2">
+    <defs>
+     <path id="fr8m-m5b99a169e4" d="M -2 2 
+L 2 2 
+L 2 -2 
+L -2 -2 
+z
+" style="stroke: #686871"/>
+    </defs>
+    <g clip-path="url(#fr8m-p94085b5d64)">
+     <use xlink:href="#fr8m-m5b99a169e4" x="39.138146" y="134.708074" style="fill: #686871; stroke: #686871"/>
+    </g>
+   </g>
+   <g id="fr8m-PathCollection_3">
+    <defs>
+     <path id="fr8m-mefb3ac1f74" d="M 0 1.732051 
+C 0.459345 1.732051 0.899939 1.549551 1.224745 1.224745 
+C 1.549551 0.899939 1.732051 0.459345 1.732051 0 
+C 1.732051 -0.459345 1.549551 -0.899939 1.224745 -1.224745 
+C 0.899939 -1.549551 0.459345 -1.732051 0 -1.732051 
+C -0.459345 -1.732051 -0.899939 -1.549551 -1.224745 -1.224745 
+C -1.549551 -0.899939 -1.732051 -0.459345 -1.732051 0 
+C -1.732051 0.459345 -1.549551 0.899939 -1.224745 1.224745 
+C -0.899939 1.549551 -0.459345 1.732051 0 1.732051 
+z
+" style="stroke: #8f6a00"/>
+    </defs>
+    <g clip-path="url(#fr8m-p94085b5d64)">
+     <use xlink:href="#fr8m-mefb3ac1f74" x="57.869767" y="101.527927" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr8m-mefb3ac1f74" x="71.272805" y="77.168053" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr8m-mefb3ac1f74" x="94.826284" y="74.752948" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr8m-mefb3ac1f74" x="117.308829" y="53.647864" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr8m-mefb3ac1f74" x="142.241922" y="30.652969" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr8m-mefb3ac1f74" x="162.679146" y="44.618074" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr8m-mefb3ac1f74" x="184.149606" y="35.482948" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr8m-mefb3ac1f74" x="205.761154" y="31.913074" style="fill: #8f6a00; stroke: #8f6a00"/>
+     <use xlink:href="#fr8m-mefb3ac1f74" x="212.993885" y="28.552948" style="fill: #8f6a00; stroke: #8f6a00"/>
+    </g>
+   </g>
+   <g id="fr8m-PathCollection_4"/>
+   <g id="fr8m-PathCollection_5">
+    <defs>
+     <path id="fr8m-mdd71ef553d" d="M -0 3.605551 
+L 3.605551 0 
+L 0 -3.605551 
+L -3.605551 -0 
+z
+" style="stroke: #ffffff; stroke-width: 0.5"/>
+    </defs>
+    <g clip-path="url(#fr8m-p94085b5d64)">
+     <use xlink:href="#fr8m-mdd71ef553d" x="231.770991" y="30.07875" style="fill: #8f6a00; stroke: #ffffff; stroke-width: 0.5"/>
+    </g>
+   </g>
+   <g id="fr8m-legend_1">
+    <g id="fr8m-PathCollection_6">
+     <g>
+      <use xlink:href="#fr8m-m5b99a169e4" x="14.06" y="187.044391" style="fill: #686871; stroke: #686871"/>
+     </g>
+    </g>
+    <g id="fr8m-text_19">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="25.11" y="189.275641" transform="rotate(-0 25.11 189.275641)">untrained weights</text>
+    </g>
+    <g id="fr8m-PathCollection_7">
+     <g>
+      <use xlink:href="#fr8m-mefb3ac1f74" x="14.06" y="199.795055" style="fill: #8f6a00; stroke: #8f6a00"/>
+     </g>
+    </g>
+    <g id="fr8m-text_20">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="25.11" y="202.026305" transform="rotate(-0 25.11 202.026305)">trained weights</text>
+    </g>
+    <g id="fr8m-PathCollection_8">
+     <defs>
+      <path id="fr8m-m23c4993109" d="M 0 2 
+C 0.530406 2 1.03916 1.789267 1.414214 1.414214 
+C 1.789267 1.03916 2 0.530406 2 0 
+C 2 -0.530406 1.789267 -1.03916 1.414214 -1.414214 
+C 1.03916 -1.789267 0.530406 -2 0 -2 
+C -0.530406 -2 -1.03916 -1.789267 -1.414214 -1.414214 
+C -1.789267 -1.03916 -2 -0.530406 -2 0 
+C -2 0.530406 -1.789267 1.03916 -1.414214 1.414214 
+C -1.03916 1.789267 -0.530406 2 0 2 
+z
+" style="stroke: #8f6a00; stroke-width: 0.9"/>
+     </defs>
+     <g>
+      <use xlink:href="#fr8m-m23c4993109" x="14.06" y="212.545719" style="fill: #ffffff; stroke: #8f6a00; stroke-width: 0.9"/>
+     </g>
+    </g>
+    <g id="fr8m-text_21">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="25.11" y="214.776969" transform="rotate(-0 25.11 214.776969)">auxiliary weights</text>
+    </g>
+    <g id="fr8m-PathCollection_9">
+     <g>
+      <use xlink:href="#fr8m-mea7dcc0b60" x="14.06" y="225.296383" style="fill: #a1a1aa; stroke: #a1a1aa"/>
+     </g>
+    </g>
+    <g id="fr8m-text_22">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="25.11" y="227.527633" transform="rotate(-0 25.11 227.527633)">other world counts (not official)</text>
+    </g>
+    <g id="fr8m-PathCollection_10">
+     <g>
+      <use xlink:href="#fr8m-mdd71ef553d" x="14.06" y="238.047047" style="fill: #8f6a00; stroke: #ffffff; stroke-width: 0.5"/>
+     </g>
+    </g>
+    <g id="fr8m-text_23">
+     <text style="font-size: 8.5px; font-family: 'IBM Plex Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #3f3f46" x="25.11" y="240.278297" transform="rotate(-0 25.11 240.278297)">held-out 50.25</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="fr8m-p94085b5d64">
+   <rect x="36.9792" y="7.552969" width="217.62" height="138.6"/>
+  </clipPath>
+ </defs>
+</svg></div></figure><div class="tw"><table><thead><tr><th class="n">Hours</th><th>Weights</th><th class="n">Worlds</th><th class="n">Progression</th><th class="n">Crafter score</th><th class="n">Steps per game</th><th>Kind</th><th class="center">Official</th></tr></thead><tbody><tr><td class="n">0.08</td><td><code>base_untrained</code></td><td class="n">100</td><td class="n">4.95</td><td class="n">1.11</td><td class="n">163</td><td>untrained</td><td class="center">✓</td></tr><tr><td class="n">0.81</td><td><code>b1_v6</code></td><td class="n">100</td><td class="n">19.32</td><td class="n">4.51</td><td class="n">171</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">1.33</td><td><code>b2_v0015</code></td><td class="n">100</td><td class="n">29.86</td><td class="n">8.64</td><td class="n">186</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">2.25</td><td><code>b3_v0030</code></td><td class="n">100</td><td class="n">30.91</td><td class="n">6.88</td><td class="n">227</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">3.12</td><td><code>b4_v0046</code></td><td class="n">100</td><td class="n">40.05</td><td class="n">12.60</td><td class="n">262</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">4.09</td><td><code>b5_v0064</code></td><td class="n">100</td><td class="n">50.00</td><td class="n">20.82</td><td class="n">255</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">4.88</td><td><code>b6_v0079</code></td><td class="n">100</td><td class="n">43.95</td><td class="n">17.04</td><td class="n">248</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">5.71</td><td><code>b7_v0092</code></td><td class="n">100</td><td class="n">47.91</td><td class="n">18.89</td><td class="n">232</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">6.55</td><td><code>b8_v0108</code></td><td class="n">100</td><td class="n">49.45</td><td class="n">21.20</td><td class="n">230</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">6.83</td><td><code>b9_v0115</code></td><td class="n">100</td><td class="n">50.91</td><td class="n">21.92</td><td class="n">233</td><td>trained</td><td class="center">✓</td></tr><tr><td class="n">7.05</td><td><code>c300_v0064</code></td><td class="n">300</td><td class="n">49.21</td><td class="n">20.77</td><td class="n">252</td><td>trained</td><td class="center"></td></tr><tr><td class="n">7.06</td><td><code>c300_v0108</code></td><td class="n">300</td><td class="n">48.39</td><td class="n">21.38</td><td class="n">234</td><td>trained</td><td class="center"></td></tr><tr><td class="n">7.25</td><td><code>c300_v0115</code></td><td class="n">300</td><td class="n">52.59</td><td class="n">22.98</td><td class="n">253</td><td>trained</td><td class="center"></td></tr></tbody></table></div><h3 id="notes">NOTES.md</h3><p>Opus 5.5 max (Teacher)'s notes as it left them at the end of the run.</p><details class="fold doc-fold" id="notes-md"><summary>NOTES.md</summary><div class="doc"><h4>Crafter curriculum for Qwen3.5-0.8B — working notes</h4>
+<h5>Setup (07:29–08:20)</h5>
+<ul>
+<li>CUDA MPS daemon on (<code>/app/mps</code>), every card process sources <code>lab/env.sh</code>.</li>
+<li>Loop (all code in <code>/app/lab</code>):
+<ul>
+<li><code>actor.py</code> — vLLM engine (0.25 of the card), 256 game slots. Slots play full games on training worlds or
+<em>drills</em>: short practice games restarted from a snapshot of a moment of the model's own full games, with the
+exact 16-step text history it had there (so the drill prompt is token-identical to the full-game prompt).
+Moments are chosen by lesson triggers (<code>lessons.py</code>). Swaps in newly published weights every few seconds.</li>
+<li><code>labeler.py</code> + <code>search.py</code> — game-verified targets: from each drill state, restore the snapshot, try every
+action for one step, and walk to each visible collectible thing with a re-planned shortest-path proposal
+executed in the real game (stepped exactly as the evaluation steps it). Only sequences whose game response
+shows a gain are kept: an achievement not held at the root (saplings excluded: 10% luck), or more
+wood/stone/coal/iron/diamond/drink/food. Label = first action of the fastest verified sequence (new
+achievements before plain gains; visible targets before unseen ones); every first move that verifies equally
+fast is kept (label set, one drawn per use).</li>
+<li><code>trainer.py</code> — one main line, all layers, AdamW; soft cross-entropy on labels, PPO-clip on own decisions
+(rewards from <code>rewards.py</code>, only on the model's own actions). Publishes weights every ~3 min.</li>
+</ul>
+</li>
+<li>Training-target rule: label targets only come from trying actions in the game from moments of the model's own
+play and keeping what the game showed worked; RL rewards only fall on the model's own sampled actions.</li>
+</ul>
+<h5>Baseline (untrained), official 100 worlds</h5>
+<p>progression 4.95%, Crafter score 1.11%, invalid outputs 38.7%, mean length 163 steps.
+Achievements: sapling 62, wake_up 18, defeat_zombie 9, eat_cow 7, collect_wood 6, place_plant 4, drink 3, rest 0.
+Deaths: zombie 52, arrow 18, other 17, thirst/hunger 13. Actions: Noop 62% (mostly invalid outputs), Do 32%,
+all four moves together ~2.5%. 73% of steps &quot;stuck&quot; (≤2 positions in 32 steps); longest same-action run 62 on average.
+Invalid outputs are near-miss names: <code>noop</code>, <code>Eat</code>, <code>NOOP</code>, <code>do</code>, <code>Eat Cow</code>, <code>Eat Plant</code>, <code>Action: Do</code>, <code>Drink</code>.</p>
+<h5>Block 1 — lesson &quot;take the verified next gain&quot; (gather / craft / explore drills)</h5>
+<ul>
+<li>Weakness: the model does not move toward anything and does not use what is in front of it; 39% of outputs are
+invalid. Evidence above: moves 2.5% of actions, stuck 73% of steps, wood 6%, table 0%.</li>
+<li>Practice: drills (12 steps) from moments of its own full games: <code>gather</code> (a collectible thing is visible),
+<code>craft</code> (it holds what a placement/craft could use), <code>explore</code> (nothing collectible visible). Mix 55/25/20.
+Full games take 35% of slots (they supply moments and diagnosis; not trained on in this block).</li>
+<li>Method: supervised on game-verified labels from the drill states, lr 1e-6, 64 decisions per step.</li>
+<li>What should move: lesson agreement (model's own action ∈ verified targets) from ~10% to &gt;50%;
+invalid outputs to &lt;5%; full-game progression from 5% to &gt;15% with collect_wood, collect_drink, place_table,
+eat_cow, make_wood_pickaxe rising. Keep if the 100-world score beats 10% (random); otherwise revisit labels.</li>
+<li>Engineering incidents: (1) <code>CUDA_MPS_ACTIVE_THREAD_PERCENTAGE=40</code> on the vLLM actor made 100% of its outputs
+invalid (PyTorch generation of the same weights was fine) — removed; the actor is throttled with a pause
+between batched steps instead (<code>actor_pause</code> in the mix). (2) With the actor unthrottled the trainer ran at
+2 samples/s (11/s alone); with a 0.8 s pause it runs at 7–12 samples/s while the actor makes ~60 decisions/s.</li>
+<li>Result at v6 (08:08, ~125 optimizer steps, ~8k labeled decisions, ~20 min of card time):
+<strong>19.32%</strong> progression (CI 17.6–21.0), Crafter score 4.51%, invalid 1.5%, mean length 171.
+wood 93, table 76, drink 55, sapling 50, plant 47, wood pickaxe 36, wood sword 32, stone 13, zombie 9, cow 9,
+coal 3, wake_up 2. Deaths: zombie 54, other 25, arrow 8, lava 6. Lesson agreement in drills 2.5% → 32–38%.
+Kept; submitted (first submission).</li>
+<li>What it taught / what it did not: moves now (75% of actions), uses Do on trees 28% of the time when facing one
+(was 4%), crafts. Forgot: wake_up 18% → 2% (it no longer sleeps), sapling 62% → 50%.</li>
+</ul>
+<h5>Block 2 — lesson &quot;keep yourself alive: drink, eat, sleep&quot; (need drills)</h5>
+<ul>
+<li>Weakness: the model never looks after its vitals. Evidence (b1_v6 transcripts): at the moment of death
+(median step 176, 90% before step 221) drink is 0–2, food 2, energy 3; deaths cluster at steps 150–250;
+&quot;zombie&quot; deaths are the finishing blow on a player already losing health to thirst. In the situation
+&quot;facing water while thirsty&quot; it drinks 30% of the time; with energy ≤ 2 it sleeps 0% of the time.</li>
+<li>Practice: three goal drills from moments of its own full games, one need at a time so labels never disagree:
+<code>need_drink</code> (drink ≤ 4; goal: drink gain), <code>need_food</code> (food ≤ 4, drink &gt; 4; goal: food gain),
+<code>need_sleep</code> (energy ≤ 3, others fine; goal: sleep until energy is back, alive — verified by sleeping it out in
+the restored game). The gather/craft/explore drills now exclude needy moments. Mix: gather .35, craft .15,
+explore .10, drink .15, food .10, sleep .15. Labels as before (visible targets first).</li>
+<li>Method: same supervised line, lr 1e-6, continuing from v9.</li>
+<li>What should move: mean episode length 171 → &gt;300; collect_drink 55 → &gt;80; wake_up 2 → &gt;30; eat_cow 9 → &gt;25;
+deaths before step 250 fall. Keep if the 100-world score beats 19.3% by ≥3 points; if it drops, go back to v6/v9.</li>
+<li>Result at v15 (08:38, Block 2 ≈ 15 min of card time, ~170 optimizer steps since v9): <strong>29.86%</strong> (CI 28.1–31.6),
+Crafter score 8.64%, invalid 0.3%. Per achievement vs v6: wake_up 2→67, drink 55→78, cow 9→41,
+wood pickaxe 36→67, wood sword 32→65, stone 13→32, place_stone 0→28, zombie 9→23, table 76→93, wood 93→100;
+sapling 50→28 and place_plant 47→28 fell (forgetting: the craft drills no longer dominate).
+Lesson success: need_drink 34%→57%, need_food 55%, rest 11%, need_sleep 2% (few moments).
+Kept; submitted.</li>
+<li>What did NOT move: mean length 171 → 186. Deaths still at steps 150–200 (zombie 62, other 22).
+Transcripts: a zombie stands &quot;1 step to your east&quot; for 30 steps while the model keeps walking; it never turns
+to face it. Facing a zombie it hits only 39% of the time.</li>
+<li>Diagnosis probe (scripted, never training data): following the labeler's own first label in full games gets
+60.6% progression but also dies at ~214 steps (zombies, the labeler ignores them once defeat_zombie is held);
+with a fight goal for nearby zombies the same probe reaches 67.9% and lives 496 steps on average.</li>
+</ul>
+<h5>Block 3 — lesson &quot;turn and fight the zombie next to you&quot; (+ seek unseen next achievements)</h5>
+<ul>
+<li>Weakness: no defence. Evidence above (deaths at 150–200, zombie adjacent for many steps, model walks away).</li>
+<li>Practice: <code>fight</code> drills from moments with a zombie within 2 steps; goal = every zombie within 3 steps
+defeated with the player alive (verified in the restored game; fastest, then least damage; all equally good
+first actions kept). All other drills now leave threatened moments alone. Second change (labeler): for
+gather/craft/explore, a new achievement reachable via an unseen target (≤30 steps) now beats a plain resource
+gain from a visible target (probe: needed to leave the forest for stone). Sleep labels now also require that
+the sleeper is not hit while asleep. Mix: fight .15, gather .25, craft .12, explore .10, drink .12, food .08,
+need_sleep .10, rest .08.</li>
+<li>Method: same line from v20, lr 1e-6, 64 decisions/step, micro-batches of 96k tokens (speed only).</li>
+<li>What should move: zombie deaths 62 → &lt;35; mean length 186 → &gt;250; defeat_zombie 23 → &gt;50; collect_stone,
+place_stone, collect_coal up. Keep if ≥ 3 points over 29.9%; go back to v15/v20 if it falls.</li>
+<li>Engineering (Block 3): actor restarted twice (09:06, 09:11) with a smaller engine (0.16 of the card, 256
+sequences, 64k batched tokens; it had grown to 69 GB) and slots kept free until drill moments exist; trainer
+restarted with the trainer/actor balance retuned (48k-token micro-batches; 13–17 samples/s, actor 30–40/s).</li>
+<li>Independent review (sub-agent, read-only) of the data code against the target rule: one real problem —
+in daylight Crafter despawns zombies at any distance, and the fight check counted a vanished zombie as
+defeated: ~24% of fight labels (9% in the newest shards) had no kill by the player. Fixed for Block 4: every
+nearby zombie must be killed by the player (defeat counter rises by that many); despawn = failure. Other
+fixes from the review: scripted actor refuses to write into /app/run; crafts after a planned walk must leave
+the player alive. Everything else verified: labels only on the model's own prompts (snapshot text matched the
+prompt in 400/400 checks), restoration exact incl. RNG (650/650 steps), RL off, no full-game training.</li>
+<li>Result at v30 (09:33, Block 3 ≈ 40 min of card time): <strong>30.91%</strong> (CI 29.2–32.8), Crafter score 6.88%,
+mean length 227 (was 186). vs v15: defeat_zombie 23→80, eat_cow 41→76, wake_up 67→84, sapling 28→61,
+place_plant 28→46, drink 78→83; but wood pickaxe 67→27, wood sword 65→38, table 93→76, stone 32→7,
+place_stone 28→0. Deaths: zombie 57, other 26. Total +1.0 (noise); Crafter score down 8.6→6.9.</li>
+<li>Reading: fight worked (zombie kills ×3.5); the second change (unseen new achievements beat visible plain gains)
+created the next weakness: the labels send the model after far cows and zombies instead of gathering the
+second and third wood the tools need — the craft chain collapsed. Kept the line (equal score), but the next
+block must restore crafting. Submission stays v15.</li>
+</ul>
+<h5>Block 4 — lesson &quot;gather toward a craft&quot; (label quality) + per-step goals</h5>
+<ul>
+<li>Weakness: crafting chain collapsed in Block 3 (wood pickaxe 67→27, stone 32→7, place_stone 28→0) because a
+plain wood/stone gain never counts as progress unless it is itself an achievement.</li>
+<li>Change in the verified search: after every unit gathered on a walk (wood, stone, coal, iron), try every
+place/make action in the game; if one gives a new achievement, the walk counts as a route to that new
+achievement (so &quot;get the 2nd wood&quot; is labeled as the route to place_table, &quot;mine the 4th stone&quot; as the route to
+place_furnace). Also: furnace as a crafting spot and place-furnace-then-craft (iron tools), skeleton as a kill
+target, saplings via a verified run of Do-on-grass (only when no other new achievement verifies), the fight
+fix above, and each drill decision now gets the goal its own state calls for (threat &gt; drink &gt; food &gt; sleep &gt;
+rest &gt; next achievement) instead of the drill's starting goal.</li>
+<li>Trainer: half of each batch from decisions the model got wrong (disagree_share 0.5).</li>
+<li>Method: same line from v35, lr 1e-6.</li>
+<li>What should move: wood pickaxe/sword back to ≥65, place_table ≥90, stone ≥30, place_stone ≥25, stone
+pickaxe/furnace &gt; 5; keep zombie ≥70 and cow ≥60. Keep if the score beats 30.9 by ≥3; else compare per
+achievement and consider returning to v15.</li>
+<li>Engineering (Block 4): the actor's vLLM engine died at 09:46 with &quot;illegal memory access&quot; right when the trainer
+was restarted (MPS); restarted at 09:51; a watchdog (<code>lab/watchdog.sh</code>) now restarts any dead process.</li>
+<li>Result at v46 (10:24, Block 4 ≈ 30 min of card time after the crash): <strong>40.05%</strong> (CI 38.1–42.1), Crafter
+score 12.6%, mean length 262. vs v30: sapling 61→80, place_plant 46→79, wood pickaxe 27→53, wood sword
+38→66, table 76→94, stone 7→36, place_stone 0→33, furnace 0→17, coal 2→11, zombie 80→89, wake_up 84→91;
+eat_cow 76→54 fell. Deaths: zombie 46, other 26, out_of_food 10, arrow 8, lava 3. +9.1 points: kept; submitted.
+Situations: facing a zombie it hits 86% (was 39% at v15); next to a table with wood and no pickaxe it crafts 85%.</li>
+</ul>
+<h5>Block 5 — lesson &quot;stone age: stone tools need wood, stone and a table together&quot;</h5>
+<ul>
+<li>Weakness: stone pickaxe 0%, stone sword 1% although stone is collected in 36% of games. Situation count:
+only 17 decisions in 100 games stand next to a table holding wood and stone. The search never counted
+&quot;get wood while holding stone&quot; as progress when no table was near: the probe after a gain only tried
+one-step placements/crafts.</li>
+<li>Change: the probe after each gathered unit also tries &quot;Place Table, then each craft&quot; (verified in the game);
+new drill <code>stone_age</code> from moments holding a wood pickaxe but no stone pickaxe (not needy, not threatened),
+weight .15 (gather .20, craft .10, explore .08, others unchanged). Expert probe (diagnosis only): with these
+labels, scripted following reaches stone pickaxe and sword in 4 of 5 test games within 300 steps.</li>
+<li>Method: same line from v46, lr 1e-6, disagree share 0.5.</li>
+<li>What should move: make_stone_pickaxe / make_stone_sword from ~0 to &gt;15; collect_iron &gt; 0; no loss on wood tools.
+Keep if ≥ +3 or if stone tools rise without loss elsewhere; else drop the drill.</li>
+<li>Result at v64 (11:20, Block 5 ≈ 33 min of card time): <strong>50.0%</strong> (CI see eval), Crafter score 20.8%,
+mean length 255. vs v46: wood pickaxe 53→87, wood sword 66→89, stone 36→67, place_stone 33→61,
+furnace 17→37, coal 11→23, stone sword 1→16, skeleton 1→11, cow 54→74, drink 78→90; stone pickaxe only
+0→3; wake_up 91→82 fell. Deaths: zombie 45, other 26 (= zombie hits at health 1: the death heuristic calls a
+2-damage hit &quot;other&quot; when health was 1), arrow 11, out_of_food 10, lava 4. +10 points: kept; submitted.
+Situations: energy ≤ 2 → Sleep only 1.4% (night sleep labels rarely verify safe); facing stone with a pickaxe
+→ Do 51% (was 30%); next to a table with wood+stone → stone sword 12/47, pickaxe rarely.</li>
+</ul>
+<h5>Block 6 — method block: same lessons, learning rate 1e-6 → 2e-6</h5>
+<ul>
+<li>Weakness: imitation precision. The labels are far better than the model: following them (scripted
+diagnosis) reaches ~73–80% progression and lives ~500 steps, the model 50% / 255 steps. Lesson success
+rates sit at 52–60% and the model's probability of the verified target on fresh decisions stays ~0.31–0.34
+while the trainer (the bottleneck, ~11 samples/s) works through them.</li>
+<li>Change: lr 2e-6 (Adam, grad-clip 1.0), nothing else. Checkpoint to return to: v64 (b5).</li>
+<li>What should move: label_target_p on fresh labels and lesson agreement rising faster than in Block 5;
+full-game score ≥ 50 with no achievement collapsing. Return to v64 at 1e-6 if the score drops ≥ 3 or the
+trainer's grad norm / invalid outputs blow up.</li>
+<li>Result at v79 (12:08, Block 6 ≈ 33 min of card time at lr 2e-6): <strong>44.0%</strong> (−6.0 vs v64), Crafter score
+17.0. Losses: eat_cow 74→35, sapling 88→72, place_plant 85→67, furnace 37→19, wood sword 89→74, drink 90→81,
+stone sword 16→7. Gains: coal 23→29. Lesson agreement did not rise faster (0.56–0.57, target prob ~0.33).
+<strong>Dropped</strong>: by the rule written before the block, the line returns to v64 (published again as v80) at
+lr 1e-6. Block 6's ~250 optimizer steps do not reach the final weights.</li>
+<li>Engineering: killing the trainer under MPS crashed the actor's engine again (illegal memory access, 12:22);
+the watchdog restarted it.</li>
+</ul>
+<h5>Block 7 — lesson &quot;at night, dig in before you sleep&quot;</h5>
+<ul>
+<li>Weakness: the night still ends most games. Evidence (v46/v64 evals): median death at step ~225 (first night),
+zombie + &quot;other&quot; (= zombie hit at health 1) ≈ 70% of deaths, 10% of games die from a 7-damage hit while
+asleep in the open; in the situation &quot;energy ≤ 2&quot; the model sleeps 1.4% of the time because sleeping in the
+open at night rarely verifies as safe, so night sleep labels mostly fall back to gathering.</li>
+<li>Practice: new <code>night</code> drill from moments with daylight &lt; 0.3 and no zombie within 2 (weight .12). Per-step
+goal: at night with energy ≤ 7 the goal is sleep. The search first tries sleeping on the spot; if a hit would
+come, it proposes digging a two-cell tunnel into stone (walking to stone first if needed, ≤ 10 steps), stepping
+back and walling the entrance with a stone, executes that in the restored game and keeps it only if the
+player ends sealed (no free grass/sand/path pocket reaching it) and then sleeps until its energy is back
+without being hit. Tested on 40 real night states from the model's own play: 11 verified (3 sleep on the spot,
+8 dig-in), 0.2 s per state.</li>
+<li>Method: line from v64 (as v80), lr 1e-6, same other lessons.</li>
+<li>What should move: wake_up ↑, zombie+other deaths ↓, mean length 255 → &gt;300; no loss elsewhere vs v64.
+Keep if ≥ 50 + 2; otherwise compare per achievement.</li>
+<li>Result at v92 (13:00, Block 7 ≈ 38 min of card time): <strong>47.9%</strong> (−2.1 vs v64, noise level), Crafter score
+18.9, mean length 232 (was 255). vs v64: furnace 37→53, stone 67→73, place_stone 61→67, coal 23→30,
+wake_up 82→89; but wood sword 89→65, cow 74→55, stone sword 16→5, sapling 88→81, plant 85→70.
+Deaths: zombie 57 (was 45). Only ~5% of night labels were dig-in shelters (thin cave walls break into
+tunnels; a bounded breadth-first sealing search found none in 1.8 s/state and was not deployed).</li>
+<li>Reading: the night lesson made things worse, and the label data shows why: &quot;sleep on the spot&quot; was kept
+whenever the sleep went well in the game's own random future — luck. On 12 daytime rest moments near a
+skeleton, 50 of 60 alternative random futures ended with a hit while asleep. The model cannot see luck, so it
+learned &quot;sleep at night&quot; and died asleep more often. Kept the line (within noise), fixed the lesson.</li>
+</ul>
+<h5>Block 8 — lesson &quot;sleep only where it is safe&quot; (robust sleep verification)</h5>
+<ul>
+<li>Change: a sleep (on the spot, or after digging in) now counts as worked only if it is safe in at least 4 of 5
+random futures of the same moment (the game's own and 4 re-seeded copies of the world's random generator).
+Test on 30 night moments: 16 sleep-on-spot, 2 dig-in, 12 none (fall back to the next-achievement labels).
+Everything else unchanged (lr 1e-6, line continues from v92).</li>
+<li>What should move: deaths while asleep ↓, zombie deaths back to ≤ 45, mean length ≥ 255, wake_up ≥ 80;
+recover sword/cow. Keep if ≥ v64's 50.0 − 1; the final choice among v64 and later lines is made on 300 worlds.</li>
+<li>Result at v108 (13:50, Block 8 ≈ 37 min): <strong>49.5%</strong> (≈ v64), Crafter score 21.2 (best so far), mean length
+230. vs v92: wake_up 89→96, stone pickaxe 5→15, stone sword 5→21, skeleton 9→17, wood sword 65→81,
+zombie 87→92; furnace 53→27 fell. Deaths: zombie 53, other 24. Kept.</li>
+</ul>
+<h5>Block 9 — rebalance toward crafting (craft .13, gather .22, night .08), 13:50–14:10</h5>
+<ul>
+<li>Weakness: crafting losses since Block 7 (wood sword 89→81, stone sword ↓, furnace ↓) while night drills took
+12% of the practice; night labels are now mostly fallbacks to the next achievement anyway.</li>
+<li>Method: same line, lr 1e-6, only the drill weights changed. Stopped at 14:10 to free the card for the
+final confirmations (the engines grow past their memory share and three could not run beside training).</li>
+<li>Result at v115 (official 100): <strong>50.91%</strong> (CI 48.6–53.2), Crafter score 21.9 — best on both measures,
+within noise of v64/v108. stone pickaxe 26 (best), coal 37, furnace 44, place_stone 70, stone 73; wake_up
+96→77 and stone sword 21→10 fell. Deaths: zombie 45, other 27, out_of_food 10, arrow 9, lava 6.
+Submitted as interim best while the 300-world confirmations run.</li>
+</ul>
+<h5>Bookkeeping</h5>
+<ul>
+<li>Optimizer steps (64 decisions each, AdamW, all 24 layers): run 1 267 (→v11), run 2 ≈268 (229 → v19),
+run 3 ≈215 (213 → v25), run 4 ≈378 (377 → v35), run 5 ≈1575 (974 → v64; the rest was Block 6 and was
+dropped), run 7 1153 (v64 → v115). Total ≈ 3,856 steps; 3,213 of them are in the lineage of v115 →
+<strong>≈83% of training steps reached the final weights</strong> (losses: ~600 steps of the dropped lr-2e-6 block,
+~45 steps lost at restarts).</li>
+<li>Plain full-game training: <strong>0%</strong> of training card time. Every training target was a game-verified label on
+a decision from a drill (a practice restart from a moment of the model's own full game). RL code exists
+(rewards.py, PPO-clip on own outputs) but was never switched on.</li>
+<li>No weight averaging or editing was done.</li>
+</ul>
+<h5>Final confirmation (300 public worlds, default seed, card otherwise idle)</h5>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>weights</th>
+<th>official 100</th>
+<th>300 worlds</th>
+<th>Crafter score (300)</th>
+<th>mean length (300)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v64 (Block 5)</td>
+<td>50.0</td>
+<td>49.21 (47.9–50.5)</td>
+<td>20.77</td>
+<td>252</td>
+</tr>
+<tr>
+<td>v108 (Block 8)</td>
+<td>49.5</td>
+<td>48.39 (47.2–49.6)</td>
+<td>21.38</td>
+<td>234</td>
+</tr>
+<tr>
+<td><strong>v115 (Block 9, final)</strong></td>
+<td><strong>50.91</strong></td>
+<td><strong>52.59 (51.4–53.8)</strong></td>
+<td><strong>22.98</strong></td>
+<td>253</td>
+</tr>
+</tbody>
+</table></div>
+<p>Submitted: v115 (<code>/submission/model.safetensors</code>, sha256 cf380ecea31ab899…, check_submission valid).
+v115 deaths on 300 worlds: zombie 147, other 70 (zombie hits at health 1), out_of_food 40, arrow 19, thirst 12.</p>
+<h5>What carried the score, in order</h5>
+<ol>
+<li>Block 1 (verified next gain): 5 → 19 — format and moving toward things come almost for free once the
+targets are right.</li>
+<li>Block 2 (needs: drink/food/sleep): 19 → 30.</li>
+<li>Block 4 (gather toward a craft: probe placements/crafts after each unit gathered; verified kills): 31 → 40.</li>
+<li>Block 5 (stone age: place-a-table-then-craft probe + stone_age drills): 40 → 50.</li>
+<li>Blocks 7–9: survival lessons around sleeping did not move the total (one hurt until the luck in &quot;verified&quot;
+sleeps was removed); the crafting rebalance in Block 9 gave the final +2–3 on 300 worlds.
+Dropped: Block 6 (lr 2e-6), −6 points.</li>
+</ol>
+<h5>What I would do next</h5>
+<ul>
+<li>Night survival is the ceiling: the median game ends in the first night. The verified-label approach can only
+teach what a short search can verify; a proper night lesson needs sealed shelters in more terrain (placing
+stone around a pocket in grassland) or RL on night drills with the model's own play (rewards.py is ready).</li>
+<li>Iron is never reached (stone pickaxe 26% at best); iron_age drills exist but there were too few moments.</li>
+</ul>
+</div></details></section></div></main><script>
+(function(){
+ function open(){var h=decodeURIComponent(location.hash.slice(1)),el=h&&document.getElementById(h);
+  if(el&&el.tagName==='DETAILS')el.open=true}
+ addEventListener('hashchange',open);open();
+ document.querySelectorAll('.chart,.spark').forEach(function(f){var tip=f.querySelector('.tip');
+  function on(e){var t=e.target.getAttribute&&e.target.getAttribute('data-tip');if(!t)return;tip.textContent=t;tip.hidden=false;
+   var b=f.getBoundingClientRect(),r=e.target.getBoundingClientRect();
+   tip.style.left=Math.max(0,Math.min(r.left-b.left+12,b.width-tip.offsetWidth))+'px';tip.style.top=(r.top-b.top-34)+'px';}
+  function off(){tip.hidden=true}
+  f.addEventListener('mouseover',on);f.addEventListener('focusin',on);f.addEventListener('mouseout',off);f.addEventListener('focusout',off);});
+})();
+</script></body></html>
